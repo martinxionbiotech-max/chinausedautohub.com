@@ -17,6 +17,7 @@ import { evaluateChery } from './evaluate-used-chery';
 import { checkEvBatteryHealth } from './check-used-ev-battery-health';
 import { checkMileageHistory } from './check-mileage-and-vehicle-history';
 import { roroVsContainer } from './roro-vs-container-shipping';
+import { exportCompliance } from './china-used-car-export-compliance';
 
 export interface GuideSection {
   heading: L10n;
@@ -94,6 +95,7 @@ export const GUIDES: GuideContent[] = [
   checkEvBatteryHealth,
   checkMileageHistory,
   roroVsContainer,
+  exportCompliance,
 ];
 
 export function getGuide(slug: string): GuideContent | undefined {
