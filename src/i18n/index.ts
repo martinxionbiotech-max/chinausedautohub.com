@@ -53,6 +53,7 @@ export interface Dictionary {
   brands: Record<string, string>;
   bodyTypes: Record<string, string>;
   powertrains: Record<string, string>;
+  tools: Record<string, string>;
   howItWorks: {
     title: string;
     description: string;

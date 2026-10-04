@@ -298,6 +298,7 @@
     "destinationMarkets": "Popular Destination Markets",
     "relatedData": "Related Vehicle Data",
     "requestBrand": "Request This Brand",
+    "modelDirectory": "Model Directory",
     "dataSubsite": "data.chinausedautohub.com"
   },
   "bodyTypes": {
@@ -311,6 +312,9 @@
     "lookingFor": "Looking for a different",
     "sourcePrompt": "Tell us your requirements and we can help source a",
     "fromChinaMarket": "from China's market.",
+    "relevantModels": "Relevant Models",
+    "powertrainBreakdown": "Powertrain Breakdown",
+    "relatedMarkets": "Related Markets",
     "requestType": "Request a"
   },
   "powertrains": {
@@ -321,6 +325,14 @@
     "forExport": "for Export",
     "priceRange": "Price range",
     "commonBrands": "Common Brands"
+  },
+  "tools": {
+    "relatedTools": "Related Tools",
+    "intro": "Estimate landed cost, import duty, profit and shipping for vehicles.",
+    "landedCost": "Landed Cost Calculator",
+    "importDuty": "Import Duty Calculator",
+    "shippingCost": "Shipping Cost Estimator",
+    "profit": "Profit Calculator"
   },
   "howItWorks": {
     "title": "How It Works — Buying a Used Car from China",
@@ -540,21 +552,30 @@
     "documents": "Documents"
   },
   "confidence": {
-    "heading": "Information Availability",
-    "intro": "Shows which vehicle details are verified, provided by the source, or not available for this listing.",
+    "heading": "Vehicle Information & Verification",
+    "intro": "Shows which vehicle details are available and how much you can rely on each one — provided by the source, backed by a source, verified, or not available.",
     "field": "Field",
-    "status": "Status",
-    "vehicleIdentity": "Vehicle Identity",
-    "mileage": "Mileage",
-    "price": "Price",
-    "inspection": "Inspection",
-    "batteryHealth": "Battery Health",
-    "maintenanceHistory": "Maintenance History",
-    "verified": "Verified",
+    "verificationLevel": "Verification level",
+    "source": "Source",
+    "lastChecked": "Last checked",
+    "lastUpdated": "Last updated",
+    "dataAvailability": "Data availability",
+    "dataAvailabilitySummary": "{count} of {total} verification fields available",
+    "mileageVerified": "Mileage verified",
+    "vehicleIdentityVerified": "Vehicle identity verified",
+    "photosAvailable": "Photos available",
+    "inspectionAvailable": "Inspection available",
+    "batteryReportAvailable": "Battery report available",
+    "serviceHistoryAvailable": "Service history available",
+    "documentsAvailable": "Documents available",
+    "vinAvailable": "VIN available",
+    "exportEligibilityChecked": "Export eligibility checked",
     "provided": "Provided",
-    "estimated": "Estimated",
+    "verified": "Verified",
+    "sellerSupplied": "Seller Supplied",
+    "sourceBacked": "Source-backed",
     "notAvailable": "Not Available",
-    "notProvided": "Not Provided"
+    "notIndependentlyVerified": "Not Independently Verified"
   },
   "units": {
     "km": "km"

@@ -14,6 +14,7 @@ export function organizationSchema(): JsonLd {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
     name: SITE.name,
     url: SITE_URL,
     email: CONTACT.email,
@@ -33,6 +34,7 @@ export function webSiteSchema(): JsonLd {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
     name: SITE.name,
     url: SITE_URL,
     description: SITE.description,
@@ -53,6 +55,7 @@ export function articleSchema(opts: {
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    '@id': opts.url,
     headline: opts.headline,
     description: opts.description,
     mainEntityOfPage: opts.url,
@@ -96,13 +99,15 @@ export function vehicleSchema(v: Vehicle, locale = 'en'): JsonLd {
     price: v.price.amount,
     priceCurrency: v.price.currency,
     url,
-    availability: statusToSchemaAvailability(v.status),
-    // Demo listings must not be read as market-live prices.
+    // Demo listings must not be read as market-live inventory — no availability
+    // claim is made (never `InStock` for a demo vehicle).
+    ...(v.is_demo ? {} : { availability: statusToSchemaAvailability(v.status) }),
     itemCondition: 'https://schema.org/UsedCondition',
   };
 
   const vehicle: JsonLd = {
     '@type': 'Vehicle',
+    '@id': `${url}#vehicle`,
     name: vehicleTitle({ vehicle: v, brand: d.brand, model: d.model }),
     url,
     image: v.images.map((img) => (img.startsWith('http') ? img : `${SITE_URL}${img}`)),
@@ -134,6 +139,7 @@ export function vehicleSchema(v: Vehicle, locale = 'en'): JsonLd {
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
+    '@id': url,
     name: vehicleTitle({ vehicle: v, brand: d.brand, model: d.model }),
     url,
     image: v.images.map((img) => (img.startsWith('http') ? img : `${SITE_URL}${img}`)),

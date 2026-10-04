@@ -6,11 +6,12 @@ import {
   getBrand,
   getVehiclesByBrand,
   getPopularModelsForBrand,
+  getModelsByBrand,
   getBodyType,
   getPowertrain,
 } from '../lib/data';
 import { SITE } from '../lib/site';
-import { dataBrandUrl, dataModelUrl, brandUrl, powertrainUrl } from '../lib/urls';
+import { dataBrandUrl, dataModelUrl, brandUrl, powertrainUrl, toolUrl, type ToolSlug } from '../lib/urls';
 import { itemListSchema } from '../lib/schema';
 import { getTranslations } from '../i18n';
 import { getBrandKnowledge } from '../i18n/brands';
@@ -34,6 +35,14 @@ if (!brand) {
 const vehicles = getVehiclesByBrand(brandSlug);
 const available = vehicles.filter((v) => v.status === 'available');
 const popularModels = getPopularModelsForBrand(brandSlug);
+const allModels = getModelsByBrand(brandSlug);
+
+const relatedTools: { slug: ToolSlug; label: string }[] = [
+  { slug: 'landed-cost-calculator', label: t.tools.landedCost },
+  { slug: 'import-duty-calculator', label: t.tools.importDuty },
+  { slug: 'shipping-cost-estimator', label: t.tools.shippingCost },
+  { slug: 'profit-calculator', label: t.tools.profit },
+];
 
 const typeSlugs = Array.from(new Set(vehicles.map((v) => v.body_type)));
 const vehicleTypes = typeSlugs.map((s) => getBodyType(s)).filter(Boolean);
@@ -86,12 +95,12 @@ const requestBrandHref = localizedUrl('/contact/', locale);
     )}
   </section>
 
-  <!-- POPULAR MODELS -->
-  {popularModels.length > 0 && (
+  <!-- MODEL DIRECTORY -->
+  {allModels.length > 0 && (
     <section class="container-site mt-12">
-      <h2 class="text-xl font-bold text-ink">{t.brands.popularModels}</h2>
+      <h2 class="text-xl font-bold text-ink">{t.brands.modelDirectory}</h2>
       <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {popularModels.map((m) => {
+        {allModels.map((m) => {
           const mUrl = dataModelUrl(m);
           return (
             <div class="card p-4">
@@ -180,6 +189,20 @@ const requestBrandHref = localizedUrl('/contact/', locale);
           </div>
         </div>
       )}
+    </div>
+  </section>
+
+  <!-- RELATED TOOLS -->
+  <section class="container-site mt-12">
+    <h2 class="text-xl font-bold text-ink">{t.tools.relatedTools}</h2>
+    <p class="mt-1 text-sm text-ink-muted">{t.tools.intro}</p>
+    <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      {relatedTools.map((tool) => (
+        <a href={toolUrl(tool.slug)} target="_blank" rel="noopener noreferrer" class="card p-4 hover:border-brand-300">
+          <span class="block text-sm font-semibold text-ink">{tool.label}</span>
+          <span class="mt-1 block text-xs text-ink-muted">{t.nav.tools}</span>
+        </a>
+      ))}
     </div>
   </section>
 

@@ -298,6 +298,7 @@
     "destinationMarkets": "Mercados de destino populares",
     "relatedData": "Datos de vehículos relacionados",
     "requestBrand": "Pedir esta marca",
+    "modelDirectory": "Directorio de modelos",
     "dataSubsite": "data.chinausedautohub.com"
   },
   "bodyTypes": {
@@ -311,6 +312,9 @@
     "lookingFor": "¿Buscas otro tipo de",
     "sourcePrompt": "Cuéntanos tus requisitos y podemos ayudarte a conseguir un",
     "fromChinaMarket": "del mercado de China.",
+    "relevantModels": "Modelos relevantes",
+    "powertrainBreakdown": "Desglose por propulsión",
+    "relatedMarkets": "Mercados relacionados",
     "requestType": "Pedir un"
   },
   "powertrains": {
@@ -321,6 +325,14 @@
     "forExport": "para exportación",
     "priceRange": "Rango de precios",
     "commonBrands": "Marcas comunes"
+  },
+  "tools": {
+    "relatedTools": "Herramientas relacionadas",
+    "intro": "Estime el coste de desembarco, los aranceles de importación, el beneficio y el envío de los vehículos.",
+    "landedCost": "Calculadora de coste de desembarco",
+    "importDuty": "Calculadora de aranceles",
+    "shippingCost": "Estimador de coste de envío",
+    "profit": "Calculadora de beneficio"
   },
   "howItWorks": {
     "title": "Cómo funciona — Comprar un coche usado de China",
@@ -540,21 +552,30 @@
     "documents": "Documentos"
   },
   "confidence": {
-    "heading": "Disponibilidad de información",
-    "intro": "Muestra qué detalles del vehículo están verificados, proporcionados por la fuente o no disponibles para este anuncio.",
+    "heading": "Información y verificación del vehículo",
+    "intro": "Muestra qué detalles del vehículo están disponibles y cuánto puede confiar en cada uno: facilitados por la fuente, respaldados por una fuente, verificados o no disponibles.",
     "field": "Campo",
-    "status": "Estado",
-    "vehicleIdentity": "Identidad del vehículo",
-    "mileage": "Kilometraje",
-    "price": "Precio",
-    "inspection": "Inspección",
-    "batteryHealth": "Estado de la batería",
-    "maintenanceHistory": "Historial de mantenimiento",
-    "verified": "Verificado",
+    "verificationLevel": "Nivel de verificación",
+    "source": "Fuente",
+    "lastChecked": "Última verificación",
+    "lastUpdated": "Última actualización",
+    "dataAvailability": "Disponibilidad de datos",
+    "dataAvailabilitySummary": "{count} de {total} campos de verificación disponibles",
+    "mileageVerified": "Kilometraje verificado",
+    "vehicleIdentityVerified": "Identidad del vehículo verificada",
+    "photosAvailable": "Fotos disponibles",
+    "inspectionAvailable": "Inspección disponible",
+    "batteryReportAvailable": "Informe de batería disponible",
+    "serviceHistoryAvailable": "Historial de servicio disponible",
+    "documentsAvailable": "Documentos disponibles",
+    "vinAvailable": "VIN disponible",
+    "exportEligibilityChecked": "Elegibilidad de exportación verificada",
     "provided": "Proporcionado",
-    "estimated": "Estimado",
+    "verified": "Verificado",
+    "sellerSupplied": "Facilitado por el vendedor",
+    "sourceBacked": "Respaldado por fuente",
     "notAvailable": "No disponible",
-    "notProvided": "No proporcionado"
+    "notIndependentlyVerified": "No verificado de forma independiente"
   },
   "units": {
     "km": "km"

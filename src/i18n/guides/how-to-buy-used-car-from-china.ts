@@ -94,10 +94,10 @@ export const howToBuy = {
       },
       paragraphs: [
         {
-          en: 'Review the specifications, mileage, condition and any history the listing provides. Each detail carries a confidence level — verified, provided, estimated or not available — so you know how much to rely on it. Ask us about anything that is unclear.',
-          ar: 'راجع المواصفات والمسافة المقطوعة والحالة وأي سجل يقدمه الإعلان. يحمل كل تفصيل مستوى ثقة — موثَّق أو مقدَّم أو مقدَّر أو غير متوفر — لتعرف مدى الاعتماد عليه. اسألنا عن أي شيء غير واضح.',
-          ru: 'Изучите характеристики, пробег, состояние и любую историю из объявления. Каждая деталь имеет уровень достоверности — подтверждено, предоставлено, оценочно или недоступно, — чтобы вы понимали, насколько ей доверять. Спрашивайте нас обо всём неясном.',
-          es: 'Revise las especificaciones, el kilometraje, el estado y cualquier historial que ofrezca el anuncio. Cada detalle lleva un nivel de confianza — verificado, facilitado, estimado o no disponible — para que sepa cuánto puede confiar en él. Pregúntenos cualquier cosa que no esté clara.',
+          en: 'Review the specifications, mileage, condition and any history the listing provides. Each detail carries a verification level — verified, provided, seller-supplied, source-backed or not available — so you know how much to rely on it. Ask us about anything that is unclear.',
+          ar: 'راجع المواصفات والمسافة المقطوعة والحالة وأي سجل يقدمه الإعلان. يحمل كل تفصيل مستوى تحقق — موثَّق أو مقدَّم أو مقدَّم من البائع أو مدعوم بمصدر أو غير متوفر — لتعرف مدى الاعتماد عليه. اسألنا عن أي شيء غير واضح.',
+          ru: 'Изучите характеристики, пробег, состояние и любую историю из объявления. Каждая деталь имеет уровень проверки — подтверждено, предоставлено, предоставлено продавцом, подтверждено источником или недоступно, — чтобы вы понимали, насколько ей доверять. Спрашивайте нас обо всём неясном.',
+          es: 'Revise las especificaciones, el kilometraje, el estado y cualquier historial que ofrezca el anuncio. Cada detalle lleva un nivel de verificación — verificado, facilitado, facilitado por el vendedor, respaldado por una fuente o no disponible — para que sepa cuánto puede confiar en él. Pregúntenos cualquier cosa que no esté clara.',
         },
       ],
     },

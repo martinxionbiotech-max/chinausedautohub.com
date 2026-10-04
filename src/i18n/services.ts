@@ -299,10 +299,10 @@ export const SERVICES: ServiceContent[] = [
     },
     included: [
       {
-        en: 'The condition information we hold, presented clearly with a confidence level (verified, provided, estimated, or not available)',
-        ar: 'معلومات الحالة التي نحتفظ بها، معروضة بوضوح مع مستوى ثقة (موثّق أو مقدَّم أو مقدَّر أو غير متوفر)',
-        ru: 'Имеющаяся информация о состоянии с чётким уровнем достоверности (подтверждено, предоставлено, оценено или недоступно)',
-        es: 'La información de estado que tenemos, presentada con claridad y con un nivel de confianza (verificado, facilitado, estimado o no disponible)',
+        en: 'The condition information we hold, presented clearly with a verification level (verified, provided, seller-supplied, source-backed, or not available)',
+        ar: 'معلومات الحالة التي نحتفظ بها، معروضة بوضوح مع مستوى تحقق (موثَّق أو مقدَّم أو مقدَّم من البائع أو مدعوم بمصدر أو غير متوفر)',
+        ru: 'Имеющаяся информация о состоянии с чётким уровнем проверки (подтверждено, предоставлено, предоставлено продавцом, подтверждено источником или недоступно)',
+        es: 'La información de estado que tenemos, presentada con claridad y con un nivel de verificación (verificado, facilitado, facilitado por el vendedor, respaldado por una fuente o no disponible)',
       },
       {
         en: 'Specifications and mileage as supplied by the source',

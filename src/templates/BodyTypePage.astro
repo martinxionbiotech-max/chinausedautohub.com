@@ -2,12 +2,12 @@
 import BaseLayout from '../components/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import VehicleCard from '../components/VehicleCard.astro';
-import { getBodyType, getVehiclesByBodyType, getBrand } from '../lib/data';
-import { formatPrice } from '../lib/site';
-import { bodyTypeUrl } from '../lib/urls';
+import { getBodyType, getVehiclesByBodyType, getBrand, getModelsByBodyType, getPowertrain } from '../lib/data';
+import { SITE, formatPrice } from '../lib/site';
+import { bodyTypeUrl, powertrainUrl, dataModelUrl, toolUrl, type ToolSlug } from '../lib/urls';
 import { itemListSchema } from '../lib/schema';
 import { getTranslations } from '../i18n';
-import { bodyTypeName, bodyTypeDescription } from '../i18n/reference';
+import { bodyTypeName, bodyTypeDescription, powertrainName, modelDescription } from '../i18n/reference';
 import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
 import type { Vehicle } from '../lib/types';
 
@@ -39,6 +39,21 @@ const commonBrands = Array.from(brandCounts.entries())
   .sort((a, b) => b[1] - a[1])
   .map(([slug]) => getBrand(slug))
   .filter(Boolean);
+
+const relevantModels = getModelsByBodyType(type);
+
+const fuelCounts = new Map<string, number>();
+for (const v of available) fuelCounts.set(v.fuel, (fuelCounts.get(v.fuel) ?? 0) + 1);
+const powertrainBreakdown = Array.from(fuelCounts.entries())
+  .sort((a, b) => b[1] - a[1])
+  .map(([slug, count]) => ({ slug, count, name: powertrainName(slug, locale, getPowertrain(slug)?.name ?? slug) }));
+
+const relatedTools: { slug: ToolSlug; label: string }[] = [
+  { slug: 'landed-cost-calculator', label: t.tools.landedCost },
+  { slug: 'import-duty-calculator', label: t.tools.importDuty },
+  { slug: 'shipping-cost-estimator', label: t.tools.shippingCost },
+  { slug: 'profit-calculator', label: t.tools.profit },
+];
 
 const title = `${name} — ${t.bodyTypes.forExport}`;
 const description = `${t.listing.descriptionPrefix} ${available.length} ${t.listing.available} ${name} ${t.bodyTypes.forExport}${priceRange ? `, ${priceRange}` : ''}.`;
@@ -72,6 +87,66 @@ const schema = itemListSchema(available.map((v) => ({ name: `${v.year} ${v.brand
       </div>
     </section>
   )}
+
+  <!-- RELEVANT MODELS -->
+  {relevantModels.length > 0 && (
+    <section class="container-site mt-12">
+      <h2 class="text-xl font-bold text-ink">{t.bodyTypes.relevantModels}</h2>
+      <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {relevantModels.map((m) => {
+          const mUrl = dataModelUrl(m);
+          return (
+            <div class="card p-4">
+              <span class="block text-base font-semibold text-ink">{m.name}</span>
+              <span class="block text-sm text-ink-muted">{modelDescription(m.brand, m.slug, locale, m.shortDescription)}</span>
+              {mUrl && (
+                <a href={mUrl} target="_blank" rel="noopener noreferrer" class="mt-2 inline-block text-sm font-semibold text-brand-700 hover:underline">{t.common.viewSpecifications} {t.common.arrow}</a>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  )}
+
+  <!-- POWERTRAIN BREAKDOWN -->
+  {powertrainBreakdown.length > 0 && (
+    <section class="container-site mt-12">
+      <h2 class="text-xl font-bold text-ink">{t.bodyTypes.powertrainBreakdown}</h2>
+      <div class="mt-4 flex flex-wrap gap-3">
+        {powertrainBreakdown.map((p) => (
+          <a href={localizedUrl(powertrainUrl({ slug: p.slug }), locale)} class="card px-4 py-2.5 text-sm font-medium text-ink hover:border-brand-300">
+            {p.name} · {p.count}
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- RELATED MARKETS -->
+  <section class="container-site mt-12">
+    <h2 class="text-xl font-bold text-ink">{t.bodyTypes.relatedMarkets}</h2>
+    <p class="mt-1 text-sm text-ink-muted">{t.brands.marketNote}</p>
+    <div class="mt-4 flex flex-wrap gap-3">
+      {t.home.markets.map((m) => (
+        <a href={`${SITE.subdomains.market}/countries/${m.slug}`} target="_blank" rel="noopener noreferrer" class="card px-4 py-2.5 text-sm font-medium text-ink hover:border-brand-300">{m.name}</a>
+      ))}
+    </div>
+  </section>
+
+  <!-- RELATED TOOLS -->
+  <section class="container-site mt-12">
+    <h2 class="text-xl font-bold text-ink">{t.tools.relatedTools}</h2>
+    <p class="mt-1 text-sm text-ink-muted">{t.tools.intro}</p>
+    <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      {relatedTools.map((tool) => (
+        <a href={toolUrl(tool.slug)} target="_blank" rel="noopener noreferrer" class="card p-4 hover:border-brand-300">
+          <span class="block text-sm font-semibold text-ink">{tool.label}</span>
+          <span class="mt-1 block text-xs text-ink-muted">{t.nav.tools}</span>
+        </a>
+      ))}
+    </div>
+  </section>
 
   <section class="container-site mt-12 pb-4">
     <div class="card p-5">

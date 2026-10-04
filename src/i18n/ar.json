@@ -298,6 +298,7 @@
     "destinationMarkets": "أسواق الوجهات الشائعة",
     "relatedData": "بيانات السيارات ذات الصلة",
     "requestBrand": "اطلب هذه العلامة",
+    "modelDirectory": "دليل الموديلات",
     "dataSubsite": "data.chinausedautohub.com"
   },
   "bodyTypes": {
@@ -311,6 +312,9 @@
     "lookingFor": "تبحث عن نوع",
     "sourcePrompt": "أخبرنا بمتطلباتك ويمكننا مساعدتك في توفير",
     "fromChinaMarket": "من السوق الصيني.",
+    "relevantModels": "الموديلات ذات الصلة",
+    "powertrainBreakdown": "توزيع أنظمة الدفع",
+    "relatedMarkets": "أسواق ذات صلة",
     "requestType": "اطلب"
   },
   "powertrains": {
@@ -321,6 +325,14 @@
     "forExport": "للتصدير",
     "priceRange": "نطاق السعر",
     "commonBrands": "العلامات التجارية الشائعة"
+  },
+  "tools": {
+    "relatedTools": "أدوات ذات صلة",
+    "intro": "قدّر التكلفة النهائية والرسوم الجمركية والربح والشحن للمركبات.",
+    "landedCost": "حاسبة التكلفة النهائية",
+    "importDuty": "حاسبة الرسوم الجمركية",
+    "shippingCost": "مقدّر تكلفة الشحن",
+    "profit": "حاسبة الربح"
   },
   "howItWorks": {
     "title": "كيف نعمل — شراء سيارة مستعملة من الصين",
@@ -540,21 +552,30 @@
     "documents": "المستندات"
   },
   "confidence": {
-    "heading": "توفر المعلومات",
-    "intro": "يوضح تفاصيل السيارة التي تم التحقق منها أو المقدمة من المصدر أو غير المتوفرة لهذا الإدراج.",
+    "heading": "معلومات السيارة والتحقق",
+    "intro": "يعرض تفاصيل السيارة المتوفرة ومدى الاعتماد على كل منها — مقدَّمة من المصدر، مدعومة بمصدر، موثَّقة، أو غير متوفرة.",
     "field": "الحقل",
-    "status": "الحالة",
-    "vehicleIdentity": "هوية السيارة",
-    "mileage": "المسافة المقطوعة",
-    "price": "السعر",
-    "inspection": "الفحص",
-    "batteryHealth": "صحة البطارية",
-    "maintenanceHistory": "سجل الصيانة",
-    "verified": "تم التحقق",
-    "provided": "مقدمة",
-    "estimated": "تقديري",
-    "notAvailable": "غير متوفرة",
-    "notProvided": "غير مقدمة"
+    "verificationLevel": "مستوى التحقق",
+    "source": "المصدر",
+    "lastChecked": "آخر فحص",
+    "lastUpdated": "آخر تحديث",
+    "dataAvailability": "توفر البيانات",
+    "dataAvailabilitySummary": "{count} من {total} حقول تحقق متوفرة",
+    "mileageVerified": "المسافة المقطوعة موثَّقة",
+    "vehicleIdentityVerified": "هوية السيارة موثَّقة",
+    "photosAvailable": "الصور متوفرة",
+    "inspectionAvailable": "الفحص متوفر",
+    "batteryReportAvailable": "تقرير البطارية متوفر",
+    "serviceHistoryAvailable": "سجل الخدمة متوفر",
+    "documentsAvailable": "المستندات متوفرة",
+    "vinAvailable": "رقم الهيكل (VIN) متوفر",
+    "exportEligibilityChecked": "التحقق من أهلية التصدير",
+    "provided": "مقدَّم",
+    "verified": "موثَّق",
+    "sellerSupplied": "مقدَّم من البائع",
+    "sourceBacked": "مدعوم بمصدر",
+    "notAvailable": "غير متوفر",
+    "notIndependentlyVerified": "غير متحقق منه بشكل مستقل"
   },
   "units": {
     "km": "كم"

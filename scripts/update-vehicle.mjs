@@ -38,6 +38,7 @@ const VEHICLES_PATH = join(DATA_DIR, 'vehicles.json');
 const CHANGELOG_PATH = join(DATA_DIR, 'changelog.json');
 
 const STATUSES = ['available', 'reserved', 'sold', 'sourcing', 'expired', 'removed'];
+const VERIFICATION_LEVELS = ['provided', 'verified', 'seller_supplied', 'source_backed', 'not_available', 'not_independently_verified'];
 const CURRENT_YEAR = new Date().getFullYear();
 const MIN_YEAR = 1990;
 const MAX_YEAR = CURRENT_YEAR + 1;
@@ -83,6 +84,17 @@ function assertValid(vehicle, { partial = false } = {}) {
       errors.push(`status must be one of: ${STATUSES.join(', ')}`);
     }
   }
+  // Verify six-state verification levels (§8); demo must never claim `verified`.
+  if (vehicle.verification && typeof vehicle.verification === 'object') {
+    for (const [field, level] of Object.entries(vehicle.verification)) {
+      if (!VERIFICATION_LEVELS.includes(level)) {
+        errors.push(`verification.${field} must be one of: ${VERIFICATION_LEVELS.join(', ')}`);
+      }
+      if (vehicle.is_demo && level === 'verified') {
+        errors.push(`verification.${field} cannot be 'verified' on a demo vehicle`);
+      }
+    }
+  }
   if (errors.length) fail(errors.join('; '));
 }
 
@@ -104,6 +116,7 @@ function findDuplicate(list, candidate, { excludeId } = {}) {
 function parseArgs(argv) {
   const args = {};
   const sets = [];
+  const unsets = [];
   const positionals = [];
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
@@ -111,6 +124,8 @@ function parseArgs(argv) {
       const key = a.slice(2);
       if (key === 'set') {
         sets.push(argv[++i]);
+      } else if (key === 'unset') {
+        unsets.push(argv[++i]);
       } else if (key.includes('=')) {
         const [k, v] = key.split('=');
         args[k] = v;
@@ -127,7 +142,7 @@ function parseArgs(argv) {
       positionals.push(a);
     }
   }
-  return { args, sets, positionals };
+  return { args, sets, unsets, positionals };
 }
 
 function req(args, key, label = key) {
@@ -230,7 +245,7 @@ function actionCreate(list, args) {
     notes: null,
     documents: null,
     data_source: args.source || 'agent',
-    data_confidence: {},
+    verification: {},
     last_verified_at: null,
     export: null,
     is_demo: true,
@@ -266,18 +281,32 @@ function applySets(target, sets) {
     if (/^-?\d+(\.\d+)?$/.test(raw)) value = Number(raw);
     else if (raw === 'true') value = true;
     else if (raw === 'false') value = false;
+    else if (raw === 'null') value = null;
+    else if (/^[{[]/.test(raw)) {
+      try {
+        value = JSON.parse(raw);
+      } catch {
+        /* keep as string */
+      }
+    }
     target[key] = value;
     changed.push(key);
   }
   return changed;
 }
 
-function actionUpdate(list, args, sets) {
+function actionUpdate(list, args, sets, unsets) {
   const id = req(args, 'vehicle-id');
   const v = getVehicle(list, id);
   const old = { ...v, price: { ...v.price } };
   const changed = applySets(v, sets);
-  if (!changed.length) fail('--update requires at least one --set key=value');
+  for (const key of unsets) {
+    if (key in v) {
+      delete v[key];
+      changed.push(key);
+    }
+  }
+  if (!changed.length) fail('--update requires at least one --set or --unset');
   v.updated_at = new Date().toISOString();
   assertValid(v);
   writeVehicles(list);
@@ -371,7 +400,7 @@ function actionMarkReal(list, args) {
 
 // ---------- Main ----------
 function main() {
-  const { args, sets, positionals } = parseArgs(process.argv.slice(2));
+  const { args, sets, unsets, positionals } = parseArgs(process.argv.slice(2));
   const action = positionals[0];
 
   if (!action || action === 'help' || args.help) {
@@ -383,6 +412,7 @@ Actions:
           [--color] [--location] [--status] [--original-price] [--images]
           [--source] [--description]
   update  --vehicle-id --set key=value [...]    Update arbitrary fields
+          --unset key [...]                      Remove a field
   update-price   --vehicle-id --amount N [--currency USD]
   update-status  --vehicle-id --status STATUS
   update-images  --vehicle-id --images "a.svg,b.svg"
@@ -397,7 +427,7 @@ Actions:
   switch (action) {
     case 'list': return actionList(list);
     case 'create': return actionCreate(list, args);
-    case 'update': return actionUpdate(list, args, sets);
+    case 'update': return actionUpdate(list, args, sets, unsets);
     case 'update-price': return actionUpdatePrice(list, args);
     case 'update-status': return actionUpdateStatus(list, args);
     case 'update-images': return actionUpdateImages(list, args);

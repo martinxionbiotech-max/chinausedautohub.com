@@ -298,6 +298,7 @@
     "destinationMarkets": "Популярные рынки назначения",
     "relatedData": "Связанные данные об автомобилях",
     "requestBrand": "Заказать эту марку",
+    "modelDirectory": "Каталог моделей",
     "dataSubsite": "data.chinausedautohub.com"
   },
   "bodyTypes": {
@@ -311,6 +312,9 @@
     "lookingFor": "Ищете другой",
     "sourcePrompt": "Сообщите нам свои требования, и мы поможем подобрать",
     "fromChinaMarket": "на китайском рынке.",
+    "relevantModels": "Соответствующие модели",
+    "powertrainBreakdown": "Разбивка по силовым установкам",
+    "relatedMarkets": "Связанные рынки",
     "requestType": "Заказать"
   },
   "powertrains": {
@@ -321,6 +325,14 @@
     "forExport": "на экспорт",
     "priceRange": "Диапазон цен",
     "commonBrands": "Распространённые марки"
+  },
+  "tools": {
+    "relatedTools": "Связанные инструменты",
+    "intro": "Оцените итоговую стоимость, импортную пошлину, прибыль и доставку для автомобилей.",
+    "landedCost": "Калькулятор итоговой стоимости",
+    "importDuty": "Калькулятор импортной пошлины",
+    "shippingCost": "Оценка стоимости доставки",
+    "profit": "Калькулятор прибыли"
   },
   "howItWorks": {
     "title": "Как это работает — покупка подержанного автомобиля из Китая",
@@ -540,21 +552,30 @@
     "documents": "Документы"
   },
   "confidence": {
-    "heading": "Доступность информации",
-    "intro": "Показывает, какие сведения об автомобиле проверены, предоставлены источником или недоступны для этого объявления.",
+    "heading": "Информация и проверка автомобиля",
+    "intro": "Показывает, какие сведения об автомобиле доступны и насколько можно на них полагаться — предоставлены источником, подтверждены источником, проверены или недоступны.",
     "field": "Поле",
-    "status": "Статус",
-    "vehicleIdentity": "Идентификация автомобиля",
-    "mileage": "Пробег",
-    "price": "Цена",
-    "inspection": "Осмотр",
-    "batteryHealth": "Состояние батареи",
-    "maintenanceHistory": "История обслуживания",
-    "verified": "Проверено",
+    "verificationLevel": "Уровень проверки",
+    "source": "Источник",
+    "lastChecked": "Последняя проверка",
+    "lastUpdated": "Последнее обновление",
+    "dataAvailability": "Доступность данных",
+    "dataAvailabilitySummary": "Доступно {count} из {total} полей проверки",
+    "mileageVerified": "Пробег проверен",
+    "vehicleIdentityVerified": "Идентификация автомобиля проверена",
+    "photosAvailable": "Фотографии доступны",
+    "inspectionAvailable": "Осмотр доступен",
+    "batteryReportAvailable": "Отчёт о батарее доступен",
+    "serviceHistoryAvailable": "История обслуживания доступна",
+    "documentsAvailable": "Документы доступны",
+    "vinAvailable": "VIN доступен",
+    "exportEligibilityChecked": "Возможность экспорта проверена",
     "provided": "Предоставлено",
-    "estimated": "Оценка",
+    "verified": "Подтверждено",
+    "sellerSupplied": "Предоставлено продавцом",
+    "sourceBacked": "Подтверждено источником",
     "notAvailable": "Недоступно",
-    "notProvided": "Не указано"
+    "notIndependentlyVerified": "Не подтверждено независимо"
   },
   "units": {
     "km": "км"

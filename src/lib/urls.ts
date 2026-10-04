@@ -73,3 +73,11 @@ export function marketUrl(m: Pick<Market, 'slug'>): string {
 export function toolsUrl(): string {
   return `${SUBDOMAINS.tools}/`;
 }
+
+// Individual tools on the Tools sub-site. Paths are the sub-site's stable
+// routes; labels are localised in the dictionary layer.
+export type ToolSlug = 'landed-cost-calculator' | 'import-duty-calculator' | 'shipping-cost-estimator' | 'profit-calculator';
+
+export function toolUrl(slug: ToolSlug): string {
+  return `${SUBDOMAINS.tools}/${slug}/`;
+}

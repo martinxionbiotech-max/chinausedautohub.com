@@ -4,8 +4,8 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import VehicleCard from '../components/VehicleCard.astro';
 import LeadForm from '../components/LeadForm.astro';
 import { getSimilarVehicles, resolveVehicle, vehicleTitle } from '../lib/data';
-import { formatPrice, formatMileage, formatDate, CONTACT } from '../lib/site';
-import { dataModelUrl, dataBrandUrl, vehicleUrl } from '../lib/urls';
+import { SITE, formatPrice, formatMileage, formatDate, CONTACT } from '../lib/site';
+import { dataModelUrl, dataBrandUrl, vehicleUrl, toolUrl } from '../lib/urls';
 import { vehicleSchema, breadcrumbSchema, type FaqItem } from '../lib/schema';
 import { getTranslations } from '../i18n';
 import {
@@ -113,25 +113,40 @@ const schemas = [vehicleSchema(vehicle, locale), breadcrumbSchema(crumbs)];
 const aboutModelHeading = t.detail.aboutModel.replace('{model}', modelName);
 const viewModelSpecsText = t.detail.viewModelSpecs.replace('{model}', modelName);
 
-const confidenceLevelLabels: Record<string, string> = {
-  verified: t.confidence.verified,
+const verificationLevelLabels: Record<string, string> = {
   provided: t.confidence.provided,
-  estimated: t.confidence.estimated,
+  verified: t.confidence.verified,
+  seller_supplied: t.confidence.sellerSupplied,
+  source_backed: t.confidence.sourceBacked,
   not_available: t.confidence.notAvailable,
-  not_provided: t.confidence.notProvided,
+  not_independently_verified: t.confidence.notIndependentlyVerified,
 };
 
-const confidenceRows = [
-  { key: 'vehicle_identity', label: t.confidence.vehicleIdentity },
-  { key: 'mileage', label: t.confidence.mileage },
-  { key: 'price', label: t.confidence.price },
-  { key: 'inspection', label: t.confidence.inspection },
-  { key: 'battery_health', label: t.confidence.batteryHealth },
-  { key: 'maintenance_history', label: t.confidence.maintenanceHistory },
-].map((r) => {
-  const level = vehicle.data_confidence?.[r.key] ?? 'not_available';
-  return { label: r.label, level: confidenceLevelLabels[level] ?? level };
+const verificationFields = [
+  { key: 'mileage', label: t.confidence.mileageVerified },
+  { key: 'vehicle_identity', label: t.confidence.vehicleIdentityVerified },
+  { key: 'photos', label: t.confidence.photosAvailable },
+  { key: 'inspection', label: t.confidence.inspectionAvailable },
+  { key: 'battery_report', label: t.confidence.batteryReportAvailable },
+  { key: 'service_history', label: t.confidence.serviceHistoryAvailable },
+  { key: 'documents', label: t.confidence.documentsAvailable },
+  { key: 'vin', label: t.confidence.vinAvailable },
+  { key: 'export_eligibility', label: t.confidence.exportEligibilityChecked },
+];
+
+const verificationRows = verificationFields.map((f) => {
+  const level = vehicle.verification?.[f.key] ?? 'not_available';
+  return { label: f.label, level: verificationLevelLabels[level] ?? level };
 });
+
+const verificationAvailableCount = verificationFields.filter(
+  (f) => (vehicle.verification?.[f.key] ?? 'not_available') !== 'not_available',
+).length;
+const verificationTotalCount = verificationFields.length;
+const sourceLabel = vehicle.data_source ?? vehicle.source;
+const dataAvailabilityText = t.confidence.dataAvailabilitySummary
+  .replace('{count}', String(verificationAvailableCount))
+  .replace('{total}', String(verificationTotalCount));
 
 const lastVerifiedText = vehicle.last_verified_at
   ? formatDate(vehicle.last_verified_at, locale)
@@ -246,8 +261,8 @@ const documentsValue = vehicle.documents ?? null;
       <dl class="grid grid-cols-2 gap-x-4 gap-y-3 pt-4 text-sm">
         <div><dt class="text-ink-muted">{t.detail.status}</dt><dd class="font-medium text-ink">{statusLabel}</dd></div>
         <div><dt class="text-ink-muted">{t.detail.location}</dt><dd class="font-medium text-ink">{location}</dd></div>
-        <div><dt class="text-ink-muted">{t.detail.generation}</dt><dd class="font-medium text-ink">{vehicle.generation ?? t.confidence.notProvided}</dd></div>
-        <div><dt class="text-ink-muted">{t.detail.trim}</dt><dd class="font-medium text-ink">{vehicle.trim ?? t.confidence.notProvided}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.generation}</dt><dd class="font-medium text-ink">{vehicle.generation ?? t.confidence.notAvailable}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.trim}</dt><dd class="font-medium text-ink">{vehicle.trim ?? t.confidence.notAvailable}</dd></div>
         <div><dt class="text-ink-muted">{t.detail.year}</dt><dd class="font-medium text-ink">{vehicle.year}</dd></div>
         <div><dt class="text-ink-muted">{t.detail.mileage}</dt><dd class="font-medium text-ink">{formatMileage(vehicle.mileage_km, locale, t.units.km)}</dd></div>
         <div><dt class="text-ink-muted">{t.detail.fuel}</dt><dd class="font-medium text-ink">{fuel}</dd></div>
@@ -284,7 +299,7 @@ const documentsValue = vehicle.documents ?? null;
       {Object.entries(vehicle.condition).map(([k, v]) => (
         <div class="bg-white p-4">
           <dt class="text-sm text-ink-muted">{conditionLabelMap[k] ?? k}</dt>
-          <dd class="mt-0.5 text-sm font-medium text-ink">{v == null ? t.confidence.notProvided : v}</dd>
+          <dd class="mt-0.5 text-sm font-medium text-ink">{v == null ? t.confidence.notAvailable : v}</dd>
         </div>
       ))}
     </div>
@@ -296,11 +311,11 @@ const documentsValue = vehicle.documents ?? null;
     <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2">
       <div class="bg-white p-4">
         <dt class="text-sm text-ink-muted">{t.detail.accidentHistory}</dt>
-        <dd class="mt-0.5 text-sm font-medium text-ink">{accidentValue ?? t.confidence.notProvided}</dd>
+        <dd class="mt-0.5 text-sm font-medium text-ink">{accidentValue ?? t.confidence.notAvailable}</dd>
       </div>
       <div class="bg-white p-4">
         <dt class="text-sm text-ink-muted">{t.detail.maintenanceHistory}</dt>
-        <dd class="mt-0.5 text-sm font-medium text-ink">{maintenanceValue ?? t.confidence.notProvided}</dd>
+        <dd class="mt-0.5 text-sm font-medium text-ink">{maintenanceValue ?? t.confidence.notAvailable}</dd>
       </div>
     </div>
   </section>
@@ -326,7 +341,7 @@ const documentsValue = vehicle.documents ?? null;
       <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2">
         <div class="bg-white p-4">
           <dt class="text-sm text-ink-muted">{t.detail.batteryCapacity}</dt>
-          <dd class="mt-0.5 text-sm font-medium text-ink">{batteryCapacityValue ?? t.confidence.notProvided}</dd>
+          <dd class="mt-0.5 text-sm font-medium text-ink">{batteryCapacityValue ?? t.confidence.notAvailable}</dd>
         </div>
         <div class="bg-white p-4">
           <dt class="text-sm text-ink-muted">{t.detail.batteryHealth}</dt>
@@ -346,7 +361,7 @@ const documentsValue = vehicle.documents ?? null;
           {documentsValue.map((doc) => <li>{doc}</li>)}
         </ul>
       ) : (
-        <p class="text-sm text-ink-soft">{t.confidence.notProvided}.</p>
+        <p class="text-sm text-ink-soft">{t.confidence.notAvailable}.</p>
       )}
       <p class="mt-3 text-sm text-ink-soft">{t.detail.documentsNote}</p>
     </div>
@@ -380,7 +395,11 @@ const documentsValue = vehicle.documents ?? null;
     <h2 class="text-xl font-bold text-ink">{t.detail.destinationHeading}</h2>
     <div class="card mt-4 p-5">
       <p class="text-sm text-ink-soft">{t.detail.destinationNote}</p>
-      <a href={localizedUrl('/markets/', locale)} class="mt-3 inline-block text-sm font-semibold text-brand-700 hover:underline">{t.nav.markets} {t.common.arrow}</a>
+      <div class="mt-4 flex flex-wrap gap-3">
+        <a href={localizedUrl('/markets/', locale)} class="btn-secondary !px-3 text-sm">{t.nav.markets} {t.common.arrow}</a>
+        <a href={SITE.subdomains.market} target="_blank" rel="noopener noreferrer" class="btn-secondary !px-3 text-sm">{t.nav.marketInformation} {t.common.arrow}</a>
+        <a href={toolUrl('landed-cost-calculator')} target="_blank" rel="noopener noreferrer" class="btn-secondary !px-3 text-sm">{t.tools.landedCost} {t.common.arrow}</a>
+      </div>
     </div>
   </section>
 
@@ -397,20 +416,40 @@ const documentsValue = vehicle.documents ?? null;
     </div>
   </section>
 
-  <!-- INFORMATION AVAILABILITY -->
+  <!-- VEHICLE INFORMATION & VERIFICATION -->
   <section class="container-site mt-10">
     <h2 class="text-xl font-bold text-ink">{t.confidence.heading}</h2>
     <p class="mt-1 text-sm text-ink-muted">{t.confidence.intro}</p>
+
+    <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2 lg:grid-cols-4">
+      <div class="bg-white p-4">
+        <dt class="text-sm text-ink-muted">{t.confidence.source}</dt>
+        <dd class="mt-0.5 text-sm font-medium text-ink">{sourceLabel}</dd>
+      </div>
+      <div class="bg-white p-4">
+        <dt class="text-sm text-ink-muted">{t.confidence.lastChecked}</dt>
+        <dd class="mt-0.5 text-sm font-medium text-ink">{lastVerifiedText}</dd>
+      </div>
+      <div class="bg-white p-4">
+        <dt class="text-sm text-ink-muted">{t.confidence.lastUpdated}</dt>
+        <dd class="mt-0.5 text-sm font-medium text-ink">{formatDate(vehicle.updated_at, locale)}</dd>
+      </div>
+      <div class="bg-white p-4">
+        <dt class="text-sm text-ink-muted">{t.confidence.dataAvailability}</dt>
+        <dd class="mt-0.5 text-sm font-medium text-ink">{dataAvailabilityText}</dd>
+      </div>
+    </div>
+
     <div class="mt-4 overflow-hidden rounded-lg border border-surface-line">
       <table class="w-full text-sm">
         <thead class="bg-surface-alt text-ink-soft">
           <tr>
             <th class="px-4 py-2.5 text-start font-semibold">{t.confidence.field}</th>
-            <th class="px-4 py-2.5 text-start font-semibold">{t.confidence.status}</th>
+            <th class="px-4 py-2.5 text-start font-semibold">{t.confidence.verificationLevel}</th>
           </tr>
         </thead>
         <tbody>
-          {confidenceRows.map((r) => (
+          {verificationRows.map((r) => (
             <tr class="border-t border-surface-line">
               <td class="px-4 py-2.5 text-ink-soft">{r.label}</td>
               <td class="px-4 py-2.5 font-medium text-ink">{r.level}</td>

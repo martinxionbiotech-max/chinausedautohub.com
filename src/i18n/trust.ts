@@ -1,8 +1,9 @@
 import type { L10n } from './l10n';
 
-// Trust / information-policy page. Distinguishes clearly between the four
-// confidence levels defined in the vehicle data layer (PHASE 9/17): Verified,
-// Provided, Estimated, Not Available.
+// Trust / information-policy page. Distinguishes clearly between the six
+// verification levels defined in the vehicle data layer (§8/§9): Verified,
+// Provided, Seller Supplied, Source-backed, Not Available, and
+// Not Independently Verified.
 
 export interface TrustSection {
   heading: L10n;
@@ -32,10 +33,10 @@ export const TRUST_PAGE: {
     es: 'Confianza — cómo gestionamos la información de los vehículos',
   },
   description: {
-    en: 'How vehicle information is collected and published, and how we distinguish between verified, provided, estimated and not-available details.',
-    ar: 'كيف تُجمع معلومات المركبات وتُنشر، وكيف نميز بين التفاصيل الموثقة والمقدَّمة والمقدَّرة وغير المتوفرة.',
-    ru: 'Как собирается и публикуется информация об автомобилях и как мы различаем подтверждённые, предоставленные, оценочные и недоступные данные.',
-    es: 'Cómo se recopila y publica la información de los vehículos, y cómo distinguimos entre detalles verificados, facilitados, estimados y no disponibles.',
+    en: 'How vehicle information is collected and published, and how we distinguish between verified, provided, seller-supplied, source-backed and not-available details.',
+    ar: 'كيف تُجمع معلومات المركبات وتُنشر، وكيف نميز بين التفاصيل الموثقة والمقدَّمة والمقدَّمة من البائع والمدعومة بمصدر وغير المتوفرة.',
+    ru: 'Как собирается и публикуется информация об автомобилях и как мы различаем подтверждённые, предоставленные, предоставленные продавцом, подтверждённые источником и недоступные данные.',
+    es: 'Cómo se recopila y publica la información de los vehículos, y cómo distinguimos entre detalles verificados, facilitados, facilitados por el vendedor, respaldados por una fuente y no disponibles.',
   },
   h1: {
     en: 'Trust & Information',
@@ -50,16 +51,16 @@ export const TRUST_PAGE: {
     es: 'Publicamos únicamente la información del vehículo que tenemos e indicamos claramente de dónde procede cada detalle. Esta página explica cómo se recopila la información, cómo la tratamos y qué significan los niveles de confianza de un anuncio.',
   },
   confidenceHeading: {
-    en: 'Information confidence levels',
-    ar: 'مستويات ثقة المعلومات',
-    ru: 'Уровни достоверности информации',
-    es: 'Niveles de confianza de la información',
+    en: 'Information verification levels',
+    ar: 'مستويات تحقق المعلومات',
+    ru: 'Уровни проверки информации',
+    es: 'Niveles de verificación de la información',
   },
   confidenceIntro: {
-    en: 'Every vehicle detail on a listing is marked with one of four confidence levels, so you know how much to rely on it.',
-    ar: 'يُعلَّم كل تفصيل في المركبة داخل الإعلان بواحد من أربعة مستويات ثقة، حتى تعرف مدى الاعتماد عليه.',
-    ru: 'Каждая деталь автомобиля в объявлении помечена одним из четырёх уровней достоверности, чтобы вы понимали, насколько ей можно доверять.',
-    es: 'Cada detalle del vehículo en un anuncio está marcado con uno de cuatro niveles de confianza, para que sepa cuánto puede confiar en él.',
+    en: 'Every vehicle detail on a listing is marked with one of six verification levels, so you know how much to rely on it.',
+    ar: 'يُعلَّم كل تفصيل في المركبة داخل الإعلان بواحد من ستة مستويات تحقق، حتى تعرف مدى الاعتماد عليه.',
+    ru: 'Каждая деталь автомобиля в объявлении помечена одним из шести уровней проверки, чтобы вы понимали, насколько ей можно доверять.',
+    es: 'Cada detalle del vehículo en un anuncio está marcado con uno de seis niveles de verificación, para que sepa cuánto puede confiar en él.',
   },
   confidenceLevels: [
     {
@@ -93,18 +94,33 @@ export const TRUST_PAGE: {
       },
     },
     {
-      key: 'estimated',
+      key: 'seller_supplied',
       label: {
-        en: 'Estimated',
-        ar: 'مقدَّر',
-        ru: 'Оценочно',
-        es: 'Estimado',
+        en: 'Seller Supplied',
+        ar: 'مقدَّم من البائع',
+        ru: 'Предоставлено продавцом',
+        es: 'Facilitado por el vendedor',
       },
       text: {
-        en: 'A value we derive or approximate where the exact figure is not available.',
-        ar: 'قيمة نستنتجها أو نقرّبها عندما لا يتوفر الرقم الدقيق.',
-        ru: 'Значение, которое мы выводим или приблизительно оцениваем, когда точная цифра недоступна.',
-        es: 'Un valor que deducimos o aproximamos cuando la cifra exacta no está disponible.',
+        en: 'A detail supplied directly by the seller that we have not independently verified.',
+        ar: 'تفصيل قدَّمه البائع مباشرة ولم نتحقق منه بشكل مستقل.',
+        ru: 'Деталь, предоставленная непосредственно продавцом, которую мы не проверяли независимо.',
+        es: 'Un detalle facilitado directamente por el vendedor que no hemos verificado de forma independiente.',
+      },
+    },
+    {
+      key: 'source_backed',
+      label: {
+        en: 'Source-backed',
+        ar: 'مدعوم بمصدر',
+        ru: 'Подтверждено источником',
+        es: 'Respaldado por fuente',
+      },
+      text: {
+        en: 'A detail supported by a citable source — for example, a manufacturer specification — but not independently re-verified.',
+        ar: 'تفصيل مدعوم بمصدر يمكن الاستشهاد به — مثل مواصفة الشركة المصنعة — دون إعادة التحقق منه بشكل مستقل.',
+        ru: 'Деталь, подтверждённая источником, на который можно сослаться, — например, спецификацией производителя, — но не перепроверенная независимо.',
+        es: 'Un detalle respaldado por una fuente citable — por ejemplo, una especificación del fabricante — pero no reverificado de forma independiente.',
       },
     },
     {
@@ -120,6 +136,21 @@ export const TRUST_PAGE: {
         ar: 'تفصيل لا نحتفظ به. نقول ذلك بدلاً من التخمين أو ترك حقل فارغ دون توضيح.',
         ru: 'Деталь, которой у нас нет. Мы прямо это указываем, а не угадываем и не оставляем поле пустым без объяснения.',
         es: 'Un detalle que no tenemos. Lo indicamos en lugar de adivinar o dejar un campo vacío sin explicación.',
+      },
+    },
+    {
+      key: 'not_independently_verified',
+      label: {
+        en: 'Not Independently Verified',
+        ar: 'غير متحقق منه بشكل مستقل',
+        ru: 'Не подтверждено независимо',
+        es: 'No verificado de forma independiente',
+      },
+      text: {
+        en: 'A detail present on the listing that has not been independently verified.',
+        ar: 'تفصيل موجود في الإعلان لم يتم التحقق منه بشكل مستقل.',
+        ru: 'Деталь, указанная в объявлении, которая не была проверена независимо.',
+        es: 'Un detalle presente en el anuncio que no ha sido verificado de forma independiente.',
       },
     },
   ],

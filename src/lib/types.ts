@@ -21,21 +21,30 @@ export interface ExportInfo {
   documents?: string;
 }
 
-export type ConfidenceLevel =
-  | 'verified'
+// Six-state verification system (§8). A vehicle detail is marked with one of
+// these levels so buyers know how much to rely on it. Only `verified` asserts
+// independent confirmation against a source/document we hold; demo listings
+// must never use `verified`.
+export type VerificationLevel =
   | 'provided'
-  | 'estimated'
+  | 'verified'
+  | 'seller_supplied'
+  | 'source_backed'
   | 'not_available'
-  | 'not_provided';
+  | 'not_independently_verified';
 
-export interface DataConfidence {
-  vehicle_identity?: ConfidenceLevel;
-  mileage?: ConfidenceLevel;
-  price?: ConfidenceLevel;
-  inspection?: ConfidenceLevel;
-  battery_health?: ConfidenceLevel;
-  maintenance_history?: ConfidenceLevel;
-  [key: string]: ConfidenceLevel | undefined;
+// The nine verification fields exposed on a vehicle listing (§8).
+export interface Verification {
+  mileage?: VerificationLevel;
+  vehicle_identity?: VerificationLevel;
+  photos?: VerificationLevel;
+  inspection?: VerificationLevel;
+  battery_report?: VerificationLevel;
+  service_history?: VerificationLevel;
+  documents?: VerificationLevel;
+  vin?: VerificationLevel;
+  export_eligibility?: VerificationLevel;
+  [key: string]: VerificationLevel | undefined;
 }
 
 export interface Vehicle {
@@ -85,7 +94,7 @@ export interface Vehicle {
   notes?: string | null;
   documents?: string[] | null;
   data_source?: string;
-  data_confidence?: DataConfidence;
+  verification?: Verification;
   last_verified_at?: string | null;
   export: ExportInfo | null;
   is_demo: boolean;

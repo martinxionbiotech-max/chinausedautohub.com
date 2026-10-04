@@ -140,6 +140,10 @@ export function getModelsByBrand(brandSlug: string): VehicleModel[] {
   return models.filter((m) => m.brand === brandSlug);
 }
 
+export function getModelsByBodyType(typeSlug: string): VehicleModel[] {
+  return models.filter((m) => m.bodyType === typeSlug);
+}
+
 export function getAllModels(): VehicleModel[] {
   return models;
 }

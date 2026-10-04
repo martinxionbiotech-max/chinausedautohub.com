@@ -1,1 +1,410 @@
-[]
+[
+  {
+    "vehicle_id": "byd-song-plus-2024-001",
+    "timestamp": "2026-10-04T06:02:36.286Z",
+    "action": "update",
+    "changed_fields": [
+      "verification",
+      "data_confidence"
+    ],
+    "old_value": {
+      "data_confidence": {
+        "vehicle_identity": "provided",
+        "mileage": "provided",
+        "price": "provided",
+        "inspection": "not_available",
+        "battery_health": "not_available",
+        "maintenance_history": "not_available"
+      }
+    },
+    "new_value": {
+      "verification": {
+        "mileage": "provided",
+        "vehicle_identity": "provided",
+        "photos": "not_available",
+        "inspection": "not_available",
+        "battery_report": "not_available",
+        "service_history": "not_available",
+        "documents": "not_available",
+        "vin": "not_available",
+        "export_eligibility": "not_available"
+      }
+    },
+    "source": "agent",
+    "agent": "scripts/update-vehicle.mjs"
+  },
+  {
+    "vehicle_id": "byd-seal-2024-001",
+    "timestamp": "2026-10-04T06:02:36.338Z",
+    "action": "update",
+    "changed_fields": [
+      "verification",
+      "data_confidence"
+    ],
+    "old_value": {
+      "data_confidence": {
+        "vehicle_identity": "provided",
+        "mileage": "provided",
+        "price": "provided",
+        "inspection": "not_available",
+        "battery_health": "not_available",
+        "maintenance_history": "not_available"
+      }
+    },
+    "new_value": {
+      "verification": {
+        "mileage": "provided",
+        "vehicle_identity": "provided",
+        "photos": "not_available",
+        "inspection": "not_available",
+        "battery_report": "not_available",
+        "service_history": "not_available",
+        "documents": "not_available",
+        "vin": "not_available",
+        "export_eligibility": "not_available"
+      }
+    },
+    "source": "agent",
+    "agent": "scripts/update-vehicle.mjs"
+  },
+  {
+    "vehicle_id": "geely-monjaro-2024-001",
+    "timestamp": "2026-10-04T06:02:36.390Z",
+    "action": "update",
+    "changed_fields": [
+      "verification",
+      "data_confidence"
+    ],
+    "old_value": {
+      "data_confidence": {
+        "vehicle_identity": "provided",
+        "mileage": "provided",
+        "price": "provided",
+        "inspection": "not_available",
+        "battery_health": "not_available",
+        "maintenance_history": "not_available"
+      }
+    },
+    "new_value": {
+      "verification": {
+        "mileage": "provided",
+        "vehicle_identity": "provided",
+        "photos": "not_available",
+        "inspection": "not_available",
+        "battery_report": "not_available",
+        "service_history": "not_available",
+        "documents": "not_available",
+        "vin": "not_available",
+        "export_eligibility": "not_available"
+      }
+    },
+    "source": "agent",
+    "agent": "scripts/update-vehicle.mjs"
+  },
+  {
+    "vehicle_id": "geely-coolray-2023-001",
+    "timestamp": "2026-10-04T06:02:36.441Z",
+    "action": "update",
+    "changed_fields": [
+      "verification",
+      "data_confidence"
+    ],
+    "old_value": {
+      "data_confidence": {
+        "vehicle_identity": "provided",
+        "mileage": "provided",
+        "price": "provided",
+        "inspection": "not_available",
+        "battery_health": "not_available",
+        "maintenance_history": "not_available"
+      }
+    },
+    "new_value": {
+      "verification": {
+        "mileage": "provided",
+        "vehicle_identity": "provided",
+        "photos": "not_available",
+        "inspection": "not_available",
+        "battery_report": "not_available",
+        "service_history": "not_available",
+        "documents": "not_available",
+        "vin": "not_available",
+        "export_eligibility": "not_available"
+      }
+    },
+    "source": "agent",
+    "agent": "scripts/update-vehicle.mjs"
+  },
+  {
+    "vehicle_id": "chery-tiggo-8-pro-2023-001",
+    "timestamp": "2026-10-04T06:02:36.492Z",
+    "action": "update",
+    "changed_fields": [
+      "verification",
+      "data_confidence"
+    ],
+    "old_value": {
+      "data_confidence": {
+        "vehicle_identity": "provided",
+        "mileage": "provided",
+        "price": "provided",
+        "inspection": "not_available",
+        "battery_health": "not_available",
+        "maintenance_history": "not_available"
+      }
+    },
+    "new_value": {
+      "verification": {
+        "mileage": "provided",
+        "vehicle_identity": "provided",
+        "photos": "not_available",
+        "inspection": "not_available",
+        "battery_report": "not_available",
+        "service_history": "not_available",
+        "documents": "not_available",
+        "vin": "not_available",
+        "export_eligibility": "not_available"
+      }
+    },
+    "source": "agent",
+    "agent": "scripts/update-vehicle.mjs"
+  },
+  {
+    "vehicle_id": "chery-arrizo-8-2023-001",
+    "timestamp": "2026-10-04T06:02:36.545Z",
+    "action": "update",
+    "changed_fields": [
+      "verification",
+      "data_confidence"
+    ],
+    "old_value": {
+      "data_confidence": {
+        "vehicle_identity": "provided",
+        "mileage": "provided",
+        "price": "provided",
+        "inspection": "not_available",
+        "battery_health": "not_available",
+        "maintenance_history": "not_available"
+      }
+    },
+    "new_value": {
+      "verification": {
+        "mileage": "provided",
+        "vehicle_identity": "provided",
+        "photos": "not_available",
+        "inspection": "not_available",
+        "battery_report": "not_available",
+        "service_history": "not_available",
+        "documents": "not_available",
+        "vin": "not_available",
+        "export_eligibility": "not_available"
+      }
+    },
+    "source": "agent",
+    "agent": "scripts/update-vehicle.mjs"
+  },
+  {
+    "vehicle_id": "changan-cs75-plus-2024-001",
+    "timestamp": "2026-10-04T06:02:36.612Z",
+    "action": "update",
+    "changed_fields": [
+      "verification",
+      "data_confidence"
+    ],
+    "old_value": {
+      "data_confidence": {
+        "vehicle_identity": "provided",
+        "mileage": "provided",
+        "price": "provided",
+        "inspection": "not_available",
+        "battery_health": "not_available",
+        "maintenance_history": "not_available"
+      }
+    },
+    "new_value": {
+      "verification": {
+        "mileage": "provided",
+        "vehicle_identity": "provided",
+        "photos": "not_available",
+        "inspection": "not_available",
+        "battery_report": "not_available",
+        "service_history": "not_available",
+        "documents": "not_available",
+        "vin": "not_available",
+        "export_eligibility": "not_available"
+      }
+    },
+    "source": "agent",
+    "agent": "scripts/update-vehicle.mjs"
+  },
+  {
+    "vehicle_id": "changan-uni-v-2023-001",
+    "timestamp": "2026-10-04T06:02:36.678Z",
+    "action": "update",
+    "changed_fields": [
+      "verification",
+      "data_confidence"
+    ],
+    "old_value": {
+      "data_confidence": {
+        "vehicle_identity": "provided",
+        "mileage": "provided",
+        "price": "provided",
+        "inspection": "not_available",
+        "battery_health": "not_available",
+        "maintenance_history": "not_available"
+      }
+    },
+    "new_value": {
+      "verification": {
+        "mileage": "provided",
+        "vehicle_identity": "provided",
+        "photos": "not_available",
+        "inspection": "not_available",
+        "battery_report": "not_available",
+        "service_history": "not_available",
+        "documents": "not_available",
+        "vin": "not_available",
+        "export_eligibility": "not_available"
+      }
+    },
+    "source": "agent",
+    "agent": "scripts/update-vehicle.mjs"
+  },
+  {
+    "vehicle_id": "gac-gs4-2022-001",
+    "timestamp": "2026-10-04T06:02:36.738Z",
+    "action": "update",
+    "changed_fields": [
+      "verification",
+      "data_confidence"
+    ],
+    "old_value": {
+      "data_confidence": {
+        "vehicle_identity": "provided",
+        "mileage": "provided",
+        "price": "provided",
+        "inspection": "not_available",
+        "battery_health": "not_available",
+        "maintenance_history": "not_available"
+      }
+    },
+    "new_value": {
+      "verification": {
+        "mileage": "provided",
+        "vehicle_identity": "provided",
+        "photos": "not_available",
+        "inspection": "not_available",
+        "battery_report": "not_available",
+        "service_history": "not_available",
+        "documents": "not_available",
+        "vin": "not_available",
+        "export_eligibility": "not_available"
+      }
+    },
+    "source": "agent",
+    "agent": "scripts/update-vehicle.mjs"
+  },
+  {
+    "vehicle_id": "great-wall-haval-h6-2023-001",
+    "timestamp": "2026-10-04T06:02:36.793Z",
+    "action": "update",
+    "changed_fields": [
+      "verification",
+      "data_confidence"
+    ],
+    "old_value": {
+      "data_confidence": {
+        "vehicle_identity": "provided",
+        "mileage": "provided",
+        "price": "provided",
+        "inspection": "not_available",
+        "battery_health": "not_available",
+        "maintenance_history": "not_available"
+      }
+    },
+    "new_value": {
+      "verification": {
+        "mileage": "provided",
+        "vehicle_identity": "provided",
+        "photos": "not_available",
+        "inspection": "not_available",
+        "battery_report": "not_available",
+        "service_history": "not_available",
+        "documents": "not_available",
+        "vin": "not_available",
+        "export_eligibility": "not_available"
+      }
+    },
+    "source": "agent",
+    "agent": "scripts/update-vehicle.mjs"
+  },
+  {
+    "vehicle_id": "nio-es6-2023-001",
+    "timestamp": "2026-10-04T06:02:36.848Z",
+    "action": "update",
+    "changed_fields": [
+      "verification",
+      "data_confidence"
+    ],
+    "old_value": {
+      "data_confidence": {
+        "vehicle_identity": "provided",
+        "mileage": "provided",
+        "price": "provided",
+        "inspection": "not_available",
+        "battery_health": "not_available",
+        "maintenance_history": "not_available"
+      }
+    },
+    "new_value": {
+      "verification": {
+        "mileage": "provided",
+        "vehicle_identity": "provided",
+        "photos": "not_available",
+        "inspection": "not_available",
+        "battery_report": "not_available",
+        "service_history": "not_available",
+        "documents": "not_available",
+        "vin": "not_available",
+        "export_eligibility": "not_available"
+      }
+    },
+    "source": "agent",
+    "agent": "scripts/update-vehicle.mjs"
+  },
+  {
+    "vehicle_id": "xpeng-g6-2024-001",
+    "timestamp": "2026-10-04T06:02:36.913Z",
+    "action": "update",
+    "changed_fields": [
+      "verification",
+      "data_confidence"
+    ],
+    "old_value": {
+      "data_confidence": {
+        "vehicle_identity": "provided",
+        "mileage": "provided",
+        "price": "provided",
+        "inspection": "not_available",
+        "battery_health": "not_available",
+        "maintenance_history": "not_available"
+      }
+    },
+    "new_value": {
+      "verification": {
+        "mileage": "provided",
+        "vehicle_identity": "provided",
+        "photos": "not_available",
+        "inspection": "not_available",
+        "battery_report": "not_available",
+        "service_history": "not_available",
+        "documents": "not_available",
+        "vin": "not_available",
+        "export_eligibility": "not_available"
+      }
+    },
+    "source": "agent",
+    "agent": "scripts/update-vehicle.mjs"
+  }
+]

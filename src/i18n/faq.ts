@@ -148,10 +148,10 @@ export const FAQ_PAGE: {
         es: '¿Cómo se informa del estado de un vehículo?',
       },
       answer: {
-        en: 'We publish the condition information we hold, as supplied by the source, and mark each detail with a confidence level — verified, provided, estimated or not available. Where a detail is not held, we say so rather than guessing.',
-        ar: 'ننشر معلومات الحالة التي نحتفظ بها، كما يوردها المصدر، ونعلّم كل تفصيل بمستوى ثقة — موثَّق أو مقدَّم أو مقدَّر أو غير متوفر. عندما لا نحتفظ بتفصيل، نقول ذلك بدلاً من التخمين.',
-        ru: 'Мы публикуем имеющуюся информацию о состоянии, предоставленную источником, и помечаем каждую деталь уровнем достоверности — подтверждено, предоставлено, оценочно или недоступно. Если детали нет, мы говорим об этом, а не угадываем.',
-        es: 'Publicamos la información de estado que tenemos, según la facilita la fuente, y marcamos cada detalle con un nivel de confianza: verificado, facilitado, estimado o no disponible. Cuando no tenemos un detalle, lo decimos en lugar de adivinar.',
+        en: 'We publish the condition information we hold, as supplied by the source, and mark each detail with a verification level — verified, provided, seller-supplied, source-backed or not available. Where a detail is not held, we say so rather than guessing.',
+        ar: 'ننشر معلومات الحالة التي نحتفظ بها، كما يوردها المصدر، ونعلّم كل تفصيل بمستوى تحقق — موثَّق أو مقدَّم أو مقدَّم من البائع أو مدعوم بمصدر أو غير متوفر. عندما لا نحتفظ بتفصيل، نقول ذلك بدلاً من التخمين.',
+        ru: 'Мы публикуем имеющуюся информацию о состоянии, предоставленную источником, и помечаем каждую деталь уровнем проверки — подтверждено, предоставлено, предоставлено продавцом, подтверждено источником или недоступно. Если детали нет, мы говорим об этом, а не угадываем.',
+        es: 'Publicamos la información de estado que tenemos, según la facilita la fuente, y marcamos cada detalle con un nivel de verificación: verificado, facilitado, facilitado por el vendedor, respaldado por una fuente o no disponible. Cuando no tenemos un detalle, lo decimos en lugar de adivinar.',
       },
     },
     {

@@ -102,10 +102,10 @@ export const inspection = {
       },
       paragraphs: [
         {
-          en: 'We present the inspection information we hold for a vehicle, marked as verified, provided, estimated or not available. Not every vehicle has a full inspection report, and inspection availability depends on the vehicle and buyer requirements.',
-          ar: 'نعرض معلومات الفحص التي نحتفظ بها للمركبة، معلَّمة كموثَّق أو مقدَّم أو مقدَّر أو غير متوفر. ليست كل مركبة لديها تقرير فحص كامل، ويعتمد توفر الفحص على المركبة ومتطلبات المشتري.',
-          ru: 'Мы показываем имеющуюся информацию о проверке автомобиля с пометкой: подтверждено, предоставлено, оценочно или недоступно. Не у каждого автомобиля есть полный отчёт, и доступность проверки зависит от автомобиля и требований покупателя.',
-          es: 'Presentamos la información de inspección que tenemos de un vehículo, marcada como verificada, facilitada, estimada o no disponible. No todos los vehículos tienen un informe completo, y la disponibilidad depende del vehículo y los requisitos del comprador.',
+          en: 'We present the inspection information we hold for a vehicle, marked as verified, provided, seller-supplied, source-backed or not available. Not every vehicle has a full inspection report, and inspection availability depends on the vehicle and buyer requirements.',
+          ar: 'نعرض معلومات الفحص التي نحتفظ بها للمركبة، معلَّمة كموثَّق أو مقدَّم أو مقدَّم من البائع أو مدعوم بمصدر أو غير متوفر. ليست كل مركبة لديها تقرير فحص كامل، ويعتمد توفر الفحص على المركبة ومتطلبات المشتري.',
+          ru: 'Мы показываем имеющуюся информацию о проверке автомобиля с пометкой: подтверждено, предоставлено, предоставлено продавцом, подтверждено источником или недоступно. Не у каждого автомобиля есть полный отчёт, и доступность проверки зависит от автомобиля и требований покупателя.',
+          es: 'Presentamos la información de inspección que tenemos de un vehículo, marcada como verificada, facilitada, facilitada por el vendedor, respaldada por una fuente o no disponible. No todos los vehículos tienen un informe completo, y la disponibilidad depende del vehículo y los requisitos del comprador.',
         },
       ],
     },
@@ -188,10 +188,10 @@ export const inspection = {
       },
       paragraphs: [
         {
-          en: 'Each detail on a listing is marked verified, provided, estimated or not available. A verified detail is confirmed against a source we hold; a provided detail comes from the source but is not independently checked; an estimated value is approximated; and not available means we do not hold it.',
-          ar: 'يُعلَّم كل تفصيل في الإدراج كموثَّق أو مقدَّم أو مقدَّر أو غير متوفر. التفصيل الموثَّق مؤكد من مصدر نحتفظ به؛ والمقدَّم يأتي من المصدر دون تحقق مستقل؛ والمقدَّر قيمة تقريبية؛ وغير المتوفر يعني أننا لا نحتفظ به.',
-          ru: 'Каждая деталь в объявлении помечена как подтверждённая, предоставленная, оценочная или недоступная. Подтверждённая деталь сверена с источником, который у нас есть; предоставленная пришла от источника без независимой проверки; оценочная — приблизительна; недоступная означает, что её у нас нет.',
-          es: 'Cada detalle de un anuncio está marcado como verificado, facilitado, estimado o no disponible. Un detalle verificado se confirma con una fuente que tenemos; uno facilitado procede de la fuente sin comprobación independiente; uno estimado es aproximado; y no disponible significa que no lo tenemos.',
+          en: 'Each detail on a listing carries one of six verification levels. Verified means confirmed against a source we hold; provided means supplied by the source without independent checking; seller-supplied and source-backed describe where the value comes from; not available means we do not hold it; and not independently verified means we show the detail but have not yet checked it.',
+          ar: 'يحمل كل تفصيل في الإدراج واحداً من ستة مستويات تحقق. الموثَّق يعني مؤكداً من مصدر نحتفظ به؛ والمقدَّم يعني مقدم من المصدر دون تحقق مستقل؛ والمقدَّم من البائع والمدعوم بمصدر يصفان مصدر القيمة؛ وغير المتوفر يعني أننا لا نحتفظ به؛ وغير المتحقق منه بشكل مستقل يعني أننا نعرض التفصيل لكننا لم نتحقق منه بعد.',
+          ru: 'Каждая деталь в объявлении имеет один из шести уровней проверки. Подтверждено — сверено с источником, который у нас есть; предоставлено — поступило от источника без независимой проверки; предоставлено продавцом и подтверждено источником описывают происхождение значения; недоступно — у нас нет этой детали; не подтверждено независимо — мы показываем деталь, но ещё не проверили её.',
+          es: 'Cada detalle de un anuncio lleva uno de seis niveles de verificación. Verificado significa confirmado con una fuente que tenemos; facilitado significa suministrado por la fuente sin comprobación independiente; facilitado por el vendedor y respaldado por fuente describen de dónde procede el valor; no disponible significa que no lo tenemos; y no verificado de forma independiente significa que mostramos el detalle pero aún no lo hemos comprobado.',
         },
         {
           en: 'Use these levels to decide where you need more certainty, and ask us for the specific detail you care about most.',

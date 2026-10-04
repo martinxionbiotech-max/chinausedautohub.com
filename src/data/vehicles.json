@@ -65,7 +65,7 @@
     "is_demo": true,
     "source": "demo-catalog",
     "created_at": "2026-09-12T00:00:00Z",
-    "updated_at": "2026-10-04T02:50:47.374Z",
+    "updated_at": "2026-10-04T06:02:36.285Z",
     "generation": null,
     "trim": null,
     "registration_date": null,
@@ -78,14 +78,6 @@
     "destination": null,
     "documents": null,
     "data_source": "demo",
-    "data_confidence": {
-      "vehicle_identity": "provided",
-      "mileage": "provided",
-      "price": "provided",
-      "inspection": "not_available",
-      "battery_health": "not_available",
-      "maintenance_history": "not_available"
-    },
     "last_verified_at": null,
     "powertrain": null,
     "range_km": null,
@@ -100,7 +92,18 @@
     "dashboard_photos": null,
     "export_eligibility": null,
     "shipping": null,
-    "notes": null
+    "notes": null,
+    "verification": {
+      "mileage": "provided",
+      "vehicle_identity": "provided",
+      "photos": "not_available",
+      "inspection": "not_available",
+      "battery_report": "not_available",
+      "service_history": "not_available",
+      "documents": "not_available",
+      "vin": "not_available",
+      "export_eligibility": "not_available"
+    }
   },
   {
     "vehicle_id": "byd-seal-2024-001",
@@ -164,7 +167,7 @@
     "is_demo": true,
     "source": "demo-catalog",
     "created_at": "2026-09-15T00:00:00Z",
-    "updated_at": "2026-09-30T00:00:00Z",
+    "updated_at": "2026-10-04T06:02:36.337Z",
     "generation": null,
     "trim": null,
     "registration_date": null,
@@ -177,14 +180,6 @@
     "destination": null,
     "documents": null,
     "data_source": "demo",
-    "data_confidence": {
-      "vehicle_identity": "provided",
-      "mileage": "provided",
-      "price": "provided",
-      "inspection": "not_available",
-      "battery_health": "not_available",
-      "maintenance_history": "not_available"
-    },
     "last_verified_at": null,
     "powertrain": null,
     "range_km": null,
@@ -199,7 +194,18 @@
     "dashboard_photos": null,
     "export_eligibility": null,
     "shipping": null,
-    "notes": null
+    "notes": null,
+    "verification": {
+      "mileage": "provided",
+      "vehicle_identity": "provided",
+      "photos": "not_available",
+      "inspection": "not_available",
+      "battery_report": "not_available",
+      "service_history": "not_available",
+      "documents": "not_available",
+      "vin": "not_available",
+      "export_eligibility": "not_available"
+    }
   },
   {
     "vehicle_id": "geely-monjaro-2024-001",
@@ -263,7 +269,7 @@
     "is_demo": true,
     "source": "demo-catalog",
     "created_at": "2026-09-18T00:00:00Z",
-    "updated_at": "2026-09-28T00:00:00Z",
+    "updated_at": "2026-10-04T06:02:36.389Z",
     "generation": null,
     "trim": null,
     "registration_date": null,
@@ -276,14 +282,6 @@
     "destination": null,
     "documents": null,
     "data_source": "demo",
-    "data_confidence": {
-      "vehicle_identity": "provided",
-      "mileage": "provided",
-      "price": "provided",
-      "inspection": "not_available",
-      "battery_health": "not_available",
-      "maintenance_history": "not_available"
-    },
     "last_verified_at": null,
     "powertrain": null,
     "range_km": null,
@@ -298,7 +296,18 @@
     "dashboard_photos": null,
     "export_eligibility": null,
     "shipping": null,
-    "notes": null
+    "notes": null,
+    "verification": {
+      "mileage": "provided",
+      "vehicle_identity": "provided",
+      "photos": "not_available",
+      "inspection": "not_available",
+      "battery_report": "not_available",
+      "service_history": "not_available",
+      "documents": "not_available",
+      "vin": "not_available",
+      "export_eligibility": "not_available"
+    }
   },
   {
     "vehicle_id": "geely-coolray-2023-001",
@@ -362,7 +371,7 @@
     "is_demo": true,
     "source": "demo-catalog",
     "created_at": "2026-09-20T00:00:00Z",
-    "updated_at": "2026-10-02T00:00:00Z",
+    "updated_at": "2026-10-04T06:02:36.441Z",
     "generation": null,
     "trim": null,
     "registration_date": null,
@@ -375,14 +384,6 @@
     "destination": null,
     "documents": null,
     "data_source": "demo",
-    "data_confidence": {
-      "vehicle_identity": "provided",
-      "mileage": "provided",
-      "price": "provided",
-      "inspection": "not_available",
-      "battery_health": "not_available",
-      "maintenance_history": "not_available"
-    },
     "last_verified_at": null,
     "powertrain": null,
     "range_km": null,
@@ -397,7 +398,18 @@
     "dashboard_photos": null,
     "export_eligibility": null,
     "shipping": null,
-    "notes": null
+    "notes": null,
+    "verification": {
+      "mileage": "provided",
+      "vehicle_identity": "provided",
+      "photos": "not_available",
+      "inspection": "not_available",
+      "battery_report": "not_available",
+      "service_history": "not_available",
+      "documents": "not_available",
+      "vin": "not_available",
+      "export_eligibility": "not_available"
+    }
   },
   {
     "vehicle_id": "chery-tiggo-8-pro-2023-001",
@@ -461,7 +473,7 @@
     "is_demo": true,
     "source": "demo-catalog",
     "created_at": "2026-09-10T00:00:00Z",
-    "updated_at": "2026-09-26T00:00:00Z",
+    "updated_at": "2026-10-04T06:02:36.491Z",
     "generation": null,
     "trim": null,
     "registration_date": null,
@@ -474,14 +486,6 @@
     "destination": null,
     "documents": null,
     "data_source": "demo",
-    "data_confidence": {
-      "vehicle_identity": "provided",
-      "mileage": "provided",
-      "price": "provided",
-      "inspection": "not_available",
-      "battery_health": "not_available",
-      "maintenance_history": "not_available"
-    },
     "last_verified_at": null,
     "powertrain": null,
     "range_km": null,
@@ -496,7 +500,18 @@
     "dashboard_photos": null,
     "export_eligibility": null,
     "shipping": null,
-    "notes": null
+    "notes": null,
+    "verification": {
+      "mileage": "provided",
+      "vehicle_identity": "provided",
+      "photos": "not_available",
+      "inspection": "not_available",
+      "battery_report": "not_available",
+      "service_history": "not_available",
+      "documents": "not_available",
+      "vin": "not_available",
+      "export_eligibility": "not_available"
+    }
   },
   {
     "vehicle_id": "chery-arrizo-8-2023-001",
@@ -560,7 +575,7 @@
     "is_demo": true,
     "source": "demo-catalog",
     "created_at": "2026-09-14T00:00:00Z",
-    "updated_at": "2026-09-29T00:00:00Z",
+    "updated_at": "2026-10-04T06:02:36.544Z",
     "generation": null,
     "trim": null,
     "registration_date": null,
@@ -573,14 +588,6 @@
     "destination": null,
     "documents": null,
     "data_source": "demo",
-    "data_confidence": {
-      "vehicle_identity": "provided",
-      "mileage": "provided",
-      "price": "provided",
-      "inspection": "not_available",
-      "battery_health": "not_available",
-      "maintenance_history": "not_available"
-    },
     "last_verified_at": null,
     "powertrain": null,
     "range_km": null,
@@ -595,7 +602,18 @@
     "dashboard_photos": null,
     "export_eligibility": null,
     "shipping": null,
-    "notes": null
+    "notes": null,
+    "verification": {
+      "mileage": "provided",
+      "vehicle_identity": "provided",
+      "photos": "not_available",
+      "inspection": "not_available",
+      "battery_report": "not_available",
+      "service_history": "not_available",
+      "documents": "not_available",
+      "vin": "not_available",
+      "export_eligibility": "not_available"
+    }
   },
   {
     "vehicle_id": "changan-cs75-plus-2024-001",
@@ -659,7 +677,7 @@
     "is_demo": true,
     "source": "demo-catalog",
     "created_at": "2026-09-22T00:00:00Z",
-    "updated_at": "2026-10-01T00:00:00Z",
+    "updated_at": "2026-10-04T06:02:36.611Z",
     "generation": null,
     "trim": null,
     "registration_date": null,
@@ -672,14 +690,6 @@
     "destination": null,
     "documents": null,
     "data_source": "demo",
-    "data_confidence": {
-      "vehicle_identity": "provided",
-      "mileage": "provided",
-      "price": "provided",
-      "inspection": "not_available",
-      "battery_health": "not_available",
-      "maintenance_history": "not_available"
-    },
     "last_verified_at": null,
     "powertrain": null,
     "range_km": null,
@@ -694,7 +704,18 @@
     "dashboard_photos": null,
     "export_eligibility": null,
     "shipping": null,
-    "notes": null
+    "notes": null,
+    "verification": {
+      "mileage": "provided",
+      "vehicle_identity": "provided",
+      "photos": "not_available",
+      "inspection": "not_available",
+      "battery_report": "not_available",
+      "service_history": "not_available",
+      "documents": "not_available",
+      "vin": "not_available",
+      "export_eligibility": "not_available"
+    }
   },
   {
     "vehicle_id": "changan-uni-v-2023-001",
@@ -758,7 +779,7 @@
     "is_demo": true,
     "source": "demo-catalog",
     "created_at": "2026-09-11T00:00:00Z",
-    "updated_at": "2026-09-27T00:00:00Z",
+    "updated_at": "2026-10-04T06:02:36.676Z",
     "generation": null,
     "trim": null,
     "registration_date": null,
@@ -771,14 +792,6 @@
     "destination": null,
     "documents": null,
     "data_source": "demo",
-    "data_confidence": {
-      "vehicle_identity": "provided",
-      "mileage": "provided",
-      "price": "provided",
-      "inspection": "not_available",
-      "battery_health": "not_available",
-      "maintenance_history": "not_available"
-    },
     "last_verified_at": null,
     "powertrain": null,
     "range_km": null,
@@ -793,7 +806,18 @@
     "dashboard_photos": null,
     "export_eligibility": null,
     "shipping": null,
-    "notes": null
+    "notes": null,
+    "verification": {
+      "mileage": "provided",
+      "vehicle_identity": "provided",
+      "photos": "not_available",
+      "inspection": "not_available",
+      "battery_report": "not_available",
+      "service_history": "not_available",
+      "documents": "not_available",
+      "vin": "not_available",
+      "export_eligibility": "not_available"
+    }
   },
   {
     "vehicle_id": "gac-gs4-2022-001",
@@ -853,7 +877,7 @@
     "is_demo": true,
     "source": "demo-catalog",
     "created_at": "2026-08-20T00:00:00Z",
-    "updated_at": "2026-09-25T00:00:00Z",
+    "updated_at": "2026-10-04T06:02:36.737Z",
     "generation": null,
     "trim": null,
     "registration_date": null,
@@ -866,14 +890,6 @@
     "destination": null,
     "documents": null,
     "data_source": "demo",
-    "data_confidence": {
-      "vehicle_identity": "provided",
-      "mileage": "provided",
-      "price": "provided",
-      "inspection": "not_available",
-      "battery_health": "not_available",
-      "maintenance_history": "not_available"
-    },
     "last_verified_at": null,
     "powertrain": null,
     "range_km": null,
@@ -888,7 +904,18 @@
     "dashboard_photos": null,
     "export_eligibility": null,
     "shipping": null,
-    "notes": null
+    "notes": null,
+    "verification": {
+      "mileage": "provided",
+      "vehicle_identity": "provided",
+      "photos": "not_available",
+      "inspection": "not_available",
+      "battery_report": "not_available",
+      "service_history": "not_available",
+      "documents": "not_available",
+      "vin": "not_available",
+      "export_eligibility": "not_available"
+    }
   },
   {
     "vehicle_id": "great-wall-haval-h6-2023-001",
@@ -948,7 +975,7 @@
     "is_demo": true,
     "source": "demo-catalog",
     "created_at": "2026-09-13T00:00:00Z",
-    "updated_at": "2026-09-28T00:00:00Z",
+    "updated_at": "2026-10-04T06:02:36.792Z",
     "generation": null,
     "trim": null,
     "registration_date": null,
@@ -961,14 +988,6 @@
     "destination": null,
     "documents": null,
     "data_source": "demo",
-    "data_confidence": {
-      "vehicle_identity": "provided",
-      "mileage": "provided",
-      "price": "provided",
-      "inspection": "not_available",
-      "battery_health": "not_available",
-      "maintenance_history": "not_available"
-    },
     "last_verified_at": null,
     "powertrain": null,
     "range_km": null,
@@ -983,7 +1002,18 @@
     "dashboard_photos": null,
     "export_eligibility": null,
     "shipping": null,
-    "notes": null
+    "notes": null,
+    "verification": {
+      "mileage": "provided",
+      "vehicle_identity": "provided",
+      "photos": "not_available",
+      "inspection": "not_available",
+      "battery_report": "not_available",
+      "service_history": "not_available",
+      "documents": "not_available",
+      "vin": "not_available",
+      "export_eligibility": "not_available"
+    }
   },
   {
     "vehicle_id": "nio-es6-2023-001",
@@ -1047,7 +1077,7 @@
     "is_demo": true,
     "source": "demo-catalog",
     "created_at": "2026-09-16T00:00:00Z",
-    "updated_at": "2026-09-30T00:00:00Z",
+    "updated_at": "2026-10-04T06:02:36.847Z",
     "generation": null,
     "trim": null,
     "registration_date": null,
@@ -1060,14 +1090,6 @@
     "destination": null,
     "documents": null,
     "data_source": "demo",
-    "data_confidence": {
-      "vehicle_identity": "provided",
-      "mileage": "provided",
-      "price": "provided",
-      "inspection": "not_available",
-      "battery_health": "not_available",
-      "maintenance_history": "not_available"
-    },
     "last_verified_at": null,
     "powertrain": null,
     "range_km": null,
@@ -1082,7 +1104,18 @@
     "dashboard_photos": null,
     "export_eligibility": null,
     "shipping": null,
-    "notes": null
+    "notes": null,
+    "verification": {
+      "mileage": "provided",
+      "vehicle_identity": "provided",
+      "photos": "not_available",
+      "inspection": "not_available",
+      "battery_report": "not_available",
+      "service_history": "not_available",
+      "documents": "not_available",
+      "vin": "not_available",
+      "export_eligibility": "not_available"
+    }
   },
   {
     "vehicle_id": "xpeng-g6-2024-001",
@@ -1146,7 +1179,7 @@
     "is_demo": true,
     "source": "demo-catalog",
     "created_at": "2026-09-21T00:00:00Z",
-    "updated_at": "2026-10-02T00:00:00Z",
+    "updated_at": "2026-10-04T06:02:36.912Z",
     "generation": null,
     "trim": null,
     "registration_date": null,
@@ -1159,14 +1192,6 @@
     "destination": null,
     "documents": null,
     "data_source": "demo",
-    "data_confidence": {
-      "vehicle_identity": "provided",
-      "mileage": "provided",
-      "price": "provided",
-      "inspection": "not_available",
-      "battery_health": "not_available",
-      "maintenance_history": "not_available"
-    },
     "last_verified_at": null,
     "powertrain": null,
     "range_km": null,
@@ -1181,6 +1206,17 @@
     "dashboard_photos": null,
     "export_eligibility": null,
     "shipping": null,
-    "notes": null
+    "notes": null,
+    "verification": {
+      "mileage": "provided",
+      "vehicle_identity": "provided",
+      "photos": "not_available",
+      "inspection": "not_available",
+      "battery_report": "not_available",
+      "service_history": "not_available",
+      "documents": "not_available",
+      "vin": "not_available",
+      "export_eligibility": "not_available"
+    }
   }
 ]
