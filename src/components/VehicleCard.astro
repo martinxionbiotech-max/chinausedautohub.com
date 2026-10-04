@@ -2,7 +2,9 @@
 import type { Vehicle } from '../lib/types';
 import { formatPrice, formatMileage } from '../lib/site';
 import { resolveVehicle, vehicleTitle } from '../lib/data';
-import { vehicleUrl } from '../lib/urls';
+import { getTranslations } from '../i18n';
+import { fuelTypeName, transmissionName } from '../i18n/reference';
+import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
 
 interface Props {
   vehicle: Vehicle;
@@ -11,16 +13,13 @@ interface Props {
 }
 
 const { vehicle, showLocation = true, demo = vehicle.is_demo } = Astro.props;
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
 const d = resolveVehicle(vehicle);
 const title = vehicleTitle(d);
-const url = vehicleUrl(vehicle);
+const url = localizedUrl(`/cars/${vehicle.brand}/${vehicle.model}/${vehicle.vehicle_id}/`, locale);
 
-const statusLabel = {
-  available: 'Available',
-  reserved: 'Reserved',
-  sold: 'Sold',
-  unavailable: 'Unavailable',
-}[vehicle.status] ?? vehicle.status;
+const statusLabel = t.status[vehicle.status] ?? vehicle.status;
 
 const statusClass = {
   available: 'bg-green-50 text-green-700 border-green-200',
@@ -28,25 +27,28 @@ const statusClass = {
   sold: 'bg-red-50 text-red-700 border-red-200',
   unavailable: 'bg-gray-50 text-gray-600 border-gray-200',
 }[vehicle.status] ?? 'bg-gray-50 text-gray-600 border-gray-200';
+
+const fuel = fuelTypeName(vehicle.fuel, locale, d.fuelType?.name ?? vehicle.fuel);
+const trans = transmissionName(vehicle.transmission, locale, d.transmission?.name ?? vehicle.transmission);
 ---
 
 <article class="card flex flex-col overflow-hidden" data-vehicle data-brand={vehicle.brand} data-model={vehicle.model} data-year={vehicle.year} data-price={vehicle.price.amount} data-mileage={vehicle.mileage_km} data-body={vehicle.body_type} data-fuel={vehicle.fuel} data-transmission={vehicle.transmission} data-drive={vehicle.drive} data-status={vehicle.status}>
   <a href={url} class="relative block aspect-[4/3] overflow-hidden bg-surface-alt">
     <img
       src={vehicle.images[0]}
-      alt={`${title} — demo placeholder image`}
+      alt={`${title} — ${t.vehicleCard.demoImageAlt}`}
       loading="lazy"
       decoding="async"
       width="800"
       height="600"
       class="h-full w-full object-cover"
     />
-    <span class:list={['absolute left-2 top-2 rounded border px-2 py-0.5 text-[11px] font-semibold', statusClass]}>
+    <span class:list={['absolute start-2 top-2 rounded border px-2 py-0.5 text-[11px] font-semibold', statusClass]}>
       {statusLabel}
     </span>
     {demo && (
-      <span class="absolute right-2 top-2 rounded border border-surface-line bg-white/90 px-2 py-0.5 text-[11px] font-semibold text-ink-muted">
-        DEMO DATA
+      <span class="absolute end-2 top-2 rounded border border-surface-line bg-white/90 px-2 py-0.5 text-[11px] font-semibold text-ink-muted">
+        {t.vehicleCard.demoData}
       </span>
     )}
   </a>
@@ -58,33 +60,33 @@ const statusClass = {
 
     <dl class="mt-2 grid grid-cols-2 gap-x-3 gap-y-1 text-sm">
       <div class="flex items-baseline gap-1">
-        <dt class="text-ink-muted">Year</dt>
+        <dt class="text-ink-muted">{t.vehicleCard.year}</dt>
         <dd class="text-ink-soft">{vehicle.year}</dd>
       </div>
       <div class="flex items-baseline gap-1">
-        <dt class="text-ink-muted">Mileage</dt>
-        <dd class="text-ink-soft">{formatMileage(vehicle.mileage_km)}</dd>
+        <dt class="text-ink-muted">{t.vehicleCard.mileage}</dt>
+        <dd class="text-ink-soft">{formatMileage(vehicle.mileage_km, locale, t.units.km)}</dd>
       </div>
       <div class="flex items-baseline gap-1">
-        <dt class="text-ink-muted">Fuel</dt>
-        <dd class="text-ink-soft">{d.fuelType?.name ?? vehicle.fuel}</dd>
+        <dt class="text-ink-muted">{t.vehicleCard.fuel}</dt>
+        <dd class="text-ink-soft">{fuel}</dd>
       </div>
       <div class="flex items-baseline gap-1">
-        <dt class="text-ink-muted">Trans.</dt>
-        <dd class="text-ink-soft">{d.transmission?.name ?? vehicle.transmission}</dd>
+        <dt class="text-ink-muted">{t.vehicleCard.transmission}</dt>
+        <dd class="text-ink-soft">{trans}</dd>
       </div>
     </dl>
 
     {showLocation && <p class="mt-2 text-sm text-ink-muted">{vehicle.location}</p>}
 
     <div class="mt-auto pt-3">
-      <p class="text-lg font-bold text-ink">{formatPrice(vehicle.price)}</p>
-      {demo && <p class="text-[11px] text-ink-muted">Example price — demo listing</p>}
+      <p class="text-lg font-bold text-ink">{formatPrice(vehicle.price, locale)}</p>
+      {demo && <p class="text-[11px] text-ink-muted">{t.vehicleCard.demoPrice}</p>}
     </div>
 
     <div class="mt-3 grid grid-cols-2 gap-2">
-      <a href={url} class="btn-secondary !px-3 text-sm">View Details</a>
-      <a href={`/request-a-car/?vehicle=${vehicle.vehicle_id}`} class="btn-primary !px-3 text-sm">Request Quote</a>
+      <a href={url} class="btn-secondary !px-3 text-sm">{t.common.viewDetails}</a>
+      <a href={`${localizedUrl('/request-a-car/', locale)}?vehicle=${vehicle.vehicle_id}`} class="btn-primary !px-3 text-sm">{t.common.requestQuote}</a>
     </div>
   </div>
 </article>

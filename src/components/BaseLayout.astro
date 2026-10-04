@@ -3,6 +3,8 @@ import '../styles/global.css';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
 import { SITE, SITE_URL } from '../lib/site';
+import { LOCALES, DEFAULT_LOCALE, localeDir, type Locale } from '../lib/i18n';
+import { localizedPath } from '../lib/i18n';
 
 interface Props {
   title: string;
@@ -22,29 +24,41 @@ const {
   schema,
 } = Astro.props;
 
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const dir = localeDir(locale);
+
+// Self-referencing canonical: the current localized URL.
 const canonicalUrl = canonical
   ? canonical.startsWith('http')
     ? canonical
-    : `${SITE_URL}${canonical}`
-  : SITE_URL;
+    : new URL(localizedPath(canonical, locale), SITE_URL).toString()
+  : new URL(Astro.url.pathname, SITE_URL).toString();
 
 const imageUrl = image.startsWith('http') ? image : `${SITE_URL}${image}`;
 
-const schemas = schema
-  ? (Array.isArray(schema) ? schema : [schema])
-  : [];
+const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+
+const alternates = LOCALES.map(({ code }) => ({
+  code,
+  url: new URL(localizedPath(Astro.url.pathname, code), SITE_URL).toString(),
+}));
+const xDefault = alternates.find((a) => a.code === DEFAULT_LOCALE)?.url;
 
 const bodyClass = Astro.props['bodyClass'] ?? '';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale} dir={dir}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    {alternates.map(({ code, url }) => (
+      <link rel="alternate" hreflang={code} href={url} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={xDefault} />
     {noindex && <meta name="robots" content="noindex,follow" />}
 
     <meta property="og:type" content="website" />

@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { SITE, CONTACT } from '../lib/site';
+import { getTranslations } from '../i18n';
+import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
+
+interface Props {
+  variant: 'privacy' | 'terms' | 'cookies';
+}
+
+const { variant } = Astro.props;
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
+
+const crumbsMap = {
+  privacy: t.breadcrumb.privacy,
+  terms: t.breadcrumb.terms,
+  cookies: t.breadcrumb.cookies,
+};
+
+// Render a translated paragraph, substituting {siteName} and {email} (trusted).
+function render(p: string): string {
+  return p
+    .replaceAll('{siteName}', SITE.name)
+    .replace('{email}', `<a href="mailto:${CONTACT.email}" class="text-brand-700 hover:underline">${CONTACT.email}</a>`);
+}
+---
+
+{(() => {
+  if (variant === 'cookies') {
+    const c = t.legal.cookies;
+    return (
+      <BaseLayout title={c.title} description={c.description} canonical={localizedUrl('/cookies/', locale)}>
+        <Breadcrumb crumbs={[{ name: t.breadcrumb.home, path: localizedUrl('/', locale) }, { name: crumbsMap.cookies, path: localizedUrl('/cookies/', locale) }]} />
+        <section class="container-site py-6">
+          <h1 class="text-3xl font-bold text-ink">{c.h1}</h1>
+          <div class="prose-vehicle mt-4 max-w-3xl space-y-4">
+            <p><strong>{t.legal.lastUpdated}</strong></p>
+            {c.paragraphs.map((p) => <p set:html={render(p)} />)}
+          </div>
+        </section>
+      </BaseLayout>
+    );
+  }
+  const page = variant === 'privacy' ? t.legal.privacy : t.legal.terms;
+  const slug = variant === 'privacy' ? '/privacy/' : '/terms/';
+  return (
+    <BaseLayout title={page.title} description={page.description} canonical={localizedUrl(slug, locale)}>
+      <Breadcrumb crumbs={[{ name: t.breadcrumb.home, path: localizedUrl('/', locale) }, { name: crumbsMap[variant], path: localizedUrl(slug, locale) }]} />
+      <section class="container-site py-6">
+        <h1 class="text-3xl font-bold text-ink">{page.h1}</h1>
+        <div class="prose-vehicle mt-4 max-w-3xl space-y-4">
+          <p><strong>{t.legal.lastUpdated}</strong></p>
+          <p set:html={render(page.intro)} />
+          {page.sections.map((s) => (
+            <>
+              <h2 class="text-lg font-semibold text-ink">{s.h}</h2>
+              {s.p.map((p) => <p set:html={render(p)} />)}
+            </>
+          ))}
+        </div>
+      </section>
+    </BaseLayout>
+  );
+})()}

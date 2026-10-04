@@ -1,0 +1,11 @@
+---
+import BodyTypePage from '../../../templates/BodyTypePage.astro';
+import { getBodyTypesWithVehicles } from '../../../lib/data';
+
+export function getStaticPaths() {
+  return getBodyTypesWithVehicles().map((t) => ({ params: { type: t.slug } }));
+}
+
+const { type } = Astro.params;
+---
+<BodyTypePage type={type} />

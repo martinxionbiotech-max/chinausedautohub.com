@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { CONTACT } from '../lib/site';
+import { getTranslations } from '../i18n';
+import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
+
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
+---
+
+<BaseLayout title={t.about.title} description={t.about.description} canonical={localizedUrl('/about/', locale)}>
+  <Breadcrumb crumbs={[{ name: t.breadcrumb.home, path: localizedUrl('/', locale) }, { name: t.breadcrumb.about, path: localizedUrl('/about/', locale) }]} />
+
+  <section class="container-site py-6">
+    <h1 class="text-3xl font-bold text-ink">{t.about.h1}</h1>
+    <div class="prose-vehicle mt-4 max-w-3xl space-y-4">
+      {t.about.paragraphs.map((p) => <p>{p}</p>)}
+    </div>
+  </section>
+
+  <section class="container-site mt-8 pb-10">
+    <div class="card max-w-3xl p-6">
+      <h2 class="text-lg font-semibold text-ink">{t.about.contactHeading}</h2>
+      <div class="mt-3 space-y-2 text-sm text-ink-soft">
+        <p>{t.footer.email}: <a href={`mailto:${CONTACT.email}`} class="font-semibold text-brand-700 hover:underline">{CONTACT.email}</a></p>
+        <p>{t.footer.whatsapp}: <a href={CONTACT.whatsappLink} target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-700 hover:underline">{CONTACT.whatsapp}</a></p>
+      </div>
+      <a href={localizedUrl('/contact/', locale)} class="btn-primary mt-4">{t.about.contactUs}</a>
+    </div>
+  </section>
+</BaseLayout>

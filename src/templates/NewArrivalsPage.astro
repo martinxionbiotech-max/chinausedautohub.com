@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import VehicleCard from '../components/VehicleCard.astro';
+import { getNewArrivals } from '../lib/data';
+import { getTranslations } from '../i18n';
+import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
+import type { Vehicle } from '../lib/types';
+
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
+
+const arrivals = getNewArrivals(24);
+const title = t.nav.newArrivals;
+---
+
+<BaseLayout title={`${title} — ${t.detail.titleSuffix}`} description={t.home.newArrivalsSub} canonical={localizedUrl('/new-arrivals/', locale)}>
+  <Breadcrumb crumbs={[{ name: t.breadcrumb.home, path: localizedUrl('/', locale) }, { name: t.breadcrumb.newArrivals, path: localizedUrl('/new-arrivals/', locale) }]} />
+
+  <section class="container-site py-6">
+    <h1 class="text-3xl font-bold text-ink">{t.nav.newArrivals}</h1>
+    <p class="mt-2 max-w-2xl text-ink-soft">{t.home.newArrivalsSub}</p>
+
+    <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {arrivals.map((v: Vehicle) => <VehicleCard vehicle={v} />)}
+    </div>
+  </section>
+</BaseLayout>

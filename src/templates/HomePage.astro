@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import SearchModule from '../components/SearchModule.astro';
+import VehicleCard from '../components/VehicleCard.astro';
+import LeadForm from '../components/LeadForm.astro';
+import {
+  getFeaturedVehicles,
+  getNewArrivals,
+  getBrandsWithVehicles,
+  getBodyTypesWithVehicles,
+} from '../lib/data';
+import { formatPrice, formatDate, SITE } from '../lib/site';
+import { brandUrl, bodyTypeUrl, vehicleUrl } from '../lib/urls';
+import { organizationSchema, webSiteSchema, itemListSchema } from '../lib/schema';
+import { getTranslations } from '../i18n';
+import { bodyTypeName, bodyTypeDescription } from '../i18n/reference';
+import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
+import type { Vehicle } from '../lib/types';
+
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
+
+const featured = getFeaturedVehicles(8);
+const arrivals = getNewArrivals(5);
+const brands = getBrandsWithVehicles();
+const bodyTypes = getBodyTypesWithVehicles();
+
+const title = t.home.title;
+const description = t.site.description;
+
+const carsHref = localizedUrl('/cars/', locale);
+const requestHref = localizedUrl('/request-a-car/', locale);
+
+const featuredListSchema = itemListSchema(
+  featured.map((v) => ({ name: `${v.year} ${v.brand} ${v.model}`, url: localizedUrl(vehicleUrl(v), locale) })),
+);
+---
+
+<BaseLayout title={title} description={description} schema={[organizationSchema(), webSiteSchema(), featuredListSchema]}>
+  <!-- HERO -->
+  <section class="bg-brand-900 text-white">
+    <div class="container-site py-16 sm:py-20">
+      <div class="max-w-2xl">
+        <h1 class="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">{t.home.heroH1}</h1>
+        <p class="mt-4 text-lg text-brand-100">{t.home.heroSub}</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href={carsHref} class="btn-primary">{t.common.browseCars}</a>
+          <a href={requestHref} class="btn-secondary !border-white/30 !bg-transparent !text-white hover:!bg-white/10">{t.common.requestACar}</a>
+        </div>
+      </div>
+      <div class="mt-10 rounded-lg bg-brand-800/60 p-5 sm:p-6">
+        <SearchModule />
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="border-b border-surface-line bg-surface-alt">
+    <div class="container-site grid gap-6 py-8 sm:grid-cols-2 lg:grid-cols-4">
+      {t.home.trustItems.map((item) => (
+        <div class="flex gap-3">
+          <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded bg-brand-100 text-brand-800">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2l7 4v6c0 3.2-2.9 5.6-7 7-4.1-1.4-7-3.8-7-7V6l7-4z"/></svg>
+          </span>
+          <div>
+            <h2 class="text-sm font-semibold text-ink">{item.title}</h2>
+            <p class="mt-1 text-sm text-ink-soft">{item.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- FEATURED VEHICLES -->
+  <section class="container-site py-14">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <h2 class="text-2xl font-bold text-ink">{t.home.featuredHeading}</h2>
+        <p class="mt-1 text-ink-soft">{t.home.featuredSub}</p>
+      </div>
+      <a href={carsHref} class="btn-ghost hidden sm:inline-flex">{t.common.viewAllVehicles} {t.common.arrow}</a>
+    </div>
+    <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {featured.map((v: Vehicle) => <VehicleCard vehicle={v} />)}
+    </div>
+    <a href={carsHref} class="btn-secondary mt-6 sm:hidden">{t.common.viewAllVehicles} {t.common.arrow}</a>
+  </section>
+
+  <!-- BROWSE BY BRAND -->
+  <section class="bg-surface-alt py-14">
+    <div class="container-site">
+      <h2 class="text-2xl font-bold text-ink">{t.home.browseBrandHeading}</h2>
+      <p class="mt-1 text-ink-soft">{t.home.browseBrandSub}</p>
+      <div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        {brands.map((b) => (
+          <a href={localizedUrl(brandUrl(b), locale)} class="card flex items-center gap-3 p-4 hover:border-brand-300">
+            <span class="flex h-10 w-10 items-center justify-center rounded bg-brand-800 text-sm font-bold text-white">{b.name.slice(0, 2).toUpperCase()}</span>
+            <div>
+              <span class="block text-sm font-semibold text-ink">{b.name}</span>
+              <span class="block text-xs text-ink-muted">{t.home.browseVehicles}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BROWSE BY VEHICLE TYPE -->
+  <section class="container-site py-14">
+    <h2 class="text-2xl font-bold text-ink">{t.home.browseTypeHeading}</h2>
+    <p class="mt-1 text-ink-soft">{t.home.browseTypeSub}</p>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {bodyTypes.map((bt) => (
+        <a href={localizedUrl(bodyTypeUrl(bt), locale)} class="card flex items-center justify-between p-5 hover:border-brand-300">
+          <div>
+            <span class="block text-base font-semibold text-ink">{bodyTypeName(bt.slug, locale, bt.name)}</span>
+            <span class="block text-sm text-ink-muted">{bodyTypeDescription(bt.slug, locale, bt.description)}</span>
+          </div>
+          <span class="text-brand-700">{t.common.arrow}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- NEW ARRIVALS -->
+  <section class="bg-surface-alt py-14">
+    <div class="container-site">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-bold text-ink">{t.home.newArrivalsHeading}</h2>
+          <p class="mt-1 text-ink-soft">{t.home.newArrivalsSub}</p>
+        </div>
+        <a href={localizedUrl('/new-arrivals/', locale)} class="btn-ghost hidden sm:inline-flex">{t.common.allNewArrivals} {t.common.arrow}</a>
+      </div>
+      <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+        {arrivals.map((v: Vehicle) => (
+          <a href={localizedUrl(vehicleUrl(v), locale)} class="card flex gap-3 p-3 hover:border-brand-300">
+            <img src={v.images[0]} alt="" loading="lazy" width="72" height="54" class="h-14 w-20 shrink-0 rounded object-cover" />
+            <div class="min-w-0">
+              <span class="block truncate text-sm font-semibold text-ink">{v.year} {v.brand} {v.model}</span>
+              <span class="block text-sm font-bold text-brand-800">{formatPrice(v.price, locale)}</span>
+              <span class="block text-xs text-ink-muted">{t.home.updated} {formatDate(v.updated_at, locale)}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SOURCE FROM CHINA -->
+  <section class="container-site py-14">
+    <h2 class="text-2xl font-bold text-ink">{t.home.whyHeading}</h2>
+    <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {t.home.whyItems.map((w) => (
+        <div class="card p-5">
+          <h3 class="text-base font-semibold text-ink">{w.title}</h3>
+          <p class="mt-2 text-sm text-ink-soft">{w.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- REQUEST A CAR CTA -->
+  <section class="bg-surface-alt py-14">
+    <div class="container-site grid gap-8 lg:grid-cols-2">
+      <div>
+        <h2 class="text-2xl font-bold text-ink">{t.home.ctaHeading}</h2>
+        <p class="mt-2 text-ink-soft">{t.home.ctaText}</p>
+        <p class="mt-4 text-sm text-ink-muted">
+          {t.home.ctaDetail}
+        </p>
+      </div>
+      <LeadForm variant="full" />
+    </div>
+  </section>
+
+  <!-- MARKET ENTRY -->
+  <section class="container-site py-14">
+    <h2 class="text-2xl font-bold text-ink">{t.home.marketHeading}</h2>
+    <p class="mt-1 text-ink-soft">{t.home.marketSub}</p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      {t.home.markets.map((m) => (
+        <a
+          href={`${SITE.subdomains.market}/${m.slug}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card px-4 py-2.5 text-sm font-medium text-ink hover:border-brand-300"
+        >
+          {m.name}
+        </a>
+      ))}
+    </div>
+    <p class="mt-3 text-xs text-ink-muted">{t.home.marketNote}</p>
+  </section>
+
+  <!-- DATA / TOOLS ENTRY -->
+  <section class="bg-surface-alt py-14">
+    <div class="container-site grid gap-5 lg:grid-cols-2">
+      <a href={`${SITE.subdomains.data}`} target="_blank" rel="noopener noreferrer" class="card p-6 hover:border-brand-300">
+        <h2 class="text-lg font-semibold text-ink">{t.home.dataHeading}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{t.home.dataText}</p>
+        <span class="mt-3 inline-block text-sm font-semibold text-brand-700">{t.home.dataLink} {t.common.arrow}</span>
+      </a>
+      <a href={`${SITE.subdomains.tools}`} target="_blank" rel="noopener noreferrer" class="card p-6 hover:border-brand-300">
+        <h2 class="text-lg font-semibold text-ink">{t.home.toolsHeading}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{t.home.toolsText}</p>
+        <span class="mt-3 inline-block text-sm font-semibold text-brand-700">{t.home.toolsLink} {t.common.arrow}</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="container-site py-14">
+    <h2 class="text-2xl font-bold text-ink">{t.home.howItWorksHeading}</h2>
+    <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {t.home.steps.map((s) => (
+        <div class="card p-5">
+          <span class="flex h-9 w-9 items-center justify-center rounded-full bg-brand-800 text-sm font-bold text-white">{s.n}</span>
+          <h3 class="mt-3 text-base font-semibold text-ink">{s.title}</h3>
+          <p class="mt-2 text-sm text-ink-soft">{s.text}</p>
+        </div>
+      ))}
+    </div>
+    <a href={localizedUrl('/how-it-works/', locale)} class="btn-ghost mt-5">{t.common.learnMoreProcess} {t.common.arrow}</a>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="bg-brand-900 py-16 text-center text-white">
+    <div class="container-site">
+      <h2 class="text-2xl font-bold sm:text-3xl">{t.home.finalCtaHeading}</h2>
+      <div class="mt-6 flex flex-wrap justify-center gap-3">
+        <a href={carsHref} class="btn-primary">{t.common.browseCars}</a>
+        <a href={requestHref} class="btn-secondary !border-white/30 !bg-transparent !text-white hover:!bg-white/10">{t.common.requestACar}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

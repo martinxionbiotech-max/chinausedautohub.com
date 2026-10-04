@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { CONTACT } from '../lib/site';
+import { getTranslations } from '../i18n';
+import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
+
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
+---
+
+<BaseLayout title={t.contact.title} description={t.contact.description} canonical={localizedUrl('/contact/', locale)}>
+  <Breadcrumb crumbs={[{ name: t.breadcrumb.home, path: localizedUrl('/', locale) }, { name: t.breadcrumb.contact, path: localizedUrl('/contact/', locale) }]} />
+
+  <section class="container-site py-6">
+    <h1 class="text-3xl font-bold text-ink">{t.contact.h1}</h1>
+    <p class="mt-2 max-w-2xl text-ink-soft">{t.contact.intro}</p>
+
+    <div class="mt-8 grid gap-5 max-w-3xl sm:grid-cols-2">
+      <a href={`mailto:${CONTACT.email}`} class="card p-6 hover:border-brand-300">
+        <h2 class="text-base font-semibold text-ink">{t.contact.emailHeading}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{t.contact.emailText}</p>
+        <p class="mt-3 text-sm font-semibold text-brand-700">{CONTACT.email}</p>
+      </a>
+      <a href={CONTACT.whatsappLink} target="_blank" rel="noopener noreferrer" class="card p-6 hover:border-brand-300">
+        <h2 class="text-base font-semibold text-ink">{t.contact.whatsappHeading}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{t.contact.whatsappText}</p>
+        <p class="mt-3 text-sm font-semibold text-brand-700">{CONTACT.whatsapp}</p>
+      </a>
+    </div>
+
+    <div class="mt-8 max-w-3xl">
+      <p class="text-sm text-ink-soft">
+        {t.contact.preferForm}{' '}
+        <a href={localizedUrl('/request-a-car/', locale)} class="font-semibold text-brand-700 hover:underline">{t.contact.requestForm}</a>{' '}
+        {t.contact.formTail}
+      </p>
+    </div>
+  </section>
+</BaseLayout>

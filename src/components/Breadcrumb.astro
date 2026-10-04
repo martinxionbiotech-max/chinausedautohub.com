@@ -1,11 +1,15 @@
 ---
 import { breadcrumbSchema, type Crumb } from '../lib/schema';
+import { getTranslations } from '../i18n';
+import { DEFAULT_LOCALE, type Locale } from '../lib/i18n';
 
 interface Props {
   crumbs: Crumb[];
 }
 
 const { crumbs } = Astro.props;
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
 const schema = breadcrumbSchema(crumbs);
 ---
 

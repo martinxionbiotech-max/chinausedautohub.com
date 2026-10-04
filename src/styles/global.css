@@ -52,3 +52,12 @@ html.js .listing-more {
 html.js .listing-hidden {
   display: none;
 }
+
+/* RTL (Arabic) adjustments — logical properties and direction-aware mirrors. */
+[dir='rtl'] .chevron {
+  transform: scaleX(-1);
+}
+[dir='rtl'] details[open] > .nav-dropdown-summary .chevron,
+[dir='rtl'] details[open] > summary .chevron {
+  transform: rotate(180deg) scaleX(-1);
+}

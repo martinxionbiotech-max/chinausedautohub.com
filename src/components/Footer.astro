@@ -1,45 +1,64 @@
 ---
-import { SITE, CONTACT, LEGAL_NAV, RESOURCE_NAV } from '../lib/site';
+import { SITE, CONTACT, SUBDOMAINS } from '../lib/site';
+import { getTranslations } from '../i18n';
+import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
+
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
 
 const browse = [
-  { label: 'Browse Vehicles', href: '/cars/' },
-  { label: 'Brands', href: '/brands/' },
-  { label: 'Vehicle Types', href: '/body-types/' },
-  { label: 'New Arrivals', href: '/new-arrivals/' },
-  { label: 'Request a Car', href: '/request-a-car/' },
-  { label: 'How It Works', href: '/how-it-works/' },
+  { label: t.footer.browseVehicles, href: localizedUrl('/cars/', locale) },
+  { label: t.nav.brands, href: localizedUrl('/brands/', locale) },
+  { label: t.nav.vehicleTypes, href: localizedUrl('/body-types/', locale) },
+  { label: t.nav.newArrivals, href: localizedUrl('/new-arrivals/', locale) },
+  { label: t.nav.requestACar, href: localizedUrl('/request-a-car/', locale) },
+  { label: t.nav.howItWorks, href: localizedUrl('/how-it-works/', locale) },
 ];
 
 const company = [
-  { label: 'About', href: '/about/' },
-  { label: 'Contact', href: '/contact/' },
+  { label: t.footer.about, href: localizedUrl('/about/', locale) },
+  { label: t.footer.contact, href: localizedUrl('/contact/', locale) },
 ];
 
+const resources = [
+  { label: t.nav.vehicleData, note: t.nav.futureSubsite, href: SUBDOMAINS.data },
+  { label: t.nav.marketInformation, note: t.nav.futureSubsite, href: SUBDOMAINS.market },
+  { label: t.nav.tools, note: t.nav.futureSubsite, href: SUBDOMAINS.tools },
+  { label: t.nav.companies, note: t.nav.futureSubsite, href: SUBDOMAINS.companies },
+];
+
+const legal = [
+  { label: t.breadcrumb.privacy, href: localizedUrl('/privacy/', locale) },
+  { label: t.breadcrumb.terms, href: localizedUrl('/terms/', locale) },
+  { label: t.breadcrumb.cookies, href: localizedUrl('/cookies/', locale) },
+];
+
+const homeHref = localizedUrl('/', locale);
 const year = new Date().getFullYear();
 ---
 
 <footer class="mt-16 border-t border-surface-line bg-surface-alt">
   <div class="container-site grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
     <div>
-      <a href="/" class="flex items-center gap-2.5">
+      <a href={homeHref} class="flex items-center gap-2.5">
         <span class="flex h-8 w-8 items-center justify-center rounded bg-brand-800 text-white text-sm font-bold">CU</span>
         <span class="text-sm font-bold text-ink">{SITE.name}</span>
       </a>
       <p class="mt-3 text-sm leading-6 text-ink-muted">
-        Source quality used and near-new vehicles from China for export to your market.
+        {t.footer.tagline}
       </p>
       <div class="mt-4 space-y-1 text-sm">
         <p class="text-ink-soft">
-          Email: <a href={`mailto:${CONTACT.email}`} class="text-brand-700 hover:underline">{CONTACT.email}</a>
+          {t.footer.email}: <a href={`mailto:${CONTACT.email}`} class="text-brand-700 hover:underline">{CONTACT.email}</a>
         </p>
         <p class="text-ink-soft">
-          WhatsApp: <a href={CONTACT.whatsappLink} target="_blank" rel="noopener noreferrer" class="text-brand-700 hover:underline">{CONTACT.whatsapp}</a>
+          {t.footer.whatsapp}: <a href={CONTACT.whatsappLink} target="_blank" rel="noopener noreferrer" class="text-brand-700 hover:underline">{CONTACT.whatsapp}</a>
         </p>
       </div>
     </div>
 
-    <nav aria-label="Browse">
-      <h3 class="text-sm font-semibold text-ink">Browse</h3>
+    <nav aria-label={t.footer.browse}>
+      <h3 class="text-sm font-semibold text-ink">{t.footer.browse}</h3>
       <ul class="mt-3 space-y-2">
         {browse.map((l) => (
           <li><a href={l.href} class="text-sm text-ink-soft hover:text-brand-700">{l.label}</a></li>
@@ -47,8 +66,8 @@ const year = new Date().getFullYear();
       </ul>
     </nav>
 
-    <nav aria-label="Company">
-      <h3 class="text-sm font-semibold text-ink">Company</h3>
+    <nav aria-label={t.footer.company}>
+      <h3 class="text-sm font-semibold text-ink">{t.footer.company}</h3>
       <ul class="mt-3 space-y-2">
         {company.map((l) => (
           <li><a href={l.href} class="text-sm text-ink-soft hover:text-brand-700">{l.label}</a></li>
@@ -57,9 +76,9 @@ const year = new Date().getFullYear();
     </nav>
 
     <div>
-      <h3 class="text-sm font-semibold text-ink">Related Resources</h3>
+      <h3 class="text-sm font-semibold text-ink">{t.footer.relatedResources}</h3>
       <ul class="mt-3 space-y-2">
-        {RESOURCE_NAV.map((l) => (
+        {resources.map((l) => (
           <li>
             <a href={l.href} target="_blank" rel="noopener noreferrer" class="text-sm text-ink-soft hover:text-brand-700">
               {l.label}
@@ -73,9 +92,9 @@ const year = new Date().getFullYear();
 
   <div class="border-t border-surface-line">
     <div class="container-site flex flex-col gap-3 py-6 sm:flex-row sm:items-center sm:justify-between">
-      <p class="text-sm text-ink-muted">© {year} {SITE.name}. All rights reserved.</p>
-      <nav class="flex flex-wrap gap-x-5 gap-y-2" aria-label="Legal">
-        {LEGAL_NAV.map((l) => (
+      <p class="text-sm text-ink-muted">© {year} {SITE.name}. {t.footer.allRightsReserved}</p>
+      <nav class="flex flex-wrap gap-x-5 gap-y-2" aria-label={t.footer.legal}>
+        {legal.map((l) => (
           <a href={l.href} class="text-sm text-ink-muted hover:text-brand-700">{l.label}</a>
         ))}
       </nav>

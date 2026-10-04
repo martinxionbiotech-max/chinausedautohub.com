@@ -1,0 +1,11 @@
+---
+import VehicleDetailPage from '../../../../../templates/VehicleDetailPage.astro';
+import { getAllVehicles } from '../../../../../lib/data';
+
+export function getStaticPaths() {
+  return getAllVehicles().map((v) => ({ params: { brand: v.brand, model: v.model, inventoryId: v.vehicle_id }, props: { vehicle: v } }));
+}
+
+const { vehicle } = Astro.props;
+---
+<VehicleDetailPage vehicle={vehicle} />

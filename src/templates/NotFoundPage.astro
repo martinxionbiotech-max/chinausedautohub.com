@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import { getTranslations } from '../i18n';
+import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
+
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
+---
+
+<BaseLayout title={t.notFound.title} description={t.notFound.description} noindex>
+  <section class="container-site flex min-h-[50vh] flex-col items-center justify-center py-24 text-center">
+    <p class="text-5xl font-bold text-brand-800">404</p>
+    <h1 class="mt-3 text-2xl font-bold text-ink">{t.notFound.h1}</h1>
+    <p class="mt-2 text-ink-soft">{t.notFound.text}</p>
+    <div class="mt-6 flex gap-3">
+      <a href={localizedUrl('/', locale)} class="btn-primary">{t.notFound.goHome}</a>
+      <a href={localizedUrl('/cars/', locale)} class="btn-secondary">{t.common.browseCars}</a>
+    </div>
+  </section>
+</BaseLayout>

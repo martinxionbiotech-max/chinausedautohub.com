@@ -1,0 +1,11 @@
+---
+import BrandPage from '../../../templates/BrandPage.astro';
+import { getBrandsWithVehicles } from '../../../lib/data';
+
+export function getStaticPaths() {
+  return getBrandsWithVehicles().map((b) => ({ params: { brand: b.slug } }));
+}
+
+const { brand } = Astro.params;
+---
+<BrandPage brand={brand} />

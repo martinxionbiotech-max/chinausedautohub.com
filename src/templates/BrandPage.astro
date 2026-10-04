@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import VehicleCard from '../components/VehicleCard.astro';
+import {
+  getBrand,
+  getVehiclesByBrand,
+  getPopularModelsForBrand,
+  getBodyType,
+} from '../lib/data';
+import { SITE } from '../lib/site';
+import { dataBrandUrl, dataModelUrl, brandUrl } from '../lib/urls';
+import { itemListSchema } from '../lib/schema';
+import { getTranslations } from '../i18n';
+import { bodyTypeName, brandOverview, modelDescription } from '../i18n/reference';
+import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
+import type { Vehicle } from '../lib/types';
+
+interface Props {
+  brand: string;
+}
+
+const { brand: brandSlug } = Astro.props;
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
+
+const brand = getBrand(brandSlug);
+if (!brand) {
+  return Astro.redirect(localizedUrl('/brands/', locale));
+}
+
+const vehicles = getVehiclesByBrand(brandSlug);
+const available = vehicles.filter((v) => v.status === 'available');
+const popularModels = getPopularModelsForBrand(brandSlug);
+
+const typeSlugs = Array.from(new Set(vehicles.map((v) => v.body_type)));
+const vehicleTypes = typeSlugs.map((s) => getBodyType(s)).filter(Boolean);
+
+const markets = [
+  { slug: 'uae' },
+  { slug: 'saudi-arabia' },
+  { slug: 'kenya' },
+  { slug: 'nigeria' },
+];
+
+const title = `${brand.name} — ${t.brands.vehiclesForExport}`;
+const description = `${t.listing.descriptionPrefix} ${available.length} ${t.listing.available} ${brand.name} — ${t.brands.vehiclesForExport}.`;
+
+const schema = itemListSchema(available.map((v) => ({ name: `${v.year} ${brand.name} ${v.model}`, url: localizedUrl(`/cars/${v.brand}/${v.model}/${v.vehicle_id}/`, locale) })));
+
+const overview = brandOverview(brand.slug, locale, brand.overview);
+---
+
+<BaseLayout title={title} description={description} canonical={localizedUrl(brandUrl(brand), locale)} schema={schema}>
+  <Breadcrumb crumbs={[{ name: t.breadcrumb.home, path: localizedUrl('/', locale) }, { name: t.breadcrumb.brands, path: localizedUrl('/brands/', locale) }, { name: brand.name, path: localizedUrl(brandUrl(brand), locale) }]} />
+
+  <section class="container-site py-6">
+    <div class="flex flex-wrap items-start justify-between gap-4">
+      <div>
+        <h1 class="text-3xl font-bold text-ink">{brand.name} {t.brands.vehiclesForExport}</h1>
+        <p class="mt-2 max-w-3xl text-ink-soft">{overview}</p>
+      </div>
+      <a href={localizedUrl('/request-a-car/', locale)} class="btn-primary">{t.common.requestACar} {brand.name}</a>
+    </div>
+  </section>
+
+  <section class="container-site">
+    <h2 class="text-xl font-bold text-ink">{t.brands.availableVehicles}</h2>
+    {available.length > 0 ? (
+      <div class="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {available.map((v: Vehicle) => <VehicleCard vehicle={v} />)}
+      </div>
+    ) : (
+      <p class="mt-3 text-ink-soft">{t.brands.noAvailable} <a href={localizedUrl('/request-a-car/', locale)} class="font-semibold text-brand-700">{t.common.requestACar} {brand.name}</a> {t.brands.requestAndSource}</p>
+    )}
+  </section>
+
+  {popularModels.length > 0 && (
+    <section class="container-site mt-12">
+      <h2 class="text-xl font-bold text-ink">{t.brands.popularModels}</h2>
+      <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {popularModels.map((m) => (
+          <a href={dataModelUrl(m)} target="_blank" rel="noopener noreferrer" class="card p-4 hover:border-brand-300">
+            <span class="block text-base font-semibold text-ink">{m.name}</span>
+            <span class="block text-sm text-ink-muted">{modelDescription(m.brand, m.slug, locale, m.shortDescription)}</span>
+            <span class="mt-2 block text-sm font-semibold text-brand-700">{t.common.viewSpecifications} {t.common.arrow}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {vehicleTypes.length > 0 && (
+    <section class="container-site mt-12">
+      <h2 class="text-xl font-bold text-ink">{t.brands.vehicleTypes}</h2>
+      <div class="mt-4 flex flex-wrap gap-3">
+        {vehicleTypes.map((bt) => (
+          <a href={localizedUrl(`/body-types/${bt.slug}/`, locale)} class="card px-4 py-2.5 text-sm font-medium text-ink hover:border-brand-300">{bodyTypeName(bt.slug, locale, bt.name)}</a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="container-site mt-12">
+    <div class="grid gap-5 lg:grid-cols-2">
+      <a href={dataBrandUrl(brand)} target="_blank" rel="noopener noreferrer" class="card p-5 hover:border-brand-300">
+        <h2 class="text-lg font-semibold text-ink">{brand.name} {t.brands.data}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{t.brands.dataDesc}</p>
+        <span class="mt-2 block text-sm font-semibold text-brand-700">{t.brands.dataSubsite} {t.common.arrow}</span>
+      </a>
+      <div class="card p-5">
+        <h2 class="text-lg font-semibold text-ink">{t.brands.relatedMarkets}</h2>
+        <div class="mt-3 flex flex-wrap gap-2">
+          {markets.map((m) => (
+            <a href={`${SITE.subdomains.market}/${m.slug}`} target="_blank" rel="noopener noreferrer" class="rounded-md border border-surface-line px-3 py-1.5 text-sm text-ink hover:border-brand-300">{t.home.markets.find((x) => x.slug === m.slug)?.name ?? m.slug}</a>
+          ))}
+        </div>
+        <p class="mt-3 text-xs text-ink-muted">{t.brands.marketNote}</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

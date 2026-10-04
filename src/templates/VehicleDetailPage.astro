@@ -1,0 +1,295 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import VehicleCard from '../components/VehicleCard.astro';
+import LeadForm from '../components/LeadForm.astro';
+import { getSimilarVehicles, resolveVehicle, vehicleTitle } from '../lib/data';
+import { formatPrice, formatMileage, formatDate } from '../lib/site';
+import { dataModelUrl, dataBrandUrl, vehicleUrl } from '../lib/urls';
+import { vehicleSchema, breadcrumbSchema, faqSchema, type FaqItem } from '../lib/schema';
+import { getTranslations } from '../i18n';
+import {
+  vehicleDescription,
+} from '../i18n/vehicles';
+import {
+  fuelTypeName,
+  transmissionName,
+  driveName,
+  bodyTypeName,
+  colorName,
+  locationName,
+  modelDescription,
+} from '../i18n/reference';
+import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
+import type { Vehicle } from '../lib/types';
+
+interface Props {
+  vehicle: Vehicle;
+}
+
+const { vehicle } = Astro.props;
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
+
+const d = resolveVehicle(vehicle);
+const title = vehicleTitle(d);
+const isSold = vehicle.status === 'sold';
+const isReserved = vehicle.status === 'reserved';
+
+const similar = getSimilarVehicles(vehicle, 4);
+
+const statusLabel = t.status[vehicle.status] ?? vehicle.status;
+
+const brandName = d.brand?.name ?? vehicle.brand;
+const modelName = d.model?.name ?? vehicle.model;
+const fuel = fuelTypeName(vehicle.fuel, locale, d.fuelType?.name ?? vehicle.fuel);
+const trans = transmissionName(vehicle.transmission, locale, d.transmission?.name ?? vehicle.transmission);
+const drive = driveName(vehicle.drive, locale, d.drive?.name ?? vehicle.drive);
+const color = colorName(vehicle.color, locale);
+const location = locationName(vehicle.location, locale);
+const desc = vehicleDescription(vehicle.vehicle_id, locale, vehicle.description);
+
+const pageTitle = `${title} — ${formatPrice(vehicle.price, locale)} | ${t.detail.titleSuffix}`;
+const statusText = vehicle.status === 'available' ? t.detail.statusAvailable : `${t.detail.statusPrefix}: ${statusLabel}`;
+const description = `${vehicle.year} ${brandName} ${modelName}, ${formatMileage(vehicle.mileage_km, locale, t.units.km)}, ${fuel}, ${color}, ${location}. ${statusText}.`;
+
+const crumbs = [
+  { name: t.breadcrumb.home, path: localizedUrl('/', locale) },
+  { name: t.breadcrumb.cars, path: localizedUrl('/cars/', locale) },
+  { name: brandName, path: localizedUrl(`/brands/${vehicle.brand}/`, locale) },
+  { name: title, path: localizedUrl(vehicleUrl(vehicle), locale) },
+];
+
+const specLabelMap: Record<string, string> = {
+  Engine: t.specLabels.engine,
+  Battery: t.specLabels.battery,
+  Power: t.specLabels.power,
+  Seats: t.specLabels.seats,
+  Doors: t.specLabels.doors,
+  Drivetrain: t.specLabels.drivetrain,
+  Transmission: t.specLabels.transmission,
+  Architecture: t.specLabels.architecture,
+  'Emission standard': t.specLabels.emissionStandard,
+};
+const specLabel = (label: string) => specLabelMap[label] ?? label;
+
+const conditionLabelMap: Record<string, string> = {
+  accident_history: t.conditionLabels.accident_history,
+  maintenance: t.conditionLabels.maintenance,
+  inspection: t.conditionLabels.inspection,
+  battery_health: t.conditionLabels.battery_health,
+  paint: t.conditionLabels.paint,
+};
+
+const exportLabelMap: Record<string, string> = {
+  export_availability: t.exportLabels.export_availability,
+  pickup_location: t.exportLabels.pickup_location,
+  shipping_port: t.exportLabels.shipping_port,
+  inspection: t.exportLabels.inspection,
+  documents: t.exportLabels.documents,
+};
+
+const faqs: FaqItem[] = [];
+if (isSold) {
+  faqs.push({ question: t.detail.faqSold, answer: t.detail.faqSoldAnswer });
+} else {
+  faqs.push({ question: t.detail.faqAvailable, answer: `${t.detail.faqAvailableYes} ${statusLabel}. ${t.detail.faqAvailableYesTail}` });
+}
+faqs.push({ question: t.detail.faqExport, answer: t.detail.faqExportAnswer });
+faqs.push({ question: t.detail.faqPrice, answer: t.detail.faqPriceAnswer });
+if (vehicle.is_demo) {
+  faqs.push({ question: t.detail.faqDemo, answer: t.detail.faqDemoAnswer });
+}
+
+const schemas = [vehicleSchema(vehicle, locale), breadcrumbSchema(crumbs)];
+if (faqs.length > 0) schemas.push(faqSchema(faqs));
+
+const aboutModelHeading = t.detail.aboutModel.replace('{model}', modelName);
+const viewModelSpecsText = t.detail.viewModelSpecs.replace('{model}', modelName);
+---
+
+<BaseLayout title={pageTitle} description={description} canonical={localizedUrl(vehicleUrl(vehicle), locale)} schema={schemas}>
+  <Breadcrumb crumbs={crumbs} />
+
+  <section class="container-site pb-6">
+    <div class="flex flex-wrap items-start justify-between gap-3">
+      <h1 class="text-2xl font-bold text-ink sm:text-3xl">{title}</h1>
+      <div class="flex items-center gap-2">
+        {vehicle.is_demo && (
+          <span class="rounded border border-surface-line bg-surface-alt px-2.5 py-1 text-xs font-semibold text-ink-muted">{t.vehicleCard.demoData}</span>
+        )}
+        <span class:list={[
+          'rounded border px-2.5 py-1 text-xs font-semibold',
+          isSold ? 'bg-red-50 text-red-700 border-red-200'
+          : isReserved ? 'bg-amber-50 text-amber-700 border-amber-200'
+          : 'bg-green-50 text-green-700 border-green-200',
+        ]}>
+          {statusLabel}
+        </span>
+      </div>
+    </div>
+    <p class="mt-1 text-sm text-ink-muted">{t.detail.vehicleId}: {vehicle.vehicle_id} · {t.detail.lastUpdated} {formatDate(vehicle.updated_at, locale)}</p>
+  </section>
+
+  {isSold && (
+    <div class="container-site pb-8">
+      <div class="rounded-lg border border-red-200 bg-red-50 p-4">
+        <p class="text-base font-semibold text-red-800">{t.detail.soldNoticeTitle}</p>
+        <p class="mt-1 text-sm text-red-700">{t.detail.soldNoticeText}</p>
+      </div>
+    </div>
+  )}
+
+  <section class="container-site grid gap-8 lg:grid-cols-[1.4fr_1fr]">
+    <!-- GALLERY -->
+    <div>
+      <div class="card overflow-hidden">
+        <img
+          src={vehicle.images[0]}
+          alt={`${title} — ${t.vehicleCard.demoImageAlt}`}
+          width="1200"
+          height="800"
+          fetchpriority="high"
+          decoding="async"
+          class="w-full object-cover"
+        />
+      </div>
+      {vehicle.is_demo && (
+        <p class="mt-2 text-xs text-ink-muted">
+          {t.detail.demoImageNote}
+        </p>
+      )}
+    </div>
+
+    <!-- SUMMARY -->
+    <aside class="card h-fit p-5">
+      <h2 class="sr-only">{t.detail.vehicleSummary}</h2>
+      <dl class="grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
+        <div><dt class="text-ink-muted">{t.detail.year}</dt><dd class="font-medium text-ink">{vehicle.year}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.mileage}</dt><dd class="font-medium text-ink">{formatMileage(vehicle.mileage_km, locale, t.units.km)}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.fuel}</dt><dd class="font-medium text-ink">{fuel}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.transmission}</dt><dd class="font-medium text-ink">{trans}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.drive}</dt><dd class="font-medium text-ink">{drive}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.color}</dt><dd class="font-medium text-ink">{color}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.location}</dt><dd class="font-medium text-ink">{location}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.status}</dt><dd class="font-medium text-ink">{statusLabel}</dd></div>
+      </dl>
+
+      <div class="mt-5 border-t border-surface-line pt-4">
+        <p class="text-sm text-ink-muted">{t.detail.askingPrice}</p>
+        <p class="mt-1 text-2xl font-bold text-ink">{formatPrice(vehicle.price, locale)}</p>
+        {vehicle.original_price && (
+          <p class="mt-1 text-xs text-ink-muted">{t.detail.originalListing}: {formatPrice(vehicle.original_price, locale)}</p>
+        )}
+        {vehicle.is_demo && <p class="mt-1 text-xs text-ink-muted">{t.detail.demoPrice}</p>}
+        <p class="mt-2 text-xs text-ink-muted">{t.detail.priceNote}</p>
+      </div>
+
+      <div class="mt-4 grid gap-2">
+        {!isSold ? (
+          <a href="#lead-form" class="btn-primary w-full">{t.detail.requestQuote}</a>
+        ) : (
+          <a href={localizedUrl('/request-a-car/', locale)} class="btn-primary w-full">{t.detail.requestSimilar}</a>
+        )}
+        <a href={localizedUrl('/request-a-car/', locale)} class="btn-secondary w-full">{t.detail.requestSimilar}</a>
+      </div>
+    </aside>
+  </section>
+
+  <!-- KEY SPECS -->
+  <section class="container-site mt-10">
+    <h2 class="text-xl font-bold text-ink">{t.detail.keySpecs}</h2>
+    <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2 lg:grid-cols-3">
+      {vehicle.specs.map((s) => (
+        <div class="bg-white p-4">
+          <dt class="text-sm text-ink-muted">{specLabel(s.label)}</dt>
+          <dd class="mt-0.5 text-sm font-medium text-ink">{s.value}</dd>
+        </div>
+      ))}
+      <div class="bg-white p-4">
+        <dt class="text-sm text-ink-muted">{t.detail.bodyType}</dt>
+        <dd class="mt-0.5 text-sm font-medium text-ink">{bodyTypeName(vehicle.body_type, locale, d.bodyType?.name ?? vehicle.body_type)}</dd>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESCRIPTION -->
+  <section class="container-site mt-10">
+    <h2 class="text-xl font-bold text-ink">{t.detail.description}</h2>
+    <p class="prose-vehicle mt-3 max-w-3xl">{desc}</p>
+  </section>
+
+  <!-- CONDITION -->
+  <section class="container-site mt-10">
+    <h2 class="text-xl font-bold text-ink">{t.detail.condition}</h2>
+    <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2 lg:grid-cols-3">
+      {Object.entries(vehicle.condition).map(([k, v]) => (
+        <div class="bg-white p-4">
+          <dt class="text-sm text-ink-muted">{conditionLabelMap[k] ?? k}</dt>
+          <dd class="mt-0.5 text-sm font-medium text-ink">{v === 'Not provided' ? t.detail.notProvided : v}</dd>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- EXPORT INFORMATION (only when real data exists) -->
+  {vehicle.export && (
+    <section class="container-site mt-10">
+      <h2 class="text-xl font-bold text-ink">{t.detail.exportInfo}</h2>
+      <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2">
+        {Object.entries(vehicle.export).map(([k, v]) => (
+          <div class="bg-white p-4">
+            <dt class="text-sm text-ink-muted">{exportLabelMap[k] ?? k}</dt>
+            <dd class="mt-0.5 text-sm font-medium text-ink">{v}</dd>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- MODEL INFORMATION -->
+  <section class="container-site mt-10">
+    <div class="card p-5">
+      <h2 class="text-lg font-bold text-ink">{aboutModelHeading}</h2>
+      <p class="mt-2 text-sm text-ink-soft max-w-3xl">{modelDescription(vehicle.brand, vehicle.model, locale, d.model?.shortDescription ?? t.detail.modelInfo)}</p>
+      <div class="mt-3 flex flex-wrap gap-4 text-sm">
+        <a href={dataModelUrl({ brand: vehicle.brand, slug: vehicle.model })} target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-700 hover:underline">
+          {viewModelSpecsText} {t.common.arrow}
+        </a>
+        <a href={dataBrandUrl({ slug: vehicle.brand })} target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-700 hover:underline">
+          {brandName} {t.common.brandData ?? ''} {t.common.arrow}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUEST QUOTE -->
+  <section class="container-site mt-10" id="quote">
+    <LeadForm variant="quote" vehicle={vehicle} />
+  </section>
+
+  <!-- SIMILAR -->
+  {similar.length > 0 && (
+    <section class="container-site mt-12">
+      <h2 class="text-xl font-bold text-ink">{t.detail.similar}</h2>
+      <div class="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {similar.map((v) => <VehicleCard vehicle={v} />)}
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ -->
+  {faqs.length > 0 && (
+    <section class="container-site mt-12 max-w-3xl">
+      <h2 class="text-xl font-bold text-ink">{t.common.faq}</h2>
+      <div class="mt-4 space-y-3">
+        {faqs.map((f) => (
+          <details class="card p-4">
+            <summary class="cursor-pointer text-sm font-semibold text-ink">{f.question}</summary>
+            <p class="mt-2 text-sm text-ink-soft">{f.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  )}
+</BaseLayout>

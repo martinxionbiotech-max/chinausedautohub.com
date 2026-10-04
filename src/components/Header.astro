@@ -1,6 +1,10 @@
 ---
-import { SITE, PRIMARY_NAV, RESOURCE_NAV } from '../lib/site';
+import { SITE, SUBDOMAINS } from '../lib/site';
+import { getTranslations } from '../i18n';
+import { LOCALES, DEFAULT_LOCALE, localizedPath, localizedUrl, type Locale } from '../lib/i18n';
 
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
 const path = Astro.url.pathname;
 
 interface NavChild {
@@ -13,25 +17,49 @@ interface NavItem {
   children?: NavChild[];
 }
 
+const navItems: NavItem[] = [
+  {
+    label: t.nav.certifiedVehicle,
+    href: localizedUrl('/cars/', locale),
+    children: [
+      { label: t.nav.certifiedVehicles, href: localizedUrl('/cars/', locale) },
+      { label: t.nav.vehicleTypes, href: localizedUrl('/body-types/', locale) },
+      { label: t.nav.newArrivals, href: localizedUrl('/new-arrivals/', locale) },
+    ],
+  },
+  { label: t.nav.brands, href: localizedUrl('/brands/', locale) },
+  { label: t.nav.requestACar, href: localizedUrl('/request-a-car/', locale) },
+  { label: t.nav.howItWorks, href: localizedUrl('/how-it-works/', locale) },
+];
+
+const resources = [
+  { label: t.nav.vehicleData, note: t.nav.futureSubsite, href: SUBDOMAINS.data },
+  { label: t.nav.marketInformation, note: t.nav.futureSubsite, href: SUBDOMAINS.market },
+  { label: t.nav.tools, note: t.nav.futureSubsite, href: SUBDOMAINS.tools },
+  { label: t.nav.companies, note: t.nav.futureSubsite, href: SUBDOMAINS.companies },
+];
+
+const homeHref = localizedUrl('/', locale);
+
 function isActive(item: NavItem): boolean {
   if (item.children) return item.children.some((c) => c.href !== '/' && path.startsWith(c.href));
-  if (item.href === '/') return path === '/';
+  if (item.href === '/' || item.href === `/${locale}/`) return path === homeHref;
   return item.href !== '/' && path.startsWith(item.href);
 }
 ---
 
 <header class="sticky top-0 z-50 border-b border-surface-line bg-white/95 backdrop-blur">
   <div class="container-site flex h-16 items-center justify-between gap-4">
-    <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label={SITE.name}>
+    <a href={homeHref} class="flex items-center gap-2.5 shrink-0" aria-label={SITE.name}>
       <span class="flex h-8 w-8 items-center justify-center rounded bg-brand-800 text-white text-sm font-bold">CU</span>
       <span class="hidden sm:block leading-tight">
         <span class="block text-sm font-bold text-ink">{SITE.name}</span>
-        <span class="block text-[11px] text-ink-muted">{SITE.tagline}</span>
+        <span class="block text-[11px] text-ink-muted">{t.site.tagline}</span>
       </span>
     </a>
 
-    <nav class="hidden lg:flex items-center gap-1" aria-label="Primary">
-      {PRIMARY_NAV.map((item) =>
+    <nav class="hidden lg:flex items-center gap-1" aria-label={t.nav.primary}>
+      {navItems.map((item) =>
         item.children ? (
           <details class="relative group">
             <summary
@@ -41,11 +69,11 @@ function isActive(item: NavItem): boolean {
               ]}
             >
               {item.label}
-              <svg class="chevron ml-1" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <svg class="chevron ms-1" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                 <path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </summary>
-            <div class="absolute left-0 top-full mt-1.5 w-56 rounded-lg border border-surface-line bg-white p-1.5 shadow-md">
+            <div class="absolute start-0 top-full mt-1.5 w-56 rounded-lg border border-surface-line bg-white p-1.5 shadow-md">
               {item.children.map((child) => (
                 <a
                   href={child.href}
@@ -77,13 +105,13 @@ function isActive(item: NavItem): boolean {
 
     <details class="relative hidden xl:block group">
       <summary class="nav-dropdown-summary inline-flex items-center gap-2 rounded-md border border-dashed border-surface-line px-3 py-1.5 text-xs font-semibold text-ink-muted uppercase tracking-wide">
-        Resources
+        {t.nav.resources}
         <svg class="chevron" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
           <path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </summary>
-      <div class="absolute right-0 top-full mt-1.5 w-64 rounded-lg border border-surface-line bg-white p-1.5 shadow-md">
-        {RESOURCE_NAV.map((item) => (
+      <div class="absolute end-0 top-full mt-1.5 w-64 rounded-lg border border-surface-line bg-white p-1.5 shadow-md">
+        {resources.map((item) => (
           <a
             href={item.href}
             target="_blank"
@@ -98,11 +126,51 @@ function isActive(item: NavItem): boolean {
     </details>
 
     <div class="flex items-center gap-2">
-      <a href="/request-a-car/" class="btn-primary hidden sm:inline-flex">Request a Car</a>
+      <!-- Language switcher -->
+      <details class="relative group">
+        <summary
+          class="inline-flex h-10 items-center gap-1.5 rounded-md border border-surface-line px-2.5 text-sm text-ink-soft hover:text-ink"
+          aria-label={t.nav.language}
+        >
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.4" />
+            <ellipse cx="10" cy="10" rx="3.5" ry="7.5" stroke="currentColor" stroke-width="1.2" />
+            <path d="M2.8 10h14.4" stroke="currentColor" stroke-width="1.2" />
+          </svg>
+          <span class="hidden sm:inline font-semibold uppercase">{locale}</span>
+          <svg class="chevron" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </summary>
+        <div class="absolute end-0 top-full mt-1.5 w-44 rounded-lg border border-surface-line bg-white p-1.5 shadow-md">
+          {LOCALES.map((l) => (
+            <a
+              href={localizedPath(path, l.code)}
+              class:list={[
+                'flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium',
+                l.code === locale ? 'bg-brand-50 text-brand-800' : 'text-ink-soft hover:bg-surface-alt',
+              ]}
+              hreflang={l.code}
+              lang={l.code}
+            >
+              <span>{l.label}</span>
+              {l.code === locale && (
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="m5 10 3.5 3.5L15 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              )}
+            </a>
+          ))}
+        </div>
+      </details>
+
+      <a href={localizedUrl('/request-a-car/', locale)} class="btn-primary hidden sm:inline-flex">{t.common.requestACar}</a>
       <button
         id="nav-toggle"
         class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-surface-line text-ink"
-        aria-label="Open menu"
+        aria-label={t.nav.openMenu}
+        data-open={t.nav.openMenu}
+        data-close={t.nav.closeMenu}
         aria-expanded="false"
         aria-controls="mobile-menu"
       >
@@ -114,8 +182,8 @@ function isActive(item: NavItem): boolean {
   </div>
 
   <div id="mobile-menu" class="hidden lg:hidden border-t border-surface-line bg-white">
-    <nav class="container-site flex flex-col py-3" aria-label="Mobile">
-      {PRIMARY_NAV.map((item) =>
+    <nav class="container-site flex flex-col py-3" aria-label={t.nav.mobile}>
+      {navItems.map((item) =>
         item.children ? (
           <details class="group">
             <summary
@@ -129,7 +197,7 @@ function isActive(item: NavItem): boolean {
                 <path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </summary>
-            <div class="flex flex-col pl-3">
+            <div class="flex flex-col ps-3">
               {item.children.map((child) => (
                 <a
                   href={child.href}
@@ -160,13 +228,13 @@ function isActive(item: NavItem): boolean {
       <div class="my-2 border-t border-surface-line"></div>
       <details class="group">
         <summary class="nav-dropdown-summary flex items-center justify-between px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-ink-muted">
-          Resources
+          {t.nav.resources}
           <svg class="chevron" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
             <path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </summary>
-        <div class="flex flex-col pl-3">
-          {RESOURCE_NAV.map((item) => (
+        <div class="flex flex-col ps-3">
+          {resources.map((item) => (
             <a
               href={item.href}
               target="_blank"
@@ -179,6 +247,23 @@ function isActive(item: NavItem): boolean {
           ))}
         </div>
       </details>
+      <div class="my-2 border-t border-surface-line"></div>
+      <p class="px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-ink-muted">{t.nav.language}</p>
+      <div class="flex flex-wrap gap-1 px-2 pb-2">
+        {LOCALES.map((l) => (
+          <a
+            href={localizedPath(path, l.code)}
+            class:list={[
+              'rounded-md px-3 py-2 text-sm font-medium',
+              l.code === locale ? 'bg-brand-50 text-brand-800' : 'text-ink-soft hover:bg-surface-alt',
+            ]}
+            hreflang={l.code}
+            lang={l.code}
+          >
+            {l.label}
+          </a>
+        ))}
+      </div>
     </nav>
   </div>
 </header>
@@ -208,7 +293,7 @@ function isActive(item: NavItem): boolean {
     toggle.addEventListener('click', () => {
       const open = menu.classList.toggle('hidden') === false;
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      toggle.setAttribute('aria-label', open ? (toggle.dataset.close || 'Close menu') : (toggle.dataset.open || 'Open menu'));
     });
   }
   // Close other dropdowns when one opens.

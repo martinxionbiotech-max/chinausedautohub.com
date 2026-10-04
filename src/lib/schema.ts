@@ -1,9 +1,12 @@
 // Schema.org (JSON-LD) builders. Every block reflects ONLY visible page
 // data — no fabricated ratings, reviews, prices or availability.
 import type { Vehicle, Brand, VehicleModel, BodyType } from './types';
-import { SITE, SITE_URL, CONTACT, formatPrice } from './site';
+import { SITE, SITE_URL, CONTACT } from './site';
 import { resolveVehicle, vehicleTitle } from './data';
 import { vehicleUrl, brandUrl } from './urls';
+import { vehicleDescription } from '../i18n/vehicles';
+import { fuelTypeName, transmissionName, driveName, bodyTypeName } from '../i18n/reference';
+import { localizedPath } from './i18n';
 
 type JsonLd = Record<string, unknown>;
 
@@ -55,11 +58,13 @@ export function breadcrumbSchema(crumbs: Crumb[]): JsonLd {
 }
 
 // Vehicle detail page: Product + Vehicle + Offer, plus BreadcrumbList.
-export function vehicleSchema(v: Vehicle): JsonLd {
+// `locale` localises URLs, description and reference names; structured numeric
+// values (price, mileage, year) are never changed.
+export function vehicleSchema(v: Vehicle, locale = 'en'): JsonLd {
   const d = resolveVehicle(v);
   const brandName = d.brand?.name ?? v.brand;
   const modelName = d.model?.name ?? v.model;
-  const url = `${SITE_URL}${vehicleUrl(v)}`;
+  const url = `${SITE_URL}${localizedPath(vehicleUrl(v), locale)}`;
 
   const offer: JsonLd = {
     '@type': 'Offer',
@@ -85,11 +90,11 @@ export function vehicleSchema(v: Vehicle): JsonLd {
       value: v.mileage_km,
       unitCode: 'KMT',
     },
-    vehicleTransmission: d.transmission?.name ?? v.transmission,
-    fuelType: d.fuelType?.name ?? v.fuel,
-    driveWheelConfiguration: d.drive?.name ?? v.drive,
+    vehicleTransmission: transmissionName(v.transmission, locale, d.transmission?.name ?? v.transmission),
+    fuelType: fuelTypeName(v.fuel, locale, d.fuelType?.name ?? v.fuel),
+    driveWheelConfiguration: driveName(v.drive, locale, d.drive?.name ?? v.drive),
     color: v.color,
-    bodyType: d.bodyType?.name ?? v.body_type,
+    bodyType: bodyTypeName(v.body_type, locale, d.bodyType?.name ?? v.body_type),
     offers: offer,
   };
 
@@ -99,7 +104,7 @@ export function vehicleSchema(v: Vehicle): JsonLd {
     name: vehicleTitle({ vehicle: v, brand: d.brand, model: d.model }),
     url,
     image: v.images.map((img) => (img.startsWith('http') ? img : `${SITE_URL}${img}`)),
-    description: v.description,
+    description: vehicleDescription(v.vehicle_id, locale, v.description),
     brand: { '@type': 'Brand', name: brandName },
     offers: offer,
     vehicle,
@@ -156,4 +161,4 @@ export function crumb(name: string, path: string): Crumb {
   return { name, path };
 }
 
-export { vehicleUrl, brandUrl, formatPrice };
+export { vehicleUrl, brandUrl };

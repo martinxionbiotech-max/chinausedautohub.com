@@ -1,62 +1,70 @@
 ---
 import { getAllBrands, getAllMarkets } from '../lib/data';
+import { getTranslations } from '../i18n';
+import { marketName } from '../i18n/reference';
+import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
+
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
 
 const brands = getAllBrands();
 const markets = getAllMarkets();
 
 const priceBuckets = [
-  { value: '', label: 'Any price' },
-  { value: '15000', label: 'Under $15,000' },
-  { value: '20000', label: 'Under $20,000' },
-  { value: '25000', label: 'Under $25,000' },
-  { value: '30000', label: 'Under $30,000' },
+  { value: '', label: t.search.anyPrice },
+  { value: '15000', label: t.search.under15000 },
+  { value: '20000', label: t.search.under20000 },
+  { value: '25000', label: t.search.under25000 },
+  { value: '30000', label: t.search.under30000 },
 ];
 
 const yearBuckets = [
-  { value: '', label: 'Any year' },
-  { value: '2022', label: '2022 or newer' },
-  { value: '2023', label: '2023 or newer' },
-  { value: '2024', label: '2024 or newer' },
+  { value: '', label: t.search.anyYear },
+  { value: '2022', label: t.search.orNewer2022 },
+  { value: '2023', label: t.search.orNewer2023 },
+  { value: '2024', label: t.search.orNewer2024 },
 ];
+
+const action = localizedUrl('/cars/', locale);
 ---
 
-<form action="/cars/" method="get" class="grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
+<form action={action} method="get" class="grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
   <label class="block">
-    <span class="mb-1 block text-xs font-semibold uppercase tracking-wide text-white/70">Brand</span>
+    <span class="mb-1 block text-xs font-semibold uppercase tracking-wide text-white/70">{t.search.brand}</span>
     <select name="brand" class="w-full rounded-md border border-white/20 bg-white px-3 py-2 text-sm text-ink">
-      <option value="">Any brand</option>
+      <option value="">{t.search.anyBrand}</option>
       {brands.map((b) => <option value={b.slug}>{b.name}</option>)}
     </select>
   </label>
 
   <label class="block">
-    <span class="mb-1 block text-xs font-semibold uppercase tracking-wide text-white/70">Model</span>
-    <input name="q" type="text" placeholder="e.g. Song Plus" class="w-full rounded-md border border-white/20 bg-white px-3 py-2 text-sm text-ink placeholder:text-ink-muted" />
+    <span class="mb-1 block text-xs font-semibold uppercase tracking-wide text-white/70">{t.search.model}</span>
+    <input name="q" type="text" placeholder={t.search.modelPlaceholder} class="w-full rounded-md border border-white/20 bg-white px-3 py-2 text-sm text-ink placeholder:text-ink-muted" />
   </label>
 
   <label class="block">
-    <span class="mb-1 block text-xs font-semibold uppercase tracking-wide text-white/70">Price</span>
+    <span class="mb-1 block text-xs font-semibold uppercase tracking-wide text-white/70">{t.search.price}</span>
     <select name="maxPrice" class="w-full rounded-md border border-white/20 bg-white px-3 py-2 text-sm text-ink">
       {priceBuckets.map((p) => <option value={p.value}>{p.label}</option>)}
     </select>
   </label>
 
   <label class="block">
-    <span class="mb-1 block text-xs font-semibold uppercase tracking-wide text-white/70">Year</span>
+    <span class="mb-1 block text-xs font-semibold uppercase tracking-wide text-white/70">{t.search.year}</span>
     <select name="minYear" class="w-full rounded-md border border-white/20 bg-white px-3 py-2 text-sm text-ink">
       {yearBuckets.map((y) => <option value={y.value}>{y.label}</option>)}
     </select>
   </label>
 
   <label class="block">
-    <span class="mb-1 block text-xs font-semibold uppercase tracking-wide text-white/70">Country</span>
+    <span class="mb-1 block text-xs font-semibold uppercase tracking-wide text-white/70">{t.search.country}</span>
     <select name="country" class="w-full rounded-md border border-white/20 bg-white px-3 py-2 text-sm text-ink">
-      <option value="">Any destination</option>
-      {markets.map((m) => <option value={m.slug}>{m.name}</option>)}
+      <option value="">{t.search.anyDestination}</option>
+      {markets.map((m) => <option value={m.slug}>{marketName(m.slug, locale, m.name)}</option>)}
     </select>
   </label>
 
   <div class="flex items-end">
-    <button type="submit" class="w-full rounded-md bg-white px-4 py-2 text-sm font-semibold text-brand-800 hover:bg-brand-50">Search Cars</button>
+    <button type="submit" class="w-full rounded-md bg-white px-4 py-2 text-sm font-semibold text-brand-800 hover:bg-brand-50">{t.search.searchCars}</button>
   </div>
 </form>
