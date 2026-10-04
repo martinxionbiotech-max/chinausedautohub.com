@@ -11,9 +11,11 @@ import {
   getPowertrain,
 } from '../lib/data';
 import { SITE } from '../lib/site';
-import { dataBrandUrl, dataModelUrl, brandUrl, powertrainUrl, toolUrl, type ToolSlug } from '../lib/urls';
+import { dataBrandUrl, dataModelUrl, brandUrl, powertrainUrl, toolUrl, guideUrl, type ToolSlug } from '../lib/urls';
 import { itemListSchema } from '../lib/schema';
 import { getTranslations } from '../i18n';
+import { GUIDES } from '../i18n/guides';
+import { pick } from '../i18n/l10n';
 import { getBrandKnowledge } from '../i18n/brands';
 import { bodyTypeName, brandOverview, modelDescription, powertrainName } from '../i18n/reference';
 import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
@@ -43,6 +45,14 @@ const relatedTools: { slug: ToolSlug; label: string }[] = [
   { slug: 'shipping-cost-estimator', label: t.tools.shippingCost },
   { slug: 'profit-calculator', label: t.tools.profit },
 ];
+
+const relatedGuideSlugs = [
+  'how-to-buy-used-car-from-china',
+  'china-used-car-export-process',
+  'vehicle-inspection',
+  'landed-cost',
+];
+const relatedGuides = GUIDES.filter((g) => relatedGuideSlugs.includes(g.slug));
 
 const typeSlugs = Array.from(new Set(vehicles.map((v) => v.body_type)));
 const vehicleTypes = typeSlugs.map((s) => getBodyType(s)).filter(Boolean);
@@ -189,6 +199,19 @@ const requestBrandHref = localizedUrl('/contact/', locale);
           </div>
         </div>
       )}
+    </div>
+  </section>
+
+  <!-- RELATED GUIDES -->
+  <section class="container-site mt-12">
+    <h2 class="text-xl font-bold text-ink">{t.brands.relatedGuides}</h2>
+    <div class="mt-4 grid gap-3 sm:grid-cols-2">
+      {relatedGuides.map((g) => (
+        <a href={localizedUrl(guideUrl(g.slug), locale)} class="card p-4 hover:border-brand-300">
+          <span class="block text-sm font-semibold text-ink">{pick(g.title, locale)}</span>
+          <span class="mt-1 block text-xs text-ink-muted">{t.nav.guides}</span>
+        </a>
+      ))}
     </div>
   </section>
 

@@ -249,6 +249,7 @@
     "destinationHeading": "Consideraciones del destino",
     "destinationNote": "Los requisitos de importación — aranceles, impuestos, antigüedad del vehículo, lado de conducción y documentos — varían según el país. Los confirmamos contigo durante la cotización.",
     "relatedData": "Datos relacionados del vehículo",
+    "relatedGuides": "Guías relacionadas",
     "requestVehicle": "Pedir un vehículo",
     "bodyType": "Tipo de carrocería",
     "description": "Descripción",
@@ -297,6 +298,7 @@
     "exportConsideration": "Consideraciones entre la versión china y la de exportación",
     "destinationMarkets": "Mercados de destino populares",
     "relatedData": "Datos de vehículos relacionados",
+    "relatedGuides": "Guías relacionadas",
     "requestBrand": "Pedir esta marca",
     "modelDirectory": "Directorio de modelos",
     "dataSubsite": "data.chinausedautohub.com"
@@ -349,23 +351,67 @@
     "buyerGuideNote": "Elegir un vehículo, presupuestar y evaluar el riesgo son decisiones del comprador. Para una guía paso a paso, consulta la guía «Cómo comprar».",
     "buyerGuideLink": "Proceso de decisión del comprador",
     "steps": [
-      { "n": "1", "title": "Buscar", "text": "Consulta nuestro inventario disponible y filtra por marca, modelo, año, precio, kilometraje y tipo de carrocería." },
-      { "n": "2", "title": "Seleccionar", "text": "Elige un vehículo o cuéntanos tus requisitos y buscaremos opciones en el mercado de China." },
-      { "n": "3", "title": "Solicitar cotización", "text": "Envíanos los datos del vehículo o tus requisitos y recibe una cotización." },
-      { "n": "4", "title": "Confirmar", "text": "Confirma el vehículo, la configuración y el acuerdo de envío a tu destino." },
-      { "n": "5", "title": "Exportar", "text": "Coordinamos la preparación de la exportación y la documentación para el envío desde China." }
+      {
+        "n": "1",
+        "title": "Buscar",
+        "text": "Consulta nuestro inventario disponible y filtra por marca, modelo, año, precio, kilometraje y tipo de carrocería."
+      },
+      {
+        "n": "2",
+        "title": "Seleccionar",
+        "text": "Elige un vehículo o cuéntanos tus requisitos y buscaremos opciones en el mercado de China."
+      },
+      {
+        "n": "3",
+        "title": "Solicitar cotización",
+        "text": "Envíanos los datos del vehículo o tus requisitos y recibe una cotización."
+      },
+      {
+        "n": "4",
+        "title": "Confirmar",
+        "text": "Confirma el vehículo, la configuración y el acuerdo de envío a tu destino."
+      },
+      {
+        "n": "5",
+        "title": "Exportar",
+        "text": "Coordinamos la preparación de la exportación y la documentación para el envío desde China."
+      }
     ],
     "areas": [
-      { "title": "Abastecimiento de vehículos", "text": "Conseguimos vehículos del mercado interno de China, incluidos modelos de gasolina, híbridos y eléctricos. Si un vehículo concreto no está en nuestro inventario, podemos buscarlo bajo pedido." },
-      { "title": "Inspección", "text": "Proporcionamos la información del vehículo que tenemos — especificaciones, kilometraje y detalles de estado según la fuente. Cuando los datos no están disponibles, lo decimos en lugar de adivinar." },
-      { "title": "Documentación", "text": "Ayudamos a preparar la documentación de exportación que requiere tu mercado. Los requisitos varían según el país de destino, por lo que los confirmamos contigo durante la cotización." },
-      { "title": "Envío", "text": "Podemos ayudar a coordinar el envío a tu puerto de destino. El flete, el seguro, los impuestos y los aranceles dependen del destino y se cotizan por separado." }
+      {
+        "title": "Abastecimiento de vehículos",
+        "text": "Conseguimos vehículos del mercado interno de China, incluidos modelos de gasolina, híbridos y eléctricos. Si un vehículo concreto no está en nuestro inventario, podemos buscarlo bajo pedido."
+      },
+      {
+        "title": "Inspección",
+        "text": "Proporcionamos la información del vehículo que tenemos — especificaciones, kilometraje y detalles de estado según la fuente. Cuando los datos no están disponibles, lo decimos en lugar de adivinar."
+      },
+      {
+        "title": "Documentación",
+        "text": "Ayudamos a preparar la documentación de exportación que requiere tu mercado. Los requisitos varían según el país de destino, por lo que los confirmamos contigo durante la cotización."
+      },
+      {
+        "title": "Envío",
+        "text": "Podemos ayudar a coordinar el envío a tu puerto de destino. El flete, el seguro, los impuestos y los aranceles dependen del destino y se cotizan por separado."
+      }
     ],
     "faqs": [
-      { "question": "¿Envían vehículos a mi país?", "answer": "Podemos ayudar a coordinar la exportación y el envío a muchos destinos. La disponibilidad y el coste final del envío dependen de tu puerto de destino, así que contáctanos indicando tu ubicación." },
-      { "question": "¿Pueden conseguir un vehículo que no está en su inventario?", "answer": "Sí. Indícanos la marca, el modelo, el año, el presupuesto y el destino mediante el formulario «Pedir un coche», y buscaremos opciones en el mercado de China." },
-      { "question": "¿Qué incluye el precio indicado?", "answer": "El precio indicado es el precio solicitado solo por el vehículo. El envío, los impuestos, los aranceles de importación y otros costes de llegada se cotizan por separado y dependen del destino." },
-      { "question": "¿Cuánto tarda la exportación?", "answer": "El tiempo de exportación depende del vehículo, los requisitos de documentación y el destino. Confirmamos un plazo estimado cuando solicitas una cotización." }
+      {
+        "question": "¿Envían vehículos a mi país?",
+        "answer": "Podemos ayudar a coordinar la exportación y el envío a muchos destinos. La disponibilidad y el coste final del envío dependen de tu puerto de destino, así que contáctanos indicando tu ubicación."
+      },
+      {
+        "question": "¿Pueden conseguir un vehículo que no está en su inventario?",
+        "answer": "Sí. Indícanos la marca, el modelo, el año, el presupuesto y el destino mediante el formulario «Pedir un coche», y buscaremos opciones en el mercado de China."
+      },
+      {
+        "question": "¿Qué incluye el precio indicado?",
+        "answer": "El precio indicado es el precio solicitado solo por el vehículo. El envío, los impuestos, los aranceles de importación y otros costes de llegada se cotizan por separado y dependen del destino."
+      },
+      {
+        "question": "¿Cuánto tarda la exportación?",
+        "answer": "El tiempo de exportación depende del vehículo, los requisitos de documentación y el destino. Confirmamos un plazo estimado cuando solicitas una cotización."
+      }
     ]
   },
   "home": {
@@ -373,31 +419,92 @@
     "heroH1": "Coches usados de China para compradores globales",
     "heroSub": "Una plataforma comercial para el abastecimiento de vehículos usados de China para compradores internacionales — con soporte de exportación de la consulta al envío.",
     "trustItems": [
-      { "title": "Abastecimiento en el mercado interno de China", "text": "Vehículos conseguidos directamente del mercado interno de China para compradores de exportación." },
-      { "title": "Selección multimarca", "text": "Modelos de gasolina, híbridos y eléctricos de marcas chinas e internacionales." },
-      { "title": "Información por vehículo", "text": "Especificaciones, kilometraje y precios en cada anuncio — sin datos inventados." },
-      { "title": "Soporte de exportación", "text": "Ayuda para coordinar la preparación de la exportación, la documentación y el envío a tu destino." }
+      {
+        "title": "Abastecimiento en el mercado interno de China",
+        "text": "Vehículos conseguidos directamente del mercado interno de China para compradores de exportación."
+      },
+      {
+        "title": "Selección multimarca",
+        "text": "Modelos de gasolina, híbridos y eléctricos de marcas chinas e internacionales."
+      },
+      {
+        "title": "Información por vehículo",
+        "text": "Especificaciones, kilometraje y precios en cada anuncio — sin datos inventados."
+      },
+      {
+        "title": "Soporte de exportación",
+        "text": "Ayuda para coordinar la preparación de la exportación, la documentación y el envío a tu destino."
+      }
     ],
     "whyItems": [
-      { "title": "Selección de vehículos", "text": "El mercado interno de China ofrece una amplia gama de modelos de gasolina, híbridos y eléctricos." },
-      { "title": "Abastecimiento competitivo", "text": "El abastecimiento directo del mercado interno puede ofrecer ventajas de coste en ciertos modelos y volúmenes." },
-      { "title": "Disponibilidad de EV e híbridos", "text": "Las marcas chinas producen una amplia gama de EV y PHEV que se exportan cada vez más a todo el mundo." },
-      { "title": "Abastecimiento orientado a exportación", "text": "Los vehículos pueden conseguirse y prepararse con la documentación de exportación que requiere tu mercado." }
+      {
+        "title": "Selección de vehículos",
+        "text": "El mercado interno de China ofrece una amplia gama de modelos de gasolina, híbridos y eléctricos."
+      },
+      {
+        "title": "Abastecimiento competitivo",
+        "text": "El abastecimiento directo del mercado interno puede ofrecer ventajas de coste en ciertos modelos y volúmenes."
+      },
+      {
+        "title": "Disponibilidad de EV e híbridos",
+        "text": "Las marcas chinas producen una amplia gama de EV y PHEV que se exportan cada vez más a todo el mundo."
+      },
+      {
+        "title": "Abastecimiento orientado a exportación",
+        "text": "Los vehículos pueden conseguirse y prepararse con la documentación de exportación que requiere tu mercado."
+      }
     ],
     "steps": [
-      { "n": "1", "title": "Encuentra un vehículo", "text": "Consulta nuestro inventario disponible o busca por marca, modelo, año y precio." },
-      { "n": "2", "title": "Solicita una cotización", "text": "Envíanos el vehículo o tus requisitos y recibe una cotización." },
-      { "n": "3", "title": "Confirma vehículo y envío", "text": "Confirma el vehículo, la configuración y el acuerdo de envío a tu destino." },
-      { "n": "4", "title": "Exporta desde China", "text": "Coordinamos la preparación de la exportación y la documentación para el envío." }
+      {
+        "n": "1",
+        "title": "Encuentra un vehículo",
+        "text": "Consulta nuestro inventario disponible o busca por marca, modelo, año y precio."
+      },
+      {
+        "n": "2",
+        "title": "Solicita una cotización",
+        "text": "Envíanos el vehículo o tus requisitos y recibe una cotización."
+      },
+      {
+        "n": "3",
+        "title": "Confirma vehículo y envío",
+        "text": "Confirma el vehículo, la configuración y el acuerdo de envío a tu destino."
+      },
+      {
+        "n": "4",
+        "title": "Exporta desde China",
+        "text": "Coordinamos la preparación de la exportación y la documentación para el envío."
+      }
     ],
     "markets": [
-      { "slug": "uae", "name": "EAU" },
-      { "slug": "saudi-arabia", "name": "Arabia Saudí" },
-      { "slug": "kenya", "name": "Kenia" },
-      { "slug": "tanzania", "name": "Tanzania" },
-      { "slug": "nigeria", "name": "Nigeria" },
-      { "slug": "kazakhstan", "name": "Kazajistán" },
-      { "slug": "uzbekistan", "name": "Uzbekistán" }
+      {
+        "slug": "uae",
+        "name": "EAU"
+      },
+      {
+        "slug": "saudi-arabia",
+        "name": "Arabia Saudí"
+      },
+      {
+        "slug": "kenya",
+        "name": "Kenia"
+      },
+      {
+        "slug": "tanzania",
+        "name": "Tanzania"
+      },
+      {
+        "slug": "nigeria",
+        "name": "Nigeria"
+      },
+      {
+        "slug": "kazakhstan",
+        "name": "Kazajistán"
+      },
+      {
+        "slug": "uzbekistan",
+        "name": "Uzbekistán"
+      }
     ],
     "featuredHeading": "Vehículos destacados",
     "featuredSub": "Una selección de vehículos disponibles actualmente desde China.",
@@ -437,10 +544,22 @@
     "howItWorksHeading": "Cómo funciona",
     "faqHeading": "Preguntas frecuentes",
     "faqs": [
-      { "question": "¿Puedo comprar un coche usado de China para exportarlo a mi país?", "answer": "Sí. Consulta nuestro inventario disponible o usa el formulario «Pedir un coche» para describir lo que necesitas, y podemos ayudarte a conseguirlo en el mercado interno de China. La disponibilidad final depende de tu destino." },
-      { "question": "¿Solo venden vehículos de su inventario?", "answer": "No. También conseguimos vehículos bajo pedido. Indícanos la marca, el modelo, el año, el presupuesto y el destino, y buscaremos opciones en el mercado de China." },
-      { "question": "¿Qué incluye el precio indicado?", "answer": "El precio indicado es el precio solicitado del vehículo. El envío, los impuestos, los aranceles de importación y otros costes de llegada se cotizan por separado y dependen de tu destino." },
-      { "question": "¿Cómo obtengo una cotización de exportación?", "answer": "Solicita una cotización desde cualquier página de vehículo o usa el formulario «Pedir un coche». Respondemos por correo electrónico o WhatsApp con disponibilidad, precio e información de exportación." }
+      {
+        "question": "¿Puedo comprar un coche usado de China para exportarlo a mi país?",
+        "answer": "Sí. Consulta nuestro inventario disponible o usa el formulario «Pedir un coche» para describir lo que necesitas, y podemos ayudarte a conseguirlo en el mercado interno de China. La disponibilidad final depende de tu destino."
+      },
+      {
+        "question": "¿Solo venden vehículos de su inventario?",
+        "answer": "No. También conseguimos vehículos bajo pedido. Indícanos la marca, el modelo, el año, el presupuesto y el destino, y buscaremos opciones en el mercado de China."
+      },
+      {
+        "question": "¿Qué incluye el precio indicado?",
+        "answer": "El precio indicado es el precio solicitado del vehículo. El envío, los impuestos, los aranceles de importación y otros costes de llegada se cotizan por separado y dependen de tu destino."
+      },
+      {
+        "question": "¿Cómo obtengo una cotización de exportación?",
+        "answer": "Solicita una cotización desde cualquier página de vehículo o usa el formulario «Pedir un coche». Respondemos por correo electrónico o WhatsApp con disponibilidad, precio e información de exportación."
+      }
     ],
     "finalCtaHeading": "Encuentra tu próximo vehículo desde China"
   },
@@ -477,9 +596,24 @@
       "h1": "Política de privacidad",
       "intro": "Esta política explica cómo {siteName} trata la información que proporcionas al usar este sitio web, incluidos los formularios de consulta y solicitud.",
       "sections": [
-        { "h": "Información que recopilamos", "p": ["Cuando envías una cotización o una solicitud de abastecimiento, recopilamos los datos que proporcionas — como tu nombre, correo electrónico, número de WhatsApp, empresa y los requisitos del vehículo que describes. Solo los usamos para responder a tu consulta."] },
-        { "h": "Cómo usamos tu información", "p": ["Usamos tu información únicamente para responder a tu consulta y prestar los servicios de abastecimiento y exportación que solicitas. No vendemos tu información ni la compartimos con terceros con fines de marketing."] },
-        { "h": "Contacto", "p": ["Para cuestiones de privacidad, escribe a {email}."] }
+        {
+          "h": "Información que recopilamos",
+          "p": [
+            "Cuando envías una cotización o una solicitud de abastecimiento, recopilamos los datos que proporcionas — como tu nombre, correo electrónico, número de WhatsApp, empresa y los requisitos del vehículo que describes. Solo los usamos para responder a tu consulta."
+          ]
+        },
+        {
+          "h": "Cómo usamos tu información",
+          "p": [
+            "Usamos tu información únicamente para responder a tu consulta y prestar los servicios de abastecimiento y exportación que solicitas. No vendemos tu información ni la compartimos con terceros con fines de marketing."
+          ]
+        },
+        {
+          "h": "Contacto",
+          "p": [
+            "Para cuestiones de privacidad, escribe a {email}."
+          ]
+        }
       ]
     },
     "terms": {
@@ -488,9 +622,24 @@
       "h1": "Términos de uso",
       "intro": "Al usar este sitio web aceptas estos términos. {siteName} proporciona una plataforma para el abastecimiento y la exportación de vehículos usados de China.",
       "sections": [
-        { "h": "Anuncios y precios", "p": ["Los anuncios, las especificaciones y los precios de los vehículos se proporcionan a título informativo. Los precios pueden variar según la configuración, el envío, los impuestos y el destino. La disponibilidad puede cambiar y se confirma al solicitar una cotización."] },
-        { "h": "Sin garantía de disponibilidad", "p": ["Un anuncio no garantiza la disponibilidad. Confirmamos la disponibilidad, el precio y los detalles de exportación contigo antes de realizar cualquier pedido."] },
-        { "h": "Contacto", "p": ["Para preguntas sobre estos términos, escribe a {email}."] }
+        {
+          "h": "Anuncios y precios",
+          "p": [
+            "Los anuncios, las especificaciones y los precios de los vehículos se proporcionan a título informativo. Los precios pueden variar según la configuración, el envío, los impuestos y el destino. La disponibilidad puede cambiar y se confirma al solicitar una cotización."
+          ]
+        },
+        {
+          "h": "Sin garantía de disponibilidad",
+          "p": [
+            "Un anuncio no garantiza la disponibilidad. Confirmamos la disponibilidad, el precio y los detalles de exportación contigo antes de realizar cualquier pedido."
+          ]
+        },
+        {
+          "h": "Contacto",
+          "p": [
+            "Para preguntas sobre estos términos, escribe a {email}."
+          ]
+        }
       ]
     },
     "cookies": {
@@ -588,10 +737,30 @@
     "km": "km"
   },
   "plurals": {
-    "vehiclesAvailable": { "one": "{count} vehículo disponible", "many": "{count} vehículos disponibles", "other": "{count} vehículos disponibles" },
-    "vehiclesInInventory": { "one": "{count} vehículo en inventario", "many": "{count} vehículos en inventario", "other": "{count} vehículos en inventario" },
-    "vehiclesInInventoryJs": { "one": "vehículo en inventario", "many": "vehículos en inventario", "other": "vehículos en inventario" },
-    "vehiclesAvailableJs": { "one": "vehículo disponible", "many": "vehículos disponibles", "other": "vehículos disponibles" },
-    "loadMore": { "one": "Cargar {count} vehículo más", "many": "Cargar {count} vehículos más", "other": "Cargar {count} vehículos más" }
+    "vehiclesAvailable": {
+      "one": "{count} vehículo disponible",
+      "many": "{count} vehículos disponibles",
+      "other": "{count} vehículos disponibles"
+    },
+    "vehiclesInInventory": {
+      "one": "{count} vehículo en inventario",
+      "many": "{count} vehículos en inventario",
+      "other": "{count} vehículos en inventario"
+    },
+    "vehiclesInInventoryJs": {
+      "one": "vehículo en inventario",
+      "many": "vehículos en inventario",
+      "other": "vehículos en inventario"
+    },
+    "vehiclesAvailableJs": {
+      "one": "vehículo disponible",
+      "many": "vehículos disponibles",
+      "other": "vehículos disponibles"
+    },
+    "loadMore": {
+      "one": "Cargar {count} vehículo más",
+      "many": "Cargar {count} vehículos más",
+      "other": "Cargar {count} vehículos más"
+    }
   }
 }

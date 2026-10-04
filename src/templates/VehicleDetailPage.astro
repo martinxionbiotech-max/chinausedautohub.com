@@ -5,9 +5,11 @@ import VehicleCard from '../components/VehicleCard.astro';
 import LeadForm from '../components/LeadForm.astro';
 import { getSimilarVehicles, resolveVehicle, vehicleTitle } from '../lib/data';
 import { SITE, formatPrice, formatMileage, formatDate, CONTACT } from '../lib/site';
-import { dataModelUrl, dataBrandUrl, vehicleUrl, toolUrl } from '../lib/urls';
+import { dataModelUrl, dataBrandUrl, vehicleUrl, toolUrl, guideUrl } from '../lib/urls';
 import { vehicleSchema, breadcrumbSchema, type FaqItem } from '../lib/schema';
 import { getTranslations } from '../i18n';
+import { GUIDES } from '../i18n/guides';
+import { pick } from '../i18n/l10n';
 import {
   vehicleDescription,
 } from '../i18n/vehicles';
@@ -50,6 +52,16 @@ const color = colorName(vehicle.color, locale);
 const location = locationName(vehicle.location, locale);
 const desc = vehicleDescription(vehicle.vehicle_id, locale, vehicle.description);
 const modelDataUrl = d.model ? dataModelUrl(d.model) : null;
+
+const relatedGuideSlugs = [
+  'how-to-buy-used-car-from-china',
+  'china-used-car-export-process',
+  'vehicle-inspection',
+  'landed-cost',
+  'shipping',
+  ...(vehicle.fuel === 'ev' || vehicle.fuel === 'phev' ? ['buying-chinese-evs-for-export'] : []),
+];
+const relatedGuides = GUIDES.filter((g) => relatedGuideSlugs.includes(g.slug));
 
 const pageTitle = `${vehicle.is_demo ? `${t.detail.demoTitlePrefix} ` : ''}${title} — ${formatPrice(vehicle.price, locale)} | ${t.detail.titleSuffix}`;
 const statusText = vehicle.status === 'available' ? t.detail.statusAvailable : `${t.detail.statusPrefix}: ${statusLabel}`;
@@ -489,6 +501,19 @@ const documentsValue = vehicle.documents ?? null;
         <span class="block text-sm font-semibold text-ink">{brandName}</span>
         <span class="mt-1 block text-xs text-ink-muted">{t.common.brandData}</span>
       </a>
+    </div>
+  </section>
+
+  <!-- RELATED GUIDES -->
+  <section class="container-site mt-10">
+    <h2 class="text-xl font-bold text-ink">{t.detail.relatedGuides}</h2>
+    <div class="mt-4 grid gap-3 sm:grid-cols-2">
+      {relatedGuides.map((g) => (
+        <a href={localizedUrl(guideUrl(g.slug), locale)} class="card p-4 hover:border-brand-300">
+          <span class="block text-sm font-semibold text-ink">{pick(g.title, locale)}</span>
+          <span class="mt-1 block text-xs text-ink-muted">{t.nav.guides}</span>
+        </a>
+      ))}
     </div>
   </section>
 

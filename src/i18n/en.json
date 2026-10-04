@@ -249,6 +249,7 @@
     "destinationHeading": "Destination Considerations",
     "destinationNote": "Import requirements — duty, taxes, vehicle age, drive side and documents — vary by destination country. We confirm these with you during the quote.",
     "relatedData": "Related Vehicle Data",
+    "relatedGuides": "Related Guides",
     "requestVehicle": "Request a Vehicle",
     "bodyType": "Body type",
     "description": "Description",
@@ -297,6 +298,7 @@
     "exportConsideration": "China-Market vs Export-Version Considerations",
     "destinationMarkets": "Popular Destination Markets",
     "relatedData": "Related Vehicle Data",
+    "relatedGuides": "Related Guides",
     "requestBrand": "Request This Brand",
     "modelDirectory": "Model Directory",
     "dataSubsite": "data.chinausedautohub.com"
@@ -349,23 +351,67 @@
     "buyerGuideNote": "Choosing a vehicle, budgeting and assessing risk are buyer-side decisions. For a step-by-step walkthrough, see the How to Buy guide.",
     "buyerGuideLink": "Buyer-side decision process",
     "steps": [
-      { "n": "1", "title": "Search", "text": "Browse our available inventory and filter by brand, model, year, price, mileage and body type." },
-      { "n": "2", "title": "Select", "text": "Choose a vehicle, or tell us your requirements and we will source options from China's market." },
-      { "n": "3", "title": "Request a Quote", "text": "Send us the vehicle details or your requirements and receive a quote for the vehicle." },
-      { "n": "4", "title": "Confirm", "text": "Confirm the vehicle, configuration and shipping arrangement for your destination." },
-      { "n": "5", "title": "Export", "text": "We coordinate export preparation and documentation for shipment from China." }
+      {
+        "n": "1",
+        "title": "Search",
+        "text": "Browse our available inventory and filter by brand, model, year, price, mileage and body type."
+      },
+      {
+        "n": "2",
+        "title": "Select",
+        "text": "Choose a vehicle, or tell us your requirements and we will source options from China's market."
+      },
+      {
+        "n": "3",
+        "title": "Request a Quote",
+        "text": "Send us the vehicle details or your requirements and receive a quote for the vehicle."
+      },
+      {
+        "n": "4",
+        "title": "Confirm",
+        "text": "Confirm the vehicle, configuration and shipping arrangement for your destination."
+      },
+      {
+        "n": "5",
+        "title": "Export",
+        "text": "We coordinate export preparation and documentation for shipment from China."
+      }
     ],
     "areas": [
-      { "title": "Vehicle Sourcing", "text": "We source vehicles from China's domestic market, including petrol, hybrid and electric models. If a specific vehicle is not in our current inventory, we can look for it on request." },
-      { "title": "Inspection", "text": "We provide the vehicle information we hold — specifications, mileage and condition details as supplied by the source. Where data is not available, we say so rather than guessing." },
-      { "title": "Documentation", "text": "We help prepare the export documentation your market requires. Requirements vary by destination country, so we confirm these with you during the quote." },
-      { "title": "Shipping", "text": "We can help coordinate shipping to your destination port. Freight, insurance, taxes and duties depend on the destination and are quoted separately." }
+      {
+        "title": "Vehicle Sourcing",
+        "text": "We source vehicles from China's domestic market, including petrol, hybrid and electric models. If a specific vehicle is not in our current inventory, we can look for it on request."
+      },
+      {
+        "title": "Inspection",
+        "text": "We provide the vehicle information we hold — specifications, mileage and condition details as supplied by the source. Where data is not available, we say so rather than guessing."
+      },
+      {
+        "title": "Documentation",
+        "text": "We help prepare the export documentation your market requires. Requirements vary by destination country, so we confirm these with you during the quote."
+      },
+      {
+        "title": "Shipping",
+        "text": "We can help coordinate shipping to your destination port. Freight, insurance, taxes and duties depend on the destination and are quoted separately."
+      }
     ],
     "faqs": [
-      { "question": "Do you ship vehicles to my country?", "answer": "We can help coordinate export and shipping to many destinations. Final shipping availability and cost depend on your destination port, so please contact us with your location." },
-      { "question": "Can you source a vehicle that is not in your inventory?", "answer": "Yes. Tell us the brand, model, year, budget and destination using the Request a Car form, and we will look for options in China's market." },
-      { "question": "What does the listed price include?", "answer": "The listed price is the asking price for the vehicle only. Shipping, taxes, import duties and other landed costs are quoted separately and depend on the destination." },
-      { "question": "How long does export take?", "answer": "Export time depends on the vehicle, documentation requirements and destination. We confirm an estimated timeline when you request a quote." }
+      {
+        "question": "Do you ship vehicles to my country?",
+        "answer": "We can help coordinate export and shipping to many destinations. Final shipping availability and cost depend on your destination port, so please contact us with your location."
+      },
+      {
+        "question": "Can you source a vehicle that is not in your inventory?",
+        "answer": "Yes. Tell us the brand, model, year, budget and destination using the Request a Car form, and we will look for options in China's market."
+      },
+      {
+        "question": "What does the listed price include?",
+        "answer": "The listed price is the asking price for the vehicle only. Shipping, taxes, import duties and other landed costs are quoted separately and depend on the destination."
+      },
+      {
+        "question": "How long does export take?",
+        "answer": "Export time depends on the vehicle, documentation requirements and destination. We confirm an estimated timeline when you request a quote."
+      }
     ]
   },
   "home": {
@@ -373,31 +419,92 @@
     "heroH1": "Used Cars from China for Global Buyers",
     "heroSub": "A commercial platform for sourcing used vehicles from China for international buyers — with export support from inquiry to shipment.",
     "trustItems": [
-      { "title": "China Domestic Market Sourcing", "text": "Vehicles sourced directly from China's domestic market for export buyers." },
-      { "title": "Multi-Brand Selection", "text": "Petrol, hybrid and electric models across Chinese and international brands." },
-      { "title": "Vehicle-Level Information", "text": "Specifications, mileage and pricing on every listing — no invented data." },
-      { "title": "Export Support", "text": "Help coordinating export preparation, documentation and shipping to your destination." }
+      {
+        "title": "China Domestic Market Sourcing",
+        "text": "Vehicles sourced directly from China's domestic market for export buyers."
+      },
+      {
+        "title": "Multi-Brand Selection",
+        "text": "Petrol, hybrid and electric models across Chinese and international brands."
+      },
+      {
+        "title": "Vehicle-Level Information",
+        "text": "Specifications, mileage and pricing on every listing — no invented data."
+      },
+      {
+        "title": "Export Support",
+        "text": "Help coordinating export preparation, documentation and shipping to your destination."
+      }
     ],
     "whyItems": [
-      { "title": "Vehicle Selection", "text": "China's domestic market offers a broad range of petrol, hybrid and electric models to source from." },
-      { "title": "Competitive Sourcing", "text": "Direct sourcing from the domestic market can offer cost advantages on certain models and volumes." },
-      { "title": "EV & Hybrid Availability", "text": "Chinese brands produce a wide range of EVs and PHEVs that are increasingly exported worldwide." },
-      { "title": "Export-oriented Sourcing", "text": "Vehicles can be sourced and prepared with the export documentation your market requires." }
+      {
+        "title": "Vehicle Selection",
+        "text": "China's domestic market offers a broad range of petrol, hybrid and electric models to source from."
+      },
+      {
+        "title": "Competitive Sourcing",
+        "text": "Direct sourcing from the domestic market can offer cost advantages on certain models and volumes."
+      },
+      {
+        "title": "EV & Hybrid Availability",
+        "text": "Chinese brands produce a wide range of EVs and PHEVs that are increasingly exported worldwide."
+      },
+      {
+        "title": "Export-oriented Sourcing",
+        "text": "Vehicles can be sourced and prepared with the export documentation your market requires."
+      }
     ],
     "steps": [
-      { "n": "1", "title": "Find a Vehicle", "text": "Browse our available inventory or search by brand, model, year and price." },
-      { "n": "2", "title": "Request a Quote", "text": "Send us the vehicle or your requirements and receive a quote." },
-      { "n": "3", "title": "Confirm Vehicle & Shipping", "text": "Confirm the vehicle, configuration and shipping arrangement for your destination." },
-      { "n": "4", "title": "Export from China", "text": "We coordinate export preparation and documentation for shipment." }
+      {
+        "n": "1",
+        "title": "Find a Vehicle",
+        "text": "Browse our available inventory or search by brand, model, year and price."
+      },
+      {
+        "n": "2",
+        "title": "Request a Quote",
+        "text": "Send us the vehicle or your requirements and receive a quote."
+      },
+      {
+        "n": "3",
+        "title": "Confirm Vehicle & Shipping",
+        "text": "Confirm the vehicle, configuration and shipping arrangement for your destination."
+      },
+      {
+        "n": "4",
+        "title": "Export from China",
+        "text": "We coordinate export preparation and documentation for shipment."
+      }
     ],
     "markets": [
-      { "slug": "uae", "name": "UAE" },
-      { "slug": "saudi-arabia", "name": "Saudi Arabia" },
-      { "slug": "kenya", "name": "Kenya" },
-      { "slug": "tanzania", "name": "Tanzania" },
-      { "slug": "nigeria", "name": "Nigeria" },
-      { "slug": "kazakhstan", "name": "Kazakhstan" },
-      { "slug": "uzbekistan", "name": "Uzbekistan" }
+      {
+        "slug": "uae",
+        "name": "UAE"
+      },
+      {
+        "slug": "saudi-arabia",
+        "name": "Saudi Arabia"
+      },
+      {
+        "slug": "kenya",
+        "name": "Kenya"
+      },
+      {
+        "slug": "tanzania",
+        "name": "Tanzania"
+      },
+      {
+        "slug": "nigeria",
+        "name": "Nigeria"
+      },
+      {
+        "slug": "kazakhstan",
+        "name": "Kazakhstan"
+      },
+      {
+        "slug": "uzbekistan",
+        "name": "Uzbekistan"
+      }
     ],
     "featuredHeading": "Featured Vehicles",
     "featuredSub": "A selection of currently available vehicles sourced from China.",
@@ -437,10 +544,22 @@
     "howItWorksHeading": "How It Works",
     "faqHeading": "Frequently Asked Questions",
     "faqs": [
-      { "question": "Can I buy a used car from China for export to my country?", "answer": "Yes. Browse our available inventory or use the Request a Car form to describe what you need, and we can help source it from China's domestic market. Final availability depends on your destination." },
-      { "question": "Do you only sell vehicles already in your inventory?", "answer": "No. We also source vehicles on request. Tell us the brand, model, year, budget and destination, and we will look for options in China's market." },
-      { "question": "What does the listed price include?", "answer": "The listed price is the asking price for the vehicle. Shipping, taxes, import duties and other landed costs are quoted separately and depend on your destination." },
-      { "question": "How do I get an export quote?", "answer": "Request a quote from any vehicle page, or use the Request a Car form. We respond by email or WhatsApp with availability, price and export information." }
+      {
+        "question": "Can I buy a used car from China for export to my country?",
+        "answer": "Yes. Browse our available inventory or use the Request a Car form to describe what you need, and we can help source it from China's domestic market. Final availability depends on your destination."
+      },
+      {
+        "question": "Do you only sell vehicles already in your inventory?",
+        "answer": "No. We also source vehicles on request. Tell us the brand, model, year, budget and destination, and we will look for options in China's market."
+      },
+      {
+        "question": "What does the listed price include?",
+        "answer": "The listed price is the asking price for the vehicle. Shipping, taxes, import duties and other landed costs are quoted separately and depend on your destination."
+      },
+      {
+        "question": "How do I get an export quote?",
+        "answer": "Request a quote from any vehicle page, or use the Request a Car form. We respond by email or WhatsApp with availability, price and export information."
+      }
     ],
     "finalCtaHeading": "Find Your Next Vehicle from China"
   },
@@ -477,9 +596,24 @@
       "h1": "Privacy Policy",
       "intro": "This policy explains how {siteName} handles information you provide when you use this website, including enquiry and request forms.",
       "sections": [
-        { "h": "Information we collect", "p": ["When you submit a quote or sourcing request, we collect the details you provide — such as your name, email, WhatsApp number, company, and the vehicle requirements you describe. We only use this to respond to your enquiry."] },
-        { "h": "How we use your information", "p": ["We use your information solely to respond to your enquiry and to provide the sourcing and export services you request. We do not sell your information or share it with third parties for marketing."] },
-        { "h": "Contact", "p": ["For privacy questions, email {email}."] }
+        {
+          "h": "Information we collect",
+          "p": [
+            "When you submit a quote or sourcing request, we collect the details you provide — such as your name, email, WhatsApp number, company, and the vehicle requirements you describe. We only use this to respond to your enquiry."
+          ]
+        },
+        {
+          "h": "How we use your information",
+          "p": [
+            "We use your information solely to respond to your enquiry and to provide the sourcing and export services you request. We do not sell your information or share it with third parties for marketing."
+          ]
+        },
+        {
+          "h": "Contact",
+          "p": [
+            "For privacy questions, email {email}."
+          ]
+        }
       ]
     },
     "terms": {
@@ -488,9 +622,24 @@
       "h1": "Terms of Use",
       "intro": "By using this website you agree to these terms. {siteName} provides a platform for sourcing and exporting used vehicles from China.",
       "sections": [
-        { "h": "Listings and pricing", "p": ["Vehicle listings, specifications and prices are provided for information. Prices may vary based on configuration, shipping, taxes and destination. Availability can change and is confirmed when you request a quote."] },
-        { "h": "No guarantee of availability", "p": ["A listing does not guarantee availability. We confirm availability, price and export details with you before any order is placed."] },
-        { "h": "Contact", "p": ["For questions about these terms, email {email}."] }
+        {
+          "h": "Listings and pricing",
+          "p": [
+            "Vehicle listings, specifications and prices are provided for information. Prices may vary based on configuration, shipping, taxes and destination. Availability can change and is confirmed when you request a quote."
+          ]
+        },
+        {
+          "h": "No guarantee of availability",
+          "p": [
+            "A listing does not guarantee availability. We confirm availability, price and export details with you before any order is placed."
+          ]
+        },
+        {
+          "h": "Contact",
+          "p": [
+            "For questions about these terms, email {email}."
+          ]
+        }
       ]
     },
     "cookies": {
@@ -588,10 +737,25 @@
     "km": "km"
   },
   "plurals": {
-    "vehiclesAvailable": { "one": "{count} vehicle available", "other": "{count} vehicles available" },
-    "vehiclesInInventory": { "one": "{count} vehicle in inventory", "other": "{count} vehicles in inventory" },
-    "vehiclesInInventoryJs": { "one": "vehicle in inventory", "other": "vehicles in inventory" },
-    "vehiclesAvailableJs": { "one": "vehicle available", "other": "vehicles available" },
-    "loadMore": { "one": "Load {count} more vehicle", "other": "Load {count} more vehicles" }
+    "vehiclesAvailable": {
+      "one": "{count} vehicle available",
+      "other": "{count} vehicles available"
+    },
+    "vehiclesInInventory": {
+      "one": "{count} vehicle in inventory",
+      "other": "{count} vehicles in inventory"
+    },
+    "vehiclesInInventoryJs": {
+      "one": "vehicle in inventory",
+      "other": "vehicles in inventory"
+    },
+    "vehiclesAvailableJs": {
+      "one": "vehicle available",
+      "other": "vehicles available"
+    },
+    "loadMore": {
+      "one": "Load {count} more vehicle",
+      "other": "Load {count} more vehicles"
+    }
   }
 }
