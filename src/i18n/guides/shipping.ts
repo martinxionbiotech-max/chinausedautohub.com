@@ -370,5 +370,202 @@ export const shipping = {
         },
       ],
     },
+    {
+      heading: {
+        en: 'Decision matrix — RoRo vs container',
+        ar: 'مصفوفة القرار — RoRo مقابل الحاوية',
+        ru: 'Матрица решений — RoRo или контейнер',
+        es: 'Matriz de decisión — RoRo frente a contenedor',
+      },
+      paragraphs: [
+        {
+          en: 'The right method depends on the vehicle, its value and your destination. Use this matrix to narrow the choice, then confirm the practical method with us before booking.',
+          ar: 'تعتمد الطريقة المناسبة على المركبة وقيمتها ووجهتك. استخدم هذه المصفوفة لتضييق الاختيار، ثم أكد الطريقة العملية معنا قبل الحجز.',
+          ru: 'Подходящий способ зависит от автомобиля, его стоимости и страны назначения. Используйте матрицу, чтобы сузить выбор, затем подтвердите практичный способ с нами до бронирования.',
+          es: 'El método correcto depende del vehículo, su valor y su destino. Use esta matriz para acotar la elección y confirme el método práctico con nosotros antes de reservar.',
+        },
+      ],
+      table: {
+        headers: [
+          { en: 'Situation', ar: 'الحالة', ru: 'Ситуация', es: 'Situación' },
+          { en: 'RoRo', ar: 'RoRo', ru: 'RoRo', es: 'RoRo' },
+          { en: 'Container', ar: 'الحاوية', ru: 'Контейнер', es: 'Contenedor' },
+        ],
+        rows: [
+          [
+            { en: 'Running, self-propelled vehicle', ar: 'مركبة صالحة للحركة الذاتية', ru: 'Исправный самоходный автомобиль', es: 'Vehículo en marcha y autopropulsado' },
+            { en: 'Usually the more cost-efficient choice — the vehicle drives on and off.', ar: 'عادة الخيار الأكثر كفاءة من حيث التكلفة — تصعد المركبة وتنزل بنفسها.', ru: 'Обычно экономичнее — автомобиль сам заезжает и съезжает.', es: 'Suele ser la opción más rentable: el vehículo sube y baja por sí mismo.' },
+            { en: 'Possible but usually unnecessary.', ar: 'ممكن لكنه غير ضروري عادة.', ru: 'Возможен, но обычно не нужен.', es: 'Posible, pero normalmente innecesario.' },
+          ],
+          [
+            { en: 'Non-running vehicle', ar: 'مركبة غير صالحة للحركة', ru: 'Неисправный автомобиль', es: 'Vehículo no operativo' },
+            { en: 'Not possible — the vehicle must move under its own power.', ar: 'غير ممكن — يجب أن تتحرك المركبة بقوتها الذاتية.', ru: 'Невозможно — автомобиль должен двигаться своим ходом.', es: 'No es posible: el vehículo debe moverse por sí mismo.' },
+            { en: 'The practical option.', ar: 'الخيار العملي.', ru: 'Практичный вариант.', es: 'La opción práctica.' },
+          ],
+          [
+            { en: 'High-value vehicle', ar: 'مركبة عالية القيمة', ru: 'Дорогой автомобиль', es: 'Vehículo de alto valor' },
+            { en: 'Possible.', ar: 'ممكن.', ru: 'Возможен.', es: 'Posible.' },
+            { en: 'Often preferred for the added protection of an enclosed box.', ar: 'يُفضل غالبًا للحماية الإضافية للصندوق المغلق.', ru: 'Часто предпочтителен из-за дополнительной защиты закрытого ящика.', es: 'A menudo preferido por la protección adicional de un espacio cerrado.' },
+          ],
+          [
+            { en: 'Extra security or enclosed protection', ar: 'أمان إضافي أو حماية مغلقة', ru: 'Дополнительная защита или закрытая упаковка', es: 'Seguridad extra o protección cerrada' },
+            { en: 'Limited protection from the elements.', ar: 'حماية محدودة من العوامل الجوية.', ru: 'Ограниченная защита от внешней среды.', es: 'Protección limitada frente a los elementos.' },
+            { en: 'Enclosed protection for the whole voyage.', ar: 'حماية مغلقة طوال الرحلة.', ru: 'Закрытая защита на весь рейс.', es: 'Protección cerrada durante todo el viaje.' },
+          ],
+          [
+            { en: 'Consolidation with other cargo', ar: 'التجميع مع بضائع أخرى', ru: 'Консолидация с другим грузом', es: 'Consolidación con otra carga' },
+            { en: 'Not applicable.', ar: 'غير قابل للتطبيق.', ru: 'Не применимо.', es: 'No aplicable.' },
+            { en: 'Possible — load alongside other goods in one box.', ar: 'ممكن — تحميلها مع بضائع أخرى في صندوق واحد.', ru: 'Возможна — погрузка вместе с другим грузом в одном контейнере.', es: 'Posible: cargar junto a otras mercancías en un mismo contenedor.' },
+          ],
+        ],
+      },
+    },
+    {
+      heading: {
+        en: 'Exceptions',
+        ar: 'استثناءات',
+        ru: 'Исключения',
+        es: 'Excepciones',
+      },
+      paragraphs: [
+        {
+          en: 'The method is not fixed by the vehicle alone. An electric vehicle may add battery-handling requirements; a route without a convenient RoRo sailing may make container the only practical choice; and a buyer consolidating several vehicles may ship differently than a single vehicle. Confirm the method for your case.',
+          ar: 'الطريقة لا تحددها المركبة وحدها. فقد تضيف المركبة الكهربائية متطلبات مناولة البطارية؛ وقد يجعل المسار دون رحلة RoRo ملائمة الحاويةَ الخيارَ العملي الوحيد؛ وقد يشحن المشتري الذي يجمع عدة مركبات بشكل مختلف عن المركبة الواحدة. أكد الطريقة لحالتك.',
+          ru: 'Способ определяется не только автомобилем. Электромобиль может добавить требования к батарее; маршрут без удобного рейса RoRo может сделать контейнер единственным практичным вариантом; покупатель, консолидирующий несколько машин, может отправить их иначе, чем один автомобиль. Подтвердите способ для вашего случая.',
+          es: 'El método no lo fija solo el vehículo. Un VE puede añadir requisitos de manipulación de batería; una ruta sin salida RoRo conveniente puede hacer del contenedor la única opción práctica; y un comprador que consolida varios vehículos puede enviarlos distinto a uno solo. Confirme el método para su caso.',
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related market considerations',
+        ar: 'اعتبارات السوق ذات الصلة',
+        ru: 'Связанные соображения по рынку',
+        es: 'Consideraciones de mercado relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'Destination ports, shipping routes and any destination-side import rules are maintained on the Market sub-site. Choosing a major destination port with frequent sailings can improve schedule options.',
+          ar: 'تُصان موانئ الوجهة ومسارات الشحن وأي قواعد استيراد في الوجهة في الموقع الفرعي للأسواق. قد يؤدي اختيار ميناء وجهة رئيسي برحلات متكررة إلى تحسين خيارات الجدول.',
+          ru: 'Порты назначения, маршруты и правила импорта в стране назначения ведутся на подсайте Market. Выбор крупного порта назначения с частыми рейсами может улучшить варианты расписания.',
+          es: 'Los puertos de destino, las rutas de envío y las normas de importación de destino se mantienen en el subsitio Market. Elegir un puerto de destino principal con salidas frecuentes puede mejorar las opciones de calendario.',
+        },
+      ],
+      links: [
+        {
+          href: 'https://market.chinausedautohub.com/ports/',
+          label: {
+            en: 'Ports and routes — Market sub-site',
+            ar: 'الموانئ والمسارات — الموقع الفرعي للأسواق',
+            ru: 'Порты и маршруты — подсайт Market',
+            es: 'Puertos y rutas — subsitio Market',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related vehicle considerations',
+        ar: 'اعتبارات المركبة ذات الصلة',
+        ru: 'Связанные соображения по автомобилю',
+        es: 'Consideraciones de vehículo relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'A vehicle\'s condition and value determine the shipping method, so shipping is downstream of inspection. For condition assessment, see the Inspection guide; for how shipping and insurance fit the cost picture, see the FOB/CFR/CIF and Landed Cost guides.',
+          ar: 'تحدد حالة المركبة وقيمتها طريقة الشحن، لذا فالشحن يلي الفحص. لتقييم الحالة، راجع دليل الفحص؛ ولمعرفة كيف يتناسب الشحن والتأمين مع صورة التكلفة، راجع دليلي FOB/CFR/CIF والتكلفة النهائية.',
+          ru: 'Состояние и стоимость автомобиля определяют способ доставки, поэтому доставка следует за проверкой. По оценке состояния см. руководство по проверке; как доставка и страховка вписываются в картину расходов — руководства FOB/CFR/CIF и по итоговой стоимости.',
+          es: 'El estado y el valor del vehículo determinan el método de envío, por lo que el envío va después de la inspección. Para la evaluación del estado, consulte la guía de inspección; para cómo encajan envío y seguro en el panorama de costes, las guías FOB/CFR/CIF y de coste de desembarco.',
+        },
+      ],
+      links: [
+        {
+          slug: 'vehicle-inspection',
+          label: {
+            en: 'Assess condition first — Inspection guide',
+            ar: 'قيّم الحالة أولًا — دليل الفحص',
+            ru: 'Сначала оцените состояние — руководство по проверке',
+            es: 'Evalúe primero el estado — guía de inspección',
+          },
+        },
+        {
+          slug: 'fob-vs-cif-vs-cfr',
+          label: {
+            en: 'Who pays for freight and insurance — FOB/CFR/CIF guide',
+            ar: 'من يدفع الشحن والتأمين — دليل FOB/CFR/CIF',
+            ru: 'Кто платит за фрахт и страховку — руководство FOB/CFR/CIF',
+            es: 'Quién paga el flete y el seguro — guía FOB/CFR/CIF',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related tools',
+        ar: 'أدوات ذات صلة',
+        ru: 'Связанные инструменты',
+        es: 'Herramientas relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'Estimate freight and the resulting landed cost on the Tools sub-site. The calculators structure the estimate; final figures are confirmed at quote time with current rates.',
+          ar: 'قدّر الشحن والتكلفة النهائية الناتجة في الموقع الفرعي للأدوات. تهيكل الحاسبات التقدير؛ وتؤكد الأرقام النهائية عند عرض السعر بالأسعار الحالية.',
+          ru: 'Оцените фрахт и итоговую стоимость на подсайте инструментов. Калькуляторы структурируют оценку; итоговые цифры подтверждаются при расчёте по текущим тарифам.',
+          es: 'Estime el flete y el coste de desembarco resultante en el subsitio de herramientas. Las calculadoras estructuran la estimación; las cifras finales se confirman al cotizar con las tarifas vigentes.',
+        },
+      ],
+      links: [
+        {
+          href: 'https://tool.chinausedautohub.com/shipping-cost-estimator/',
+          label: {
+            en: 'Shipping Cost Estimator',
+            ar: 'حاسبة تقدير تكلفة الشحن',
+            ru: 'Оценка стоимости доставки',
+            es: 'Estimador de coste de envío',
+          },
+        },
+        {
+          href: 'https://tool.chinausedautohub.com/landed-cost-calculator/',
+          label: {
+            en: 'Landed Cost Calculator',
+            ar: 'حاسبة التكلفة النهائية',
+            ru: 'Калькулятор итоговой стоимости',
+            es: 'Calculadora de coste de desembarco',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Reliable sources',
+        ar: 'مصادر موثوقة',
+        ru: 'Надёжные источники',
+        es: 'Fuentes fiables',
+      },
+      paragraphs: [
+        {
+          en: 'Freight and insurance rates are not fixed; they are confirmed from current sources at quote time. Port and route data are maintained on the Market sub-site, and carrier documents (the bill of lading) are the reference for release. We do not publish rate tables.',
+          ar: 'أسعار الشحن والتأمين ليست ثابتة؛ تُؤكد من مصادر حالية عند عرض السعر. تُصان بيانات الموانئ والمسارات في الموقع الفرعي للأسواق، ووثائق الناقل (بوليصة الشحن) هي مرجع الإفراج. لا ننشر جداول أسعار.',
+          ru: 'Тарифы на фрахт и страховку не фиксированы; они подтверждаются из актуальных источников при расчёте. Данные о портах и маршрутах ведутся на подсайте Market, а документы перевозчика (коносамент) — ориентир для выпуска. Мы не публикуем тарифные таблицы.',
+          es: 'Las tarifas de flete y seguro no son fijas; se confirman de fuentes actuales al cotizar. Los datos de puertos y rutas se mantienen en el subsitio Market, y los documentos del transportista (conocimiento de embarque) son la referencia para la liberación. No publicamos tablas de tarifas.',
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Last reviewed and verification status',
+        ar: 'آخر مراجعة وحالة التحقق',
+        ru: 'Дата последней проверки и статус верификации',
+        es: 'Última revisión y estado de verificación',
+      },
+      paragraphs: [
+        {
+          en: 'Last reviewed: 2026-10-04. This guide describes shipping methods in general; transit times and rates are estimates confirmed at quote time, not guarantees. Confirm the method, route and figures for your vehicle before booking.',
+          ar: 'آخر مراجعة: 2026-10-04. يصف هذا الدليل طرق الشحن عمومًا؛ فمدد النقل والأسعار تقديرات تؤكد عند عرض السعر، وليست ضمانات. أكد الطريقة والمسار والأرقام لمركبتك قبل الحجز.',
+          ru: 'Последняя проверка: 2026-10-04. Это руководство описывает способы доставки в общем виде; сроки и тарифы — это оценки, подтверждаемые при расчёте, а не гарантии. Подтвердите способ, маршрут и цифры для вашего автомобиля до бронирования.',
+          es: 'Última revisión: 2026-10-04. Esta guía describe los métodos de envío en general; los plazos y tarifas son estimaciones que se confirman al cotizar, no garantías. Confirme el método, la ruta y las cifras de su vehículo antes de reservar.',
+        },
+      ],
+    },
   ],
 };

@@ -76,6 +76,30 @@ export const inspection = {
           es: 'El historial de accidentes y los registros de mantenimiento son importantes, pero no siempre están disponibles para todos los vehículos. Presentamos lo que tenemos y lo marcamos con un nivel de confianza. Cuando no hay registro, lo decimos en lugar de suponer.',
         },
       ],
+      table: {
+        headers: [
+          { en: 'Signal', ar: 'الإشارة', ru: 'Признак', es: 'Señal' },
+          { en: 'What to check', ar: 'ما يجب التحقق منه', ru: 'Что проверять', es: 'Qué comprobar' },
+          { en: 'Warning signs', ar: 'علامات التحذير', ru: 'Тревожные сигналы', es: 'Señales de alarma' },
+        ],
+        rows: [
+          [
+            { en: 'Accident record', ar: 'سجل الحوادث', ru: 'Запись о ДТП', es: 'Registro de accidentes' },
+            { en: 'Review any collision or repair history the source provides, and its confidence level.', ar: 'راجع أي سجل تصادم أو إصلاح يقدمه المصدر، ومستوى ثقته.', ru: 'Изучите историю столкновений или ремонтов, которую даёт источник, и её уровень достоверности.', es: 'Revise el historial de colisiones o reparaciones que facilite la fuente y su nivel de confianza.' },
+            { en: 'A record that is missing entirely, or one that is marked seller-supplied without independent checking.', ar: 'سجل مفقود كليًا، أو معلَّم بأنه مقدَّم من البائع دون تحقق مستقل.', ru: 'Полностью отсутствующая запись или помеченная как предоставленная продавцом без независимой проверки.', es: 'Un registro totalmente ausente, o marcado como facilitado por el vendedor sin comprobación independiente.' },
+          ],
+          [
+            { en: 'Structural signs', ar: 'علامات هيكلية', ru: 'Структурные признаки', es: 'Señales estructurales' },
+            { en: 'Look for repaint, mismatched panel gaps, or frame/chassis misalignment.', ar: 'ابحث عن إعادة طلاء أو فجوات ألواح غير متطابقة أو اختلال في الهيكل/الشاسيه.', ru: 'Ищите перекраску, несовпадающие зазоры панелей или нарушение геометрии рамы/шасси.', es: 'Busque repintado, holguras de paneles dispares o desalineación del chasis/bastidor.' },
+            { en: 'Signs of major collision repair that contradict a "clean" record.', ar: 'علامات إصلاح تصادم كبير تناقض سجلًا "نظيفًا".', ru: 'Признаки крупного кузовного ремонта, противоречащие «чистой» истории.', es: 'Señales de reparación de una colisión grave que contradicen un historial «limpio».' },
+          ],
+          [
+            { en: 'Maintenance records', ar: 'سجلات الصيانة', ru: 'Записи о ТО', es: 'Registros de mantenimiento' },
+            { en: 'Check for a regular, consistent service history that matches the mileage.', ar: 'تحقق من وجود سجل خدمة منتظم ومتسق يطابق المسافة المقطوعة.', ru: 'Проверьте регулярную и последовательную историю обслуживания, соответствующую пробегу.', es: 'Compruebe un historial de servicio regular y coherente que coincida con el kilometraje.' },
+            { en: 'Missing service history with no explanation, or records that stop abruptly.', ar: 'سجل خدمة مفقود دون تفسير، أو سجلات تتوقف فجأة.', ru: 'Отсутствующая история обслуживания без объяснения или записи, резко обрывающиеся.', es: 'Historial de servicio ausente sin explicación, o registros que se cortan de repente.' },
+          ],
+        ],
+      },
     },
     {
       heading: {
@@ -178,6 +202,35 @@ export const inspection = {
           es: 'El kilometraje es una de las cifras más importantes y puede verificarse mediante varias señales: el cuentakilómetros, los registros de servicio, el desgaste del interior (pedales, asientos, volante), el desgaste de los neumáticos y cualquier lectura de diagnóstico. La incoherencia entre estas señales puede ser una advertencia.',
         },
       ],
+      table: {
+        headers: [
+          { en: 'Signal', ar: 'الإشارة', ru: 'Признак', es: 'Señal' },
+          { en: 'What to check', ar: 'ما يجب التحقق منه', ru: 'Что проверять', es: 'Qué comprobar' },
+          { en: 'Warning signs', ar: 'علامات التحذير', ru: 'Тревожные сигналы', es: 'Señales de alarma' },
+        ],
+        rows: [
+          [
+            { en: 'Odometer reading', ar: 'قراءة عداد المسافة', ru: 'Показания одометра', es: 'Lectura del cuentakilómetros' },
+            { en: 'Compare the odometer against any diagnostic readout and documents.', ar: 'قارن عداد المسافة مع أي قراءة تشخيصية والوثائق.', ru: 'Сверьте одометр с показаниями диагностики и документами.', es: 'Compare el cuentakilómetros con cualquier lectura de diagnóstico y los documentos.' },
+            { en: 'A reading that drops between records, or a replaced/loose cluster suggesting tampering.', ar: 'قراءة تنخفض بين السجلات، أو لوحة عدادات مستبدلة/مرتخية توحي بالعبث.', ru: 'Показание, уменьшающееся между записями, или заменённая/незакреплённая панель, указывающая на вмешательство.', es: 'Una lectura que baja entre registros, o un cuadro sustituido/suelto que sugiere manipulación.' },
+          ],
+          [
+            { en: 'Service records', ar: 'سجلات الخدمة', ru: 'Записи о ТО', es: 'Registros de servicio' },
+            { en: 'Check whether recorded mileage increases consistently over time.', ar: 'تحقق مما إذا كانت المسافة المسجلة تزيد باستمرار مع الوقت.', ru: 'Проверьте, растёт ли зафиксированный пробег последовательно со временем.', es: 'Compruebe si el kilometraje registrado aumenta de forma constante con el tiempo.' },
+            { en: 'Long gaps in records, or mileage that jumps backwards between services.', ar: 'فجوات طويلة في السجلات، أو مسافة تقفز للخلف بين الخدمات.', ru: 'Длительные пробелы в записях или пробег, скачущий назад между ТО.', es: 'Largos vacíos en los registros, o kilometraje que salta hacia atrás entre servicios.' },
+          ],
+          [
+            { en: 'Interior wear', ar: 'تآكل المقصورة', ru: 'Износ салона', es: 'Desgaste interior' },
+            { en: 'Match pedal, seat and steering-wheel wear to the stated mileage.', ar: 'طابق تآكل الدواسات والمقاعد وعجلة القيادة مع المسافة المعلنة.', ru: 'Сопоставьте износ педалей, сидений и руля с заявленным пробегом.', es: 'Coteje el desgaste de pedales, asientos y volante con el kilometraje declarado.' },
+            { en: 'Low stated mileage with heavy interior wear.', ar: 'مسافة معلنة منخفضة مع تآكل داخلي شديد.', ru: 'Низкий заявленный пробег при сильном износе салона.', es: 'Kilometraje declarado bajo con un desgaste interior intenso.' },
+          ],
+          [
+            { en: 'Tire wear', ar: 'تآكل الإطارات', ru: 'Износ шин', es: 'Desgaste de neumáticos' },
+            { en: 'Compare tire tread and manufacturing dates with the mileage and age.', ar: 'قارن مداس الإطارات وتواريخ تصنيعها مع المسافة والعمر.', ru: 'Сравните глубину протектора и даты производства шин с пробегом и возрастом.', es: 'Compare la banda de rodadura y las fechas de fabricación de los neumáticos con el kilometraje y la antigüedad.' },
+            { en: 'Worn or mismatched tires that are inconsistent with the stated mileage.', ar: 'إطارات متآكلة أو غير متطابقة لا تتفق مع المسافة المعلنة.', ru: 'Изношенные или несовпадающие шины, не соответствующие заявленному пробегу.', es: 'Neumáticos desgastados o dispares incoherentes con el kilometraje declarado.' },
+          ],
+        ],
+      },
     },
     {
       heading: {
@@ -326,6 +379,203 @@ export const inspection = {
           ar: 'يقلل الفحص من عدم اليقين لكنه لا يلغيه. يمكن أن توجد عيوب خفية، ويعكس التقرير النظيف المعلومات المتوفرة في وقتها. نشجع المشترين على مراجعة كل المعلومات بعناية والسؤال قبل الالتزام.',
           ru: 'Проверка снижает неопределённость, но не устраняет её. Скрытые дефекты возможны, а чистый отчёт отражает информацию, доступную на момент проверки. Мы рекомендуем покупателям тщательно изучить всю информацию и задавать вопросы до принятия обязательств.',
           es: 'La inspección reduce la incertidumbre pero no la elimina. Puede haber fallos ocultos, y un informe limpio refleja la información disponible en ese momento. Animamos a los compradores a revisar toda la información con cuidado y a preguntar antes de comprometerse.',
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Decision framework — accept, clarify or reject',
+        ar: 'إطار القرار — القبول أو التوضيح أو الرفض',
+        ru: 'Структура решения — принять, уточнить или отказаться',
+        es: 'Marco de decisión — aceptar, aclarar o rechazar',
+      },
+      paragraphs: [
+        {
+          en: 'Every inspection finding leads to one of three outcomes: accept and proceed, ask for more information or a price adjustment, or reject. Grade the findings against the vehicle\'s value and your risk tolerance, and treat an unresolved warning sign as a reason to pause, not to overlook it.',
+          ar: 'كل نتيجة فحص تؤدي إلى واحدة من ثلاث نتائج: القبول والمتابعة، أو طلب مزيد من المعلومات أو تعديل السعر، أو الرفض. قيّم النتائج مقابل قيمة المركبة وتحمل المخاطر لديك، وعامل علامة التحذير غير المحلولة كسبب للتوقف، لا لتجاهلها.',
+          ru: 'Любой результат проверки ведёт к одному из трёх исходов: принять и продолжить, запросить больше информации или корректировку цены либо отказаться. Оцените результаты относительно стоимости автомобиля и вашей готовности к риску и относитесь к неразрешённому тревожному сигналу как к поводу остановиться, а не пропустить его.',
+          es: 'Cada resultado de inspección lleva a uno de tres desenlaces: aceptar y continuar, pedir más información o un ajuste de precio, o rechazar. Valore los hallazgos frente al valor del vehículo y su tolerancia al riesgo, y trate una señal de alarma no resuelta como motivo para detenerse, no para pasarla por alto.',
+        },
+      ],
+      table: {
+        headers: [
+          { en: 'Factor', ar: 'العامل', ru: 'Фактор', es: 'Factor' },
+          { en: 'What to check', ar: 'ما يجب التحقق منه', ru: 'Что проверять', es: 'Qué comprobar' },
+          { en: 'Warning signs', ar: 'علامات التحذير', ru: 'Тревожные сигналы', es: 'Señales de alarma' },
+        ],
+        rows: [
+          [
+            { en: 'Vehicle identity', ar: 'هوية المركبة', ru: 'Идентичность автомобиля', es: 'Identidad del vehículo' },
+            { en: 'Confirm the VIN, make, model and year against the documents.', ar: 'أكد رقم الهيكل والصنع والطراز والسنة مقابل الوثائق.', ru: 'Сверьте VIN, марку, модель и год с документами.', es: 'Confirme el VIN, la marca, el modelo y el año con los documentos.' },
+            { en: 'A VIN or identity that does not match the documents.', ar: 'رقم هيكل أو هوية لا يطابقان الوثائق.', ru: 'VIN или идентичность, не совпадающие с документами.', es: 'Un VIN o identidad que no coincide con los documentos.' },
+          ],
+          [
+            { en: 'Mileage', ar: 'المسافة المقطوعة', ru: 'Пробег', es: 'Kilometraje' },
+            { en: 'Cross-check the odometer, service records, interior and tire wear.', ar: 'قارن عداد المسافة وسجلات الخدمة وتآكل المقصورة والإطارات.', ru: 'Сопоставьте одометр, записи о ТО, износ салона и шин.', es: 'Cruce el cuentakilómetros, los registros de servicio y el desgaste interior y de neumáticos.' },
+            { en: 'Inconsistency between these signals suggesting odometer rollback.', ar: 'تعارض بين هذه الإشارات يوحي بالتلاعب بعداد المسافة.', ru: 'Несоответствие между этими признаками, указывающее на скрученный пробег.', es: 'Incoherencia entre estas señales que sugiere manipulación del cuentakilómetros.' },
+          ],
+          [
+            { en: 'Structural condition', ar: 'الحالة الهيكلية', ru: 'Состояние конструкции', es: 'Estado estructural' },
+            { en: 'Look for repaint, panel gaps, chassis misalignment and repair signs.', ar: 'ابحث عن إعادة طلاء وفجوات ألواح واختلال هيكلي وعلامات إصلاح.', ru: 'Ищите перекраску, зазоры панелей, нарушение геометрии шасси и следы ремонта.', es: 'Busque repintado, holguras de paneles, desalineación del chasis y señales de reparación.' },
+            { en: 'Signs of major collision repair that a "clean" record does not explain.', ar: 'علامات إصلاح تصادم كبير لا يفسرها سجل "نظيف".', ru: 'Признаки крупного кузовного ремонта, которые «чистая» история не объясняет.', es: 'Señales de reparación de colisión grave que un historial «limpio» no explica.' },
+          ],
+          [
+            { en: 'EV battery (if applicable)', ar: 'بطارية المركبة الكهربائية (إن وجدت)', ru: 'Батарея электромобиля (если есть)', es: 'Batería del VE (si procede)' },
+            { en: 'Review state of health, capacity and any diagnostic report.', ar: 'راجع حالة الصحة والسعة وأي تقرير تشخيصي.', ru: 'Изучите состояние здоровья, ёмкость и диагностический отчёт.', es: 'Revise el estado de salud, la capacidad y cualquier informe de diagnóstico.' },
+            { en: 'No diagnostic report available for a battery you cannot assess.', ar: 'لا يوجد تقرير تشخيصي لبطارية لا يمكنك تقييمها.', ru: 'Отсутствует диагностический отчёт по батарее, которую вы не можете оценить.', es: 'Sin informe de diagnóstico para una batería que no puede evaluar.' },
+          ],
+          [
+            { en: 'Records', ar: 'السجلات', ru: 'Записи', es: 'Registros' },
+            { en: 'Check accident history and maintenance records and their confidence level.', ar: 'تحقق من سجل الحوادث وسجلات الصيانة ومستوى ثقتهما.', ru: 'Проверьте историю ДТП и записи о ТО и их уровень достоверности.', es: 'Compruebe el historial de accidentes y mantenimiento y su nivel de confianza.' },
+            { en: 'Missing or inconsistent records for a detail that matters to you.', ar: 'سجلات ناقصة أو متعارضة لتفصيل يهمك.', ru: 'Отсутствующие или противоречивые записи по важной для вас детали.', es: 'Registros ausentes o incoherentes sobre un detalle que le importa.' },
+          ],
+        ],
+      },
+    },
+    {
+      heading: {
+        en: 'Exceptions',
+        ar: 'استثناءات',
+        ru: 'Исключения',
+        es: 'Excepciones',
+      },
+      paragraphs: [
+        {
+          en: 'The depth of inspection varies by case. A high-value vehicle, an EV where battery health is critical, or an incomplete listing justify a deeper diagnostic or third-party inspection; a cheap, common vehicle with a documented history may not. The decision principle is the same — match the depth of checking to the value at stake and the uncertainty in the information.',
+          ar: 'يختلف عمق الفحص حسب الحالة. فالمركبة عالية القيمة أو الكهربائية التي تكون صحة بطاريتها حرجة أو الإعلان الناقص تبرر تشخيصًا أعمق أو فحصًا من طرف ثالث؛ بينما قد لا تحتاج المركبة الرخيصة الشائعة ذات السجل الموثق إلى ذلك. مبدأ القرار واحد — طابق عمق الفحص مع القيمة المعرضة للخطر وعدم اليقين في المعلومات.',
+          ru: 'Глубина проверки зависит от случая. Дорогой автомобиль, электромобиль с критичной батареей или неполное объявление оправдывают более глубокую диагностику или стороннюю проверку; дешёвый распространённый автомобиль с документированной историей — возможно, нет. Принцип решения один — сопоставьте глубину проверки со стоимостью на кону и неопределённостью информации.',
+          es: 'La profundidad de la inspección varía según el caso. Un vehículo de alto valor, un VE con batería crítica o un anuncio incompleto justifican un diagnóstico más profundo o una inspección de terceros; un vehículo barato y común con historial documentado quizá no. El principio de decisión es el mismo: ajuste la profundidad de comprobación al valor en juego y a la incertidumbre de la información.',
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related market considerations',
+        ar: 'اعتبارات السوق ذات الصلة',
+        ru: 'Связанные соображения по рынку',
+        es: 'Consideraciones de mercado relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'What a clean inspection can and cannot tell you interacts with your destination\'s rules: a vehicle may pass inspection yet still be ineligible by age, drive-side or specification. Check those inputs on the Market sub-site, where each rule carries a source and last-checked date.',
+          ar: 'ما يمكن وما لا يمكن أن يخبرك به الفحص النظيف يتفاعل مع قواعد وجهتك: فقد تجتاز المركبة الفحص ومع ذلك تكون غير مؤهلة بسبب العمر أو جانب القيادة أو المواصفات. تحقق من تلك المدخلات في الموقع الفرعي للأسواق، حيث يحمل كل حكم مصدره وتاريخ آخر فحص.',
+          ru: 'То, что чистая проверка может и не может сказать, взаимодействует с правилами вашей страны: автомобиль может пройти проверку, но оставаться недопустимым по возрасту, стороне руля или характеристикам. Проверьте эти данные на подсайте Market, где каждое правило имеет источник и дату последней проверки.',
+          es: 'Lo que una inspección limpia puede y no puede decir interactúa con las normas de su destino: un vehículo puede pasar la inspección y aun así no ser elegible por antigüedad, lado de conducción o especificación. Compruebe esos datos en el subsitio Market, donde cada norma lleva fuente y fecha de última comprobación.',
+        },
+      ],
+      links: [
+        {
+          href: 'https://market.chinausedautohub.com/',
+          label: {
+            en: 'Check destination rules by country — Market sub-site',
+            ar: 'تحقق من قواعد الوجهة حسب البلد — الموقع الفرعي للأسواق',
+            ru: 'Проверьте правила страны назначения по странам — подсайт Market',
+            es: 'Consulte las normas de destino por país — subsitio Market',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related vehicle considerations',
+        ar: 'اعتبارات المركبة ذات الصلة',
+        ru: 'Связанные соображения по автомобилю',
+        es: 'Consideraciones de vehículo relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'Inspection findings are one input to the buying decision. For the full commercial picture, see the How to Buy guide\'s suitability framework; for EV battery and charging specifics, see the Chinese EVs guide; for model specifications, see the Data sub-site.',
+          ar: 'نتائج الفحص مدخل واحد لقرار الشراء. للصورة التجارية الكاملة، راجع إطار الملاءمة في دليل «كيف تشتري»؛ ولتفاصيل بطارية وشحن المركبات الكهربائية، راجع دليل السيارات الكهربائية الصينية؛ ولمواصفات الطرازات، راجع الموقع الفرعي للبيانات.',
+          ru: 'Результаты проверки — лишь один вход для решения о покупке. Для полной коммерческой картины см. структуру пригодности в руководстве «Как купить»; по батарее и зарядке электромобилей — руководство по китайским электромобилям; по спецификациям моделей — подсайт Data.',
+          es: 'Los resultados de la inspección son un dato de la decisión de compra. Para el panorama comercial completo, consulte el marco de idoneidad de la guía «Cómo comprar»; para batería y carga de VE, la guía de VE chinos; para especificaciones de modelos, el subsitio Data.',
+        },
+      ],
+      links: [
+        {
+          slug: 'how-to-buy-used-car-from-china',
+          label: {
+            en: 'Full buying decision — How to Buy guide',
+            ar: 'قرار الشراء الكامل — دليل «كيف تشتري»',
+            ru: 'Полное решение о покупке — руководство «Как купить»',
+            es: 'Decisión de compra completa — guía «Cómo comprar»',
+          },
+        },
+        {
+          slug: 'buying-chinese-evs-for-export',
+          label: {
+            en: 'Battery and charging checks — Chinese EVs guide',
+            ar: 'فحوصات البطارية والشحن — دليل السيارات الكهربائية الصينية',
+            ru: 'Проверки батареи и зарядки — руководство по китайским электромобилям',
+            es: 'Comprobaciones de batería y carga — guía de VE chinos',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related tools',
+        ar: 'أدوات ذات صلة',
+        ru: 'Связанные инструменты',
+        es: 'Herramientas relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'Inspection reduces risk; the Tools sub-site helps you price the rest of the decision. Compare vehicles and estimate landed and ownership cost to see how a condition finding affects the whole deal.',
+          ar: 'يقلل الفحص المخاطرة؛ ويساعدك الموقع الفرعي للأدوات على تسعير باقي القرار. قارن المركبات وقدّر التكلفة النهائية وتكلفة الملكية لترى كيف تؤثر نتيجة الحالة على الصفقة كاملة.',
+          ru: 'Проверка снижает риск; подсайт инструментов помогает оценить остальную часть решения. Сравните автомобили и оцените итоговую стоимость и стоимость владения, чтобы увидеть, как результат проверки влияет на всю сделку.',
+          es: 'La inspección reduce el riesgo; el subsitio de herramientas le ayuda a valorar el resto de la decisión. Compare vehículos y estime el coste de desembarco y de propiedad para ver cómo un hallazgo de estado afecta a todo el trato.',
+        },
+      ],
+      links: [
+        {
+          href: 'https://tool.chinausedautohub.com/vehicle-comparison/',
+          label: {
+            en: 'Vehicle Comparison tool',
+            ar: 'أداة مقارنة المركبات',
+            ru: 'Инструмент сравнения автомобилей',
+            es: 'Herramienta de comparación de vehículos',
+          },
+        },
+        {
+          href: 'https://tool.chinausedautohub.com/landed-cost-calculator/',
+          label: {
+            en: 'Landed Cost Calculator',
+            ar: 'حاسبة التكلفة النهائية',
+            ru: 'Калькулятор итоговой стоимости',
+            es: 'Calculadora de coste de desembarco',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Reliable sources',
+        ar: 'مصادر موثوقة',
+        ru: 'Надёжные источники',
+        es: 'Fuentes fiables',
+      },
+      paragraphs: [
+        {
+          en: 'Inspection information is presented only when we hold it, and each detail carries a confidence level (verified, provided, seller-supplied, source-backed, not available, or not independently verified). We do not fabricate inspection results. Destination rules and model specifications are sourced on the Market and Data sub-sites respectively.',
+          ar: 'تُعرض معلومات الفحص فقط عندما نحتفظ بها، وكل تفصيل يحمل مستوى ثقة (موثَّق، مقدَّم، مقدَّم من البائع، مدعوم بمصدر، غير متوفر، أو غير متحقق منه بشكل مستقل). لا نختلق نتائج فحص. تُصدر قواعد الوجهة ومواصفات الطرازات من موقعي الأسواق والبيانات على التوالي.',
+          ru: 'Информация о проверке показывается только при её наличии, и каждая деталь имеет уровень достоверности (подтверждено, предоставлено, предоставлено продавцом, подтверждено источником, недоступно или не подтверждено независимо). Мы не выдумываем результаты проверок. Правила страны назначения и спецификации моделей берутся на подсайтах Market и Data соответственно.',
+          es: 'La información de inspección se presenta solo cuando la tenemos, y cada detalle lleva un nivel de confianza (verificado, facilitado, facilitado por el vendedor, respaldado por fuente, no disponible o no verificado de forma independiente). No fabricamos resultados de inspección. Las normas de destino y las especificaciones de modelos proceden de los subsitios Market y Data respectivamente.',
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Last reviewed and verification status',
+        ar: 'آخر مراجعة وحالة التحقق',
+        ru: 'Дата последней проверки и статус верификации',
+        es: 'Última revisión y estado de verificación',
+      },
+      paragraphs: [
+        {
+          en: 'Last reviewed: 2026-10-04. This guide describes a general inspection method and does not certify any specific vehicle. A clean report is a snapshot of the information available at the time, not a lifetime guarantee. Confirm any detail that affects your decision with a current quote or inspection before committing.',
+          ar: 'آخر مراجعة: 2026-10-04. يصف هذا الدليل طريقة فحص عامة ولا يعتمد أي مركبة محددة. التقرير النظيف هو لقطة للمعلومات المتوفرة وقت الفحص، وليس ضمانًا مدى الحياة. أكد أي تفصيل يؤثر على قرارك بعرض سعر أو فحص حالي قبل الالتزام.',
+          ru: 'Последняя проверка: 2026-10-04. Это руководство описывает общий метод проверки и не сертифицирует конкретный автомобиль. Чистый отчёт — это снимок информации, доступной на момент проверки, а не пожизненная гарантия. Подтвердите любую важную деталь актуальным расчётом или проверкой до обязательств.',
+          es: 'Última revisión: 2026-10-04. Esta guía describe un método general de inspección y no certifica ningún vehículo concreto. Un informe limpio es una instantánea de la información disponible en ese momento, no una garantía de por vida. Confirme cualquier detalle que afecte a su decisión con una cotización o inspección actual antes de comprometerse.',
         },
       ],
     },

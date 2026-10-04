@@ -48,14 +48,52 @@ const schema = articleSchema({
       {guide.sections.map((section) => (
         <section>
           <h2 class="text-xl font-bold text-ink">{pick(section.heading, locale)}</h2>
-          <div class="prose-vehicle mt-3 space-y-3">
-            {section.paragraphs.map((p) => <p>{pick(p, locale)}</p>)}
-          </div>
+          {section.paragraphs && section.paragraphs.length > 0 && (
+            <div class="prose-vehicle mt-3 space-y-3">
+              {section.paragraphs.map((p) => <p>{pick(p, locale)}</p>)}
+            </div>
+          )}
+          {section.checklist && section.checklist.length > 0 && (
+            <ul class="mt-3 space-y-2">
+              {section.checklist.map((item) => (
+                <li class="flex items-start gap-2 text-ink-soft">
+                  <span class="mt-1 text-brand-700" aria-hidden="true">✓</span>
+                  <span>{pick(item, locale)}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          {section.table && section.table.headers && section.table.headers.length > 0 && (
+            <div class="mt-3 overflow-x-auto">
+              <table class="w-full border-collapse text-sm">
+                <thead>
+                  <tr>
+                    {section.table.headers.map((h) => (
+                      <th class="border border-surface-line bg-surface-alt px-3 py-2 text-left font-semibold text-ink">{pick(h, locale)}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {section.table.rows.map((row) => (
+                    <tr class="align-top">
+                      {row.map((cell) => (
+                        <td class="border border-surface-line px-3 py-2 text-ink-soft">{pick(cell, locale)}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
           {section.links && section.links.length > 0 && (
             <div class="mt-3 space-y-1.5">
-              {section.links.map((l) => (
-                <a href={localizedUrl(guideUrl(l.slug), locale)} class="inline-block text-sm font-semibold text-brand-700 hover:underline">{pick(l.label, locale)} {t.common.arrow}</a>
-              ))}
+              {section.links.map((l) => {
+                const isExternal = Boolean(l.href);
+                const href = l.href ?? localizedUrl(guideUrl(l.slug!), locale);
+                return (
+                  <a href={href} target={isExternal ? '_blank' : undefined} rel={isExternal ? 'noopener noreferrer' : undefined} class="inline-block text-sm font-semibold text-brand-700 hover:underline">{pick(l.label, locale)} {t.common.arrow}</a>
+                );
+              })}
             </div>
           )}
         </section>

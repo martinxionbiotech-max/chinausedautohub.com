@@ -205,12 +205,66 @@ export const fobVsCifVsCfr = {
       },
       paragraphs: [
         {
-          en: 'A decision matrix that maps common situations — arranging your own freight forwarder, seller-arranged shipping, buying your own insurance, experience level, single vehicle versus bulk, and container versus RoRo — to a recommended term is being added to this guide. Until it is published, use the comparisons above and confirm the term in writing with us before booking.',
-          ar: 'ستُضاف إلى هذا الدليل مصفوفة قرار تربط الحالات الشائعة — ترتيب وكيل الشحن بنفسك، أو الشحن المرتب من البائع، أو شراء التأمين بنفسك، ومستوى الخبرة، ومركبة واحدة مقابل شحنة بالجملة، والحاوية مقابل RoRo — بالمصطلح الموصى به. وحتى تُنشر، استخدم المقارنات أعلاه وأكد المصطلح كتابيًا معنا قبل الحجز.',
-          ru: 'В это руководство добавляется матрица решений, которая сопоставляет распространённые ситуации — свой экспедитор, доставка, организованная продавцом, собственная страховка, уровень опыта, один автомобиль или партия, контейнер или RoRo — с рекомендуемым термином. Пока она не опубликована, используйте сравнения выше и письменно подтверждайте термин с нами до бронирования.',
-          es: 'Se está añadiendo a esta guía una matriz de decisión que relaciona situaciones comunes — gestionar su propio transitario, envío organizado por el vendedor, contratar su propio seguro, nivel de experiencia, vehículo único frente a lote, y contenedor frente a RoRo — con el término recomendado. Hasta su publicación, use las comparaciones anteriores y confirme el término por escrito con nosotros antes de reservar.',
+          en: 'The term you choose should match how you want to control freight, insurance and risk. The matrix below maps common situations to a term that often fits — none is universally correct, and your destination and experience matter. Confirm the term in writing before booking.',
+          ar: 'يجب أن يطابق المصطلح الذي تختاره كيف تريد التحكم في الشحن والتأمين والمخاطرة. تربط المصفوفة أدناه الحالات الشائعة بمصطلح يناسبها غالبًا — ولا يوجد مصطلح صحيح عالميًا، فوجهتك وخبرتك مهمتان. أكد المصطلح كتابيًا قبل الحجز.',
+          ru: 'Выбранный термин должен соответствовать тому, как вы хотите контролировать фрахт, страховку и риск. Матрица ниже сопоставляет типовые ситуации с обычно подходящим термином — универсально правильного нет, важны ваша страна и опыт. Подтвердите термин письменно до бронирования.',
+          es: 'El término que elija debe coincidir con cómo desea controlar el flete, el seguro y el riesgo. La matriz siguiente relaciona situaciones comunes con un término que suele encajar: ninguno es universalmente correcto, e importan su destino y experiencia. Confirme el término por escrito antes de reservar.',
         },
       ],
+      table: {
+        headers: [
+          { en: 'Situation', ar: 'الحالة', ru: 'Ситуация', es: 'Situación' },
+          { en: 'Term that often fits', ar: 'المصطلح الذي يناسب غالبًا', ru: 'Обычно подходящий термин', es: 'Término que suele encajar' },
+          { en: 'Why', ar: 'لماذا', ru: 'Почему', es: 'Por qué' },
+        ],
+        rows: [
+          [
+            { en: 'Buyer has their own freight forwarder', ar: 'للمشتري وكيل شحن خاص به', ru: 'У покупателя свой экспедитор', es: 'El comprador tiene su propio transitario' },
+            { en: 'FOB', ar: 'FOB', ru: 'FOB', es: 'FOB' },
+            { en: 'You arrange freight and insurance through a forwarder you trust.', ar: 'ترتب الشحن والتأمين عبر وكيل تثق به.', ru: 'Вы организуете фрахт и страховку через проверенного экспедитора.', es: 'Usted gestiona el flete y el seguro a través de un transitario de confianza.' },
+          ],
+          [
+            { en: 'Seller arranges shipping', ar: 'البائع يرتب الشحن', ru: 'Доставку организует продавец', es: 'El vendedor organiza el envío' },
+            { en: 'CFR or CIF', ar: 'CFR أو CIF', ru: 'CFR или CIF', es: 'CFR o CIF' },
+            { en: 'The seller pays freight to the destination port (CFR), or freight plus minimum insurance (CIF).', ar: 'يدفع البائع الشحن إلى ميناء الوجهة (CFR)، أو الشحن والتأمين الأدنى (CIF).', ru: 'Продавец платит фрахт до порта назначения (CFR) или фрахт и минимальную страховку (CIF).', es: 'El vendedor paga el flete hasta el puerto de destino (CFR), o el flete y un seguro mínimo (CIF).' },
+          ],
+          [
+            { en: 'Buyer wants their own insurance', ar: 'يريد المشتري تأمينه الخاص', ru: 'Покупатель хочет свою страховку', es: 'El comprador quiere su propio seguro' },
+            { en: 'FOB or CFR', ar: 'FOB أو CFR', ru: 'FOB или CFR', es: 'FOB o CFR' },
+            { en: 'These terms leave insurance to the buyer, so you choose the coverage level.', ar: 'يترك هذان المصطلحان التأمين للمشتري، فتختار مستوى التغطية.', ru: 'Эти термины оставляют страховку покупателю, поэтому вы выбираете уровень покрытия.', es: 'Estos términos dejan el seguro al comprador, así que usted elige el nivel de cobertura.' },
+          ],
+          [
+            { en: 'Experienced importer', ar: 'مستورد خبير', ru: 'Опытный импортёр', es: 'Importador experimentado' },
+            { en: 'Often FOB', ar: 'غالبًا FOB', ru: 'Часто FOB', es: 'A menudo FOB' },
+            { en: 'Control over freight and insurance suits buyers who know their routes and carriers.', ar: 'التحكم في الشحن والتأمين يناسب المشترين الذين يعرفون مساراتهم وناقليهم.', ru: 'Контроль над фрахтом и страховкой подходит тем, кто знает свои маршруты и перевозчиков.', es: 'El control del flete y el seguro conviene a quien conoce sus rutas y transportistas.' },
+          ],
+          [
+            { en: 'First-time importer', ar: 'مستورد لأول مرة', ru: 'Импортёр впервые', es: 'Importador primerizo' },
+            { en: 'Often CIF', ar: 'غالبًا CIF', ru: 'Часто CIF', es: 'A menudo CIF' },
+            { en: 'The seller arranging freight and minimum insurance is simpler while you learn the process.', ar: 'ترتيب البائع للشحن والتأمين الأدنى أبسط أثناء تعلمك العملية.', ru: 'Организация фрахта и минимальной страховки продавцом проще, пока вы осваиваете процесс.', es: 'Que el vendedor organice el flete y un seguro mínimo es más simple mientras aprende el proceso.' },
+          ],
+          [
+            { en: 'Single vehicle', ar: 'مركبة واحدة', ru: 'Один автомобиль', es: 'Un solo vehículo' },
+            { en: 'Any — depends on control vs convenience', ar: 'أي — يعتمد على التحكم مقابل الراحة', ru: 'Любой — зависит от контроля и удобства', es: 'Cualquiera — depende de control frente a comodidad' },
+            { en: 'A single vehicle does not favour one term; choose on how much you want to arrange yourself.', ar: 'المركبة الواحدة لا تفضل مصطلحًا بعينه؛ اختر حسب مقدار ما تريد ترتيبه بنفسك.', ru: 'Один автомобиль не диктует термин; выбирайте по тому, сколько вы готовы организовывать сами.', es: 'Un solo vehículo no favorece un término; elija según cuánto quiera gestionar usted mismo.' },
+          ],
+          [
+            { en: 'Multiple vehicles', ar: 'مركبات متعددة', ru: 'Несколько автомобилей', es: 'Varios vehículos' },
+            { en: 'FOB or CIF — depends on consolidation control', ar: 'FOB أو CIF — يعتمد على التحكم في التجميع', ru: 'FOB или CIF — зависит от контроля консолидации', es: 'FOB o CIF — depende del control de la consolidación' },
+            { en: 'FOB if you manage consolidation; CIF if you prefer the seller to handle more of the move.', ar: 'FOB إذا كنت تدير التجميع؛ وCIF إذا كنت تفضل أن يتولى البائع جزءًا أكبر من النقل.', ru: 'FOB, если консолидацию ведёте вы; CIF, если предпочитаете, чтобы продавец взял на себя больше.', es: 'FOB si gestiona la consolidación; CIF si prefiere que el vendedor asuma más del traslado.' },
+          ],
+          [
+            { en: 'Container shipment', ar: 'شحنة حاويات', ru: 'Контейнерная отправка', es: 'Envío en contenedor' },
+            { en: 'Any of the three', ar: 'أي من الثلاثة', ru: 'Любой из трёх', es: 'Cualquiera de los tres' },
+            { en: 'The term governs cost and risk, not the physical method — container is just how the vehicle moves.', ar: 'المصطلح يحكم التكلفة والمخاطرة، لا الطريقة الفيزيائية — فالحاوية مجرد طريقة نقل المركبة.', ru: 'Термин управляет расходами и риском, а не физическим способом — контейнер лишь способ перевозки автомобиля.', es: 'El término rige el coste y el riesgo, no el método físico: el contenedor es solo cómo se mueve el vehículo.' },
+          ],
+          [
+            { en: 'RoRo shipment', ar: 'شحنة RoRo', ru: 'Отправка RoRo', es: 'Envío RoRo' },
+            { en: 'Any of the three', ar: 'أي من الثلاثة', ru: 'Любой из трёх', es: 'Cualquiera de los tres' },
+            { en: 'RoRo is a shipping method, not an Incoterm — the term still decides who pays freight and insurance.', ar: 'RoRo طريقة شحن وليس مصطلحًا تجاريًا — فالمصطلح ما يزال يحدد من يدفع الشحن والتأمين.', ru: 'RoRo — способ доставки, а не Инкотермс; термин по-прежнему решает, кто платит фрахт и страховку.', es: 'RoRo es un método de envío, no un Incoterm: el término sigue decidiendo quién paga el flete y el seguro.' },
+          ],
+        ],
+      },
       links: [
         {
           slug: 'landed-cost',
@@ -348,6 +402,158 @@ export const fobVsCifVsCfr = {
           ar: 'أسعار الشحن والتأمين ليست ثابتة — فهي تعتمد على المركبة والمسار وطريقة الشحن والسوق وقت الشحن. لا ننشر جداول أسعار؛ بل تُؤكد الأرقام ذات الصلة عند طلب عرض سعر.',
           ru: 'Тарифы на фрахт и страховку не фиксированы — они зависят от автомобиля, маршрута, способа доставки и рынка на момент отправки. Мы не публикуем таблицы тарифов; соответствующие цифры подтверждаются при запросе расчёта.',
           es: 'Las tarifas de flete y seguro no son fijas: dependen del vehículo, la ruta, el método de envío y el mercado en el momento del envío. No publicamos tablas de tarifas; las cifras pertinentes se confirman al solicitar la cotización.',
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Exceptions',
+        ar: 'استثناءات',
+        ru: 'Исключения',
+        es: 'Excepciones',
+      },
+      paragraphs: [
+        {
+          en: 'The term is only about cost and risk up to the destination port — it never covers import duties, taxes or destination charges, whatever term you choose. Some buyers also use terms beyond FOB/CFR/CIF for specific arrangements; the same principle applies: read what each term includes and confirm it in writing.',
+          ar: 'المصطلح يتعلق فقط بالتكلفة والمخاطرة حتى ميناء الوجهة — فهو لا يغطي أبدًا رسوم الاستيراد أو الضرائب أو رسوم الوجهة، أيًا كان المصطلح الذي تختاره. كما يستخدم بعض المشترين مصطلحات أخرى غير FOB/CFR/CIF لترتيبات محددة؛ وينطبق المبدأ نفسه: اقرأ ما يتضمنه كل مصطلح وأكده كتابيًا.',
+          ru: 'Термин касается только расходов и риска до порта назначения — он никогда не покрывает импортные пошлины, налоги или сборы в стране назначения, какой бы термин вы ни выбрали. Некоторые покупатели также используют термины помимо FOB/CFR/CIF для особых схем; принцип тот же: читайте, что включает термин, и подтверждайте письменно.',
+          es: 'El término solo atañe al coste y al riesgo hasta el puerto de destino: nunca cubre los aranceles de importación, los impuestos ni los gastos de destino, elija el término que elija. Algunos compradores también usan términos más allá de FOB/CFR/CIF para acuerdos concretos; el principio es el mismo: lea qué incluye cada término y confírmelo por escrito.',
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Practical checklist',
+        ar: 'قائمة تحقق عملية',
+        ru: 'Практический чек-лист',
+        es: 'Lista práctica',
+      },
+      checklist: [
+        { en: 'Choose a term that matches your control preference and experience.', ar: 'اختر مصطلحًا يطابق تفضيلك في التحكم وخبرتك.', ru: 'Выберите термин, соответствующий вашим предпочтениям по контролю и опыту.', es: 'Elija un término acorde a su preferencia de control y experiencia.' },
+        { en: 'Confirm the term, the ports and what each side covers — in writing.', ar: 'أكد المصطلح والموانئ وما يغطيه كل طرف — كتابيًا.', ru: 'Подтвердите термин, порты и что покрывает каждая сторона — письменно.', es: 'Confirme el término, los puertos y qué cubre cada parte — por escrito.' },
+        { en: 'Remember duties, taxes and destination charges are always yours.', ar: 'تذكر أن الرسوم والضرائب ورسوم الوجهة عليك دائمًا.', ru: 'Помните: пошлины, налоги и сборы на стороне назначения всегда ваши.', es: 'Recuerde que aranceles, impuestos y gastos de destino son siempre suyos.' },
+        { en: 'Under FOB or CFR, arrange your own adequate insurance.', ar: 'بموجب FOB أو CFR، رتب تأمينك الكافي بنفسك.', ru: 'При FOB или CFR оформите собственную достаточную страховку.', es: 'Con FOB o CFR, contrate usted un seguro adecuado.' },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related market considerations',
+        ar: 'اعتبارات السوق ذات الصلة',
+        ru: 'Связанные соображения по рынку',
+        es: 'Consideraciones de mercado relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'Destination duties, taxes and charges — which no Incoterm covers — are maintained per country on the Market sub-site, where each rule carries a source and last-checked date.',
+          ar: 'رسوم الوجهة والضرائب والتكاليف — التي لا يغطيها أي مصطلح تجاري — تُصان لكل بلد في الموقع الفرعي للأسواق، حيث يحمل كل حكم مصدره وتاريخ آخر فحص.',
+          ru: 'Пошлины, налоги и сборы в стране назначения — которые не покрывает ни один Инкотермс — ведутся по странам на подсайте Market, где каждое правило имеет источник и дату последней проверки.',
+          es: 'Los aranceles, impuestos y gastos de destino — que ningún Incoterm cubre — se mantienen por país en el subsitio Market, donde cada norma lleva fuente y fecha de última comprobación.',
+        },
+      ],
+      links: [
+        {
+          href: 'https://market.chinausedautohub.com/',
+          label: {
+            en: 'Destination duties and taxes by country — Market sub-site',
+            ar: 'رسوم وضرائب الوجهة حسب البلد — الموقع الفرعي للأسواق',
+            ru: 'Пошлины и налоги страны назначения по странам — подсайт Market',
+            es: 'Aranceles e impuestos de destino por país — subsitio Market',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related vehicle considerations',
+        ar: 'اعتبارات المركبة ذات الصلة',
+        ru: 'Связанные соображения по автомобилю',
+        es: 'Consideraciones de vehículo relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'The term interacts with how the vehicle is physically moved — see the Shipping guide for RoRo versus container. The term\'s cost impact flows into your total landed cost — see the Landed Cost guide.',
+          ar: 'يتفاعل المصطلح مع كيفية نقل المركبة ماديًا — راجع دليل الشحن للمقارنة بين RoRo والحاوية. ويتدفق أثر تكلفة المصطلح إلى تكلفتك النهائية الإجمالية — راجع دليل التكلفة النهائية.',
+          ru: 'Термин взаимодействует с тем, как автомобиль физически перевозится, — см. руководство по доставке (RoRo или контейнер). Влияние термина на расходы входит в итоговую стоимость — см. руководство по итоговой стоимости.',
+          es: 'El término interactúa con cómo se mueve físicamente el vehículo: consulte la guía de envío para RoRo frente a contenedor. El impacto de coste del término entra en su coste de desembarco total: consulte la guía de coste de desembarco.',
+        },
+      ],
+      links: [
+        {
+          slug: 'shipping',
+          label: {
+            en: 'RoRo vs container — Shipping guide',
+            ar: 'RoRo مقابل الحاوية — دليل الشحن',
+            ru: 'RoRo или контейнер — руководство по доставке',
+            es: 'RoRo frente a contenedor — guía de envío',
+          },
+        },
+        {
+          slug: 'landed-cost',
+          label: {
+            en: 'How the term affects total cost — Landed Cost guide',
+            ar: 'كيف يؤثر المصطلح على التكلفة الإجمالية — دليل التكلفة النهائية',
+            ru: 'Как термин влияет на итоговую стоимость — руководство по итоговой стоимости',
+            es: 'Cómo afecta el término al coste total — guía de coste de desembarco',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related tools',
+        ar: 'أدوات ذات صلة',
+        ru: 'Связанные инструменты',
+        es: 'Herramientas relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'The FOB/CFR/CIF calculator on the Tools sub-site structures how the term splits cost between parties. It estimates; final figures are confirmed at quote time.',
+          ar: 'تهيكل حاسبة FOB/CFR/CIF في الموقع الفرعي للأدوات كيف يقسم المصطلح التكلفة بين الأطراف. وهي تقدّر؛ وتؤكد الأرقام النهائية عند عرض السعر.',
+          ru: 'Калькулятор FOB/CFR/CIF на подсайте инструментов структурирует, как термин делит расходы между сторонами. Он оценивает; итоговые цифры подтверждаются при расчёте.',
+          es: 'La calculadora FOB/CFR/CIF del subsitio de herramientas estructura cómo reparte el término el coste entre las partes. Estima; las cifras finales se confirman al cotizar.',
+        },
+      ],
+      links: [
+        {
+          href: 'https://tool.chinausedautohub.com/fob-cfr-cif-calculator/',
+          label: {
+            en: 'FOB/CFR/CIF Calculator',
+            ar: 'حاسبة FOB/CFR/CIF',
+            ru: 'Калькулятор FOB/CFR/CIF',
+            es: 'Calculadora FOB/CFR/CIF',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Reliable sources',
+        ar: 'مصادر موثوقة',
+        ru: 'Надёжные источники',
+        es: 'Fuentes fiables',
+      },
+      paragraphs: [
+        {
+          en: 'The Incoterm definitions here follow the standard international trade terms. Freight and insurance figures are not fixed; they are confirmed from current sources at quote time, and destination duties and taxes are sourced on the Market sub-site. We do not publish rate tables.',
+          ar: 'تتبع تعريفات مصطلحات التجارة الواردة هنا المصطلحات التجارية الدولية القياسية. أرقام الشحن والتأمين ليست ثابتة؛ تؤكد من مصادر حالية عند عرض السعر، وتصدر رسوم وضرائب الوجهة من الموقع الفرعي للأسواق. لا ننشر جداول أسعار.',
+          ru: 'Определения Инкотермс здесь следуют стандартным международным торговым терминам. Цифры по фрахту и страховке не фиксированы; они подтверждаются из актуальных источников при расчёте, а пошлины и налоги страны назначения берутся на подсайте Market. Мы не публикуем тарифные таблицы.',
+          es: 'Las definiciones de Incoterms aquí siguen los términos comerciales internacionales estándar. Las cifras de flete y seguro no son fijas; se confirman de fuentes actuales al cotizar, y los aranceles e impuestos de destino proceden del subsitio Market. No publicamos tablas de tarifas.',
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Last reviewed and verification status',
+        ar: 'آخر مراجعة وحالة التحقق',
+        ru: 'Дата последней проверки и статус верификации',
+        es: 'Última revisión y estado de verificación',
+      },
+      paragraphs: [
+        {
+          en: 'Last reviewed: 2026-10-04. This guide explains trade terms for vehicle export; it contains no fixed rates or unverified claims. Confirm the term, ports and figures in writing with a current quote before booking.',
+          ar: 'آخر مراجعة: 2026-10-04. يشرح هذا الدليل مصطلحات التجارة لتصدير المركبات؛ ولا يحتوي على أسعار ثابتة أو ادعاءات غير مُتحقق منها. أكد المصطلح والموانئ والأرقام كتابيًا بعرض سعر حالي قبل الحجز.',
+          ru: 'Последняя проверка: 2026-10-04. Это руководство объясняет торговые термины для экспорта автомобилей; оно не содержит фиксированных тарифов или непроверенных утверждений. Подтвердите термин, порты и цифры письменно актуальным расчётом до бронирования.',
+          es: 'Última revisión: 2026-10-04. Esta guía explica los términos comerciales para la exportación de vehículos; no contiene tarifas fijas ni afirmaciones no verificadas. Confirme el término, los puertos y las cifras por escrito con una cotización actual antes de reservar.',
         },
       ],
     },

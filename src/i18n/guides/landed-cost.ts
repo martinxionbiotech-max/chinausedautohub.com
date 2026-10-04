@@ -377,5 +377,251 @@ export const landedCost = {
         },
       ],
     },
+    {
+      heading: {
+        en: 'Cost classification — what depends on what',
+        ar: 'تصنيف التكلفة — ما الذي يعتمد على ماذا',
+        ru: 'Классификация затрат — что от чего зависит',
+        es: 'Clasificación de costes — qué depende de qué',
+      },
+      paragraphs: [
+        {
+          en: 'Not all landed-cost components behave the same way. Sorting them helps you see which parts are fixed, which move with the vehicle or the shipment, and which are set by your destination.',
+          ar: 'لا تتصرف كل مكونات التكلفة النهائية بنفس الطريقة. يساعدك تصنيفها على رؤية الأجزاء الثابتة، والتي تتحرك مع المركبة أو الشحنة، والتي تحددها وجهتك.',
+          ru: 'Не все компоненты итоговой стоимости ведут себя одинаково. Их классификация помогает увидеть, какие части фиксированы, какие зависят от автомобиля или отправки, а какие задаются вашей страной.',
+          es: 'No todos los componentes del coste de desembarco se comportan igual. Clasificarlos le ayuda a ver qué partes son fijas, cuáles se mueven con el vehículo o el envío y cuáles las fija su destino.',
+        },
+      ],
+      table: {
+        headers: [
+          { en: 'Category', ar: 'الفئة', ru: 'Категория', es: 'Categoría' },
+          { en: 'Components', ar: 'المكونات', ru: 'Компоненты', es: 'Componentes' },
+          { en: 'What it depends on', ar: 'ما الذي يعتمد عليه', ru: 'От чего зависит', es: 'De qué depende' },
+        ],
+        rows: [
+          [
+            { en: 'Fixed', ar: 'ثابتة', ru: 'Фиксированные', es: 'Fijos' },
+            { en: 'Basic documentation and coordination costs that apply regardless of destination.', ar: 'تكاليف الوثائق والتنسيق الأساسية التي تنطبق بغض النظر عن الوجهة.', ru: 'Базовые расходы на документы и координацию, не зависящие от страны.', es: 'Costes básicos de documentación y coordinación que se aplican con independencia del destino.' },
+            { en: 'The transaction itself.', ar: 'المعاملة نفسها.', ru: 'Сама сделка.', es: 'La propia transacción.' },
+          ],
+          [
+            { en: 'Variable', ar: 'متغيرة', ru: 'Переменные', es: 'Variables' },
+            { en: 'Freight and insurance.', ar: 'الشحن والتأمين.', ru: 'Фрахт и страховка.', es: 'Flete y seguro.' },
+            { en: 'Route, shipping method and the market at the time of shipment.', ar: 'المسار وطريقة الشحن والسوق وقت الشحن.', ru: 'Маршрут, способ доставки и рынок на момент отправки.', es: 'Ruta, método de envío y mercado en el momento del envío.' },
+          ],
+          [
+            { en: 'Destination-dependent', ar: 'مرتبطة بالوجهة', ru: 'Зависящие от страны', es: 'Dependientes del destino' },
+            { en: 'Import duties, taxes and destination port/handling charges.', ar: 'رسوم الاستيراد والضرائب ورسوم الموانئ/المناولة في الوجهة.', ru: 'Импортные пошлины, налоги и портовые сборы в стране назначения.', es: 'Aranceles, impuestos y gastos portuarios de destino.' },
+            { en: 'The destination country\'s published rules (value, type, age, engine).', ar: 'قواعد بلد الوجهة المنشورة (القيمة والنوع والعمر والمحرك).', ru: 'Опубликованные правила страны (стоимость, тип, возраст, двигатель).', es: 'Las normas publicadas del país de destino (valor, tipo, antigüedad, motor).' },
+          ],
+          [
+            { en: 'Vehicle-dependent', ar: 'مرتبطة بالمركبة', ru: 'Зависящие от автомобиля', es: 'Dependientes del vehículo' },
+            { en: 'Vehicle price, inland transport to the port, and any EV battery-handling requirements.', ar: 'سعر المركبة، والنقل الداخلي إلى الميناء، وأي متطلبات مناولة بطارية كهربائية.', ru: 'Цена автомобиля, внутренняя доставка до порта и требования к батарее электромобиля.', es: 'Precio del vehículo, transporte interior al puerto y requisitos de manipulación de batería de VE.' },
+            { en: 'The specific vehicle and its location and type.', ar: 'المركبة المحددة وموقعها ونوعها.', ru: 'Конкретный автомобиль, его расположение и тип.', es: 'El vehículo concreto, su ubicación y tipo.' },
+          ],
+          [
+            { en: 'Shipment-dependent', ar: 'مرتبطة بالشحنة', ru: 'Зависящие от отправки', es: 'Dependientes del envío' },
+            { en: 'Method (RoRo vs container) and any consolidation choices.', ar: 'الطريقة (RoRo مقابل الحاوية) وأي خيارات تجميع.', ru: 'Способ (RoRo или контейнер) и выбор консолидации.', es: 'Método (RoRo frente a contenedor) y las decisiones de consolidación.' },
+            { en: 'How many vehicles you ship and how you ship them.', ar: 'عدد المركبات التي تشحنها وكيف تشحنها.', ru: 'Сколько автомобилей вы отправляете и как.', es: 'Cuántos vehículos envía y cómo los envía.' },
+          ],
+        ],
+      },
+    },
+    {
+      heading: {
+        en: 'Decision framework — price the landed cost, not the list price',
+        ar: 'إطار القرار — سعّر التكلفة النهائية لا سعر الإدراج',
+        ru: 'Структура решения — считайте итоговую стоимость, а не цену объявления',
+        es: 'Marco de decisión — valore el coste de desembarco, no el precio de lista',
+      },
+      paragraphs: [
+        {
+          en: 'The list price is only the first component. Budget and compare on the landed cost, because it is the figure you actually pay before local registration. A vehicle with a higher list price but a cheaper total can be the better commercial choice — this is why landed cost, not purchase price, is the number that drives the decision.',
+          ar: 'سعر الإدراج هو المكوّن الأول فقط. ضَع الميزانية وقارن على أساس التكلفة النهائية، لأنها الرقم الذي تدفعه فعليًا قبل التسجيل المحلي. فقد تكون المركبة الأعلى سعرًا في الإدراج لكن الأرخص إجمالًا خيارًا تجاريًا أفضل — ولهذا تكون التكلفة النهائية، لا سعر الشراء، هي الرقم الذي يقود القرار.',
+          ru: 'Цена в объявлении — лишь первый компонент. Бюджетируйте и сравнивайте по итоговой стоимости, потому что именно её вы фактически платите до местной регистрации. Автомобиль с более высокой ценой объявления, но более дешёвой итоговой суммой может быть лучшим коммерческим выбором — поэтому решением управляет итоговая стоимость, а не цена покупки.',
+          es: 'El precio de lista es solo el primer componente. Presupueste y compare por el coste de desembarco, porque es la cifra que realmente paga antes de la matriculación local. Un vehículo con mayor precio de lista pero menor total puede ser la mejor opción comercial: por eso el coste de desembarco, no el precio de compra, es el número que guía la decisión.',
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Total ownership cost',
+        ar: 'التكلفة الإجمالية للملكية',
+        ru: 'Совокупная стоимость владения',
+        es: 'Coste total de propiedad',
+      },
+      paragraphs: [
+        {
+          en: 'Landed cost gets the vehicle to your market; total ownership cost adds the ongoing costs of running and eventually reselling it — registration, insurance, parts, service, and fuel or charging. For dealers and importers, a model with lower running costs and stronger resale can be worth more than a cheaper model that costs more to support.',
+          ar: 'توصل التكلفة النهائية المركبة إلى سوقك؛ وتضيف التكلفة الإجمالية للملكية تكاليف التشغيل الجارية وإعادة البيع في النهاية — التسجيل والتأمين وقطع الغيار والخدمة والوقود أو الشحن. بالنسبة للتجار والمستوردين، قد يستحق الطراز الأقل تكاليف تشغيل والأقوى إعادة بيع أكثر من طراز أرخص لكنه أغلى في الدعم.',
+          ru: 'Итоговая стоимость доставляет автомобиль на ваш рынок; совокупная стоимость владения добавляет текущие расходы на эксплуатацию и итоговую перепродажу — регистрацию, страховку, запчасти, сервис и топливо или зарядку. Для дилеров и импортёров модель с меньшими эксплуатационными расходами и более сильной перепродажей может стоить дороже более дешёвой модели, которую дороже обслуживать.',
+          es: 'El coste de desembarco lleva el vehículo a su mercado; el coste total de propiedad añade los costes corrientes de operarlo y eventualmente revenderlo: matriculación, seguro, repuestos, servicio y combustible o carga. Para concesionarios e importadores, un modelo con menores costes de uso y mejor reventa puede valer más que uno más barato pero más costoso de mantener.',
+        },
+        {
+          en: 'Estimate both figures before committing: landed cost for the purchase decision, and total ownership cost for the resale and margin decision.',
+          ar: 'قدّر الرقمين قبل الالتزام: التكلفة النهائية لقرار الشراء، والتكلفة الإجمالية للملكية لقرار إعادة البيع والهامش.',
+          ru: 'Оцените обе цифры до обязательств: итоговую стоимость для решения о покупке и совокупную стоимость владения для решения о перепродаже и марже.',
+          es: 'Estime ambas cifras antes de comprometerse: el coste de desembarco para la decisión de compra, y el coste total de propiedad para la decisión de reventa y margen.',
+        },
+      ],
+      links: [
+        {
+          href: 'https://tool.chinausedautohub.com/tco-calculator/',
+          label: {
+            en: 'Estimate total ownership cost — TCO Calculator',
+            ar: 'قدّر التكلفة الإجمالية للملكية — حاسبة التكلفة الإجمالية للملكية',
+            ru: 'Оцените совокупную стоимость владения — калькулятор TCO',
+            es: 'Estime el coste total de propiedad — Calculadora TCO',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Exceptions',
+        ar: 'استثناءات',
+        ru: 'Исключения',
+        es: 'Excepciones',
+      },
+      paragraphs: [
+        {
+          en: 'The cost structure is the same for every import, but the proportions shift. An electric vehicle may have different duty treatment in some markets; a non-running vehicle changes the shipping component; and a destination with EV incentives can lower the duty component. Estimate the same components, but confirm the figures that change for your case.',
+          ar: 'بنية التكلفة واحدة لكل استيراد، لكن النسب تتبدل. فقد تختلف معاملة الرسوم للمركبة الكهربائية في بعض الأسواق؛ وتغير المركبة غير الصالحة للحركة مكوّن الشحن؛ وقد تخفض الوجهة ذات حوافز المركبات الكهربائية مكوّن الرسوم. قدّر نفس المكونات، لكن أكد الأرقام التي تتغير لحالتك.',
+          ru: 'Структура затрат одинакова для любого импорта, но пропорции меняются. Электромобиль может иметь иное обложение пошлинами на некоторых рынках; неисправный автомобиль меняет компонент доставки; страна со стимулами для электромобилей может снизить компонент пошлин. Оценивайте те же компоненты, но подтверждайте цифры, которые меняются для вашего случая.',
+          es: 'La estructura de costes es la misma para toda importación, pero las proporciones cambian. Un VE puede tener un trato arancelario distinto en algunos mercados; un vehículo no operativo cambia el componente de envío; y un destino con incentivos para VE puede reducir el componente arancelario. Estime los mismos componentes, pero confirme las cifras que cambian para su caso.',
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related market considerations',
+        ar: 'اعتبارات السوق ذات الصلة',
+        ru: 'Связанные соображения по рынку',
+        es: 'Consideraciones de mercado relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'Duties and taxes — the largest destination-specific component — are maintained per country on the Market sub-site, where each rule carries a source and last-checked date. Estimate them from your destination\'s published rules.',
+          ar: 'الرسوم والضرائب — أكبر مكوّن مرتبط بالوجهة — تُصان لكل بلد في الموقع الفرعي للأسواق، حيث يحمل كل حكم مصدره وتاريخ آخر فحص. قدّرها من قواعد وجهتك المنشورة.',
+          ru: 'Пошлины и налоги — крупнейший компонент, зависящий от страны, — ведутся по странам на подсайте Market, где каждое правило имеет источник и дату последней проверки. Оценивайте их по опубликованным правилам вашей страны.',
+          es: 'Los aranceles e impuestos — el mayor componente específico del destino — se mantienen por país en el subsitio Market, donde cada norma lleva fuente y fecha de última comprobación. Estímelos según las normas publicadas de su destino.',
+        },
+      ],
+      links: [
+        {
+          href: 'https://market.chinausedautohub.com/',
+          label: {
+            en: 'Destination duties and taxes by country — Market sub-site',
+            ar: 'رسوم وضرائب الوجهة حسب البلد — الموقع الفرعي للأسواق',
+            ru: 'Пошлины и налоги страны назначения по странам — подсайт Market',
+            es: 'Aranceles e impuestos de destino por país — subsitio Market',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related vehicle considerations',
+        ar: 'اعتبارات المركبة ذات الصلة',
+        ru: 'Связанные соображения по автомобилю',
+        es: 'Consideraciones de vehículo relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'Vehicle price, inland transport and EV battery handling are the vehicle-dependent components. The Incoterm you agree shifts which of the freight/insurance components sit inside the seller\'s price — see the FOB/CFR/CIF guide.',
+          ar: 'سعر المركبة والنقل الداخلي ومناولة البطارية الكهربائية هي المكونات المرتبطة بالمركبة. يغير مصطلح التجارة الذي تتفق عليه أيًا من مكوني الشحن/التأمين يقع داخل سعر البائع — راجع دليل FOB/CFR/CIF.',
+          ru: 'Цена автомобиля, внутренняя доставка и обращение с батареей электромобиля — компоненты, зависящие от автомобиля. Согласованный Инкотермс определяет, какие компоненты фрахта/страховки входят в цену продавца, — см. руководство FOB/CFR/CIF.',
+          es: 'El precio del vehículo, el transporte interior y la manipulación de la batería del VE son los componentes dependientes del vehículo. El Incoterm que acuerde desplaza cuáles de los componentes de flete/seguro están dentro del precio del vendedor: consulte la guía FOB/CFR/CIF.',
+        },
+      ],
+      links: [
+        {
+          slug: 'fob-vs-cif-vs-cfr',
+          label: {
+            en: 'Who pays freight and insurance — FOB/CFR/CIF guide',
+            ar: 'من يدفع الشحن والتأمين — دليل FOB/CFR/CIF',
+            ru: 'Кто платит за фрахт и страховку — руководство FOB/CFR/CIF',
+            es: 'Quién paga el flete y el seguro — guía FOB/CFR/CIF',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related tools',
+        ar: 'أدوات ذات صلة',
+        ru: 'Связанные инструменты',
+        es: 'Herramientas relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'The Tools sub-site has calculators for the components in this guide. They structure the calculation; final figures are confirmed at quote time with current rates.',
+          ar: 'يحتوي الموقع الفرعي للأدوات على حاسبات للمكونات في هذا الدليل. وهي تهيكل الحساب؛ وتؤكد الأرقام النهائية عند عرض السعر بالأسعار الحالية.',
+          ru: 'На подсайте инструментов есть калькуляторы для компонентов из этого руководства. Они структурируют расчёт; итоговые цифры подтверждаются при расчёте по текущим тарифам.',
+          es: 'El subsitio de herramientas tiene calculadoras para los componentes de esta guía. Estructuran el cálculo; las cifras finales se confirman al cotizar con las tarifas vigentes.',
+        },
+      ],
+      links: [
+        {
+          href: 'https://tool.chinausedautohub.com/landed-cost-calculator/',
+          label: {
+            en: 'Landed Cost Calculator',
+            ar: 'حاسبة التكلفة النهائية',
+            ru: 'Калькулятор итоговой стоимости',
+            es: 'Calculadora de coste de desembarco',
+          },
+        },
+        {
+          href: 'https://tool.chinausedautohub.com/import-duty-calculator/',
+          label: {
+            en: 'Import Duty Calculator',
+            ar: 'حاسبة رسوم الاستيراد',
+            ru: 'Калькулятор импортных пошлин',
+            es: 'Calculadora de aranceles de importación',
+          },
+        },
+        {
+          href: 'https://tool.chinausedautohub.com/tco-calculator/',
+          label: {
+            en: 'TCO Calculator',
+            ar: 'حاسبة التكلفة الإجمالية للملكية',
+            ru: 'Калькулятор TCO',
+            es: 'Calculadora TCO',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Reliable sources',
+        ar: 'مصادر موثوقة',
+        ru: 'Надёжные источники',
+        es: 'Fuentes fiables',
+      },
+      paragraphs: [
+        {
+          en: 'Freight, insurance, duties, taxes and port charges are confirmed from current sources at quote time; we do not publish fixed rate tables. Destination duties and taxes are sourced on the Market sub-site (each with a cited source). The worked example uses placeholder values, not market rates.',
+          ar: 'يؤكد الشحن والتأمين والرسوم والضرائب ورسوم الموانئ من مصادر حالية عند عرض السعر؛ ولا ننشر جداول أسعار ثابتة. تصدر رسوم وضرائب الوجهة من الموقع الفرعي للأسواق (كل منها بمصدر مستشهد به). ويستخدم المثال التوضيحي قيمًا مؤقتة لا أسعار سوق.',
+          ru: 'Фрахт, страховка, пошлины, налоги и портовые сборы подтверждаются из актуальных источников при расчёте; мы не публикуем фиксированные тарифные таблицы. Пошлины и налоги страны назначения берутся на подсайте Market (каждое с указанным источником). Наглядный пример использует условные значения, а не рыночные тарифы.',
+          es: 'El flete, el seguro, los aranceles, los impuestos y los gastos portuarios se confirman de fuentes actuales al cotizar; no publicamos tablas de tarifas fijas. Los aranceles e impuestos de destino proceden del subsitio Market (cada uno con fuente citada). El ejemplo práctico usa valores de referencia, no tarifas de mercado.',
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Last reviewed and verification status',
+        ar: 'آخر مراجعة وحالة التحقق',
+        ru: 'Дата последней проверки и статус верификации',
+        es: 'Última revisión y estado de verificación',
+      },
+      paragraphs: [
+        {
+          en: 'Last reviewed: 2026-10-04. This guide explains a method, not fixed rates. Any figures you see are placeholders or examples; confirm the actual numbers with a current quote before committing.',
+          ar: 'آخر مراجعة: 2026-10-04. يشرح هذا الدليل طريقة، لا أسعارًا ثابتة. أي أرقام تراها هي قيم مؤقتة أو أمثلة؛ أكد الأرقام الفعلية بعرض سعر حالي قبل الالتزام.',
+          ru: 'Последняя проверка: 2026-10-04. Это руководство объясняет метод, а не фиксированные тарифы. Любые цифры — условные или примерные; подтвердите фактические значения актуальным расчётом до обязательств.',
+          es: 'Última revisión: 2026-10-04. Esta guía explica un método, no tarifas fijas. Cualquier cifra que vea es un valor de referencia o un ejemplo; confirme los números reales con una cotización actual antes de comprometerse.',
+        },
+      ],
+    },
   ],
 };

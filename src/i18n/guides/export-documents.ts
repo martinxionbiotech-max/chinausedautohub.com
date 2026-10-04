@@ -355,5 +355,193 @@ export const exportDocuments = {
         },
       ],
     },
+    {
+      heading: {
+        en: 'Decision framework — is your document set complete?',
+        ar: 'إطار القرار — هل مجموعة وثائقك كاملة؟',
+        ru: 'Структура решения — полон ли ваш комплект документов?',
+        es: 'Marco de decisión — ¿está completo su juego de documentos?',
+      },
+      paragraphs: [
+        {
+          en: 'Before the vehicle ships, check the document set against a few consistency tests. A set that passes all of them is ready to move; any failed test should be corrected at the source first.',
+          ar: 'قبل شحن المركبة، تحقق من مجموعة الوثائق عبر اختبارات اتساق قليلة. المجموعة التي تجتازها جميعًا جاهزة للحركة؛ وأي اختبار يفشل يجب تصحيحه عند المصدر أولًا.',
+          ru: 'До отправки автомобиля проверьте комплект документов по нескольким тестам согласованности. Комплект, прошедший все тесты, готов к отправке; любой проваленный тест нужно исправить в источнике заранее.',
+          es: 'Antes de enviar el vehículo, compruebe el juego de documentos con unas pocas pruebas de coherencia. Un conjunto que las supere todas está listo; cualquier prueba fallida debe corregirse en la fuente primero.',
+        },
+      ],
+      table: {
+        headers: [
+          { en: 'Factor', ar: 'العامل', ru: 'Фактор', es: 'Factor' },
+          { en: 'What to check', ar: 'ما يجب التحقق منه', ru: 'Что проверять', es: 'Qué comprobar' },
+          { en: 'Warning signs', ar: 'علامات التحذير', ru: 'Тревожные сигналы', es: 'Señales de alarma' },
+        ],
+        rows: [
+          [
+            { en: 'Identity consistency', ar: 'اتساق الهوية', ru: 'Согласованность идентичности', es: 'Coherencia de identidad' },
+            { en: 'The VIN, make, model and year match across the invoice, vehicle documents and shipping papers.', ar: 'تتطابق رقم الهيكل والصنع والطراز والسنة عبر الفاتورة ووثائق المركبة وأوراق الشحن.', ru: 'VIN, марка, модель и год совпадают в инвойсе, документах на автомобиль и отгрузочных бумагах.', es: 'El VIN, la marca, el modelo y el año coinciden en la factura, los documentos del vehículo y los papeles de envío.' },
+            { en: 'A VIN, model name or year that differs between any two documents.', ar: 'رقم هيكل أو اسم طراز أو سنة يختلف بين أي وثيقتين.', ru: 'VIN, название модели или год, различающиеся в двух документах.', es: 'Un VIN, nombre de modelo o año que difiere entre dos documentos.' },
+          ],
+          [
+            { en: 'Buyer and seller details', ar: 'تفاصيل المشتري والبائع', ru: 'Данные покупателя и продавца', es: 'Datos de comprador y vendedor' },
+            { en: 'Names and addresses are written consistently everywhere.', ar: 'الأسماء والعناوين مكتوبة بشكل متسق في كل مكان.', ru: 'Имена и адреса записаны согласованно во всех документах.', es: 'Los nombres y direcciones figuran de forma coherente en todas partes.' },
+            { en: 'Inconsistent buyer or seller details, or a different spelling between documents.', ar: 'تفاصيل مشترٍ أو بائع غير متسقة، أو كتابة مختلفة بين الوثائق.', ru: 'Несогласованные данные покупателя или продавца либо разное написание в документах.', es: 'Datos de comprador o vendedor incoherentes, o una grafía distinta entre documentos.' },
+          ],
+          [
+            { en: 'Values and dates', ar: 'القيم والتواريخ', ru: 'Значения и даты', es: 'Valores y fechas' },
+            { en: 'The price and key dates are consistent across documents.', ar: 'السعر والتواريخ الأساسية متسقة عبر الوثائق.', ru: 'Цена и ключевые даты согласованы по документам.', es: 'El precio y las fechas clave son coherentes entre documentos.' },
+            { en: 'Mismatched values or dates that could trigger a customs hold.', ar: 'قيم أو تواريخ غير متطابقة قد تسبب احتجازًا جمركيًا.', ru: 'Несовпадающие значения или даты, способные вызвать таможенную задержку.', es: 'Valores o fechas dispares que podrían provocar una retención aduanera.' },
+          ],
+          [
+            { en: 'Signatures and stamps', ar: 'التوقيعات والأختام', ru: 'Подписи и печати', es: 'Firmas y sellos' },
+            { en: 'Required signatures and stamps are present where applicable.', ar: 'التوقيعات والأختام المطلوبة موجودة حيثما ينطبق.', ru: 'Требуемые подписи и печати присутствуют, где применимо.', es: 'Las firmas y sellos requeridos están presentes donde corresponde.' },
+            { en: 'Missing signatures or stamps on documents that need them.', ar: 'توقيعات أو أختام ناقصة في وثائق تحتاجها.', ru: 'Отсутствующие подписи или печати в документах, где они нужны.', es: 'Firmas o sellos ausentes en documentos que los necesitan.' },
+          ],
+          [
+            { en: 'Destination requirements', ar: 'متطلبات الوجهة', ru: 'Требования страны назначения', es: 'Requisitos de destino' },
+            { en: 'Confirm which documents your destination additionally requires for clearance and registration.', ar: 'أكد الوثائق التي تتطلبها وجهتك إضافيًا للتخليص والتسجيل.', ru: 'Подтвердите, какие документы дополнительно требует ваша страна для оформления и регистрации.', es: 'Confirme qué documentos adicionales exige su destino para el despacho y la matriculación.' },
+            { en: 'A destination-specific certificate you cannot obtain for the vehicle.', ar: 'شهادة خاصة بالوجهة لا يمكنك الحصول عليها للمركبة.', ru: 'Специфичный для страны сертификат, который нельзя получить для автомобиля.', es: 'Un certificado específico del destino que no puede obtener para el vehículo.' },
+          ],
+        ],
+      },
+    },
+    {
+      heading: {
+        en: 'Exceptions',
+        ar: 'استثناءات',
+        ru: 'Исключения',
+        es: 'Excepciones',
+      },
+      paragraphs: [
+        {
+          en: 'Document requirements are not identical everywhere. Some destinations accept electronic bills of lading and scanned copies throughout; others still require original or notarized paper documents. Some markets add certificates or inspections. Treat the common list as a starting point and confirm what your destination requires.',
+          ar: 'متطلبات الوثائق ليست متطابقة في كل مكان. فبعض الوجهات تقبل بوليصات الشحن الإلكترونية والنسخ الممسوحة طوال العملية؛ بينما لا تزال أخرى تتطلب وثائق ورقية أصلية أو موثقة. وتضيف بعض الأسواق شهادات أو فحوصات. عامل القائمة الشائعة كنقطة بداية وأكد ما تتطلبه وجهتك.',
+          ru: 'Требования к документам не везде одинаковы. Одни страны принимают электронные коносаменты и сканы на всём протяжении; другие всё ещё требуют оригиналы или нотариально заверенные бумаги. Некоторые рынки добавляют сертификаты или осмотры. Относитесь к общему списку как к отправной точке и подтверждайте требования вашей страны.',
+          es: 'Los requisitos documentales no son idénticos en todas partes. Algunos destinos aceptan conocimientos de embarque electrónicos y copias escaneadas en todo el proceso; otros siguen exigiendo documentos originales en papel o notariados. Algunos mercados añaden certificados o inspecciones. Trate la lista común como punto de partida y confirme lo que exige su destino.',
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related market considerations',
+        ar: 'اعتبارات السوق ذات الصلة',
+        ru: 'Связанные соображения по рынку',
+        es: 'Consideraciones de mercado relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'Destination-specific document requirements are maintained per country on the Market sub-site, where each rule carries a source and last-checked date. Confirm them for your destination before shipping.',
+          ar: 'تُصان متطلبات الوثائق الخاصة بكل وجهة حسب البلد في الموقع الفرعي للأسواق، حيث يحمل كل حكم مصدره وتاريخ آخر فحص. أكدها لوجهتك قبل الشحن.',
+          ru: 'Специфичные для страны требования к документам ведутся по странам на подсайте Market, где каждое правило имеет источник и дату последней проверки. Подтвердите их для вашей страны до отправки.',
+          es: 'Los requisitos documentales específicos de cada destino se mantienen por país en el subsitio Market, donde cada norma lleva fuente y fecha de última comprobación. Confírmelos para su destino antes del envío.',
+        },
+      ],
+      links: [
+        {
+          href: 'https://market.chinausedautohub.com/',
+          label: {
+            en: 'Destination requirements by country — Market sub-site',
+            ar: 'متطلبات الوجهة حسب البلد — الموقع الفرعي للأسواق',
+            ru: 'Требования страны назначения по странам — подсайт Market',
+            es: 'Requisitos de destino por país — subsitio Market',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related vehicle considerations',
+        ar: 'اعتبارات المركبة ذات الصلة',
+        ru: 'Связанные соображения по автомобилю',
+        es: 'Consideraciones de vehículo relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'Vehicle identity and specification details that appear in the documents are sourced on the Data sub-site. The documents described here are the operational side of the export process; the buyer-side decision is covered in the How to Buy guide.',
+          ar: 'تفاصيل هوية المركبة ومواصفاتها التي تظهر في الوثائق مصدرها الموقع الفرعي للبيانات. الوثائق الموصوفة هنا هي الجانب التشغيلي من عملية التصدير؛ وقرار جانب المشتري مشروح في دليل «كيف تشتري».',
+          ru: 'Детали идентичности и характеристик автомобиля, указанные в документах, берутся на подсайте Data. Описанные здесь документы — операционная сторона экспортного процесса; решение на стороне покупателя описано в руководстве «Как купить».',
+          es: 'Los detalles de identidad y especificación del vehículo que aparecen en los documentos proceden del subsitio Data. Los documentos descritos aquí son el lado operativo del proceso de exportación; la decisión del comprador se trata en la guía «Cómo comprar».',
+        },
+      ],
+      links: [
+        {
+          slug: 'china-used-car-export-process',
+          label: {
+            en: 'How the paperwork fits the operation — Export Process guide',
+            ar: 'كيف تتوافق الأوراق مع العملية — دليل عملية التصدير',
+            ru: 'Как документы встраиваются в операцию — руководство по процессу экспорта',
+            es: 'Cómo encaja el papeleo en la operación — guía del proceso de exportación',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related tools',
+        ar: 'أدوات ذات صلة',
+        ru: 'Связанные инструменты',
+        es: 'Herramientas relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'There is no calculator for document preparation itself; the document data feeds the downstream cost tools. Use the shipping and landed cost estimators to see how the shipment the documents describe is priced.',
+          ar: 'لا توجد حاسبة لإعداد الوثائق نفسها؛ إذ تغذي بيانات الوثائق أدوات التكلفة اللاحقة. استخدم مقدّري الشحن والتكلفة النهائية لترى كيف تُسعَّر الشحنة التي تصفها الوثائق.',
+          ru: 'Калькулятора для подготовки документов нет; данные документов питают дальнейшие инструменты расчёта. Используйте оценщики доставки и итоговой стоимости, чтобы увидеть, как оценивается отправка, которую описывают документы.',
+          es: 'No hay calculadora para la propia preparación de documentos; los datos documentales alimentan las herramientas de coste posteriores. Use los estimadores de envío y coste de desembarco para ver cómo se valora el envío que describen los documentos.',
+        },
+      ],
+      links: [
+        {
+          href: 'https://tool.chinausedautohub.com/shipping-cost-estimator/',
+          label: {
+            en: 'Shipping Cost Estimator',
+            ar: 'حاسبة تقدير تكلفة الشحن',
+            ru: 'Оценка стоимости доставки',
+            es: 'Estimador de coste de envío',
+          },
+        },
+        {
+          href: 'https://tool.chinausedautohub.com/landed-cost-calculator/',
+          label: {
+            en: 'Landed Cost Calculator',
+            ar: 'حاسبة التكلفة النهائية',
+            ru: 'Калькулятор итоговой стоимости',
+            es: 'Calculadora de coste de desembarco',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Reliable sources',
+        ar: 'مصادر موثوقة',
+        ru: 'Надёжные источники',
+        es: 'Fuentes fiables',
+      },
+      paragraphs: [
+        {
+          en: 'Document requirements are confirmed per vehicle and destination during the quote. Country-specific document rules are sourced on the Market sub-site (each with a cited source). This guide describes what is commonly involved, not a legal guarantee for a specific shipment.',
+          ar: 'تُؤكد متطلبات الوثائق لكل مركبة ووجهة أثناء عرض السعر. تُصدر قواعد الوثائق الخاصة بكل بلد من الموقع الفرعي للأسواق (كل منها بمصدر مستشهد به). يصف هذا الدليل ما يتضمنه الأمر عادة، وليس ضمانًا قانونيًا لشحنة محددة.',
+          ru: 'Требования к документам подтверждаются по каждому автомобилю и стране при расчёте. Специфичные для страны правила документов берутся на подсайте Market (каждое с указанным источником). Это руководство описывает типичный состав, а не юридическую гарантию для конкретной отправки.',
+          es: 'Los requisitos documentales se confirman por vehículo y destino durante la cotización. Las normas documentales por país proceden del subsitio Market (cada una con fuente citada). Esta guía describe lo que suele implicar, no una garantía legal para un envío concreto.',
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Last reviewed and verification status',
+        ar: 'آخر مراجعة وحالة التحقق',
+        ru: 'Дата последней проверки и статус верификации',
+        es: 'Última revisión y estado de verificación',
+      },
+      paragraphs: [
+        {
+          en: 'Last reviewed: 2026-10-04. This guide describes common export documents; exact requirements depend on the vehicle, the export arrangement and the destination country. Confirm which documents your destination requires before shipping.',
+          ar: 'آخر مراجعة: 2026-10-04. يصف هذا الدليل وثائق التصدير الشائعة؛ تعتمد المتطلبات الدقيقة على المركبة وترتيب التصدير وبلد الوجهة. أكد الوثائق التي تتطلبها وجهتك قبل الشحن.',
+          ru: 'Последняя проверка: 2026-10-04. Это руководство описывает типовые экспортные документы; точные требования зависят от автомобиля, схемы экспорта и страны назначения. Подтвердите, какие документы требует ваша страна, до отправки.',
+          es: 'Última revisión: 2026-10-04. Esta guía describe los documentos de exportación habituales; los requisitos exactos dependen del vehículo, el acuerdo de exportación y el país de destino. Confirme qué documentos exige su destino antes del envío.',
+        },
+      ],
+    },
   ],
 };

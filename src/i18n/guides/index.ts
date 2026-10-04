@@ -10,9 +10,18 @@ import { buyingEvs } from './buying-chinese-evs-for-export';
 
 export interface GuideSection {
   heading: L10n;
-  paragraphs: L10n[];
-  /** Optional cross-guide links rendered under the section. */
-  links?: { slug: string; label: L10n }[];
+  paragraphs?: L10n[];
+  /** Optional links rendered under the section. Internal guide links use `slug`; external links (tools / market sub-sites) use `href`. */
+  links?: { slug?: string; href?: string; label: L10n }[];
+  /** Optional practical checklist, rendered as a bulleted check list. */
+  checklist?: L10n[];
+  /** Optional decision-framework table (e.g. Factor | What to check | Warning signs). */
+  table?: GuideTable;
+}
+
+export interface GuideTable {
+  headers: L10n[];
+  rows: L10n[][];
 }
 
 export interface GuideContent {

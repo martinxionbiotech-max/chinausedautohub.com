@@ -303,6 +303,219 @@ export const buyingEvs = {
     },
     {
       heading: {
+        en: 'Battery health — SOH, capacity and chemistry',
+        ar: 'صحة البطارية — حالة الصحة والسعة والكيمياء',
+        ru: 'Здоровье батареи — SOH, ёмкость и химия',
+        es: 'Salud de la batería — SOH, capacidad y química',
+      },
+      paragraphs: [
+        {
+          en: 'State of health (SOH) is the battery\'s current capacity as a proportion of its capacity when new. Usable capacity is what the vehicle can actually draw on, which is usually less than the nominal (rated) capacity. Batteries degrade gradually with age, use and charging habits, and the two main chemistries — LFP (lithium iron phosphate) and NMC (nickel manganese cobalt) — degrade and behave differently. Where a diagnostic report is available it is the clearest evidence; where it is not, we mark battery health as not available rather than guessing.',
+          ar: 'حالة الصحة (SOH) هي سعة البطارية الحالية كنسبة من سعتها عند الجديدة. السعة القابلة للاستخدام هي ما يمكن للمركبة سحبه فعليًا، وعادة تكون أقل من السعة الاسمية (المقدرة). تتدهور البطاريات تدريجيًا مع العمر والاستخدام وعادات الشحن، والكيمياء الرئيسية — LFP (فوسفات الحديد الليثيوم) وNMC (نيكل منغنيز كوبالت) — تتدهوران وتتصرفان بشكل مختلف. عندما يتوفر تقرير تشخيصي يكون أوضح دليل؛ وعندما لا يتوفر، نعلّم صحة البطارية بأنها غير متوفرة بدلًا من التخمين.',
+          ru: 'Состояние здоровья (SOH) — это текущая ёмкость батареи как доля от ёмкости новой. Полезная ёмкость — то, что автомобиль реально может использовать, и она обычно меньше номинальной (паспортной). Батареи деградируют постепенно с возрастом, использованием и привычками зарядки, а две основные химии — LFP (литий-железо-фосфат) и NMC (никель-марганец-кобальт) — деградируют и ведут себя по-разному. При наличии диагностического отчёта он — самое ясное доказательство; если его нет, мы помечаем здоровье батареи как недоступное, а не угадываем.',
+          es: 'El estado de salud (SOH) es la capacidad actual de la batería como proporción de su capacidad de nueva. La capacidad útil es lo que el vehículo puede realmente aprovechar, normalmente menor que la capacidad nominal (homologada). Las baterías se degradan gradualmente con la edad, el uso y los hábitos de carga, y las dos químicas principales — LFP (litio-ferrofosfato) y NMC (níquel-manganeso-cobalto) — se degradan y se comportan de forma distinta. Cuando hay un informe de diagnóstico es la evidencia más clara; si no lo hay, marcamos la salud de la batería como no disponible en lugar de adivinar.',
+        },
+      ],
+      table: {
+        headers: [
+          { en: 'Factor', ar: 'العامل', ru: 'Фактор', es: 'Factor' },
+          { en: 'What to check', ar: 'ما يجب التحقق منه', ru: 'Что проверять', es: 'Qué comprobar' },
+          { en: 'Warning signs', ar: 'علامات التحذير', ru: 'Тревожные сигналы', es: 'Señales de alarma' },
+        ],
+        rows: [
+          [
+            { en: 'State of health (SOH)', ar: 'حالة الصحة (SOH)', ru: 'Состояние здоровья (SOH)', es: 'Estado de salud (SOH)' },
+            { en: 'Ask for a battery diagnostic report showing SOH as a percentage of new capacity.', ar: 'اطلب تقرير تشخيص للبطارية يعرض حالة الصحة كنسبة من سعة الجديدة.', ru: 'Запросите диагностический отчёт по батарее с SOH как процентом от новой ёмкости.', es: 'Pida un informe de diagnóstico de batería que muestre el SOH como porcentaje de la capacidad de nueva.' },
+            { en: 'No diagnostic report available for a battery you cannot otherwise assess.', ar: 'لا يوجد تقرير تشخيصي لبطارية لا يمكنك تقييمها بغير ذلك.', ru: 'Нет диагностического отчёта по батарее, которую иначе оценить нельзя.', es: 'Sin informe de diagnóstico para una batería que no puede evaluar de otro modo.' },
+          ],
+          [
+            { en: 'Usable vs nominal capacity', ar: 'السعة القابلة للاستخدام مقابل الاسمية', ru: 'Полезная и номинальная ёмкость', es: 'Capacidad útil frente a nominal' },
+            { en: 'Check the usable (real-world) capacity against the nominal (rated) capacity.', ar: 'تحقق من السعة القابلة للاستخدام (الواقعية) مقابل السعة الاسمية (المقدرة).', ru: 'Проверьте полезную (реальную) ёмкость против номинальной (паспортной).', es: 'Compruebe la capacidad útil (real) frente a la nominal (homologada).' },
+            { en: 'A large, unexplained gap between usable and nominal capacity.', ar: 'فجوة كبيرة غير مفسرة بين السعة القابلة للاستخدام والاسمية.', ru: 'Большой необъяснимый разрыв между полезной и номинальной ёмкостью.', es: 'Una brecha grande e inexplicada entre la capacidad útil y la nominal.' },
+          ],
+          [
+            { en: 'Degradation and chemistry', ar: 'التدهور والكيمياء', ru: 'Деградация и химия', es: 'Degradación y química' },
+            { en: 'Consider the battery\'s age, chemistry (LFP vs NMC) and how it has been used and charged.', ar: 'راعِ عمر البطارية وكيميائها (LFP مقابل NMC) وكيف استُخدمت وشُحنت.', ru: 'Учитывайте возраст батареи, химию (LFP или NMC) и то, как её использовали и заряжали.', es: 'Considere la edad de la batería, su química (LFP frente a NMC) y cómo se ha usado y cargado.' },
+            { en: 'A degradation curve that is unusually steep for the vehicle\'s age and chemistry.', ar: 'منحنى تدهور شديد بشكل غير معتاد بالنسبة لعمر المركبة وكيميائها.', ru: 'Кривая деградации, необычно крутая для возраста автомобиля и химии.', es: 'Una curva de degradación inusualmente pronunciada para la edad y química del vehículo.' },
+          ],
+          [
+            { en: 'Charging system', ar: 'نظام الشحن', ru: 'Система зарядки', es: 'Sistema de carga' },
+            { en: 'Check the connector standard, voltage and any charging limits against your market.', ar: 'تحقق من معيار الموصل والجهد وأي حدود شحن مقابل سوقك.', ru: 'Проверьте стандарт разъёма, напряжение и ограничения зарядки относительно вашего рынка.', es: 'Compruebe el estándar del conector, el voltaje y los límites de carga frente a su mercado.' },
+            { en: 'A connector or electrical system your market\'s infrastructure does not support.', ar: 'موصل أو نظام كهربائي لا تدعمه البنية التحتية في سوقك.', ru: 'Разъём или электрическая система, не поддерживаемые инфраструктурой вашего рынка.', es: 'Un conector o sistema eléctrico que la infraestructura de su mercado no admite.' },
+          ],
+          [
+            { en: 'Warranty', ar: 'الضمان', ru: 'Гарантия', es: 'Garantía' },
+            { en: 'Check whether a battery warranty applies and whether it transfers to your export market.', ar: 'تحقق مما إذا كان ضمان البطارية ساريًا وهل ينتقل إلى سوق التصدير لديك.', ru: 'Проверьте, действует ли гарантия на батарею и переносится ли она на ваш экспортный рынок.', es: 'Compruebe si se aplica una garantía de batería y si se transfiere a su mercado de exportación.' },
+            { en: 'A warranty that is not valid outside the domestic market, with no local support.', ar: 'ضمان غير سارٍ خارج السوق المحلي، دون دعم محلي.', ru: 'Гарантия, не действующая за пределами внутреннего рынка, без локальной поддержки.', es: 'Una garantía no válida fuera del mercado interno, sin soporte local.' },
+          ],
+        ],
+      },
+    },
+    {
+      heading: {
+        en: 'Charging standards and compatibility',
+        ar: 'معايير الشحن والتوافق',
+        ru: 'Стандарты зарядки и совместимость',
+        es: 'Estándares de carga y compatibilidad',
+      },
+      paragraphs: [
+        {
+          en: 'Charging connectors and standards differ by region. China\'s domestic standard is GB/T; other markets commonly use CCS2 (Europe and several other regions), CHAdeMO (notably Japan) or North American connectors. A vehicle built for the Chinese market may use a connector and electrical system that is less common in your destination, and its software, over-the-air updates, app and connected services may be region- or language-locked. Check compatibility — connector, voltage and frequency, software and language — against your market\'s infrastructure before buying, and confirm whether adapters are practical for your use.',
+          ar: 'تختلف موصلات ومعايير الشحن حسب المنطقة. المعيار المحلي في الصين هو GB/T؛ وتستخدم أسواق أخرى عادة CCS2 (أوروبا ومناطق أخرى عدة)، أو CHAdeMO (خاصة اليابان) أو موصلات أمريكا الشمالية. قد تستخدم المركبة المصنوعة للسوق الصيني موصلًا ونظامًا كهربائيًا أقل شيوعًا في وجهتك، وقد تكون برمجياتها وتحديثاتها اللاسلكية وتطبيقها وخدماتها المتصلة مقفلة حسب المنطقة أو اللغة. تحقق من التوافق — الموصل والجهد والتردد والبرمجيات واللغة — مقابل البنية التحتية في سوقك قبل الشراء، وأكد ما إذا كانت المحولات عملية لاستخدامك.',
+          ru: 'Разъёмы и стандарты зарядки различаются по регионам. Внутренний стандарт Китая — GB/T; в других рынках обычно используются CCS2 (Европа и ряд других регионов), CHAdeMO (особенно Япония) или североамериканские разъёмы. Автомобиль, созданный для китайского рынка, может использовать разъём и электрическую систему, менее распространённые в вашей стране, а его ПО, обновления по воздуху, приложение и подключённые сервисы могут быть привязаны к региону или языку. Проверьте совместимость — разъём, напряжение и частоту, ПО и язык — с инфраструктурой вашего рынка до покупки и подтвердите, практичны ли адаптеры для вашего использования.',
+          es: 'Los conectores y estándares de carga difieren por región. El estándar interno de China es GB/T; otros mercados suelen usar CCS2 (Europa y otras regiones), CHAdeMO (sobre todo Japón) o conectores norteamericanos. Un vehículo fabricado para el mercado chino puede usar un conector y un sistema eléctrico menos comunes en su destino, y su software, actualizaciones por aire, app y servicios conectados pueden estar bloqueados por región o idioma. Compruebe la compatibilidad — conector, voltaje y frecuencia, software e idioma — con la infraestructura de su mercado antes de comprar, y confirme si los adaptadores son prácticos para su uso.',
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Exceptions',
+        ar: 'استثناءات',
+        ru: 'Исключения',
+        es: 'Excepciones',
+      },
+      paragraphs: [
+        {
+          en: 'The depth of EV checking varies. A nearly new BEV with a diagnostic report needs less scrutiny than an older PHEV with no battery data; a market with strong EV incentives changes the economics; and a model with an official export version may already match your market\'s charging standard. The principle is the same — weigh battery condition and compatibility against the vehicle\'s value and your destination\'s rules.',
+          ar: 'يختلف عمق فحص المركبة الكهربائية. فالمركبة الكهربائية بالكامل شبه الجديدة ذات التقرير التشخيصي تحتاج فحصًا أقل من هجينة أقدم دون بيانات بطارية؛ ويغير السوق ذو حوافز المركبات الكهربائية القوية الاقتصاديات؛ وقد يطابق الطراز ذو النسخة التصديرية الرسمية معيار الشحن في سوقك بالفعل. المبدأ واحد — وازن بين حالة البطارية والتوافق وقيمة المركبة وقواعد وجهتك.',
+          ru: 'Глубина проверки электромобиля зависит от случая. Почти новый BEV с диагностическим отчётом требует меньше проверок, чем старый PHEV без данных о батарее; рынок с сильными стимулами для электромобилей меняет экономику; модель с официальной экспортной версией может уже соответствовать стандарту зарядки вашего рынка. Принцип тот же — сопоставьте состояние батареи и совместимость со стоимостью автомобиля и правилами вашей страны.',
+          es: 'La profundidad de comprobación de un VE varía. Un BEV seminuevo con informe de diagnóstico necesita menos escrutinio que un PHEV más antiguo sin datos de batería; un mercado con fuertes incentivos para VE cambia la economía; y un modelo con versión de exportación oficial puede ya coincidir con el estándar de carga de su mercado. El principio es el mismo: sopese el estado de la batería y la compatibilidad con el valor del vehículo y las normas de su destino.',
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related market considerations',
+        ar: 'اعتبارات السوق ذات الصلة',
+        ru: 'Связанные соображения по рынку',
+        es: 'Consideraciones de mercado relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'EV import rules, duties, incentives and technical requirements are destination-specific and maintained on the Market sub-site (each rule with a source and last-checked date). The EV import centre compares EV policy across markets.',
+          ar: 'قواعد استيراد المركبات الكهربائية والرسوم والحوافز والمتطلبات التقنية خاصة بكل وجهة وتُصان في الموقع الفرعي للأسواق (كل حكم بمصدر وتاريخ آخر فحص). يقارن مركز استيراد المركبات الكهربائية سياسات المركبات الكهربائية عبر الأسواق.',
+          ru: 'Правила импорта электромобилей, пошлины, стимулы и технические требования специфичны для страны и ведутся на подсайте Market (каждое правило с источником и датой последней проверки). Центр импорта электромобилей сравнивает политику по рынкам.',
+          es: 'Las normas de importación de VE, aranceles, incentivos y requisitos técnicos son específicos del destino y se mantienen en el subsitio Market (cada norma con fuente y fecha de última comprobación). El centro de importación de VE compara la política entre mercados.',
+        },
+      ],
+      links: [
+        {
+          href: 'https://market.chinausedautohub.com/ev-import/',
+          label: {
+            en: 'EV import rules by market — Market sub-site',
+            ar: 'قواعد استيراد المركبات الكهربائية حسب السوق — الموقع الفرعي للأسواق',
+            ru: 'Правила импорта электромобилей по рынкам — подсайт Market',
+            es: 'Normas de importación de VE por mercado — subsitio Market',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related vehicle considerations',
+        ar: 'اعتبارات المركبة ذات الصلة',
+        ru: 'Связанные соображения по автомобилю',
+        es: 'Consideraciones de vehículo relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'EV and hybrid model specifications live on the Data sub-site. For the condition and battery checks that precede purchase, see the Inspection guide; for the full commercial decision, see the How to Buy guide\'s suitability framework.',
+          ar: 'توجد مواصفات طرازات المركبات الكهربائية والهجينة في الموقع الفرعي للبيانات. لفحوصات الحالة والبطارية التي تسبق الشراء، راجع دليل الفحص؛ وللقرار التجاري الكامل، راجع إطار الملاءمة في دليل «كيف تشتري».',
+          ru: 'Спецификации электрических и гибридных моделей находятся на подсайте Data. По проверкам состояния и батареи перед покупкой см. руководство по проверке; по полному коммерческому решению — структуру пригодности в руководстве «Как купить».',
+          es: 'Las especificaciones de modelos EV e híbridos viven en el subsitio Data. Para las comprobaciones de estado y batería previas a la compra, consulte la guía de inspección; para la decisión comercial completa, el marco de idoneidad de la guía «Cómo comprar».',
+        },
+      ],
+      links: [
+        {
+          slug: 'vehicle-inspection',
+          label: {
+            en: 'Condition and battery checks — Inspection guide',
+            ar: 'فحوصات الحالة والبطارية — دليل الفحص',
+            ru: 'Проверки состояния и батареи — руководство по проверке',
+            es: 'Comprobaciones de estado y batería — guía de inspección',
+          },
+        },
+        {
+          slug: 'how-to-buy-used-car-from-china',
+          label: {
+            en: 'Full buying decision — How to Buy guide',
+            ar: 'قرار الشراء الكامل — دليل «كيف تشتري»',
+            ru: 'Полное решение о покупке — руководство «Как купить»',
+            es: 'Decisión de compra completa — guía «Cómo comprar»',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Related tools',
+        ar: 'أدوات ذات صلة',
+        ru: 'Связанные инструменты',
+        es: 'Herramientas relacionadas',
+      },
+      paragraphs: [
+        {
+          en: 'Estimate EV import cost and check destination compatibility on the Tools sub-site. The calculators structure the estimate; final figures are confirmed at quote time with current rates.',
+          ar: 'قدّر تكلفة استيراد المركبة الكهربائية وتحقق من توافق الوجهة في الموقع الفرعي للأدوات. تهيكل الحاسبات التقدير؛ وتؤكد الأرقام النهائية عند عرض السعر بالأسعار الحالية.',
+          ru: 'Оцените стоимость импорта электромобиля и проверьте совместимость со страной на подсайте инструментов. Калькуляторы структурируют оценку; итоговые цифры подтверждаются при расчёте по текущим тарифам.',
+          es: 'Estime el coste de importación del VE y compruebe la compatibilidad de destino en el subsitio de herramientas. Las calculadoras estructuran la estimación; las cifras finales se confirman al cotizar con las tarifas vigentes.',
+        },
+      ],
+      links: [
+        {
+          href: 'https://tool.chinausedautohub.com/ev-import-cost-calculator/',
+          label: {
+            en: 'EV Import Cost Calculator',
+            ar: 'حاسبة تكلفة استيراد المركبات الكهربائية',
+            ru: 'Калькулятор стоимости импорта электромобиля',
+            es: 'Calculadora de coste de importación de VE',
+          },
+        },
+        {
+          href: 'https://tool.chinausedautohub.com/market-compatibility/',
+          label: {
+            en: 'Market Compatibility checker',
+            ar: 'أداة التحقق من توافق السوق',
+            ru: 'Проверка совместимости с рынком',
+            es: 'Comprobador de compatibilidad de mercado',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Reliable sources',
+        ar: 'مصادر موثوقة',
+        ru: 'Надёжные источники',
+        es: 'Fuentes fiables',
+      },
+      paragraphs: [
+        {
+          en: 'Battery and charging information is presented only when we hold it, with a confidence level; we do not fabricate SOH or range figures. EV import rules and incentives are sourced on the Market sub-site (each with a cited source), and model specifications on the Data sub-site. Charging-standard compatibility should be verified for the specific vehicle and destination.',
+          ar: 'تُعرض معلومات البطارية والشحن فقط عندما نحتفظ بها، مع مستوى ثقة؛ ولا نختلق أرقام حالة الصحة أو المدى. تصدر قواعد وحوافز استيراد المركبات الكهربائية من الموقع الفرعي للأسواق (كل منها بمصدر مستشهد به)، ومواصفات الطرازات من الموقع الفرعي للبيانات. يجب التحقق من توافق معيار الشحن للمركبة والوجهة المحددتين.',
+          ru: 'Информация о батарее и зарядке показывается только при её наличии, с уровнем достоверности; мы не выдумываем цифры SOH или запаса хода. Правила и стимулы импорта электромобилей берутся на подсайте Market (каждое с указанным источником), а спецификации моделей — на подсайте Data. Совместимость стандарта зарядки нужно проверять для конкретного автомобиля и страны.',
+          es: 'La información de batería y carga se presenta solo cuando la tenemos, con un nivel de confianza; no fabricamos cifras de SOH ni de autonomía. Las normas e incentivos de importación de VE proceden del subsitio Market (cada uno con fuente citada) y las especificaciones de modelos del subsitio Data. La compatibilidad del estándar de carga debe verificarse para el vehículo y destino concretos.',
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Last reviewed and verification status',
+        ar: 'آخر مراجعة وحالة التحقق',
+        ru: 'Дата последней проверки и статус верификации',
+        es: 'Última revisión y estado de verificación',
+      },
+      paragraphs: [
+        {
+          en: 'Last reviewed: 2026-10-04. This guide describes EV considerations in general; battery health, charging compatibility and destination rules must be verified for the specific vehicle and market. Confirm any figure that affects your decision with a current quote or diagnostic before committing.',
+          ar: 'آخر مراجعة: 2026-10-04. يصف هذا الدليل اعتبارات المركبات الكهربائية عمومًا؛ يجب التحقق من صحة البطارية وتوافق الشحن وقواعد الوجهة للمركبة والسوق المحددين. أكد أي رقم يؤثر على قرارك بعرض سعر أو تشخيص حالي قبل الالتزام.',
+          ru: 'Последняя проверка: 2026-10-04. Это руководство описывает соображения по электромобилям в общем виде; здоровье батареи, совместимость зарядки и правила страны нужно проверять для конкретного автомобиля и рынка. Подтвердите любую важную цифру актуальным расчётом или диагностикой до обязательств.',
+          es: 'Última revisión: 2026-10-04. Esta guía describe las consideraciones de VE en general; la salud de la batería, la compatibilidad de carga y las normas de destino deben verificarse para el vehículo y mercado concretos. Confirme cualquier cifra que afecte a su decisión con una cotización o diagnóstico actual antes de comprometerse.',
+        },
+      ],
+    },
+    {
+      heading: {
         en: 'Key considerations',
         ar: 'اعتبارات أساسية',
         ru: 'Ключевые соображения',
