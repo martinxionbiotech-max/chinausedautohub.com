@@ -69,13 +69,13 @@ const clientStrings = {
           <span class="text-ink-muted"> · {reservedCount} {t.listing.reserved} · {soldCount} {t.listing.sold}</span>
         </p>
       </div>
-      <a href={localizedUrl('/request-a-car/', locale)} class="btn-primary">{t.common.requestACar}</a>
+      <a href={localizedUrl('/contact/', locale)} class="btn-primary">{t.common.requestACar}</a>
     </div>
 
     {countryName && (
       <div class="mt-4 rounded-md border border-brand-200 bg-brand-50 p-3 text-sm text-brand-800">
         {t.listing.destinationLabel}: <strong>{countryName}</strong> — {t.listing.destinationNotice}{' '}
-        <a href={`${localizedUrl('/request-a-car/', locale)}?country=${country}`} class="font-semibold underline">{t.listing.requestForCountry} {countryName}</a>.
+        <a href={`${localizedUrl('/contact/', locale)}?country=${country}`} class="font-semibold underline">{t.listing.requestForCountry} {countryName}</a>.
       </div>
     )}
 

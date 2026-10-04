@@ -232,11 +232,11 @@ const documentsValue = vehicle.documents ?? null;
         {!isSold ? (
           <a href="#request-vehicle" class="btn-primary w-full">{t.detail.requestQuote}</a>
         ) : (
-          <a href={localizedUrl('/request-a-car/', locale)} class="btn-primary w-full">{t.detail.requestSimilar}</a>
+          <a href={localizedUrl('/contact/', locale)} class="btn-primary w-full">{t.detail.requestSimilar}</a>
         )}
         <a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="btn-secondary w-full">{t.detail.whatsapp}</a>
         {!isSold && (
-          <a href={localizedUrl('/request-a-car/', locale)} class="btn-ghost w-full text-sm">{t.detail.requestSimilar}</a>
+          <a href={localizedUrl('/contact/', locale)} class="btn-ghost w-full text-sm">{t.detail.requestSimilar}</a>
         )}
       </div>
     </aside>

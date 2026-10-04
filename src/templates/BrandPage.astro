@@ -49,7 +49,7 @@ const description = `${t.listing.descriptionPrefix} ${available.length} ${t.list
 const schema = itemListSchema(available.map((v) => ({ name: `${v.year} ${brand.name} ${v.model}`, url: localizedUrl(`/cars/${v.brand}/${v.model}/${v.vehicle_id}/`, locale) })));
 
 const overview = brandOverview(brand.slug, locale, brand.overview);
-const requestBrandHref = localizedUrl('/request-a-car/', locale);
+const requestBrandHref = localizedUrl('/contact/', locale);
 ---
 
 <BaseLayout title={title} description={description} canonical={localizedUrl(brandUrl(brand), locale)} schema={schema}>

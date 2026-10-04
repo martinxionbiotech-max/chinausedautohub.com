@@ -77,7 +77,7 @@ const schema = itemListSchema(available.map((v) => ({ name: `${v.year} ${v.brand
     <div class="card p-5">
       <h2 class="text-lg font-semibold text-ink">{t.bodyTypes.lookingFor} {name}?</h2>
       <p class="mt-2 text-sm text-ink-soft">{t.bodyTypes.sourcePrompt} {name} {t.bodyTypes.fromChinaMarket}</p>
-      <a href={localizedUrl('/request-a-car/', locale)} class="btn-primary mt-4">{t.bodyTypes.requestType} {name}</a>
+      <a href={localizedUrl('/contact/', locale)} class="btn-primary mt-4">{t.bodyTypes.requestType} {name}</a>
     </div>
   </section>
 </BaseLayout>

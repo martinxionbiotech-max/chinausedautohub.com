@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import LeadForm from '../components/LeadForm.astro';
 import { CONTACT } from '../lib/site';
 import { getTranslations } from '../i18n';
 import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
@@ -29,12 +30,12 @@ const t = getTranslations(locale);
       </a>
     </div>
 
-    <div class="mt-8 max-w-3xl">
-      <p class="text-sm text-ink-soft">
-        {t.contact.preferForm}{' '}
-        <a href={localizedUrl('/request-a-car/', locale)} class="font-semibold text-brand-700 hover:underline">{t.contact.requestForm}</a>{' '}
-        {t.contact.formTail}
-      </p>
+    <div class="mt-10 max-w-3xl">
+      <h2 class="text-xl font-bold text-ink">{t.contact.requestForm}</h2>
+      <p class="mt-1 text-sm text-ink-soft">{t.contact.preferForm}</p>
+      <div class="mt-6">
+        <LeadForm variant="full" />
+      </div>
     </div>
   </section>
 </BaseLayout>

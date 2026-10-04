@@ -52,7 +52,7 @@ export function newArrivalsUrl(): string {
 }
 
 export function requestACarUrl(): string {
-  return '/request-a-car/';
+  return '/contact/';
 }
 
 // Model specifications live on the Data sub-site, not the main site.

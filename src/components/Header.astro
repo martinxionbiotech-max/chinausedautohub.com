@@ -174,8 +174,7 @@ function isActive(item: NavItem): boolean {
         </div>
       </details>
 
-      <a href={localizedUrl('/request-a-car/', locale)} class="btn-primary hidden sm:inline-flex">{t.common.requestACar}</a>
-      <a href={localizedUrl('/contact/', locale)} class="btn-secondary hidden md:inline-flex">{t.nav.contact}</a>
+      <a href={localizedUrl('/contact/', locale)} class="btn-primary hidden sm:inline-flex">{t.nav.contact}</a>
       <button
         id="nav-toggle"
         class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-surface-line text-ink"
@@ -194,9 +193,8 @@ function isActive(item: NavItem): boolean {
 
   <div id="mobile-menu" class="hidden lg:hidden border-t border-surface-line bg-white">
     <nav class="container-site flex flex-col py-3" aria-label={t.nav.mobile}>
-      <div class="flex gap-2 pb-3">
-        <a href={localizedUrl('/request-a-car/', locale)} class="btn-primary flex-1">{t.common.requestACar}</a>
-        <a href={localizedUrl('/contact/', locale)} class="btn-secondary flex-1">{t.nav.contact}</a>
+      <div class="pb-3">
+        <a href={localizedUrl('/contact/', locale)} class="btn-primary w-full">{t.nav.contact}</a>
       </div>
       {navItems.map((item) =>
         item.children ? (
@@ -320,6 +318,26 @@ function isActive(item: NavItem): boolean {
           if (other !== d) other.open = false;
         });
       }
+    });
+  });
+  // Close when clicking outside any open dropdown.
+  document.addEventListener('click', (e) => {
+    dropdowns.forEach((d) => {
+      if (d.open && !d.contains(e.target as Node)) d.open = false;
+    });
+  });
+  // Close all dropdowns on Escape.
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      dropdowns.forEach((d) => {
+        d.open = false;
+      });
+    }
+  });
+  // Close a dropdown after one of its links is clicked (navigation).
+  document.querySelectorAll('header details a').forEach((link) => {
+    link.addEventListener('click', () => {
+      link.closest('details')?.removeAttribute('open');
     });
   });
 </script>
