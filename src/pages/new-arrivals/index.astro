@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import VehicleCard from '../../components/VehicleCard.astro';
+import { getNewArrivals } from '../../lib/data';
+import { formatPrice, formatDate } from '../../lib/site';
+import { vehicleUrl } from '../../lib/urls';
+import type { Vehicle } from '../../lib/types';
+
+const arrivals = getNewArrivals(24);
+const title = 'New Arrivals — Recently Added Used Cars from China';
+const description = 'Recently added and updated used vehicles for export from China. See what has arrived or been updated in our inventory.';
+---
+
+<BaseLayout title={title} description={description} canonical="/new-arrivals/">
+  <Breadcrumb crumbs={[{ name: 'Home', path: '/' }, { name: 'New Arrivals', path: '/new-arrivals/' }]} />
+
+  <section class="container-site py-6">
+    <h1 class="text-3xl font-bold text-ink">New Arrivals</h1>
+    <p class="mt-2 max-w-2xl text-ink-soft">Recently added or updated vehicles in our inventory.</p>
+
+    <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {arrivals.map((v: Vehicle) => <VehicleCard vehicle={v} />)}
+    </div>
+  </section>
+</BaseLayout>

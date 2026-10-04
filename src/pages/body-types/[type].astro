@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import VehicleCard from '../../components/VehicleCard.astro';
+import { getBodyType, getVehiclesByBodyType, getBrand, getBodyTypesWithVehicles } from '../../lib/data';
+import { formatPrice } from '../../lib/site';
+import { bodyTypeUrl } from '../../lib/urls';
+import { itemListSchema } from '../../lib/schema';
+import type { Vehicle } from '../../lib/types';
+
+export function getStaticPaths() {
+  return getBodyTypesWithVehicles().map((t) => ({ params: { type: t.slug } }));
+}
+
+const { type } = Astro.params;
+const bodyType = getBodyType(type);
+
+if (!bodyType) {
+  return Astro.redirect('/body-types/');
+}
+
+const vehicles = getVehiclesByBodyType(type);
+const available = vehicles.filter((v) => v.status === 'available');
+
+const prices = available.map((v) => v.price.amount);
+const priceRange = prices.length
+  ? `${formatPrice({ amount: Math.min(...prices), currency: 'USD' })} – ${formatPrice({ amount: Math.max(...prices), currency: 'USD' })}`
+  : null;
+
+// Common brands for this body type.
+const brandCounts = new Map<string, number>();
+for (const v of available) brandCounts.set(v.brand, (brandCounts.get(v.brand) ?? 0) + 1);
+const commonBrands = Array.from(brandCounts.entries())
+  .sort((a, b) => b[1] - a[1])
+  .map(([slug]) => getBrand(slug))
+  .filter(Boolean);
+
+const title = `${bodyType.name} Vehicles for Export from China`;
+const description = `Browse ${available.length} available ${bodyType.name.toLowerCase()} vehicles for export from China${priceRange ? `, priced from ${priceRange}` : ''}.`;
+
+const schema = itemListSchema(available.map((v) => ({ name: `${v.year} ${v.brand} ${v.model}`, url: `/cars/${v.brand}/${v.model}/${v.vehicle_id}/` })));
+---
+
+<BaseLayout title={title} description={description} canonical={bodyTypeUrl(bodyType)} schema={schema}>
+  <Breadcrumb crumbs={[{ name: 'Home', path: '/' }, { name: 'Vehicle Types', path: '/body-types/' }, { name: bodyType.name, path: bodyTypeUrl(bodyType) }]} />
+
+  <section class="container-site py-6">
+    <h1 class="text-3xl font-bold text-ink">{bodyType.name} for Export</h1>
+    <p class="mt-2 max-w-2xl text-ink-soft">{bodyType.description}</p>
+    {priceRange && <p class="mt-1 text-sm text-ink-muted">Price range: {priceRange}</p>}
+  </section>
+
+  <section class="container-site">
+    <h2 class="text-xl font-bold text-ink">Available Vehicles</h2>
+    <div class="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {available.map((v: Vehicle) => <VehicleCard vehicle={v} />)}
+    </div>
+  </section>
+
+  {commonBrands.length > 0 && (
+    <section class="container-site mt-12">
+      <h2 class="text-xl font-bold text-ink">Common Brands</h2>
+      <div class="mt-4 flex flex-wrap gap-3">
+        {commonBrands.map((b) => (
+          <a href={`/brands/${b.slug}/`} class="card px-4 py-2.5 text-sm font-medium text-ink hover:border-brand-300">{b.name}</a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="container-site mt-12 pb-4">
+    <div class="card p-5">
+      <h2 class="text-lg font-semibold text-ink">Looking for a different {bodyType.name}?</h2>
+      <p class="mt-2 text-sm text-ink-soft">Tell us your requirements and we can help source a {bodyType.name.toLowerCase()} from China's market.</p>
+      <a href="/request-a-car/" class="btn-primary mt-4">Request a {bodyType.name}</a>
+    </div>
+  </section>
+</BaseLayout>

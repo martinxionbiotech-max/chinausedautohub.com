@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const title = 'Cookie Policy — China Used Car Export';
+const description = 'Cookie policy for China Used Car Export.';
+---
+
+<BaseLayout title={title} description={description} canonical="/cookies/">
+  <Breadcrumb crumbs={[{ name: 'Home', path: '/' }, { name: 'Cookie Policy', path: '/cookies/' }]} />
+
+  <section class="container-site py-6">
+    <h1 class="text-3xl font-bold text-ink">Cookie Policy</h1>
+    <div class="prose-vehicle mt-4 max-w-3xl space-y-4">
+      <p><strong>Last updated:</strong> 4 October 2026</p>
+      <p>
+        This website is a static site and does not use advertising or analytics cookies. Any cookies set are limited to
+        those required for basic site functionality.
+      </p>
+      <p>
+        We do not use third-party advertising trackers or cross-site tracking cookies.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

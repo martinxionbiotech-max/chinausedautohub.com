@@ -1,0 +1,9 @@
+[
+  { "slug": "uae", "name": "UAE", "region": "Middle East", "dataUrl": "https://market.example.com/uae" },
+  { "slug": "saudi-arabia", "name": "Saudi Arabia", "region": "Middle East", "dataUrl": "https://market.example.com/saudi-arabia" },
+  { "slug": "kenya", "name": "Kenya", "region": "Africa", "dataUrl": "https://market.example.com/kenya" },
+  { "slug": "tanzania", "name": "Tanzania", "region": "Africa", "dataUrl": "https://market.example.com/tanzania" },
+  { "slug": "nigeria", "name": "Nigeria", "region": "Africa", "dataUrl": "https://market.example.com/nigeria" },
+  { "slug": "kazakhstan", "name": "Kazakhstan", "region": "Central Asia", "dataUrl": "https://market.example.com/kazakhstan" },
+  { "slug": "uzbekistan", "name": "Uzbekistan", "region": "Central Asia", "dataUrl": "https://market.example.com/uzbekistan" }
+]

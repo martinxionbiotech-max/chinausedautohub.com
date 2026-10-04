@@ -1,0 +1,30 @@
+---
+import { breadcrumbSchema, type Crumb } from '../lib/schema';
+
+interface Props {
+  crumbs: Crumb[];
+}
+
+const { crumbs } = Astro.props;
+const schema = breadcrumbSchema(crumbs);
+---
+
+<nav aria-label="Breadcrumb" class="container-site py-4">
+  <ol class="flex flex-wrap items-center gap-1.5 text-sm text-ink-muted">
+    {crumbs.map((c, i) => {
+      const last = i === crumbs.length - 1;
+      return (
+        <li class="flex items-center gap-1.5">
+          {i > 0 && <span aria-hidden="true" class="text-ink-muted">/</span>}
+          {last ? (
+            <span class="text-ink-soft" aria-current="page">{c.name}</span>
+          ) : (
+            <a href={c.path} class="hover:text-brand-700">{c.name}</a>
+          )}
+        </li>
+      );
+    })}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

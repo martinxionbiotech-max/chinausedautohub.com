@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { getBodyTypesWithVehicles, getVehiclesByBodyType } from '../../lib/data';
+import { bodyTypeUrl } from '../../lib/urls';
+import { itemListSchema } from '../../lib/schema';
+
+const bodyTypes = getBodyTypesWithVehicles();
+const title = 'Vehicle Types Available for Export from China';
+const description = 'Browse used vehicles for export from China by body type — SUVs, sedans and more.';
+
+const schema = itemListSchema(bodyTypes.map((t) => ({ name: t.name, url: bodyTypeUrl(t) })));
+---
+
+<BaseLayout title={title} description={description} canonical="/body-types/" schema={schema}>
+  <Breadcrumb crumbs={[{ name: 'Home', path: '/' }, { name: 'Vehicle Types', path: '/body-types/' }]} />
+
+  <section class="container-site py-6">
+    <h1 class="text-3xl font-bold text-ink">Browse by Vehicle Type</h1>
+    <p class="mt-2 max-w-2xl text-ink-soft">Find vehicles by body type. Only categories with vehicles currently in our inventory are listed.</p>
+
+    <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {bodyTypes.map((t) => {
+        const count = getVehiclesByBodyType(t.slug).length;
+        return (
+          <a href={bodyTypeUrl(t)} class="card p-5 hover:border-brand-300">
+            <h2 class="text-base font-semibold text-ink">{t.name}</h2>
+            <p class="mt-1 text-sm text-ink-soft">{t.description}</p>
+            <p class="mt-2 text-sm text-ink-muted">{count} vehicle{count === 1 ? '' : 's'} in inventory</p>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>

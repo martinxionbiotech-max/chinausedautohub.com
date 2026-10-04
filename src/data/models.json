@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "song-plus",
+    "brand": "byd",
+    "name": "Song Plus",
+    "bodyType": "suv",
+    "fuelType": "phev",
+    "shortDescription": "Mid-size SUV available as a PHEV (DM-i) in the Chinese market, known for electric-first daily driving with a petrol range extender.",
+    "dataUrl": "https://data.example.com/models/byd/song-plus"
+  },
+  {
+    "slug": "seal",
+    "brand": "byd",
+    "name": "Seal",
+    "bodyType": "sedan",
+    "fuelType": "ev",
+    "shortDescription": "Mid-size electric sedan built on BYD's e-platform 3.0, offered with single- and dual-motor configurations.",
+    "dataUrl": "https://data.example.com/models/byd/seal"
+  },
+  {
+    "slug": "monjaro",
+    "brand": "geely",
+    "name": "Monjaro",
+    "bodyType": "suv",
+    "fuelType": "petrol",
+    "shortDescription": "Mid-size SUV (sold as Xingyue L in China) with a 2.0T engine and automatic transmission, exported to several markets.",
+    "dataUrl": "https://data.example.com/models/geely/monjaro"
+  },
+  {
+    "slug": "coolray",
+    "brand": "geely",
+    "name": "Coolray",
+    "bodyType": "suv",
+    "fuelType": "petrol",
+    "shortDescription": "Compact SUV (Binyue in China) with a turbocharged petrol engine, popular in export markets.",
+    "dataUrl": "https://data.example.com/models/geely/coolray"
+  },
+  {
+    "slug": "tiggo-8-pro",
+    "brand": "chery",
+    "name": "Tiggo 8 Pro",
+    "bodyType": "suv",
+    "fuelType": "petrol",
+    "shortDescription": "Mid-size 7-seat SUV with turbocharged petrol engines, a core export model for Chery.",
+    "dataUrl": "https://data.example.com/models/chery/tiggo-8-pro"
+  },
+  {
+    "slug": "arrizo-8",
+    "brand": "chery",
+    "name": "Arrizo 8",
+    "bodyType": "sedan",
+    "fuelType": "petrol",
+    "shortDescription": "Mid-size sedan with turbocharged petrol engines, positioned as a value-focused family sedan.",
+    "dataUrl": "https://data.example.com/models/chery/arrizo-8"
+  },
+  {
+    "slug": "cs75-plus",
+    "brand": "changan",
+    "name": "CS75 Plus",
+    "bodyType": "suv",
+    "fuelType": "petrol",
+    "shortDescription": "Compact-to-mid-size SUV with turbocharged petrol engines and automatic transmission, one of Changan's best-selling models.",
+    "dataUrl": "https://data.example.com/models/changan/cs75-plus"
+  },
+  {
+    "slug": "uni-v",
+    "brand": "changan",
+    "name": "UNI-V",
+    "bodyType": "sedan",
+    "fuelType": "petrol",
+    "shortDescription": "Sporty compact sedan with a turbocharged petrol engine and dual-clutch transmission.",
+    "dataUrl": "https://data.example.com/models/changan/uni-v"
+  },
+  {
+    "slug": "gs4",
+    "brand": "gac",
+    "name": "GS4",
+    "bodyType": "suv",
+    "fuelType": "petrol",
+    "shortDescription": "Compact SUV from GAC Motor (Trumpchi), offered with turbocharged petrol engines.",
+    "dataUrl": "https://data.example.com/models/gac/gs4"
+  },
+  {
+    "slug": "haval-h6",
+    "brand": "great-wall",
+    "name": "Haval H6",
+    "bodyType": "suv",
+    "fuelType": "petrol",
+    "shortDescription": "Compact SUV from Haval with turbocharged petrol engines and DCT, a long-running high-volume model in China.",
+    "dataUrl": "https://data.example.com/models/great-wall/haval-h6"
+  },
+  {
+    "slug": "es6",
+    "brand": "nio",
+    "name": "ES6",
+    "bodyType": "suv",
+    "fuelType": "ev",
+    "shortDescription": "Mid-size electric SUV from NIO, offered with dual-motor AWD and battery-swap capability.",
+    "dataUrl": "https://data.example.com/models/nio/es6"
+  },
+  {
+    "slug": "g6",
+    "brand": "xpeng",
+    "name": "G6",
+    "bodyType": "suv",
+    "fuelType": "ev",
+    "shortDescription": "Mid-size electric SUV from XPeng with 800V architecture and fast-charging capability.",
+    "dataUrl": "https://data.example.com/models/xpeng/g6"
+  }
+]

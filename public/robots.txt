@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://china-used-car-export.pages.dev/sitemap-index.xml

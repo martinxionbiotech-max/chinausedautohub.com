@@ -1,0 +1,730 @@
+[
+  {
+    "vehicle_id": "byd-song-plus-2024-001",
+    "vin": "DEMO-VIN-BYD-SONGPLUS-2024-001",
+    "brand": "byd",
+    "model": "song-plus",
+    "year": 2024,
+    "mileage_km": 18235,
+    "body_type": "suv",
+    "fuel": "phev",
+    "transmission": "automatic",
+    "drive": "fwd",
+    "color": "White",
+    "location": "Shenzhen, China",
+    "status": "available",
+    "price": {
+      "amount": 24800,
+      "currency": "USD"
+    },
+    "original_price": {
+      "amount": 179800,
+      "currency": "CNY"
+    },
+    "images": [
+      "/images/placeholder-suv-white.svg"
+    ],
+    "specs": [
+      {
+        "label": "Engine",
+        "value": "1.5L turbo + electric motor (DM-i)"
+      },
+      {
+        "label": "Battery",
+        "value": "18.3 kWh"
+      },
+      {
+        "label": "Power",
+        "value": "105 kW engine (combined system higher)"
+      },
+      {
+        "label": "Seats",
+        "value": "5"
+      },
+      {
+        "label": "Doors",
+        "value": "5"
+      },
+      {
+        "label": "Emission standard",
+        "value": "China VI"
+      }
+    ],
+    "description": "2024 BYD Song Plus DM-i with 18,235 km on the odometer. Plug-in hybrid powertrain (1.5L turbo + electric motor) with an 18.3 kWh battery, so it can run on electric power for daily use. White exterior, five seats, front-wheel drive and automatic transmission. Located in Shenzhen, China.",
+    "condition": {
+      "accident_history": "Not provided",
+      "maintenance": "Not provided",
+      "inspection": "Not provided",
+      "battery_health": "Not provided",
+      "paint": "Not provided"
+    },
+    "export": null,
+    "is_demo": true,
+    "source": "demo-catalog",
+    "created_at": "2026-09-12T00:00:00Z",
+    "updated_at": "2026-10-04T02:50:47.374Z"
+  },
+  {
+    "vehicle_id": "byd-seal-2024-001",
+    "vin": "DEMO-VIN-BYD-SEAL-2024-001",
+    "brand": "byd",
+    "model": "seal",
+    "year": 2024,
+    "mileage_km": 9120,
+    "body_type": "sedan",
+    "fuel": "ev",
+    "transmission": "automatic",
+    "drive": "rwd",
+    "color": "Arctic Blue",
+    "location": "Guangzhou, China",
+    "status": "available",
+    "price": {
+      "amount": 26500,
+      "currency": "USD"
+    },
+    "original_price": {
+      "amount": 199800,
+      "currency": "CNY"
+    },
+    "images": [
+      "/images/placeholder-sedan-blue.svg"
+    ],
+    "specs": [
+      {
+        "label": "Drivetrain",
+        "value": "Rear-wheel drive, single motor"
+      },
+      {
+        "label": "Battery",
+        "value": "82.5 kWh (approx.)"
+      },
+      {
+        "label": "Power",
+        "value": "230 kW"
+      },
+      {
+        "label": "Seats",
+        "value": "5"
+      },
+      {
+        "label": "Doors",
+        "value": "4"
+      }
+    ],
+    "description": "2024 BYD Seal electric sedan with 9,120 km. Built on BYD's e-platform 3.0 with a rear-wheel-drive single-motor layout and a roughly 82.5 kWh battery. Arctic Blue exterior, five seats, automatic transmission. Located in Guangzhou, China.",
+    "condition": {
+      "accident_history": "Not provided",
+      "maintenance": "Not provided",
+      "inspection": "Not provided",
+      "battery_health": "Not provided",
+      "paint": "Not provided"
+    },
+    "export": null,
+    "is_demo": true,
+    "source": "demo-catalog",
+    "created_at": "2026-09-15T00:00:00Z",
+    "updated_at": "2026-09-30T00:00:00Z"
+  },
+  {
+    "vehicle_id": "geely-monjaro-2024-001",
+    "vin": "DEMO-VIN-GEELY-MONJARO-2024-001",
+    "brand": "geely",
+    "model": "monjaro",
+    "year": 2024,
+    "mileage_km": 15480,
+    "body_type": "suv",
+    "fuel": "petrol",
+    "transmission": "automatic",
+    "drive": "awd",
+    "color": "Silver",
+    "location": "Hangzhou, China",
+    "status": "available",
+    "price": {
+      "amount": 21900,
+      "currency": "USD"
+    },
+    "original_price": {
+      "amount": 158000,
+      "currency": "CNY"
+    },
+    "images": [
+      "/images/placeholder-suv-silver.svg"
+    ],
+    "specs": [
+      {
+        "label": "Engine",
+        "value": "2.0L turbo petrol"
+      },
+      {
+        "label": "Power",
+        "value": "175 kW (approx.)"
+      },
+      {
+        "label": "Transmission",
+        "value": "8-speed automatic"
+      },
+      {
+        "label": "Seats",
+        "value": "5"
+      },
+      {
+        "label": "Doors",
+        "value": "5"
+      }
+    ],
+    "description": "2024 Geely Monjaro (Xingyue L) with 15,480 km. 2.0L turbo petrol engine, all-wheel drive and an 8-speed automatic transmission. Silver exterior, five seats. Located in Hangzhou, China.",
+    "condition": {
+      "accident_history": "Not provided",
+      "maintenance": "Not provided",
+      "inspection": "Not provided",
+      "battery_health": "Not provided",
+      "paint": "Not provided"
+    },
+    "export": null,
+    "is_demo": true,
+    "source": "demo-catalog",
+    "created_at": "2026-09-18T00:00:00Z",
+    "updated_at": "2026-09-28T00:00:00Z"
+  },
+  {
+    "vehicle_id": "geely-coolray-2023-001",
+    "vin": "DEMO-VIN-GEELY-COOLRAY-2023-001",
+    "brand": "geely",
+    "model": "coolray",
+    "year": 2023,
+    "mileage_km": 22100,
+    "body_type": "suv",
+    "fuel": "petrol",
+    "transmission": "dct",
+    "drive": "fwd",
+    "color": "Red",
+    "location": "Ningbo, China",
+    "status": "reserved",
+    "price": {
+      "amount": 12400,
+      "currency": "USD"
+    },
+    "original_price": {
+      "amount": 89900,
+      "currency": "CNY"
+    },
+    "images": [
+      "/images/placeholder-suv-red.svg"
+    ],
+    "specs": [
+      {
+        "label": "Engine",
+        "value": "1.5L turbo petrol"
+      },
+      {
+        "label": "Transmission",
+        "value": "7-speed DCT"
+      },
+      {
+        "label": "Power",
+        "value": "130 kW (approx.)"
+      },
+      {
+        "label": "Seats",
+        "value": "5"
+      },
+      {
+        "label": "Doors",
+        "value": "5"
+      }
+    ],
+    "description": "2023 Geely Coolray (Binyue) with 22,100 km. 1.5L turbo petrol engine, front-wheel drive and a 7-speed dual-clutch transmission. Red exterior, five seats. Located in Ningbo, China. This unit is currently reserved.",
+    "condition": {
+      "accident_history": "Not provided",
+      "maintenance": "Not provided",
+      "inspection": "Not provided",
+      "battery_health": "Not provided",
+      "paint": "Not provided"
+    },
+    "export": null,
+    "is_demo": true,
+    "source": "demo-catalog",
+    "created_at": "2026-09-20T00:00:00Z",
+    "updated_at": "2026-10-02T00:00:00Z"
+  },
+  {
+    "vehicle_id": "chery-tiggo-8-pro-2023-001",
+    "vin": "DEMO-VIN-CHERY-TIGGO8PRO-2023-001",
+    "brand": "chery",
+    "model": "tiggo-8-pro",
+    "year": 2023,
+    "mileage_km": 27650,
+    "body_type": "suv",
+    "fuel": "petrol",
+    "transmission": "dct",
+    "drive": "awd",
+    "color": "Black",
+    "location": "Wuhu, China",
+    "status": "available",
+    "price": {
+      "amount": 18200,
+      "currency": "USD"
+    },
+    "original_price": {
+      "amount": 139900,
+      "currency": "CNY"
+    },
+    "images": [
+      "/images/placeholder-suv-black.svg"
+    ],
+    "specs": [
+      {
+        "label": "Engine",
+        "value": "2.0L turbo petrol"
+      },
+      {
+        "label": "Transmission",
+        "value": "7-speed DCT"
+      },
+      {
+        "label": "Seats",
+        "value": "7"
+      },
+      {
+        "label": "Doors",
+        "value": "5"
+      },
+      {
+        "label": "Power",
+        "value": "187 kW (approx.)"
+      }
+    ],
+    "description": "2023 Chery Tiggo 8 Pro with 27,650 km. 2.0L turbo petrol engine, all-wheel drive and a 7-speed dual-clutch transmission. Black exterior, seven-seat layout. Located in Wuhu, China.",
+    "condition": {
+      "accident_history": "Not provided",
+      "maintenance": "Not provided",
+      "inspection": "Not provided",
+      "battery_health": "Not provided",
+      "paint": "Not provided"
+    },
+    "export": null,
+    "is_demo": true,
+    "source": "demo-catalog",
+    "created_at": "2026-09-10T00:00:00Z",
+    "updated_at": "2026-09-26T00:00:00Z"
+  },
+  {
+    "vehicle_id": "chery-arrizo-8-2023-001",
+    "vin": "DEMO-VIN-CHERY-ARRIZO8-2023-001",
+    "brand": "chery",
+    "model": "arrizo-8",
+    "year": 2023,
+    "mileage_km": 19870,
+    "body_type": "sedan",
+    "fuel": "petrol",
+    "transmission": "dct",
+    "drive": "fwd",
+    "color": "White",
+    "location": "Wuhu, China",
+    "status": "available",
+    "price": {
+      "amount": 15800,
+      "currency": "USD"
+    },
+    "original_price": {
+      "amount": 109900,
+      "currency": "CNY"
+    },
+    "images": [
+      "/images/placeholder-sedan-white.svg"
+    ],
+    "specs": [
+      {
+        "label": "Engine",
+        "value": "1.6L turbo petrol"
+      },
+      {
+        "label": "Transmission",
+        "value": "7-speed DCT"
+      },
+      {
+        "label": "Seats",
+        "value": "5"
+      },
+      {
+        "label": "Doors",
+        "value": "4"
+      },
+      {
+        "label": "Power",
+        "value": "145 kW (approx.)"
+      }
+    ],
+    "description": "2023 Chery Arrizo 8 with 19,870 km. 1.6L turbo petrol engine, front-wheel drive and a 7-speed dual-clutch transmission. White exterior, five seats. Located in Wuhu, China.",
+    "condition": {
+      "accident_history": "Not provided",
+      "maintenance": "Not provided",
+      "inspection": "Not provided",
+      "battery_health": "Not provided",
+      "paint": "Not provided"
+    },
+    "export": null,
+    "is_demo": true,
+    "source": "demo-catalog",
+    "created_at": "2026-09-14T00:00:00Z",
+    "updated_at": "2026-09-29T00:00:00Z"
+  },
+  {
+    "vehicle_id": "changan-cs75-plus-2024-001",
+    "vin": "DEMO-VIN-CHANGAN-CS75PLUS-2024-001",
+    "brand": "changan",
+    "model": "cs75-plus",
+    "year": 2024,
+    "mileage_km": 11930,
+    "body_type": "suv",
+    "fuel": "petrol",
+    "transmission": "automatic",
+    "drive": "fwd",
+    "color": "Grey",
+    "location": "Chongqing, China",
+    "status": "available",
+    "price": {
+      "amount": 20600,
+      "currency": "USD"
+    },
+    "original_price": {
+      "amount": 149900,
+      "currency": "CNY"
+    },
+    "images": [
+      "/images/placeholder-suv-grey.svg"
+    ],
+    "specs": [
+      {
+        "label": "Engine",
+        "value": "2.0L turbo petrol"
+      },
+      {
+        "label": "Transmission",
+        "value": "8-speed automatic"
+      },
+      {
+        "label": "Seats",
+        "value": "5"
+      },
+      {
+        "label": "Doors",
+        "value": "5"
+      },
+      {
+        "label": "Power",
+        "value": "171 kW (approx.)"
+      }
+    ],
+    "description": "2024 Changan CS75 Plus with 11,930 km. 2.0L turbo petrol engine, front-wheel drive and an 8-speed automatic transmission. Grey exterior, five seats. Located in Chongqing, China.",
+    "condition": {
+      "accident_history": "Not provided",
+      "maintenance": "Not provided",
+      "inspection": "Not provided",
+      "battery_health": "Not provided",
+      "paint": "Not provided"
+    },
+    "export": null,
+    "is_demo": true,
+    "source": "demo-catalog",
+    "created_at": "2026-09-22T00:00:00Z",
+    "updated_at": "2026-10-01T00:00:00Z"
+  },
+  {
+    "vehicle_id": "changan-uni-v-2023-001",
+    "vin": "DEMO-VIN-CHANGAN-UNIV-2023-001",
+    "brand": "changan",
+    "model": "uni-v",
+    "year": 2023,
+    "mileage_km": 16220,
+    "body_type": "sedan",
+    "fuel": "petrol",
+    "transmission": "dct",
+    "drive": "fwd",
+    "color": "Grey",
+    "location": "Chongqing, China",
+    "status": "available",
+    "price": {
+      "amount": 14900,
+      "currency": "USD"
+    },
+    "original_price": {
+      "amount": 108900,
+      "currency": "CNY"
+    },
+    "images": [
+      "/images/placeholder-sedan-grey.svg"
+    ],
+    "specs": [
+      {
+        "label": "Engine",
+        "value": "1.5L turbo petrol"
+      },
+      {
+        "label": "Transmission",
+        "value": "7-speed DCT"
+      },
+      {
+        "label": "Seats",
+        "value": "5"
+      },
+      {
+        "label": "Doors",
+        "value": "4"
+      },
+      {
+        "label": "Power",
+        "value": "138 kW (approx.)"
+      }
+    ],
+    "description": "2023 Changan UNI-V with 16,220 km. 1.5L turbo petrol engine, front-wheel drive and a 7-speed dual-clutch transmission. Grey exterior, five seats. Located in Chongqing, China.",
+    "condition": {
+      "accident_history": "Not provided",
+      "maintenance": "Not provided",
+      "inspection": "Not provided",
+      "battery_health": "Not provided",
+      "paint": "Not provided"
+    },
+    "export": null,
+    "is_demo": true,
+    "source": "demo-catalog",
+    "created_at": "2026-09-11T00:00:00Z",
+    "updated_at": "2026-09-27T00:00:00Z"
+  },
+  {
+    "vehicle_id": "gac-gs4-2022-001",
+    "vin": "DEMO-VIN-GAC-GS4-2022-001",
+    "brand": "gac",
+    "model": "gs4",
+    "year": 2022,
+    "mileage_km": 41500,
+    "body_type": "suv",
+    "fuel": "petrol",
+    "transmission": "automatic",
+    "drive": "fwd",
+    "color": "White",
+    "location": "Guangzhou, China",
+    "status": "sold",
+    "price": {
+      "amount": 11500,
+      "currency": "USD"
+    },
+    "original_price": {
+      "amount": 98800,
+      "currency": "CNY"
+    },
+    "images": [
+      "/images/placeholder-suv-white.svg"
+    ],
+    "specs": [
+      {
+        "label": "Engine",
+        "value": "1.5L turbo petrol"
+      },
+      {
+        "label": "Transmission",
+        "value": "Automatic"
+      },
+      {
+        "label": "Seats",
+        "value": "5"
+      },
+      {
+        "label": "Doors",
+        "value": "5"
+      }
+    ],
+    "description": "2022 GAC GS4 with 41,500 km. 1.5L turbo petrol engine, front-wheel drive and automatic transmission. White exterior, five seats. Located in Guangzhou, China. This vehicle has been sold and is retained for reference.",
+    "condition": {
+      "accident_history": "Not provided",
+      "maintenance": "Not provided",
+      "inspection": "Not provided",
+      "battery_health": "Not provided",
+      "paint": "Not provided"
+    },
+    "export": null,
+    "is_demo": true,
+    "source": "demo-catalog",
+    "created_at": "2026-08-20T00:00:00Z",
+    "updated_at": "2026-09-25T00:00:00Z"
+  },
+  {
+    "vehicle_id": "great-wall-haval-h6-2023-001",
+    "vin": "DEMO-VIN-GWM-HAVALH6-2023-001",
+    "brand": "great-wall",
+    "model": "haval-h6",
+    "year": 2023,
+    "mileage_km": 24780,
+    "body_type": "suv",
+    "fuel": "petrol",
+    "transmission": "dct",
+    "drive": "fwd",
+    "color": "Black",
+    "location": "Baoding, China",
+    "status": "available",
+    "price": {
+      "amount": 17400,
+      "currency": "USD"
+    },
+    "original_price": {
+      "amount": 119900,
+      "currency": "CNY"
+    },
+    "images": [
+      "/images/placeholder-suv-black.svg"
+    ],
+    "specs": [
+      {
+        "label": "Engine",
+        "value": "1.5L turbo petrol"
+      },
+      {
+        "label": "Transmission",
+        "value": "7-speed DCT"
+      },
+      {
+        "label": "Seats",
+        "value": "5"
+      },
+      {
+        "label": "Doors",
+        "value": "5"
+      }
+    ],
+    "description": "2023 Haval H6 with 24,780 km. 1.5L turbo petrol engine, front-wheel drive and a 7-speed dual-clutch transmission. Black exterior, five seats. Located in Baoding, China.",
+    "condition": {
+      "accident_history": "Not provided",
+      "maintenance": "Not provided",
+      "inspection": "Not provided",
+      "battery_health": "Not provided",
+      "paint": "Not provided"
+    },
+    "export": null,
+    "is_demo": true,
+    "source": "demo-catalog",
+    "created_at": "2026-09-13T00:00:00Z",
+    "updated_at": "2026-09-28T00:00:00Z"
+  },
+  {
+    "vehicle_id": "nio-es6-2023-001",
+    "vin": "DEMO-VIN-NIO-ES6-2023-001",
+    "brand": "nio",
+    "model": "es6",
+    "year": 2023,
+    "mileage_km": 14320,
+    "body_type": "suv",
+    "fuel": "ev",
+    "transmission": "automatic",
+    "drive": "awd",
+    "color": "Grey",
+    "location": "Hefei, China",
+    "status": "available",
+    "price": {
+      "amount": 32800,
+      "currency": "USD"
+    },
+    "original_price": {
+      "amount": 368000,
+      "currency": "CNY"
+    },
+    "images": [
+      "/images/placeholder-suv-grey.svg"
+    ],
+    "specs": [
+      {
+        "label": "Drivetrain",
+        "value": "Dual-motor all-wheel drive"
+      },
+      {
+        "label": "Power",
+        "value": "360 kW (approx.)"
+      },
+      {
+        "label": "Battery",
+        "value": "75 kWh (approx.)"
+      },
+      {
+        "label": "Seats",
+        "value": "5"
+      },
+      {
+        "label": "Doors",
+        "value": "5"
+      }
+    ],
+    "description": "2023 NIO ES6 electric SUV with 14,320 km. Dual-motor all-wheel drive with a roughly 75 kWh battery. Grey exterior, five seats, automatic transmission. Located in Hefei, China.",
+    "condition": {
+      "accident_history": "Not provided",
+      "maintenance": "Not provided",
+      "inspection": "Not provided",
+      "battery_health": "Not provided",
+      "paint": "Not provided"
+    },
+    "export": null,
+    "is_demo": true,
+    "source": "demo-catalog",
+    "created_at": "2026-09-16T00:00:00Z",
+    "updated_at": "2026-09-30T00:00:00Z"
+  },
+  {
+    "vehicle_id": "xpeng-g6-2024-001",
+    "vin": "DEMO-VIN-XPENG-G6-2024-001",
+    "brand": "xpeng",
+    "model": "g6",
+    "year": 2024,
+    "mileage_km": 8940,
+    "body_type": "suv",
+    "fuel": "ev",
+    "transmission": "automatic",
+    "drive": "rwd",
+    "color": "Silver",
+    "location": "Guangzhou, China",
+    "status": "available",
+    "price": {
+      "amount": 28900,
+      "currency": "USD"
+    },
+    "original_price": {
+      "amount": 209900,
+      "currency": "CNY"
+    },
+    "images": [
+      "/images/placeholder-suv-silver.svg"
+    ],
+    "specs": [
+      {
+        "label": "Drivetrain",
+        "value": "Rear-wheel drive, single motor"
+      },
+      {
+        "label": "Architecture",
+        "value": "800V high-voltage platform"
+      },
+      {
+        "label": "Battery",
+        "value": "66 kWh (approx.)"
+      },
+      {
+        "label": "Seats",
+        "value": "5"
+      },
+      {
+        "label": "Doors",
+        "value": "5"
+      }
+    ],
+    "description": "2024 XPeng G6 electric SUV with 8,940 km. Rear-wheel-drive single motor on an 800V platform with a roughly 66 kWh battery. Silver exterior, five seats, automatic transmission. Located in Guangzhou, China.",
+    "condition": {
+      "accident_history": "Not provided",
+      "maintenance": "Not provided",
+      "inspection": "Not provided",
+      "battery_health": "Not provided",
+      "paint": "Not provided"
+    },
+    "export": null,
+    "is_demo": true,
+    "source": "demo-catalog",
+    "created_at": "2026-09-21T00:00:00Z",
+    "updated_at": "2026-10-02T00:00:00Z"
+  }
+]

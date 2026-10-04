@@ -1,0 +1,279 @@
+---
+import type { Vehicle } from '../lib/types';
+import { SITE, formatPrice } from '../lib/site';
+import { getAllFuelTypes, getAllBrands, getAllBodyTypes, getBodyType } from '../lib/data';
+
+interface Props {
+  variant?: 'full' | 'quote';
+  vehicle?: Vehicle;
+  heading?: string;
+  subheading?: string;
+}
+
+const {
+  variant = 'full',
+  vehicle,
+  heading,
+  subheading,
+} = Astro.props;
+
+const fuelTypes = getAllFuelTypes();
+const bodyTypes = getAllBodyTypes();
+const brands = getAllBrands();
+
+const isQuote = variant === 'quote';
+const defaultHeading = isQuote
+  ? 'Request a Quote'
+  : 'Request a Used Car from China';
+const defaultSubheading = isQuote
+  ? 'Send us your details and we will get back to you with availability, price and export information for this vehicle.'
+  : "Can't find the vehicle you're looking for? Tell us your requirements and we can help source it from China's vehicle market.";
+
+const formId = isQuote ? 'request-quote-form' : 'request-car-form';
+const endpoint = SITE.leadEndpoint || '';
+---
+
+<section id="lead-form" class="card p-6 sm:p-8">
+  <div>
+    <h2 class="text-xl font-semibold text-ink">{heading ?? defaultHeading}</h2>
+    <p class="mt-2 text-sm text-ink-soft">{subheading ?? defaultSubheading}</p>
+  </div>
+
+  {vehicle && (
+    <div class="mt-4 rounded-md border border-surface-line bg-surface-alt p-4">
+      <p class="text-sm font-semibold text-ink">Vehicle</p>
+      <p class="mt-1 text-sm text-ink-soft">
+        {vehicle.year} {vehicle.brand.toUpperCase()} {vehicle.model} · {formatPrice(vehicle.price)}
+      </p>
+    </div>
+  )}
+
+  <form
+    id={formId}
+    class="mt-6 grid gap-4"
+    method="post"
+    action={endpoint || '#'}
+    data-endpoint={endpoint}
+    data-variant={variant}
+    data-email={SITE.email}
+    novalidate
+  >
+    {/* Honeypot spam trap — hidden from humans */}
+    <div class="hidden" aria-hidden="true">
+      <label>Leave this field empty<input type="text" name="company_website" tabindex="-1" autocomplete="off" /></label>
+    </div>
+
+    {isQuote && vehicle && (
+      <div class="hidden">
+        <input type="hidden" name="vehicle_id" value={vehicle.vehicle_id} />
+        <input type="hidden" name="brand" value={vehicle.brand} />
+        <input type="hidden" name="model" value={vehicle.model} />
+        <input type="hidden" name="year" value={String(vehicle.year)} />
+        <input type="hidden" name="price" value={`${vehicle.price.amount} ${vehicle.price.currency}`} />
+      </div>
+    )}
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      {!isQuote && (
+        <div class="sm:col-span-2">
+          <label class="flex items-center gap-2 text-sm text-ink-soft">
+            <input type="checkbox" id="unknown-model" name="unknown_model" class="h-4 w-4 rounded border-surface-line" />
+            I don't know the exact model
+          </label>
+        </div>
+      )}
+
+      <div>
+        <label for={`${formId}-brand`} class="label">Vehicle Brand {!isQuote && <span class="text-red-600">*</span>}</label>
+        {isQuote ? (
+          <input id={`${formId}-brand`} name="brand" value={vehicle?.brand.toUpperCase()} readonly class="input bg-surface-alt" />
+        ) : (
+          <select id={`${formId}-brand`} name="brand" class="input">
+            <option value="">Any brand</option>
+            {brands.map((b) => <option value={b.slug}>{b.name}</option>)}
+          </select>
+        )}
+      </div>
+
+      <div>
+        <label for={`${formId}-model`} class="label">Vehicle Model</label>
+        <input id={`${formId}-model`} name="model" type="text" value={vehicle?.model} readonly={isQuote} class:list={['input', isQuote && 'bg-surface-alt']} placeholder="e.g. Song Plus" />
+      </div>
+
+      <div>
+        <label for={`${formId}-year`} class="label">Preferred Year</label>
+        <input id={`${formId}-year`} name="year" type="number" min="2000" max="2026" value={vehicle?.year} readonly={isQuote} class:list={['input', isQuote && 'bg-surface-alt']} placeholder="e.g. 2023" />
+      </div>
+
+      <div>
+        <label for={`${formId}-budget`} class="label">Budget (USD)</label>
+        <input id={`${formId}-budget`} name="budget" type="number" min="0" class="input" placeholder="e.g. 20000" />
+      </div>
+
+      <div>
+        <label for={`${formId}-mileage`} class="label">Maximum Mileage (km)</label>
+        <input id={`${formId}-mileage`} name="mileage" type="number" min="0" class="input" placeholder="e.g. 50000" />
+      </div>
+
+      <div>
+        <label for={`${formId}-fuel`} class="label">Fuel Type</label>
+        <select id={`${formId}-fuel`} name="fuel" class="input">
+          <option value="">Any</option>
+          {fuelTypes.map((f) => <option value={f.slug}>{f.name}</option>)}
+        </select>
+      </div>
+
+      {!isQuote && (
+        <div>
+          <label for={`${formId}-body`} class="label">Body Type</label>
+          <select id={`${formId}-body`} name="body_type" class="input">
+            <option value="">Any</option>
+            {bodyTypes.map((b) => <option value={b.slug}>{b.name}</option>)}
+          </select>
+        </div>
+      )}
+
+      <div>
+        <label for={`${formId}-qty`} class="label">Quantity</label>
+        <input id={`${formId}-qty`} name="quantity" type="number" min="1" value="1" class="input" />
+      </div>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div>
+        <label for={`${formId}-country`} class="label">Destination Country {!isQuote && <span class="text-red-600">*</span>}</label>
+        <input id={`${formId}-country`} name="country" type="text" class="input" placeholder="e.g. Kenya" />
+      </div>
+      <div>
+        <label for={`${formId}-port`} class="label">Destination Port</label>
+        <input id={`${formId}-port`} name="port" type="text" class="input" placeholder="e.g. Mombasa" />
+      </div>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div>
+        <label for={`${formId}-company`} class="label">Company Name</label>
+        <input id={`${formId}-company`} name="company" type="text" class="input" autocomplete="organization" />
+      </div>
+      <div>
+        <label for={`${formId}-name`} class="label">Name <span class="text-red-600">*</span></label>
+        <input id={`${formId}-name`} name="name" type="text" required class="input" autocomplete="name" />
+      </div>
+      <div>
+        <label for={`${formId}-email`} class="label">Email <span class="text-red-600">*</span></label>
+        <input id={`${formId}-email`} name="email" type="email" required class="input" autocomplete="email" />
+      </div>
+      <div>
+        <label for={`${formId}-whatsapp`} class="label">WhatsApp</label>
+        <input id={`${formId}-whatsapp`} name="whatsapp" type="tel" class="input" placeholder="+country code and number" />
+      </div>
+    </div>
+
+    <div>
+      <label for={`${formId}-message`} class="label">Message</label>
+      <textarea id={`${formId}-message`} name="message" rows="4" class="input" placeholder="Tell us what you are looking for, target condition, and any export requirements."></textarea>
+    </div>
+
+    <div aria-live="polite">
+      <p id={`${formId}-error`} class="hidden text-sm text-red-600" role="alert"></p>
+      <p id={`${formId}-success`} class="hidden text-sm text-green-700" role="status"></p>
+    </div>
+
+    <div>
+      <button type="submit" class="btn-primary w-full sm:w-auto" id={`${formId}-submit`}>
+        {isQuote ? 'Request Quote' : 'Submit Request'}
+      </button>
+      <p class="mt-2 text-xs text-ink-muted">
+        We only use your details to respond to this enquiry. We will not share them with third parties.
+      </p>
+    </div>
+  </form>
+</section>
+
+<script is:inline>
+  (() => {
+    const form = document.getElementById('request-quote-form') || document.getElementById('request-car-form');
+    if (!form) return;
+    const fid = form.id;
+    const variant = form.dataset.variant || 'full';
+    const isQuote = variant === 'quote';
+    const supportEmail = form.dataset.email || '';
+
+    const errEl = document.getElementById(fid + '-error');
+    const okEl = document.getElementById(fid + '-success');
+    const submitBtn = document.getElementById(fid + '-submit');
+    const unknownModel = document.getElementById('unknown-model');
+
+    const brandSel = document.getElementById(fid + '-brand');
+    const modelInp = document.getElementById(fid + '-model');
+
+    if (unknownModel) {
+      unknownModel.addEventListener('change', () => {
+        const off = unknownModel.checked;
+        if (brandSel) brandSel.disabled = off;
+        if (modelInp) { modelInp.disabled = off; modelInp.placeholder = off ? 'Any model' : 'e.g. Song Plus'; }
+      });
+    }
+
+    function setError(msg) {
+      if (msg) { errEl.textContent = msg; errEl.classList.remove('hidden'); }
+      else errEl.classList.add('hidden');
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      setError('');
+      okEl.classList.add('hidden');
+
+      const fd = new FormData(form);
+
+      // Honeypot: bots fill the hidden field.
+      if (fd.get('company_website')) {
+        okEl.textContent = 'Thank you, your request has been received.';
+        okEl.classList.remove('hidden');
+        form.reset();
+        return;
+      }
+
+      const name = String(fd.get('name') || '').trim();
+      const email = String(fd.get('email') || '').trim();
+      const country = String(fd.get('country') || '').trim();
+      const brand = String(fd.get('brand') || '').trim();
+      const skipVehicle = unknownModel ? unknownModel.checked : false;
+
+      if (!name) { setError('Please enter your name.'); return; }
+      if (!email || !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) { setError('Please enter a valid email address.'); return; }
+      if (!isQuote && !skipVehicle && !brand) { setError('Please select a brand, or tick "I don\'t know the exact model".'); return; }
+      if (!isQuote && !country) { setError('Please enter a destination country.'); return; }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      const payload = Object.fromEntries(fd.entries());
+      const endpoint = form.dataset.endpoint;
+
+      try {
+        if (endpoint) {
+          const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          if (!res.ok) throw new Error('request failed');
+        } else {
+          // No backend configured in Phase 1 — simulate success.
+          await new Promise((r) => setTimeout(r, 400));
+        }
+        okEl.textContent = 'Thank you — your request has been received. We will contact you by email or WhatsApp.';
+        okEl.classList.remove('hidden');
+        form.reset();
+        if (unknownModel) { unknownModel.checked = false; if (brandSel) brandSel.disabled = false; if (modelInp) modelInp.disabled = false; }
+      } catch {
+        setError('Something went wrong. Please try again, or email us at ' + supportEmail + '.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = isQuote ? 'Request Quote' : 'Submit Request';
+      }
+    });
+  })();
+</script>

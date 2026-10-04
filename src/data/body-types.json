@@ -1,0 +1,4 @@
+[
+  { "slug": "suv", "name": "SUV", "description": "Sport utility vehicles, including compact, mid-size and 7-seat models." },
+  { "slug": "sedan", "name": "Sedan", "description": "Four-door passenger sedans across compact and mid-size segments." }
+]

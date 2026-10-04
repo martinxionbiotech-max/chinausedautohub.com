@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { CONTACT } from '../../lib/site';
+
+const title = 'Terms — China Used Car Export';
+const description = 'Terms of use for China Used Car Export.';
+---
+
+<BaseLayout title={title} description={description} canonical="/terms/">
+  <Breadcrumb crumbs={[{ name: 'Home', path: '/' }, { name: 'Terms', path: '/terms/' }]} />
+
+  <section class="container-site py-6">
+    <h1 class="text-3xl font-bold text-ink">Terms of Use</h1>
+    <div class="prose-vehicle mt-4 max-w-3xl space-y-4">
+      <p><strong>Last updated:</strong> 4 October 2026</p>
+      <p>
+        By using this website you agree to these terms. {`China Used Car Export`} provides a platform for sourcing and
+        exporting used vehicles from China.
+      </p>
+      <h2 class="text-lg font-semibold text-ink">Listings and pricing</h2>
+      <p>
+        Vehicle listings, specifications and prices are provided for information. Prices may vary based on configuration,
+        shipping, taxes and destination. Availability can change and is confirmed when you request a quote.
+      </p>
+      <h2 class="text-lg font-semibold text-ink">No guarantee of availability</h2>
+      <p>
+        A listing does not guarantee availability. We confirm availability, price and export details with you before any
+        order is placed.
+      </p>
+      <h2 class="text-lg font-semibold text-ink">Contact</h2>
+      <p>
+        For questions about these terms, email <a href={`mailto:${CONTACT.email}`} class="text-brand-700 hover:underline">{CONTACT.email}</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

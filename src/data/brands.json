@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "byd",
+    "name": "BYD",
+    "fullName": "BYD Auto",
+    "country": "China",
+    "overview": "BYD is a Chinese automaker with a strong focus on electrified vehicles, including PHEV (DM-i/DM-p) and full EV (e-platform 3.0) passenger cars. Several of its models are exported to overseas markets.",
+    "dataUrl": "https://data.example.com/brands/byd"
+  },
+  {
+    "slug": "geely",
+    "name": "Geely",
+    "fullName": "Geely Auto",
+    "country": "China",
+    "overview": "Geely Auto produces a wide range of passenger vehicles, including the Monjaro (Xingyue L) and Coolray (Binyue) SUVs, sold across multiple global markets.",
+    "dataUrl": "https://data.example.com/brands/geely"
+  },
+  {
+    "slug": "chery",
+    "name": "Chery",
+    "fullName": "Chery Automobile",
+    "country": "China",
+    "overview": "Chery is one of China's largest vehicle exporters, with models such as the Tiggo 8 Pro and Arrizo 8 sold in many emerging markets.",
+    "dataUrl": "https://data.example.com/brands/chery"
+  },
+  {
+    "slug": "changan",
+    "name": "Changan",
+    "fullName": "Changan Automobile",
+    "country": "China",
+    "overview": "Changan Automobile produces passenger vehicles including the CS75 Plus SUV and UNI-V sedan, with growing export activity.",
+    "dataUrl": "https://data.example.com/brands/changan"
+  },
+  {
+    "slug": "gac",
+    "name": "GAC",
+    "fullName": "GAC Motor",
+    "country": "China",
+    "overview": "GAC Motor manufactures vehicles including the GS4 SUV under the Trumpchi (GAC) brand, exported to several overseas markets.",
+    "dataUrl": "https://data.example.com/brands/gac"
+  },
+  {
+    "slug": "great-wall",
+    "name": "Great Wall",
+    "fullName": "Great Wall Motor (Haval)",
+    "country": "China",
+    "overview": "Great Wall Motor is known for its Haval SUV brand and the Haval H6, one of China's long-running compact SUVs, sold internationally as well.",
+    "dataUrl": "https://data.example.com/brands/great-wall"
+  },
+  {
+    "slug": "nio",
+    "name": "NIO",
+    "fullName": "NIO",
+    "country": "China",
+    "overview": "NIO designs premium electric SUVs and sedans, including the ES6 SUV, and has begun sales in select European and Middle East markets.",
+    "dataUrl": "https://data.example.com/brands/nio"
+  },
+  {
+    "slug": "xpeng",
+    "name": "XPeng",
+    "fullName": "XPeng Motors",
+    "country": "China",
+    "overview": "XPeng produces electric vehicles including the G6 mid-size SUV, with expanding presence in Europe and other regions.",
+    "dataUrl": "https://data.example.com/brands/xpeng"
+  }
+]

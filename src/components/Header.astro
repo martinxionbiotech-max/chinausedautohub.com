@@ -1,0 +1,107 @@
+---
+import { SITE, PRIMARY_NAV, RESOURCE_NAV } from '../lib/site';
+
+const path = Astro.url.pathname;
+
+function isActive(href: string): boolean {
+  if (href === '/') return path === '/';
+  return href !== '/' && path.startsWith(href);
+}
+---
+
+<header class="sticky top-0 z-50 border-b border-surface-line bg-white/95 backdrop-blur">
+  <div class="container-site flex h-16 items-center justify-between gap-6">
+    <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label={SITE.name}>
+      <span class="flex h-8 w-8 items-center justify-center rounded bg-brand-800 text-white text-sm font-bold">CU</span>
+      <span class="hidden sm:block leading-tight">
+        <span class="block text-sm font-bold text-ink">China Used Car Export</span>
+        <span class="block text-[11px] text-ink-muted">Source vehicles from China</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-1" aria-label="Primary">
+      {PRIMARY_NAV.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            'px-3 py-2 text-sm font-medium rounded-md transition-colors',
+            isActive(item.href) ? 'bg-brand-50 text-brand-800' : 'text-ink-soft hover:text-ink hover:bg-surface-alt',
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="hidden xl:flex items-center gap-2 rounded-md border border-dashed border-surface-line px-3 py-1.5" aria-label="Related resources">
+      <span class="text-[11px] font-semibold uppercase tracking-wide text-ink-muted">Resources</span>
+      {RESOURCE_NAV.map((item) => (
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={`${item.label} — ${item.note}`}
+          class="text-xs font-medium text-ink-muted hover:text-brand-700"
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+
+    <div class="flex items-center gap-2">
+      <a href="/request-a-car/" class="btn-primary hidden sm:inline-flex">Request a Car</a>
+      <button
+        id="nav-toggle"
+        class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-surface-line text-ink"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-surface-line bg-white">
+    <nav class="container-site flex flex-col py-3" aria-label="Mobile">
+      {PRIMARY_NAV.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            'px-3 py-2.5 text-sm font-medium rounded-md',
+            isActive(item.href) ? 'bg-brand-50 text-brand-800' : 'text-ink-soft hover:bg-surface-alt',
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+      <div class="my-2 border-t border-surface-line"></div>
+      <p class="px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-ink-muted">Related resources</p>
+      {RESOURCE_NAV.map((item) => (
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-3 py-2 text-sm font-medium text-ink-muted hover:text-brand-700"
+        >
+          {item.label}
+          <span class="text-[11px] text-ink-muted"> — {item.note}</span>
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden') === false;
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+  }
+</script>

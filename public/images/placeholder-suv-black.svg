@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Demo vehicle placeholder">
+  <rect width="1200" height="800" fill="#f2f4f7"/>
+  <rect x="24" y="24" width="1152" height="752" fill="none" stroke="#dfe3e8" stroke-width="2"/>
+  <!-- ground shadow -->
+  <ellipse cx="600" cy="620" rx="470" ry="26" fill="#e2e6ec"/>
+  <!-- car body -->
+  <path d="M150 470 L150 540 Q150 556 166 556 L1030 556 Q1046 556 1046 540 L1046 470 Z" fill="#3a3f46"/>
+  <!-- cabin -->
+  <path d="M330 470 L372 336 Q376 318 396 318 L760 318 Q780 318 784 336 L820 470 Z" fill="#3a3f46"/>
+  <!-- windows -->
+  <path d="M398 470 L430 344 L520 344 L520 470 Z" fill="#c9d4e0"/>
+  <path d="M544 470 L544 344 L632 344 L632 470 Z" fill="#c9d4e0"/>
+  <path d="M656 470 L656 344 L744 344 L744 470 Z" fill="#c9d4e0"/>
+  <!-- beltline -->
+  <line x1="160" y1="470" x2="1040" y2="470" stroke="#ffffff" stroke-opacity="0.35" stroke-width="3"/>
+  <!-- wheels -->
+  <circle cx="340" cy="556" r="62" fill="#22262c"/>
+  <circle cx="340" cy="556" r="34" fill="#5a616b"/>
+  <circle cx="860" cy="556" r="62" fill="#22262c"/>
+  <circle cx="860" cy="556" r="34" fill="#5a616b"/>
+  <!-- label -->
+  <rect x="420" y="656" width="360" height="46" rx="8" fill="#1a2330"/>
+  <text x="600" y="686" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#ffffff">DEMO — Placeholder image</text>
+  <text x="600" y="740" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#718096">No real vehicle photo available</text>
+</svg>

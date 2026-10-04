@@ -1,0 +1,5 @@
+[
+  { "slug": "fwd", "name": "Front-wheel drive" },
+  { "slug": "rwd", "name": "Rear-wheel drive" },
+  { "slug": "awd", "name": "All-wheel drive" }
+]

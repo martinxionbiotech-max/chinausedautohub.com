@@ -1,0 +1,308 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import VehicleCard from '../../components/VehicleCard.astro';
+import {
+  getAllVehicles,
+  getAllBrands,
+  getAllBodyTypes,
+  getAllFuelTypes,
+  getAllTransmissions,
+  getAllDrives,
+  getAllModels,
+  getMarket,
+  getListableVehicles,
+} from '../../lib/data';
+import { SITE } from '../../lib/site';
+import { itemListSchema } from '../../lib/schema';
+import { vehicleUrl } from '../../lib/urls';
+import type { Vehicle } from '../../lib/types';
+
+// Server renders every inventory card as crawlable HTML. Client-side JS only
+// enhances with live filter/sort/load-more — it never gates the core data.
+const all = getAllVehicles();
+const availableCount = all.filter((v) => v.status === 'available').length;
+const reservedCount = all.filter((v) => v.status === 'reserved').length;
+const soldCount = all.filter((v) => v.status === 'sold').length;
+
+const brands = getAllBrands();
+const bodyTypes = getAllBodyTypes();
+const fuelTypes = getAllFuelTypes();
+const transmissions = getAllTransmissions();
+const drives = getAllDrives();
+const models = getAllModels();
+
+const country = Astro.url.searchParams.get('country') ?? '';
+const countryName = country ? (getMarket(country)?.name ?? country) : '';
+
+const title = 'Available Used Cars for Export from China';
+const description = `Browse ${availableCount} available used vehicles for export from China. Filter by brand, model, year, price, mileage, body type, fuel and transmission.`;
+
+const pageSize = 9;
+const schema = itemListSchema(
+  all.map((v) => ({ name: `${v.year} ${v.brand} ${v.model}`, url: vehicleUrl(v) })),
+);
+---
+
+<BaseLayout title={title} description={description} canonical="/cars/" schema={schema}>
+  <Breadcrumb crumbs={[{ name: 'Home', path: '/' }, { name: 'Cars', path: '/cars/' }]} />
+
+  <section class="container-site py-6">
+    <div class="flex flex-wrap items-end justify-between gap-3">
+      <div>
+        <h1 class="text-3xl font-bold text-ink">Available Vehicles</h1>
+        <p class="mt-1 text-ink-soft">
+          <span id="listing-count" data-available={availableCount}>{availableCount}</span> vehicles available
+          <span class="text-ink-muted"> · {reservedCount} reserved · {soldCount} sold</span>
+        </p>
+      </div>
+      <a href="/request-a-car/" class="btn-primary">Request a Car</a>
+    </div>
+
+    {countryName && (
+      <div class="mt-4 rounded-md border border-brand-200 bg-brand-50 p-3 text-sm text-brand-800">
+        Destination: <strong>{countryName}</strong> — vehicle availability is shown below; for country-specific sourcing and landed costs,{' '}
+        <a href={`/request-a-car/?country=${country}`} class="font-semibold underline">request a car for {countryName}</a>.
+      </div>
+    )}
+
+    <!-- FILTER / SORT -->
+    <form id="listing-filter" class="mt-6 rounded-lg border border-surface-line bg-surface-alt p-4" onsubmit="return false">
+      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <label class="block">
+          <span class="label !mt-0">Search</span>
+          <input id="listing-q" type="text" class="input" placeholder="Brand, model, year, color…" />
+        </label>
+        <label class="block">
+          <span class="label !mt-0">Brand</span>
+          <select id="listing-brand" class="input">
+            <option value="">Any brand</option>
+            {brands.map((b) => <option value={b.slug}>{b.name}</option>)}
+          </select>
+        </label>
+        <label class="block">
+          <span class="label !mt-0">Model</span>
+          <select id="listing-model" class="input">
+            <option value="">Any model</option>
+            {models.map((m) => <option value={m.slug}>{m.name}</option>)}
+          </select>
+        </label>
+        <label class="block">
+          <span class="label !mt-0">Body Type</span>
+          <select id="listing-body" class="input">
+            <option value="">Any</option>
+            {bodyTypes.map((b) => <option value={b.slug}>{b.name}</option>)}
+          </select>
+        </label>
+        <label class="block">
+          <span class="label !mt-0">Fuel Type</span>
+          <select id="listing-fuel" class="input">
+            <option value="">Any</option>
+            {fuelTypes.map((f) => <option value={f.slug}>{f.name}</option>)}
+          </select>
+        </label>
+        <label class="block">
+          <span class="label !mt-0">Transmission</span>
+          <select id="listing-transmission" class="input">
+            <option value="">Any</option>
+            {transmissions.map((t) => <option value={t.slug}>{t.name}</option>)}
+          </select>
+        </label>
+        <label class="block">
+          <span class="label !mt-0">Drive</span>
+          <select id="listing-drive" class="input">
+            <option value="">Any</option>
+            {drives.map((d) => <option value={d.slug}>{d.name}</option>)}
+          </select>
+        </label>
+        <label class="block">
+          <span class="label !mt-0">Availability</span>
+          <select id="listing-status" class="input">
+            <option value="available" selected>Available</option>
+            <option value="all">All statuses</option>
+            <option value="reserved">Reserved</option>
+            <option value="sold">Sold</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+        <label class="block">
+          <span class="label !mt-0">Min Year</span>
+          <select id="listing-minyear" class="input">
+            <option value="">Any</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+          </select>
+        </label>
+        <label class="block">
+          <span class="label !mt-0">Max Year</span>
+          <select id="listing-maxyear" class="input">
+            <option value="">Any</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+          </select>
+        </label>
+        <label class="block">
+          <span class="label !mt-0">Max Price</span>
+          <select id="listing-maxprice" class="input">
+            <option value="">Any</option>
+            <option value="15000">Under $15,000</option>
+            <option value="20000">Under $20,000</option>
+            <option value="25000">Under $25,000</option>
+            <option value="30000">Under $30,000</option>
+          </select>
+        </label>
+        <label class="block">
+          <span class="label !mt-0">Max Mileage</span>
+          <select id="listing-maxmileage" class="input">
+            <option value="">Any</option>
+            <option value="10000">Under 10,000 km</option>
+            <option value="20000">Under 20,000 km</option>
+            <option value="30000">Under 30,000 km</option>
+            <option value="50000">Under 50,000 km</option>
+          </select>
+        </label>
+        <label class="block">
+          <span class="label !mt-0">Sort</span>
+          <select id="listing-sort" class="input">
+            <option value="newest">Newest year</option>
+            <option value="oldest">Oldest year</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="mileage-asc">Mileage: low to high</option>
+            <option value="mileage-desc">Mileage: high to low</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="mt-4 flex items-center justify-between">
+        <button type="button" id="listing-clear" class="btn-ghost !px-3 text-sm">Clear filters</button>
+        <p id="listing-empty" class="hidden text-sm text-ink-muted">No vehicles match your filters.</p>
+      </div>
+    </form>
+
+    <!-- RESULTS -->
+    <div id="listing-grid" class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-page-size={pageSize}>
+      {all.map((v: Vehicle) => <VehicleCard vehicle={v} />)}
+    </div>
+
+    <div class="mt-8 text-center">
+      <button id="listing-more" class="btn-secondary hidden">Load more vehicles</button>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  (() => {
+    const grid = document.getElementById('listing-grid');
+    if (!grid) return;
+    const cards = Array.from(grid.querySelectorAll('[data-vehicle]'));
+    const countEl = document.getElementById('listing-count');
+    const moreBtn = document.getElementById('listing-more');
+    const emptyEl = document.getElementById('listing-empty');
+    const pageSize = Number(grid.dataset.pageSize || 9);
+    let shownCount = pageSize;
+
+    const ids = [
+      'q', 'brand', 'model', 'body', 'fuel', 'transmission', 'drive',
+      'status', 'minyear', 'maxyear', 'maxprice', 'maxmileage', 'sort',
+    ];
+    const els = Object.fromEntries(ids.map((k) => [k, document.getElementById('listing-' + k)]));
+
+    // Pre-fill from URL params (hero search links here).
+    const params = new URLSearchParams(location.search);
+    if (els.brand && params.get('brand')) els.brand.value = params.get('brand');
+    if (els.q && params.get('q')) els.q.value = params.get('q');
+    if (els.maxprice && params.get('maxPrice')) els.maxprice.value = params.get('maxPrice');
+    if (els.minyear && params.get('minYear')) els.minyear.value = params.get('minYear');
+
+    function val(id) { return els[id] ? els[id].value : ''; }
+
+    function matches(card) {
+      const d = card.dataset;
+      const q = val('q').toLowerCase();
+      if (q) {
+        const hay = `${d.brand} ${d.model} ${d.year} ${d.color ?? ''}`.toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      if (val('brand') && d.brand !== val('brand')) return false;
+      if (val('model') && d.model !== val('model')) return false;
+      if (val('body') && d.body !== val('body')) return false;
+      if (val('fuel') && d.fuel !== val('fuel')) return false;
+      if (val('transmission') && d.transmission !== val('transmission')) return false;
+      if (val('drive') && d.drive !== val('drive')) return false;
+
+      const status = val('status') || 'available';
+      if (status !== 'all' && d.status !== status) return false;
+
+      const year = Number(d.year);
+      if (val('minyear') && year < Number(val('minyear'))) return false;
+      if (val('maxyear') && year > Number(val('maxyear'))) return false;
+      const price = Number(d.price);
+      if (val('maxprice') && price > Number(val('maxprice'))) return false;
+      const mileage = Number(d.mileage);
+      if (val('maxmileage') && mileage > Number(val('maxmileage'))) return false;
+      return true;
+    }
+
+    function sortCmp(a, b) {
+      const sort = val('sort') || 'newest';
+      const da = a.dataset, db = b.dataset;
+      switch (sort) {
+        case 'price-asc': return Number(da.price) - Number(db.price);
+        case 'price-desc': return Number(db.price) - Number(da.price);
+        case 'oldest': return Number(da.year) - Number(db.year);
+        case 'mileage-asc': return Number(da.mileage) - Number(db.mileage);
+        case 'mileage-desc': return Number(db.mileage) - Number(da.mileage);
+        default: return Number(db.year) - Number(da.year);
+      }
+    }
+
+    function apply() {
+      const visible = cards.filter(matches).sort(sortCmp);
+      const hidden = cards.filter((c) => !matches(c));
+
+      // Reorder: visible first (sorted), then hidden.
+      visible.forEach((c) => grid.appendChild(c));
+      hidden.forEach((c) => grid.appendChild(c));
+
+      visible.forEach((c) => c.classList.remove('listing-hidden', 'hidden'));
+      hidden.forEach((c) => c.classList.add('hidden'));
+
+      // Load-more gate among visible.
+      visible.forEach((c, i) => {
+        if (i < shownCount) c.classList.remove('listing-hidden');
+        else c.classList.add('listing-hidden');
+      });
+
+      const status = val('status') || 'available';
+      const countLabel = status === 'all' ? 'vehicles in inventory' : 'vehicles available';
+      countEl.textContent = String(visible.length);
+
+      const remaining = visible.length - shownCount;
+      if (remaining > 0) {
+        moreBtn.classList.remove('hidden');
+        moreBtn.textContent = `Load ${remaining} more vehicle${remaining === 1 ? '' : 's'}`;
+      } else {
+        moreBtn.classList.add('hidden');
+      }
+      emptyEl.classList.toggle('hidden', visible.length !== 0);
+    }
+
+    ids.forEach((k) => { if (els[k]) els[k].addEventListener('input', () => { shownCount = pageSize; apply(); }); });
+
+    document.getElementById('listing-clear')?.addEventListener('click', () => {
+      ids.forEach((k) => { if (els[k] && els[k].tagName === 'SELECT') els[k].selectedIndex = 0; else if (els[k]) els[k].value = ''; });
+      if (els.status) els.status.value = 'available';
+      shownCount = pageSize;
+      apply();
+    });
+
+    moreBtn?.addEventListener('click', () => { shownCount += pageSize; apply(); });
+
+    apply();
+  })();
+</script>

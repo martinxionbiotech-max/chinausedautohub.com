@@ -1,0 +1,6 @@
+[
+  { "slug": "automatic", "name": "Automatic" },
+  { "slug": "dct", "name": "DCT (Dual Clutch)" },
+  { "slug": "cvt", "name": "CVT" },
+  { "slug": "manual", "name": "Manual" }
+]

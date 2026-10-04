@@ -1,0 +1,6 @@
+[
+  { "slug": "petrol", "name": "Petrol", "description": "Internal-combustion petrol (gasoline) vehicles." },
+  { "slug": "ev", "name": "EV", "description": "Battery electric vehicles." },
+  { "slug": "phev", "name": "PHEV", "description": "Plug-in hybrid electric vehicles." },
+  { "slug": "hybrid", "name": "Hybrid", "description": "Non-plug-in hybrid electric vehicles." }
+]

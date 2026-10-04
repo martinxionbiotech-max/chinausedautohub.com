@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { SITE } from '../../lib/site';
+import { faqSchema, type FaqItem } from '../../lib/schema';
+
+const title = 'How It Works — Buying a Used Car from China';
+const description = 'How to find, request, confirm and export a used vehicle from China: search, select, request a quote, confirm and export.';
+
+const steps = [
+  { n: '1', title: 'Search', text: 'Browse our available inventory and filter by brand, model, year, price, mileage and body type.' },
+  { n: '2', title: 'Select', text: 'Choose a vehicle, or tell us your requirements and we will source options from China\u2019s market.' },
+  { n: '3', title: 'Request a Quote', text: 'Send us the vehicle details or your requirements and receive a quote for the vehicle.' },
+  { n: '4', title: 'Confirm', text: 'Confirm the vehicle, configuration and shipping arrangement for your destination.' },
+  { n: '5', title: 'Export', text: 'We coordinate export preparation and documentation for shipment from China.' },
+];
+
+const areas = [
+  {
+    title: 'Vehicle Sourcing',
+    text: 'We source vehicles from China\u2019s domestic market, including petrol, hybrid and electric models. If a specific vehicle is not in our current inventory, we can look for it on request.',
+  },
+  {
+    title: 'Inspection',
+    text: 'We provide the vehicle information we hold — specifications, mileage and condition details as supplied by the source. Where data is not available, we say so rather than guessing.',
+  },
+  {
+    title: 'Documentation',
+    text: 'We help prepare the export documentation your market requires. Requirements vary by destination country, so we confirm these with you during the quote.',
+  },
+  {
+    title: 'Shipping',
+    text: 'We can help coordinate shipping to your destination port. Freight, insurance, taxes and duties depend on the destination and are quoted separately.',
+  },
+];
+
+const faqs: FaqItem[] = [
+  { question: 'Do you ship vehicles to my country?', answer: 'We can help coordinate export and shipping to many destinations. Final shipping availability and cost depend on your destination port, so please contact us with your location.' },
+  { question: 'Can you source a vehicle that is not in your inventory?', answer: 'Yes. Tell us the brand, model, year, budget and destination using the Request a Car form, and we will look for options in China\u2019s market.' },
+  { question: 'What does the listed price include?', answer: 'The listed price is the asking price for the vehicle only. Shipping, taxes, import duties and other landed costs are quoted separately and depend on the destination.' },
+  { question: 'How long does export take?', answer: 'Export time depends on the vehicle, documentation requirements and destination. We confirm an estimated timeline when you request a quote.' },
+];
+
+const schema = faqSchema(faqs);
+---
+
+<BaseLayout title={title} description={description} canonical="/how-it-works/" schema={schema}>
+  <Breadcrumb crumbs={[{ name: 'Home', path: '/' }, { name: 'How It Works', path: '/how-it-works/' }]} />
+
+  <section class="container-site py-6">
+    <h1 class="text-3xl font-bold text-ink">How It Works</h1>
+    <p class="mt-2 max-w-2xl text-ink-soft">A straightforward process for finding and exporting a used vehicle from China.</p>
+  </section>
+
+  <section class="container-site">
+    <ol class="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+      {steps.map((s) => (
+        <li class="card p-5">
+          <span class="flex h-9 w-9 items-center justify-center rounded-full bg-brand-800 text-sm font-bold text-white">{s.n}</span>
+          <h2 class="mt-3 text-base font-semibold text-ink">{s.title}</h2>
+          <p class="mt-2 text-sm text-ink-soft">{s.text}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="container-site mt-12">
+    <h2 class="text-xl font-bold text-ink">What we provide</h2>
+    <div class="mt-4 grid gap-5 sm:grid-cols-2">
+      {areas.map((a) => (
+        <div class="card p-5">
+          <h3 class="text-base font-semibold text-ink">{a.title}</h3>
+          <p class="mt-2 text-sm text-ink-soft">{a.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="container-site mt-12 max-w-3xl">
+    <h2 class="text-xl font-bold text-ink">Frequently Asked Questions</h2>
+    <div class="mt-4 space-y-3">
+      {faqs.map((f) => (
+        <details class="card p-4">
+          <summary class="cursor-pointer text-sm font-semibold text-ink">{f.question}</summary>
+          <p class="mt-2 text-sm text-ink-soft">{f.answer}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="container-site mt-12 pb-4">
+    <div class="card p-6 text-center">
+      <h2 class="text-lg font-semibold text-ink">Ready to find a vehicle?</h2>
+      <div class="mt-4 flex flex-wrap justify-center gap-3">
+        <a href="/cars/" class="btn-primary">Browse Cars</a>
+        <a href="/request-a-car/" class="btn-secondary">Request a Car</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
