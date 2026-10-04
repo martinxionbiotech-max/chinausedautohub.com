@@ -1,19 +1,27 @@
 {
-  "name": "China Used Car Export",
-  "shortName": "China Used Car Export",
+  "name": "China Used Auto Hub",
+  "shortName": "China Used Auto Hub",
   "tagline": "Source quality used vehicles from China for your market.",
   "description": "A commercial platform for sourcing used and near-new vehicles from China for export — browse available inventory, request quotes, and request specific vehicles from China's market.",
-  "url": "https://china-used-car-export.pages.dev",
+  "url": "https://chinausedautohub.com",
   "email": "landengltd@gmail.com",
   "whatsapp": "+86 13323237275",
   "whatsappLink": "https://wa.me/8613323237275",
   "subdomains": {
-    "data": "https://data.example.com",
-    "companies": "https://companies.example.com",
-    "tools": "https://tools.example.com",
-    "market": "https://market.example.com"
+    "data": "https://data.chinausedautohub.com",
+    "companies": "https://companies.chinausedautohub.com",
+    "tools": "https://tools.chinausedautohub.com",
+    "market": "https://market.chinausedautohub.com"
   },
   "leadEndpoint": "",
   "ogImage": "/images/og-default.svg",
-  "markets": ["uae", "saudi-arabia", "kenya", "tanzania", "nigeria", "kazakhstan", "uzbekistan"]
+  "markets": [
+    "uae",
+    "saudi-arabia",
+    "kenya",
+    "tanzania",
+    "nigeria",
+    "kazakhstan",
+    "uzbekistan"
+  ]
 }

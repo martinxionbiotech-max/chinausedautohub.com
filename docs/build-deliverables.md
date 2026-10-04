@@ -96,12 +96,12 @@ BaseLayout.astro（head/SEO/canonical/schema + <slot/>）
 
 | 页面 | 链接目标 |
 | --- | --- |
-| Vehicle 详情 | Brand 页（主站）· Model 数据页（data.example.com）· 相似车辆 · Request Quote · Tools |
-| Brand 页 | 该品牌 Available Vehicles · Popular Models（→ data.example.com）· Vehicle Types · Related Data · Related Markets |
+| Vehicle 详情 | Brand 页（主站）· Model 数据页（data.chinausedautohub.com）· 相似车辆 · Request Quote · Tools |
+| Brand 页 | 该品牌 Available Vehicles · Popular Models（→ data.chinausedautohub.com）· Vehicle Types · Related Data · Related Markets |
 | Body Type 页 | 相关车辆 · 常见品牌 · 热门车型 · Request a Car |
 | 首页 | Featured / Brands / Types / New Arrivals / Request / Market 入口 / Data·Tools 入口 / How It Works |
 
-所有子站链接（data/tools/companies/market.example.com）均标注「future sub-site」，明确为外部资源区，与主站商业目录视觉区分。
+所有子站链接（data/tools/companies/market.chinausedautohub.com）均标注「future sub-site」，明确为外部资源区，与主站商业目录视觉区分。
 
 ---
 
@@ -130,12 +130,12 @@ BaseLayout.astro（head/SEO/canonical/schema + <slot/>）
 
 ## 9. 尚未完成项目
 
-1. **域名**：`SITE.url` 默认 `https://china-used-car-export.pages.dev`（总纲未给正式域名），集中在 `src/data/site.json` 一处可改。
+1. **域名**：`SITE.url` 默认 `https://chinausedautohub.com`（总纲未给正式域名），集中在 `src/data/site.json` 一处可改。
 2. **GitHub 远程仓库**：尚未创建/关联（需用户授权后建），本次仅本地 commit。
 3. **表单后端**：`LeadForm` 目前无真实接收端（`leadEndpoint` 为空，提交走本地成功提示 + honeypot 防垃圾）；待接入 Email / CRM webhook。
 4. **真实图片**：全部使用统一中性占位图（SVG，明确标注 "DEMO — Placeholder image"），待替换真实车图 + 生成 WebP/AVIF 响应式尺寸。
 5. **真实库存数据**：当前 12 台均为 demo，上线前需 `clear-demo-data` + 导入真实库存。
-6. **子站**：data / tools / companies / market.example.com 均为占位链接（未来子站）。
+6. **子站**：data / tools / companies / market.chinausedautohub.com 均为占位链接（未来子站）。
 7. **额外栏目**：`/fuel-types/`、`/featured-cars/`、`/markets/`、`/export/`、`/faq/` 未单独建页（总纲列为「按内容再增加」，非 Phase 1 必需）。
 8. **Cloudflare Pages 部署配置**：尚未生成 `wrangler.toml` / 部署管线。
 
