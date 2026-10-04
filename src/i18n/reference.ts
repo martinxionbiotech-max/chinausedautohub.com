@@ -53,6 +53,42 @@ const FUEL_DESCRIPTIONS: Record<string, L10n> = {
   },
 };
 
+const POWERTRAIN_NAMES: Record<string, L10n> = {
+  ev: { ar: 'كهربائي (EV)', ru: 'Электрический (EV)', es: 'Eléctrico (EV)' },
+  phev: { ar: 'هجين قابل للشحن (PHEV)', ru: 'Подключаемый гибрид (PHEV)', es: 'Híbrido enchufable (PHEV)' },
+  hybrid: { ar: 'هجين (HEV)', ru: 'Гибрид (HEV)', es: 'Híbrido (HEV)' },
+  petrol: { ar: 'بنزين', ru: 'Бензиновый', es: 'Gasolina' },
+  diesel: { ar: 'ديزل', ru: 'Дизельный', es: 'Diésel' },
+};
+
+const POWERTRAIN_DESCRIPTIONS: Record<string, L10n> = {
+  ev: {
+    ar: 'سيارات كهربائية تعمل بالبطارية فقط، دون محرك احتراق داخلي.',
+    ru: 'Аккумуляторные электромобили без двигателя внутреннего сгорания.',
+    es: 'Vehículos eléctricos de batería sin motor de combustión interna.',
+  },
+  phev: {
+    ar: 'سيارات هجينة قابلة للشحن تجمع بين محرك كهربائي ومحرك احتراق وبطارية قابلة للشحن.',
+    ru: 'Подключаемые гибриды, сочетающие электромотор, ДВС и заряжаемую батарею.',
+    es: 'Híbridos enchufables que combinan motor eléctrico, motor de combustión y batería recargable.',
+  },
+  hybrid: {
+    ar: 'سيارات هجينة غير قابلة للشحن تجمع بين محرك احتراق ومحرك كهربائي يُعاد شحنه أثناء القيادة.',
+    ru: 'Неподключаемые гибриды, сочетающие ДВС и электромотор, заряжаемый при движении.',
+    es: 'Híbridos no enchufables que combinan motor de combustión y motor eléctrico recargado al conducir.',
+  },
+  petrol: {
+    ar: 'سيارات تعمل بمحرك احتراق داخلي بنزين.',
+    ru: 'Автомобили с бензиновым двигателем внутреннего сгорания.',
+    es: 'Vehículos con motor de combustión interna de gasolina.',
+  },
+  diesel: {
+    ar: 'سيارات تعمل بمحرك احتراق داخلي ديزل.',
+    ru: 'Автомобили с дизельным двигателем внутреннего сгорания.',
+    es: 'Vehículos con motor de combustión interna diésel.',
+  },
+};
+
 const TRANSMISSION_NAMES: Record<string, L10n> = {
   automatic: { ar: 'أوتوماتيك', ru: 'Автомат', es: 'Automática' },
   dct: { ar: 'DCT (قابض مزدوج)', ru: 'DCT (робот с двойным сцеплением)', es: 'DCT (doble embrague)' },
@@ -222,6 +258,12 @@ export function fuelTypeName(slug: string, locale: string, en: string): string {
 }
 export function fuelTypeDescription(slug: string, locale: string, en: string): string {
   return FUEL_DESCRIPTIONS[slug] ? pick(FUEL_DESCRIPTIONS[slug], locale, en) : en;
+}
+export function powertrainName(slug: string, locale: string, en: string): string {
+  return POWERTRAIN_NAMES[slug] ? pick(POWERTRAIN_NAMES[slug], locale, en) : en;
+}
+export function powertrainDescription(slug: string, locale: string, en: string): string {
+  return POWERTRAIN_DESCRIPTIONS[slug] ? pick(POWERTRAIN_DESCRIPTIONS[slug], locale, en) : en;
 }
 export function transmissionName(slug: string, locale: string, en: string): string {
   return TRANSMISSION_NAMES[slug] ? pick(TRANSMISSION_NAMES[slug], locale, en) : en;

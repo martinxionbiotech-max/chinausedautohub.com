@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { SUBDOMAINS, SITE_URL } from '../lib/site';
+import { articleSchema } from '../lib/schema';
+import { getTranslations } from '../i18n';
+import { getGuide } from '../i18n/guides';
+import { pick } from '../i18n/l10n';
+import { guideUrl, guidesUrl } from '../lib/urls';
+import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
+
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
+
+const guide = getGuide(slug);
+if (!guide) {
+  return Astro.redirect(localizedUrl(guidesUrl(), locale));
+}
+
+const title = pick(guide.title, locale);
+const description = pick(guide.description, locale);
+const h1 = pick(guide.h1, locale);
+const canonical = localizedUrl(guideUrl(slug), locale);
+
+const schema = articleSchema({
+  headline: pick(guide.title, 'en'),
+  description: pick(guide.description, 'en'),
+  url: `${SITE_URL}${canonical}`,
+});
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schema={schema}>
+  <Breadcrumb crumbs={[{ name: t.breadcrumb.home, path: localizedUrl('/', locale) }, { name: t.breadcrumb.guides, path: localizedUrl(guidesUrl(), locale) }, { name: h1, path: canonical }]} />
+
+  <article class="container-site py-6">
+    <h1 class="text-3xl font-bold text-ink">{h1}</h1>
+    <p class="mt-2 max-w-3xl text-ink-soft">{description}</p>
+  </article>
+
+  <article class="container-site max-w-3xl">
+    <div class="space-y-8">
+      {guide.sections.map((section) => (
+        <section>
+          <h2 class="text-xl font-bold text-ink">{pick(section.heading, locale)}</h2>
+          <div class="prose-vehicle mt-3 space-y-3">
+            {section.paragraphs.map((p) => <p>{pick(p, locale)}</p>)}
+          </div>
+        </section>
+      ))}
+    </div>
+  </article>
+
+  <section class="container-site mt-12 max-w-3xl pb-10">
+    <div class="card p-6">
+      <h2 class="text-lg font-semibold text-ink">{t.nav.resources}</h2>
+      <p class="mt-2 text-sm text-ink-soft">{t.howItWorks.ready}</p>
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <a href={SUBDOMAINS.data} target="_blank" rel="noopener noreferrer" class="card p-4 hover:border-brand-300">
+          <span class="block text-sm font-semibold text-ink">{t.nav.vehicleData}</span>
+          <span class="block text-[11px] text-ink-muted">data.chinausedautohub.com</span>
+        </a>
+        <a href={SUBDOMAINS.market} target="_blank" rel="noopener noreferrer" class="card p-4 hover:border-brand-300">
+          <span class="block text-sm font-semibold text-ink">{t.nav.marketInformation}</span>
+          <span class="block text-[11px] text-ink-muted">market.chinausedautohub.com</span>
+        </a>
+        <a href={SUBDOMAINS.tools} target="_blank" rel="noopener noreferrer" class="card p-4 hover:border-brand-300">
+          <span class="block text-sm font-semibold text-ink">{t.nav.tools}</span>
+          <span class="block text-[11px] text-ink-muted">tools.chinausedautohub.com</span>
+        </a>
+        <a href={localizedUrl('/request-a-car/', locale)} class="card p-4 hover:border-brand-300">
+          <span class="block text-sm font-semibold text-ink">{t.common.requestACar}</span>
+          <span class="block text-[11px] text-ink-muted">{t.site.tagline}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

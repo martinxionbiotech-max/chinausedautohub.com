@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import VehicleCard from '../components/VehicleCard.astro';
+import { getPowertrain, getVehiclesByPowertrain, getBrand } from '../lib/data';
+import { formatPrice } from '../lib/site';
+import { powertrainUrl } from '../lib/urls';
+import { itemListSchema } from '../lib/schema';
+import { getTranslations } from '../i18n';
+import { powertrainName, powertrainDescription } from '../i18n/reference';
+import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
+import type { Vehicle } from '../lib/types';
+
+interface Props {
+  type: string;
+}
+
+const { type } = Astro.props;
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
+
+const powertrain = getPowertrain(type);
+if (!powertrain) {
+  return Astro.redirect(localizedUrl('/powertrains/', locale));
+}
+
+const name = powertrainName(powertrain.slug, locale, powertrain.name);
+const vehicles = getVehiclesByPowertrain(type);
+const available = vehicles.filter((v) => v.status === 'available');
+
+const prices = available.map((v) => v.price.amount);
+const priceRange = prices.length
+  ? `${formatPrice({ amount: Math.min(...prices), currency: 'USD' }, locale)} – ${formatPrice({ amount: Math.max(...prices), currency: 'USD' }, locale)}`
+  : null;
+
+const brandCounts = new Map<string, number>();
+for (const v of available) brandCounts.set(v.brand, (brandCounts.get(v.brand) ?? 0) + 1);
+const commonBrands = Array.from(brandCounts.entries())
+  .sort((a, b) => b[1] - a[1])
+  .map(([slug]) => getBrand(slug))
+  .filter(Boolean);
+
+const title = `${name} — ${t.powertrains.forExport}`;
+const description = `${t.listing.descriptionPrefix} ${available.length} ${t.listing.available} ${name} ${t.powertrains.forExport}${priceRange ? `, ${priceRange}` : ''}.`;
+
+const schema = itemListSchema(
+  available.map((v) => ({ name: `${v.year} ${v.brand} ${v.model}`, url: localizedUrl(`/cars/${v.brand}/${v.model}/${v.vehicle_id}/`, locale) })),
+);
+---
+
+<BaseLayout title={title} description={description} canonical={localizedUrl(powertrainUrl(powertrain), locale)} schema={schema}>
+  <Breadcrumb crumbs={[{ name: t.breadcrumb.home, path: localizedUrl('/', locale) }, { name: t.breadcrumb.powertrains, path: localizedUrl('/powertrains/', locale) }, { name, path: localizedUrl(powertrainUrl(powertrain), locale) }]} />
+
+  <section class="container-site py-6">
+    <h1 class="text-3xl font-bold text-ink">{name} {t.powertrains.forExport}</h1>
+    <p class="mt-2 max-w-2xl text-ink-soft">{powertrainDescription(powertrain.slug, locale, powertrain.description)}</p>
+    {priceRange && <p class="mt-1 text-sm text-ink-muted">{t.powertrains.priceRange}: {priceRange}</p>}
+  </section>
+
+  <section class="container-site">
+    <h2 class="text-xl font-bold text-ink">{t.brands.availableVehicles}</h2>
+    <div class="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {available.map((v: Vehicle) => <VehicleCard vehicle={v} />)}
+    </div>
+  </section>
+
+  {commonBrands.length > 0 && (
+    <section class="container-site mt-12">
+      <h2 class="text-xl font-bold text-ink">{t.powertrains.commonBrands}</h2>
+      <div class="mt-4 flex flex-wrap gap-3">
+        {commonBrands.map((b) => (
+          <a href={localizedUrl(`/brands/${b.slug}/`, locale)} class="card px-4 py-2.5 text-sm font-medium text-ink hover:border-brand-300">{b.name}</a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="container-site mt-12 pb-4">
+    <div class="card p-5">
+      <h2 class="text-lg font-semibold text-ink">{t.home.ctaHeading}</h2>
+      <p class="mt-2 text-sm text-ink-soft">{t.home.ctaText}</p>
+      <a href={localizedUrl('/request-a-car/', locale)} class="btn-primary mt-4">{t.common.requestACar}</a>
+    </div>
+  </section>
+</BaseLayout>

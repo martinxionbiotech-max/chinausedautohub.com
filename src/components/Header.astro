@@ -24,10 +24,13 @@ const navItems: NavItem[] = [
     children: [
       { label: t.nav.availableVehicles, href: localizedUrl('/cars/', locale) },
       { label: t.nav.vehicleTypes, href: localizedUrl('/body-types/', locale) },
+      { label: t.nav.powertrains, href: localizedUrl('/powertrains/', locale) },
       { label: t.nav.newArrivals, href: localizedUrl('/new-arrivals/', locale) },
     ],
   },
   { label: t.nav.brands, href: localizedUrl('/brands/', locale) },
+  { label: t.nav.markets, href: localizedUrl('/markets/', locale) },
+  { label: t.nav.services, href: localizedUrl('/services/', locale) },
   { label: t.nav.requestACar, href: localizedUrl('/request-a-car/', locale) },
   { label: t.nav.howItWorks, href: localizedUrl('/how-it-works/', locale) },
 ];
@@ -119,6 +122,9 @@ function isActive(item: NavItem): boolean {
         </svg>
       </summary>
       <div class="absolute end-0 top-full mt-1.5 w-64 rounded-lg border border-surface-line bg-white p-1.5 shadow-md">
+        <a href={localizedUrl('/guides/', locale)} class="block rounded-md px-3 py-2">
+          <span class="block text-sm font-medium text-ink-soft hover:text-brand-700">{t.nav.guides}</span>
+        </a>
         {resources.map((item) => (
           <a
             href={item.href}
@@ -242,6 +248,9 @@ function isActive(item: NavItem): boolean {
           </svg>
         </summary>
         <div class="flex flex-col ps-3">
+          <a href={localizedUrl('/guides/', locale)} class="px-3 py-2 text-sm font-medium text-ink-muted hover:text-brand-700">
+            {t.nav.guides}
+          </a>
           {resources.map((item) => (
             <a
               href={item.href}

@@ -104,6 +104,12 @@ export interface BodyType {
   description: string;
 }
 
+export interface Powertrain {
+  slug: string;
+  name: string;
+  description: string;
+}
+
 export interface FuelType {
   slug: string;
   name: string;

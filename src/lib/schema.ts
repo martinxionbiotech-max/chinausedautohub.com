@@ -39,6 +39,30 @@ export function webSiteSchema(): JsonLd {
   };
 }
 
+// Article schema — used only for genuine evergreen guides. No fabricated
+// author/person; publisher is the site Organization.
+export function articleSchema(opts: {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished?: string;
+  dateModified?: string;
+}): JsonLd {
+  const publisher = { '@type': 'Organization', name: SITE.name, url: SITE_URL };
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: opts.headline,
+    description: opts.description,
+    mainEntityOfPage: opts.url,
+    author: publisher,
+    publisher,
+    inLanguage: 'en',
+    ...(opts.datePublished ? { datePublished: opts.datePublished } : {}),
+    ...(opts.dateModified ? { dateModified: opts.dateModified } : {}),
+  };
+}
+
 export interface Crumb {
   name: string;
   path: string;

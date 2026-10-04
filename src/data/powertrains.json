@@ -1,0 +1,7 @@
+[
+  { "slug": "ev", "name": "Electric (EV)", "description": "Battery electric vehicles powered only by an electric motor and a rechargeable battery, with no combustion engine." },
+  { "slug": "phev", "name": "Plug-in Hybrid (PHEV)", "description": "Plug-in hybrid electric vehicles combining an electric motor with a combustion engine and a rechargeable battery." },
+  { "slug": "hybrid", "name": "Hybrid (HEV)", "description": "Non-plug-in hybrid electric vehicles combining a combustion engine with an electric motor that recharges during driving." },
+  { "slug": "petrol", "name": "Petrol", "description": "Internal-combustion vehicles powered by a petrol (gasoline) engine." },
+  { "slug": "diesel", "name": "Diesel", "description": "Internal-combustion vehicles powered by a diesel engine." }
+]

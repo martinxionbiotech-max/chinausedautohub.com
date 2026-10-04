@@ -1,0 +1,11 @@
+---
+import PowertrainPage from '../../templates/PowertrainPage.astro';
+import { getPowertrainsWithVehicles } from '../../lib/data';
+
+export function getStaticPaths() {
+  return getPowertrainsWithVehicles().map((p) => ({ params: { type: p.slug } }));
+}
+
+const { type } = Astro.params;
+---
+<PowertrainPage type={type} />

@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { faqSchema } from '../lib/schema';
+import { getTranslations } from '../i18n';
+import { FAQ_PAGE } from '../i18n/faq';
+import { pick } from '../i18n/l10n';
+import { faqUrl } from '../lib/urls';
+import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
+
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
+
+const title = pick(FAQ_PAGE.title, locale);
+const description = pick(FAQ_PAGE.description, locale);
+const h1 = pick(FAQ_PAGE.h1, locale);
+const intro = pick(FAQ_PAGE.intro, locale);
+
+const schema = faqSchema(
+  FAQ_PAGE.items.map((item) => ({
+    question: pick(item.question, 'en'),
+    answer: pick(item.answer, 'en'),
+  })),
+);
+---
+
+<BaseLayout title={title} description={description} canonical={localizedUrl(faqUrl(), locale)} schema={schema}>
+  <Breadcrumb crumbs={[{ name: t.breadcrumb.home, path: localizedUrl('/', locale) }, { name: t.breadcrumb.faq, path: localizedUrl(faqUrl(), locale) }]} />
+
+  <section class="container-site py-6">
+    <h1 class="text-3xl font-bold text-ink">{h1}</h1>
+    <p class="mt-2 max-w-3xl text-ink-soft">{intro}</p>
+  </section>
+
+  <section class="container-site max-w-3xl pb-10">
+    <div class="space-y-3">
+      {FAQ_PAGE.items.map((item) => (
+        <details class="card p-4">
+          <summary class="cursor-pointer text-sm font-semibold text-ink">{pick(item.question, locale)}</summary>
+          <p class="mt-2 text-sm text-ink-soft">{pick(item.answer, locale)}</p>
+        </details>
+      ))}
+    </div>
+
+    <div class="card mt-10 p-6 text-center">
+      <h2 class="text-lg font-semibold text-ink">{t.common.requestACar}</h2>
+      <p class="mx-auto mt-2 max-w-xl text-sm text-ink-soft">{t.leadForm.requestSubheading}</p>
+      <a href={localizedUrl('/request-a-car/', locale)} class="btn-primary mt-4">{t.common.requestACar}</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { itemListSchema } from '../lib/schema';
+import { getTranslations } from '../i18n';
+import { GUIDES, GUIDES_OVERVIEW } from '../i18n/guides';
+import { pick } from '../i18n/l10n';
+import { guideUrl, guidesUrl } from '../lib/urls';
+import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
+
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
+
+const title = pick(GUIDES_OVERVIEW.title, locale);
+const description = pick(GUIDES_OVERVIEW.description, locale);
+const h1 = pick(GUIDES_OVERVIEW.h1, locale);
+const intro = pick(GUIDES_OVERVIEW.intro, locale);
+
+const schema = itemListSchema(
+  GUIDES.map((g) => ({ name: pick(g.h1, locale), url: localizedUrl(guideUrl(g.slug), locale) })),
+);
+---
+
+<BaseLayout title={title} description={description} canonical={localizedUrl(guidesUrl(), locale)} schema={schema}>
+  <Breadcrumb crumbs={[{ name: t.breadcrumb.home, path: localizedUrl('/', locale) }, { name: t.breadcrumb.guides, path: localizedUrl(guidesUrl(), locale) }]} />
+
+  <section class="container-site py-6">
+    <h1 class="text-3xl font-bold text-ink">{h1}</h1>
+    <p class="mt-2 max-w-3xl text-ink-soft">{intro}</p>
+  </section>
+
+  <section class="container-site">
+    <div class="grid gap-5 sm:grid-cols-2">
+      {GUIDES.map((g) => (
+        <a href={localizedUrl(guideUrl(g.slug), locale)} class="card flex flex-col p-5 hover:border-brand-300">
+          <h2 class="text-base font-semibold text-ink">{pick(g.h1, locale)}</h2>
+          <p class="mt-2 flex-1 text-sm text-ink-soft">{pick(g.summary, locale)}</p>
+          <span class="mt-3 text-sm font-semibold text-brand-700">{t.common.viewDetails} {t.common.arrow}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="container-site mt-12 pb-10">
+    <div class="card p-6 text-center">
+      <h2 class="text-lg font-semibold text-ink">{t.common.requestACar}</h2>
+      <p class="mx-auto mt-2 max-w-xl text-sm text-ink-soft">{t.leadForm.requestSubheading}</p>
+      <a href={localizedUrl('/request-a-car/', locale)} class="btn-primary mt-4">{t.common.requestACar}</a>
+    </div>
+  </section>
+</BaseLayout>

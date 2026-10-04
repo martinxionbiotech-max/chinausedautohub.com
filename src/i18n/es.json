@@ -17,6 +17,12 @@
     "brands": "Marcas",
     "requestACar": "Pedir un coche",
     "howItWorks": "Cómo funciona",
+    "services": "Servicios",
+    "guides": "Guías de compra",
+    "trust": "Confianza",
+    "faq": "Preguntas frecuentes",
+    "powertrains": "Propulsión",
+    "markets": "Mercados",
     "resources": "Recursos",
     "vehicleData": "Datos de vehículos",
     "marketInformation": "Información de mercado",
@@ -258,6 +264,15 @@
     "fromChinaMarket": "del mercado de China.",
     "requestType": "Pedir un"
   },
+  "powertrains": {
+    "indexTitle": "Propulsiones disponibles para exportación desde China",
+    "indexDescription": "Consulta coches usados para exportación desde China por propulsión — eléctricos, híbridos enchufables y gasolina.",
+    "h1": "Explorar por propulsión",
+    "intro": "Encuentra vehículos por tipo de propulsión. Solo se listan las propulsiones con vehículos actualmente en nuestro inventario.",
+    "forExport": "para exportación",
+    "priceRange": "Rango de precios",
+    "commonBrands": "Marcas comunes"
+  },
   "howItWorks": {
     "title": "Cómo funciona — Comprar un coche usado de China",
     "description": "Cómo encontrar, pedir, confirmar y exportar un coche usado de China: buscar, seleccionar, solicitar cotización, confirmar y exportar.",
@@ -419,6 +434,12 @@
     "newArrivals": "Novedades",
     "requestACar": "Pedir un coche",
     "howItWorks": "Cómo funciona",
+    "services": "Servicios",
+    "guides": "Guías de compra",
+    "trust": "Confianza",
+    "faq": "Preguntas frecuentes",
+    "powertrains": "Propulsión",
+    "markets": "Mercados",
     "privacy": "Política de privacidad",
     "terms": "Términos",
     "cookies": "Política de cookies"

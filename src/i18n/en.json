@@ -17,6 +17,12 @@
     "brands": "Brands",
     "requestACar": "Request a Car",
     "howItWorks": "How It Works",
+    "services": "Services",
+    "guides": "Buying Guides",
+    "trust": "Trust",
+    "faq": "FAQ",
+    "powertrains": "Powertrains",
+    "markets": "Markets",
     "resources": "Resources",
     "vehicleData": "Vehicle Data",
     "marketInformation": "Market Information",
@@ -258,6 +264,15 @@
     "fromChinaMarket": "from China's market.",
     "requestType": "Request a"
   },
+  "powertrains": {
+    "indexTitle": "Powertrains Available for Export from China",
+    "indexDescription": "Browse used vehicles for export from China by powertrain — electric, plug-in hybrid and petrol.",
+    "h1": "Browse by Powertrain",
+    "intro": "Find vehicles by powertrain type. Only powertrains with vehicles currently in our inventory are listed.",
+    "forExport": "for Export",
+    "priceRange": "Price range",
+    "commonBrands": "Common Brands"
+  },
   "howItWorks": {
     "title": "How It Works — Buying a Used Car from China",
     "description": "How to find, request, confirm and export a used vehicle from China: search, select, request a quote, confirm and export.",
@@ -419,6 +434,12 @@
     "newArrivals": "New Arrivals",
     "requestACar": "Request a Car",
     "howItWorks": "How It Works",
+    "services": "Services",
+    "guides": "Guides",
+    "trust": "Trust",
+    "faq": "FAQ",
+    "powertrains": "Powertrains",
+    "markets": "Markets",
     "privacy": "Privacy Policy",
     "terms": "Terms",
     "cookies": "Cookie Policy"

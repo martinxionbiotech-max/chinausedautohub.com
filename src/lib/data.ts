@@ -10,11 +10,13 @@ import fuelTypesJson from '../data/fuel-types.json';
 import transmissionsJson from '../data/transmissions.json';
 import drivesJson from '../data/drive-types.json';
 import marketsJson from '../data/markets.json';
+import powertrainsJson from '../data/powertrains.json';
 import type {
   Vehicle,
   Brand,
   VehicleModel,
   BodyType,
+  Powertrain,
   FuelType,
   TransmissionType,
   DriveType,
@@ -30,6 +32,7 @@ const fuelTypes = fuelTypesJson as FuelType[];
 const transmissions = transmissionsJson as TransmissionType[];
 const drives = drivesJson as DriveType[];
 const markets = marketsJson as Market[];
+const powertrains = powertrainsJson as Powertrain[];
 
 const brandMap = new Map(brands.map((b) => [b.slug, b]));
 const modelMap = new Map(models.map((m) => [`${m.brand}/${m.slug}`, m]));
@@ -38,6 +41,7 @@ const fuelMap = new Map(fuelTypes.map((t) => [t.slug, t]));
 const transmissionMap = new Map(transmissions.map((t) => [t.slug, t]));
 const driveMap = new Map(drives.map((t) => [t.slug, t]));
 const marketMap = new Map(markets.map((m) => [m.slug, m]));
+const powertrainMap = new Map(powertrains.map((p) => [p.slug, p]));
 const vehicleMap = new Map(vehicles.map((v) => [v.vehicle_id, v]));
 
 // ---------- Vehicles ----------
@@ -60,6 +64,10 @@ export function getVehiclesByModel(modelSlug: string): Vehicle[] {
 
 export function getVehiclesByBodyType(typeSlug: string): Vehicle[] {
   return vehicles.filter((v) => v.body_type === typeSlug);
+}
+
+export function getVehiclesByPowertrain(powertrainSlug: string): Vehicle[] {
+  return vehicles.filter((v) => v.fuel === powertrainSlug);
 }
 
 export function getVehiclesByStatus(status: VehicleStatus): Vehicle[] {
@@ -155,6 +163,19 @@ export function getBodyType(slug: string): BodyType | undefined {
 
 export function getAllBodyTypes(): BodyType[] {
   return bodyTypes;
+}
+
+export function getPowertrain(slug: string): Powertrain | undefined {
+  return powertrainMap.get(slug);
+}
+
+export function getAllPowertrains(): Powertrain[] {
+  return powertrains;
+}
+
+export function getPowertrainsWithVehicles(): Powertrain[] {
+  const seen = new Set(vehicles.map((v) => v.fuel));
+  return powertrains.filter((p) => seen.has(p.slug));
 }
 
 export function getBodyTypesWithVehicles(): BodyType[] {
