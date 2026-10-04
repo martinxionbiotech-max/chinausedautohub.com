@@ -74,7 +74,7 @@ function isActive(item: NavItem): boolean {
           <details class="relative group">
             <summary
               class:list={[
-                'nav-dropdown-summary px-3 py-2 text-sm font-medium rounded-md transition-colors',
+                'nav-dropdown-summary inline-flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors',
                 isActive(item) ? 'bg-brand-50 text-brand-800' : 'text-ink-soft hover:text-ink hover:bg-surface-alt',
               ]}
             >
@@ -282,7 +282,7 @@ function isActive(item: NavItem): boolean {
 </header>
 
 <style is:global>
-  .nav-dropdown-summary {
+  .nav-dropdown-summary inline-flex items-center gap-1 {
     cursor: pointer;
     list-style: none;
     user-select: none;
