@@ -62,6 +62,8 @@ export interface Dictionary {
     whatWeProvide: string;
     faqHeading: string;
     ready: string;
+    buyerGuideNote: string;
+    buyerGuideLink: string;
     steps: { n: string; title: string; text: string }[];
     areas: { title: string; text: string }[];
     faqs: { question: string; answer: string }[];

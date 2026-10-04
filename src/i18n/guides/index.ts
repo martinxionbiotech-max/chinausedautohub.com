@@ -11,6 +11,8 @@ import { buyingEvs } from './buying-chinese-evs-for-export';
 export interface GuideSection {
   heading: L10n;
   paragraphs: L10n[];
+  /** Optional cross-guide links rendered under the section. */
+  links?: { slug: string; label: L10n }[];
 }
 
 export interface GuideContent {

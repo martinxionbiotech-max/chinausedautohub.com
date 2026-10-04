@@ -184,6 +184,44 @@ export const fobVsCifVsCfr = {
           es: 'Los compradores que desean controlar el flete y el seguro suelen preferir FOB, gestionando su propio transportista y cobertura. Quienes quieren un acuerdo más sencillo con el flete incluido eligen CFR, y quienes quieren flete y seguro incluidos eligen CIF. No hay una única respuesta correcta: depende de su preferencia, experiencia y destino.',
         },
       ],
+      links: [
+        {
+          slug: 'shipping',
+          label: {
+            en: 'How the vehicle is physically moved — see the Shipping guide',
+            ar: 'كيف تُنقل المركبة ماديًا — راجع دليل الشحن',
+            ru: 'Как автомобиль физически перевозится — см. руководство по доставке',
+            es: 'Cómo se traslada físicamente el vehículo — consulte la guía de envío',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
+        en: 'Decision matrix — choosing the right term',
+        ar: 'مصفوفة القرار — اختيار المصطلح المناسب',
+        ru: 'Матрица решений — выбор подходящего термина',
+        es: 'Matriz de decisión — elegir el término adecuado',
+      },
+      paragraphs: [
+        {
+          en: 'A decision matrix that maps common situations — arranging your own freight forwarder, seller-arranged shipping, buying your own insurance, experience level, single vehicle versus bulk, and container versus RoRo — to a recommended term is being added to this guide. Until it is published, use the comparisons above and confirm the term in writing with us before booking.',
+          ar: 'ستُضاف إلى هذا الدليل مصفوفة قرار تربط الحالات الشائعة — ترتيب وكيل الشحن بنفسك، أو الشحن المرتب من البائع، أو شراء التأمين بنفسك، ومستوى الخبرة، ومركبة واحدة مقابل شحنة بالجملة، والحاوية مقابل RoRo — بالمصطلح الموصى به. وحتى تُنشر، استخدم المقارنات أعلاه وأكد المصطلح كتابيًا معنا قبل الحجز.',
+          ru: 'В это руководство добавляется матрица решений, которая сопоставляет распространённые ситуации — свой экспедитор, доставка, организованная продавцом, собственная страховка, уровень опыта, один автомобиль или партия, контейнер или RoRo — с рекомендуемым термином. Пока она не опубликована, используйте сравнения выше и письменно подтверждайте термин с нами до бронирования.',
+          es: 'Se está añadiendo a esta guía una matriz de decisión que relaciona situaciones comunes — gestionar su propio transitario, envío organizado por el vendedor, contratar su propio seguro, nivel de experiencia, vehículo único frente a lote, y contenedor frente a RoRo — con el término recomendado. Hasta su publicación, use las comparaciones anteriores y confirme el término por escrito con nosotros antes de reservar.',
+        },
+      ],
+      links: [
+        {
+          slug: 'landed-cost',
+          label: {
+            en: 'How the term affects your total cost — see the Landed Cost guide',
+            ar: 'كيف يؤثر المصطلح على تكلفتك الإجمالية — راجع دليل التكلفة النهائية',
+            ru: 'Как термин влияет на итоговую стоимость — см. руководство по итоговой стоимости',
+            es: 'Cómo afecta el término a su coste total — consulte la guía de coste de desembarco',
+          },
+        },
+      ],
     },
     {
       heading: {

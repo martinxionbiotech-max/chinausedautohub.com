@@ -86,10 +86,21 @@ export const landedCost = {
       },
       paragraphs: [
         {
-          en: 'Freight is the cost of moving the vehicle from the China port to the destination port. It depends on the route, the shipping method (RoRo, container or car carrier) and the market at the time of shipment, so it is confirmed as part of the quote.',
-          ar: 'الشحن هو تكلفة نقل المركبة من الميناء الصيني إلى ميناء الوجهة. يعتمد على المسار وطريقة الشحن (RoRo أو حاوية أو ناقلة سيارات) والسوق وقت الشحن، لذا يُؤكد ضمن عرض السعر.',
-          ru: 'Фрахт — это стоимость перевозки автомобиля из китайского порта в порт назначения. Он зависит от маршрута, способа доставки (RoRo, контейнер или автовоз) и рынка на момент отправки, поэтому подтверждается в рамках расчёта.',
-          es: 'El flete es el coste de trasladar el vehículo del puerto chino al puerto de destino. Depende de la ruta, el método de envío (RoRo, contenedor o transportista) y el mercado en el momento del envío, por lo que se confirma como parte de la cotización.',
+          en: 'Freight is the cost of moving the vehicle from the China port to the destination port. It depends on the route, the shipping method and the market at the time of shipment, so it is confirmed as part of the quote.',
+          ar: 'الشحن هو تكلفة نقل المركبة من الميناء الصيني إلى ميناء الوجهة. يعتمد على المسار وطريقة الشحن والسوق وقت الشحن، لذا يُؤكد ضمن عرض السعر.',
+          ru: 'Фрахт — это стоимость перевозки автомобиля из китайского порта в порт назначения. Он зависит от маршрута, способа доставки и рынка на момент отправки, поэтому подтверждается в рамках расчёта.',
+          es: 'El flete es el coste de trasladar el vehículo del puerto chino al puerto de destino. Depende de la ruta, el método de envío y el mercado en el momento del envío, por lo que se confirma como parte de la cotización.',
+        },
+      ],
+      links: [
+        {
+          slug: 'shipping',
+          label: {
+            en: 'How the vehicle is physically moved — see the Shipping guide',
+            ar: 'كيف تُنقل المركبة ماديًا — راجع دليل الشحن',
+            ru: 'Как автомобиль физически перевозится — см. руководство по доставке',
+            es: 'Cómo se traslada físicamente el vehículo — consulte la guía de envío',
+          },
         },
       ],
     },
@@ -102,10 +113,21 @@ export const landedCost = {
       },
       paragraphs: [
         {
-          en: 'Marine insurance covers the vehicle during transit. The cost depends on the vehicle\'s value, the route and the coverage level. Under CIF the seller arranges a minimum level of insurance; otherwise you arrange it separately.',
-          ar: 'يغطي التأمين البحري المركبة أثناء النقل. تعتمد التكلفة على قيمة المركبة والمسار ومستوى التغطية. بموجب CIF يرتب البائع مستوى أدنى من التأمين؛ وإلا ترتبه أنت بشكل منفصل.',
-          ru: 'Морская страховка покрывает автомобиль во время перевозки. Стоимость зависит от стоимости автомобиля, маршрута и уровня покрытия. При CIF продавец оформляет минимальный уровень страховки; иначе вы оформляете её отдельно.',
-          es: 'El seguro marítimo cubre el vehículo durante el tránsito. El coste depende del valor del vehículo, la ruta y el nivel de cobertura. Con CIF el vendedor gestiona un nivel mínimo de seguro; de lo contrario, lo gestiona usted por separado.',
+          en: 'Marine insurance covers the vehicle during transit. The cost depends on the vehicle\'s value, the route and the coverage level, so it is estimated as part of the landed cost.',
+          ar: 'يغطي التأمين البحري المركبة أثناء النقل. تعتمد التكلفة على قيمة المركبة والمسار ومستوى التغطية، لذا تُقدَّر ضمن التكلفة النهائية.',
+          ru: 'Морская страховка покрывает автомобиль во время перевозки. Стоимость зависит от стоимости автомобиля, маршрута и уровня покрытия, поэтому оценивается в составе итоговой стоимости.',
+          es: 'El seguro marítimo cubre el vehículo durante el tránsito. El coste depende del valor del vehículo, la ruta y el nivel de cobertura, por lo que se estima como parte del coste de desembarco.',
+        },
+      ],
+      links: [
+        {
+          slug: 'fob-vs-cif-vs-cfr',
+          label: {
+            en: 'Who pays for insurance — see the FOB/CFR/CIF guide',
+            ar: 'من يدفع التأمين — راجع دليل FOB/CFR/CIF',
+            ru: 'Кто платит за страховку — см. руководство FOB/CFR/CIF',
+            es: 'Quién paga el seguro — consulte la guía FOB/CFR/CIF',
+          },
         },
       ],
     },

@@ -51,6 +51,13 @@ const schema = articleSchema({
           <div class="prose-vehicle mt-3 space-y-3">
             {section.paragraphs.map((p) => <p>{pick(p, locale)}</p>)}
           </div>
+          {section.links && section.links.length > 0 && (
+            <div class="mt-3 space-y-1.5">
+              {section.links.map((l) => (
+                <a href={localizedUrl(guideUrl(l.slug), locale)} class="inline-block text-sm font-semibold text-brand-700 hover:underline">{pick(l.label, locale)} {t.common.arrow}</a>
+              ))}
+            </div>
+          )}
         </section>
       ))}
     </div>

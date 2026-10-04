@@ -158,10 +158,21 @@ export const howToBuy = {
       },
       paragraphs: [
         {
-          en: 'We coordinate export preparation and documentation, and shipping from a China port to your destination port. Shipping method (RoRo, container or car carrier) depends on the vehicle, the destination and your requirements.',
-          ar: 'ننسق تجهيز التصدير والوثائق والشحن من ميناء صيني إلى ميناء وجهتك. تعتمد طريقة الشحن (RoRo أو حاوية أو ناقلة سيارات) على المركبة والوجهة ومتطلباتك.',
-          ru: 'Мы координируем подготовку экспорта, документацию и доставку из китайского порта в порт назначения. Способ доставки (RoRo, контейнер или автовоз) зависит от автомобиля, страны назначения и ваших требований.',
-          es: 'Coordinamos la preparación de la exportación, la documentación y el envío desde un puerto chino hasta su puerto de destino. El método de envío (RoRo, contenedor o transportista) depende del vehículo, el destino y sus requisitos.',
+          en: 'After you confirm the purchase, the export operation begins — export preparation, documentation and shipping from a China port to your destination port. These operational steps are covered in detail in the China export process guide, so here we only summarise the hand-off.',
+          ar: 'بعد تأكيدك الشراء، تبدأ عملية التصدير — تجهيز التصدير والوثائق والشحن من ميناء صيني إلى ميناء وجهتك. هذه الخطوات التشغيلية مشروحة بالتفصيل في دليل عملية التصدير من الصين، لذلك نلخّص هنا التسليم فقط.',
+          ru: 'После подтверждения покупки начинается экспортная операция — подготовка экспорта, документация и доставка из китайского порта в порт назначения. Эти операционные шаги подробно описаны в руководстве по процессу экспорта из Китая, поэтому здесь мы лишь резюмируем передачу.',
+          es: 'Tras confirmar la compra, comienza la operación de exportación: preparación, documentación y envío desde un puerto chino hasta su puerto de destino. Estos pasos operativos se detallan en la guía del proceso de exportación desde China, por lo que aquí solo resumimos la entrega.',
+        },
+      ],
+      links: [
+        {
+          slug: 'china-used-car-export-process',
+          label: {
+            en: 'See the full China export process',
+            ar: 'اطّلع على عملية التصدير الكاملة من الصين',
+            ru: 'См. полный процесс экспорта из Китая',
+            es: 'Ver el proceso completo de exportación desde China',
+          },
         },
       ],
     },
@@ -174,10 +185,21 @@ export const howToBuy = {
       },
       paragraphs: [
         {
-          en: 'At the destination, the vehicle must clear customs and be registered according to local rules. Import duties, taxes, vehicle age limits and other requirements depend on the destination country — these are covered in detail on the Market sub-site for popular markets.',
-          ar: 'في الوجهة، يجب تخليص المركبة جمركياً وتسجيلها وفق القواعد المحلية. تعتمد الرسوم الجمركية والضرائب وحدود عمر المركبة ومتطلبات أخرى على بلد الوجهة — وتُغطى بالتفصيل في الموقع الفرعي للأسواق للأسواق الشائعة.',
-          ru: 'В стране назначения автомобиль проходит таможенное оформление и регистрацию по местным правилам. Пошлины, налоги, ограничения по возрасту и другие требования зависят от страны назначения — они подробно описаны на подсайте Market для популярных рынков.',
-          es: 'En el destino, el vehículo debe despacharse en aduana y matricularse según las normas locales. Los aranceles, impuestos, límites de antigüedad y otros requisitos dependen del país de destino; se detallan en el subsitio Market para los mercados populares.',
+          en: 'At the destination, the vehicle must clear customs and be registered according to local rules. Destination clearance is part of the export process; import duties, taxes and age limits for each market are detailed on the Market sub-site.',
+          ar: 'في الوجهة، يجب تخليص المركبة جمركياً وتسجيلها وفق القواعد المحلية. التخليص في الوجهة جزء من عملية التصدير؛ وتُفصَّل الرسوم الجمركية والضرائب وحدود العمر لكل سوق في الموقع الفرعي للأسواق.',
+          ru: 'В стране назначения автомобиль проходит таможенное оформление и регистрацию по местным правилам. Оформление в стране назначения — часть экспортного процесса; пошлины, налоги и ограничения по возрасту для каждого рынка подробно описаны на подсайте Market.',
+          es: 'En el destino, el vehículo debe despacharse en aduana y matricularse según las normas locales. El despacho en destino forma parte del proceso de exportación; los aranceles, impuestos y límites de antigüedad de cada mercado se detallan en el subsitio Market.',
+        },
+      ],
+      links: [
+        {
+          slug: 'china-used-car-export-process',
+          label: {
+            en: 'See the full China export process',
+            ar: 'اطّلع على عملية التصدير الكاملة من الصين',
+            ru: 'См. полный процесс экспорта из Китая',
+            es: 'Ver el proceso completo de exportación desde China',
+          },
         },
       ],
     },

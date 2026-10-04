@@ -38,10 +38,21 @@ export const exportProcess = {
       },
       paragraphs: [
         {
-          en: 'Exporting a used vehicle from China means buying a vehicle in China\'s domestic market and moving it to a buyer in another country — clearing it out of China and clearing it into the destination. It combines sourcing, documentation, shipping and destination formalities.',
-          ar: 'تصدير مركبة مستعملة من الصين يعني شراء مركبة في السوق المحلي الصيني ونقلها إلى مشترٍ في بلد آخر — تخليصها خارج الصين وتخليصها في الوجهة. وهو يجمع بين التوريد والوثائق والشحن وإجراءات الوجهة.',
-          ru: 'Экспорт подержанного автомобиля из Китая означает покупку автомобиля на внутреннем рынке Китая и его передачу покупателю в другой стране — вывоз из Китая и ввоз в страну назначения. Он объединяет подбор, документацию, доставку и формальности в стране назначения.',
-          es: 'Exportar un vehículo usado desde China significa comprar un vehículo en el mercado interno chino y trasladarlo a un comprador en otro país: sacarlo de China y despacharlo en el destino. Combina abastecimiento, documentación, envío y trámites de destino.',
+          en: 'Exporting a used vehicle from China means buying a vehicle in China\'s domestic market and moving it to a buyer in another country — clearing it out of China and clearing it into the destination. It combines sourcing, documentation, shipping and destination formalities. This guide covers the operation after you have chosen a vehicle; the buyer-side decision (choosing, verifying and budgeting for a vehicle) is covered in the How to Buy guide.',
+          ar: 'تصدير مركبة مستعملة من الصين يعني شراء مركبة في السوق المحلي الصيني ونقلها إلى مشترٍ في بلد آخر — تخليصها خارج الصين وتخليصها في الوجهة. وهو يجمع بين التوريد والوثائق والشحن وإجراءات الوجهة. يغطي هذا الدليل العملية بعد اختيارك المركبة؛ أما قرار المشتري (الاختيار والتحقق ووضع الميزانية) فمشروح في دليل «كيف تشتري».',
+          ru: 'Экспорт подержанного автомобиля из Китая означает покупку автомобиля на внутреннем рынке Китая и его передачу покупателю в другой стране — вывоз из Китая и ввоз в страну назначения. Он объединяет подбор, документацию, доставку и формальности в стране назначения. Это руководство описывает операцию после выбора автомобиля; решение на стороне покупателя (выбор, проверка и бюджетирование) описано в руководстве «Как купить».',
+          es: 'Exportar un vehículo usado desde China significa comprar un vehículo en el mercado interno chino y trasladarlo a un comprador en otro país: sacarlo de China y despacharlo en el destino. Combina abastecimiento, documentación, envío y trámites de destino. Esta guía cubre la operación después de elegir un vehículo; la decisión del comprador (elegir, verificar y presupuestar) se trata en la guía «Cómo comprar».',
+        },
+      ],
+      links: [
+        {
+          slug: 'how-to-buy-used-car-from-china',
+          label: {
+            en: 'Buyer-side decision process — How to Buy guide',
+            ar: 'عملية قرار المشتري — دليل «كيف تشتري»',
+            ru: 'Процесс принятия решения покупателем — руководство «Как купить»',
+            es: 'Proceso de decisión del comprador — guía «Cómo comprar»',
+          },
         },
       ],
     },

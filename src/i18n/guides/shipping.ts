@@ -134,10 +134,30 @@ export const shipping = {
       },
       paragraphs: [
         {
-          en: 'The full shipping cost is made up of several components: freight (the transport itself), insurance, port charges at origin and destination, and destination-side charges such as handling and clearance. These are quoted separately because they depend on the destination and the shipment.',
-          ar: 'تتكون تكلفة الشحن الكاملة من عدة مكونات: الشحن (النقل نفسه)، والتأمين، ورسوم الموانئ في المنشأ والوجهة، ورسوم جانب الوجهة مثل المناولة والتخليص. تُقدَّر هذه بشكل منفصل لأنها تعتمد على الوجهة والشحنة.',
-          ru: 'Полная стоимость доставки состоит из нескольких компонентов: фрахт (сама перевозка), страховка, портовые сборы в портах отправления и назначения, а также сборы на стороне назначения (обработка, оформление). Они рассчитываются отдельно, поскольку зависят от страны назначения и отправки.',
-          es: 'El coste total del envío se compone de varios elementos: el flete (el transporte en sí), el seguro, los gastos portuarios en origen y destino, y los gastos del lado de destino como la manipulación y el despacho. Se cotizan por separado porque dependen del destino y del envío.',
+          en: 'The full shipping cost is made up of several components — freight (the transport itself), insurance, and port charges at origin and destination. How much of each you arrange and pay yourself depends on the trade term; see the FOB/CFR/CIF guide for who pays what, and the landed cost guide for how these add up.',
+          ar: 'تتكون تكلفة الشحن الكاملة من عدة مكونات — الشحن (النقل نفسه)، والتأمين، ورسوم الموانئ في المنشأ والوجهة. يعتمد مقدار ما ترتبه وتدفعه بنفسك من كل مكوّن على مصطلح التجارة؛ راجع دليل FOB/CFR/CIF لمعرفة من يدفع ماذا، ودليل التكلفة النهائية لمعرفة كيف تُجمع هذه المكونات.',
+          ru: 'Полная стоимость доставки состоит из нескольких компонентов — фрахт (сама перевозка), страховка и портовые сборы в портах отправления и назначения. Сколько из этого вы организуете и оплачиваете сами, зависит от торгового термина; см. руководство FOB/CFR/CIF, кто за что платит, и руководство по итоговой стоимости, как это суммируется.',
+          es: 'El coste total del envío se compone de varios elementos — el flete (el transporte en sí), el seguro y los gastos portuarios en origen y destino. Cuánto de cada uno gestiona y paga usted depende del término comercial; consulte la guía FOB/CFR/CIF sobre quién paga qué, y la guía de coste de desembarco sobre cómo se suman.',
+        },
+      ],
+      links: [
+        {
+          slug: 'fob-vs-cif-vs-cfr',
+          label: {
+            en: 'Who pays for what — see the FOB/CFR/CIF guide',
+            ar: 'من يدفع ماذا — راجع دليل FOB/CFR/CIF',
+            ru: 'Кто за что платит — см. руководство FOB/CFR/CIF',
+            es: 'Quién paga qué — consulte la guía FOB/CFR/CIF',
+          },
+        },
+        {
+          slug: 'landed-cost',
+          label: {
+            en: 'How these add up — see the Landed Cost guide',
+            ar: 'كيف تُجمع هذه المكونات — راجع دليل التكلفة النهائية',
+            ru: 'Как это суммируется — см. руководство по итоговой стоимости',
+            es: 'Cómo se suman — consulte la guía de coste de desembarco',
+          },
         },
       ],
     },
@@ -188,10 +208,21 @@ export const shipping = {
       },
       paragraphs: [
         {
-          en: 'Marine insurance covers the vehicle against loss or damage during transit. The cost depends on the vehicle\'s value, the route and the coverage level. Under CIF the seller arranges a minimum level of insurance; otherwise you arrange it separately. Check what is covered before the vehicle ships.',
-          ar: 'يغطي التأمين البحري المركبة ضد الفقد أو التلف أثناء النقل. تعتمد التكلفة على قيمة المركبة والمسار ومستوى التغطية. بموجب CIF يرتب البائع مستوى أدنى من التأمين؛ وإلا ترتبه أنت بشكل منفصل. تحقق مما هو مشمول قبل شحن المركبة.',
-          ru: 'Морская страховка покрывает автомобиль от утраты или повреждения во время перевозки. Стоимость зависит от стоимости автомобиля, маршрута и уровня покрытия. При CIF продавец оформляет минимальный уровень страховки; иначе вы оформляете её отдельно. Проверьте, что покрыто, до отправки автомобиля.',
-          es: 'El seguro marítimo cubre el vehículo contra pérdida o daños durante el tránsito. El coste depende del valor del vehículo, la ruta y el nivel de cobertura. Con CIF el vendedor gestiona un nivel mínimo de seguro; de lo contrario, lo gestiona usted por separado. Compruebe qué está cubierto antes de que se envíe el vehículo.',
+          en: 'Marine insurance covers the vehicle against loss or damage in transit. Whether the seller or you arrange insurance depends on the trade term — the FOB/CFR/CIF guide explains who pays what. Shipping itself covers only the physical movement of the vehicle.',
+          ar: 'يغطي التأمين البحري المركبة ضد الفقد أو التلف أثناء النقل. يعتمد ما إذا كان البائع أو أنت يرتب التأمين على مصطلح التجارة — يشرح دليل FOB/CFR/CIF من يدفع ماذا. أما الشحن نفسه فيغطي فقط الحركة المادية للمركبة.',
+          ru: 'Морская страховка покрывает автомобиль от утраты или повреждения во время перевозки. Кто оформляет страховку — продавец или вы, зависит от торгового термина; руководство FOB/CFR/CIF объясняет, кто за что платит. Сама доставка покрывает только физическое перемещение автомобиля.',
+          es: 'El seguro marítimo cubre el vehículo contra pérdida o daños durante el tránsito. Si el seguro lo gestiona el vendedor o usted depende del término comercial; la guía FOB/CFR/CIF explica quién paga qué. El envío en sí solo cubre el movimiento físico del vehículo.',
+        },
+      ],
+      links: [
+        {
+          slug: 'fob-vs-cif-vs-cfr',
+          label: {
+            en: 'Who pays for insurance — see the FOB/CFR/CIF guide',
+            ar: 'من يدفع التأمين — راجع دليل FOB/CFR/CIF',
+            ru: 'Кто платит за страховку — см. руководство FOB/CFR/CIF',
+            es: 'Quién paga el seguro — consulte la guía FOB/CFR/CIF',
+          },
         },
       ],
     },

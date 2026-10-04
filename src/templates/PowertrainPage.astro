@@ -3,7 +3,7 @@ import BaseLayout from '../components/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import VehicleCard from '../components/VehicleCard.astro';
 import { getPowertrain, getVehiclesByPowertrain, getBrand } from '../lib/data';
-import { formatPrice } from '../lib/site';
+import { formatPrice, SUBDOMAINS } from '../lib/site';
 import { powertrainUrl } from '../lib/urls';
 import { itemListSchema } from '../lib/schema';
 import { getTranslations } from '../i18n';
@@ -55,6 +55,10 @@ const schema = itemListSchema(
     <h1 class="text-3xl font-bold text-ink">{name} {t.powertrains.forExport}</h1>
     <p class="mt-2 max-w-2xl text-ink-soft">{powertrainDescription(powertrain.slug, locale, powertrain.description)}</p>
     {priceRange && <p class="mt-1 text-sm text-ink-muted">{t.powertrains.priceRange}: {priceRange}</p>}
+    <p class="mt-3 max-w-2xl text-sm text-ink-muted">
+      {t.powertrains.dataNote}{" "}
+      <a href={`${SUBDOMAINS.data}/powertrains/`} target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-700 hover:underline">{t.powertrains.dataLink} {t.common.arrow}</a>
+    </p>
   </section>
 
   <section class="container-site">
