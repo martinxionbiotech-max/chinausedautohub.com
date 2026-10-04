@@ -16,10 +16,16 @@ export const SUBDOMAINS = SITE.subdomains;
 
 // Primary (commercial) navigation.
 export const PRIMARY_NAV = [
-  { label: 'Vehicles', href: '/cars/' },
+  {
+    label: 'Certified Vehicle',
+    href: '/cars/',
+    children: [
+      { label: 'Certified Vehicles', href: '/cars/' },
+      { label: 'Vehicle Types', href: '/body-types/' },
+      { label: 'New Arrivals', href: '/new-arrivals/' },
+    ],
+  },
   { label: 'Brands', href: '/brands/' },
-  { label: 'Vehicle Types', href: '/body-types/' },
-  { label: 'New Arrivals', href: '/new-arrivals/' },
   { label: 'Request a Car', href: '/request-a-car/' },
   { label: 'How It Works', href: '/how-it-works/' },
 ];
