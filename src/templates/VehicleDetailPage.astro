@@ -169,10 +169,16 @@ const batteryCapacityValue =
   vehicle.specs.find((s) => s.label === 'Battery')?.value ??
   null;
 const batteryHealthValue = vehicle.battery_health ?? null;
+const batteryStatusValue = vehicle.battery_status ?? null;
 const accidentValue = vehicle.accident_history ?? null;
 const maintenanceValue = vehicle.maintenance_history ?? null;
 const inspectionValue = vehicle.inspection_status ?? null;
 const documentsValue = vehicle.documents ?? null;
+const vinStatusValue = vehicle.vin ?? t.detail.notCurrentlyAvailable;
+const historyStatusValue =
+  vehicle.accident_history || vehicle.maintenance_history
+    ? t.status.available
+    : t.detail.notCurrentlyAvailable;
 ---
 
 <BaseLayout title={pageTitle} description={description} canonical={localizedUrl(vehicleUrl(vehicle), locale)} schema={schemas} noindex={vehicle.is_demo}>
@@ -273,8 +279,8 @@ const documentsValue = vehicle.documents ?? null;
       <dl class="grid grid-cols-2 gap-x-4 gap-y-3 pt-4 text-sm">
         <div><dt class="text-ink-muted">{t.detail.status}</dt><dd class="font-medium text-ink">{statusLabel}</dd></div>
         <div><dt class="text-ink-muted">{t.detail.location}</dt><dd class="font-medium text-ink">{location}</dd></div>
-        <div><dt class="text-ink-muted">{t.detail.generation}</dt><dd class="font-medium text-ink">{vehicle.generation ?? t.confidence.notAvailable}</dd></div>
-        <div><dt class="text-ink-muted">{t.detail.trim}</dt><dd class="font-medium text-ink">{vehicle.trim ?? t.confidence.notAvailable}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.priceType}</dt><dd class="font-medium text-ink">{t.detail.priceTypeAsking}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.registrationDate}</dt><dd class="font-medium text-ink">{vehicle.registration_date ?? t.detail.notCurrentlyAvailable}</dd></div>
         <div><dt class="text-ink-muted">{t.detail.year}</dt><dd class="font-medium text-ink">{vehicle.year}</dd></div>
         <div><dt class="text-ink-muted">{t.detail.mileage}</dt><dd class="font-medium text-ink">{formatMileage(vehicle.mileage_km, locale, t.units.km)}</dd></div>
         <div><dt class="text-ink-muted">{t.detail.fuel}</dt><dd class="font-medium text-ink">{fuel}</dd></div>
@@ -320,14 +326,22 @@ const documentsValue = vehicle.documents ?? null;
   <!-- VEHICLE HISTORY -->
   <section class="container-site mt-10">
     <h2 class="text-xl font-bold text-ink">{t.detail.history}</h2>
-    <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2">
+    <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2 lg:grid-cols-4">
       <div class="bg-white p-4">
         <dt class="text-sm text-ink-muted">{t.detail.accidentHistory}</dt>
-        <dd class="mt-0.5 text-sm font-medium text-ink">{accidentValue ?? t.confidence.notAvailable}</dd>
+        <dd class="mt-0.5 text-sm font-medium text-ink">{accidentValue ?? t.detail.notCurrentlyAvailable}</dd>
       </div>
       <div class="bg-white p-4">
         <dt class="text-sm text-ink-muted">{t.detail.maintenanceHistory}</dt>
-        <dd class="mt-0.5 text-sm font-medium text-ink">{maintenanceValue ?? t.confidence.notAvailable}</dd>
+        <dd class="mt-0.5 text-sm font-medium text-ink">{maintenanceValue ?? t.detail.notCurrentlyAvailable}</dd>
+      </div>
+      <div class="bg-white p-4">
+        <dt class="text-sm text-ink-muted">{t.detail.vehicleHistoryStatus}</dt>
+        <dd class="mt-0.5 text-sm font-medium text-ink">{historyStatusValue}</dd>
+      </div>
+      <div class="bg-white p-4">
+        <dt class="text-sm text-ink-muted">{t.detail.vinStatus}</dt>
+        <dd class="mt-0.5 text-sm font-medium text-ink">{vinStatusValue}</dd>
       </div>
     </div>
   </section>
@@ -350,7 +364,7 @@ const documentsValue = vehicle.documents ?? null;
   {isBatteryVehicle && (
     <section class="container-site mt-10">
       <h2 class="text-xl font-bold text-ink">{t.detail.batteryHeading}</h2>
-      <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2">
+      <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2 lg:grid-cols-3">
         <div class="bg-white p-4">
           <dt class="text-sm text-ink-muted">{t.detail.batteryCapacity}</dt>
           <dd class="mt-0.5 text-sm font-medium text-ink">{batteryCapacityValue ?? t.confidence.notAvailable}</dd>
@@ -358,6 +372,10 @@ const documentsValue = vehicle.documents ?? null;
         <div class="bg-white p-4">
           <dt class="text-sm text-ink-muted">{t.detail.batteryHealth}</dt>
           <dd class="mt-0.5 text-sm font-medium text-ink">{batteryHealthValue ?? t.confidence.notAvailable}</dd>
+        </div>
+        <div class="bg-white p-4">
+          <dt class="text-sm text-ink-muted">{t.detail.batteryStatusLabel}</dt>
+          <dd class="mt-0.5 text-sm font-medium text-ink">{batteryStatusValue ?? t.detail.notCurrentlyAvailable}</dd>
         </div>
       </div>
       <p class="mt-3 text-sm text-ink-soft">{t.detail.batteryNote}</p>
@@ -415,9 +433,17 @@ const documentsValue = vehicle.documents ?? null;
     </div>
   </section>
 
-  <!-- DETAILED SPECIFICATIONS -->
+  <!-- MODEL SPECIFICATIONS (model-level → data site) -->
   <section class="container-site mt-10">
     <h2 class="text-xl font-bold text-ink">{t.detail.keySpecs}</h2>
+    <p class="mt-1 text-sm text-ink-muted">{t.detail.modelSpecsNote}</p>
+    {modelDataUrl && (
+      <p class="mt-2 text-sm">
+        <a href={modelDataUrl} target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-700 hover:underline">
+          {t.detail.modelSpecsLink} → data.chinausedautohub.com {t.common.arrow}
+        </a>
+      </p>
+    )}
     <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2 lg:grid-cols-3">
       {vehicle.specs.map((s) => (
         <div class="bg-white p-4">
@@ -425,6 +451,20 @@ const documentsValue = vehicle.documents ?? null;
           <dd class="mt-0.5 text-sm font-medium text-ink">{s.value}</dd>
         </div>
       ))}
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED / EXCLUDED -->
+  <section class="container-site mt-10">
+    <div class="grid gap-5 sm:grid-cols-2">
+      <div class="card p-5">
+        <h2 class="text-lg font-bold text-ink">{t.detail.includedHeading}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{t.detail.includedText}</p>
+      </div>
+      <div class="card p-5">
+        <h2 class="text-lg font-bold text-ink">{t.detail.excludedHeading}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{t.detail.excludedText}</p>
+      </div>
     </div>
   </section>
 

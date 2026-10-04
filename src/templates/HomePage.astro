@@ -91,6 +91,23 @@ const featuredListSchema = itemListSchema(
     </div>
   </section>
 
+  <!-- WHO / WHAT / METHODOLOGY -->
+  <section class="container-site py-14">
+    <div class="grid gap-6 lg:grid-cols-2">
+      <div class="card p-6">
+        <h2 class="text-lg font-semibold text-ink">{t.home.whoHeading}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{t.home.whoText}</p>
+      </div>
+      <div class="card p-6">
+        <h2 class="text-lg font-semibold text-ink">{t.home.whatHeading}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{t.site.description}</p>
+      </div>
+    </div>
+    <div class="card mt-6 border-l-4 border-brand-500 p-6">
+      <p class="text-sm text-ink-soft">{t.home.methodology}</p>
+    </div>
+  </section>
+
   <!-- FEATURED VEHICLES -->
   <section class="container-site py-14">
     <div class="flex items-end justify-between gap-4">
@@ -221,6 +238,40 @@ const featuredListSchema = itemListSchema(
             <h3 class="text-base font-semibold text-ink">{w.title}</h3>
             <p class="mt-2 text-sm text-ink-soft">{w.text}</p>
           </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BUYER CHALLENGES → PLATFORM SOLUTIONS -->
+  <section class="container-site py-14">
+    <h2 class="text-2xl font-bold text-ink">{t.home.problemsHeading}</h2>
+    <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {t.home.problems.map((p) => (
+        <div class="card p-5">
+          <h3 class="text-base font-semibold text-ink">{p.problem}</h3>
+          <p class="mt-2 text-sm text-ink-soft">{p.solution}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- FIVE PATHWAYS -->
+  <section class="bg-surface-alt py-14">
+    <div class="container-site">
+      <h2 class="text-2xl font-bold text-ink">{t.home.pathwaysHeading}</h2>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        {t.home.pathways.map((p, i) => (
+          <a
+            href={i === 0 ? carsHref : i === 1 ? SITE.subdomains.data : i === 2 ? SITE.subdomains.market : i === 3 ? SITE.subdomains.tools : requestHref}
+            target={i === 0 || i === 4 ? undefined : '_blank'}
+            rel={i === 0 || i === 4 ? undefined : 'noopener noreferrer'}
+            class="card flex flex-col p-5 hover:border-brand-300"
+          >
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-brand-800 text-sm font-bold text-white">{i + 1}</span>
+            <span class="mt-3 text-base font-semibold text-ink">{p.title}</span>
+            <span class="mt-2 flex-1 text-sm text-ink-soft">{p.text}</span>
+          </a>
         ))}
       </div>
     </div>

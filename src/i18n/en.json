@@ -221,6 +221,10 @@
     "location": "Location",
     "status": "Status",
     "askingPrice": "Asking price",
+    "priceType": "Price type",
+    "priceTypeAsking": "Asking price (vehicle only)",
+    "registrationDate": "Registration date",
+    "notCurrentlyAvailable": "Not currently available",
     "originalListing": "Original listing",
     "demoPrice": "Example price — demo listing",
     "demoTitlePrefix": "Example Vehicle Listing —",
@@ -232,8 +236,12 @@
     "requestQuote": "Request Quote",
     "requestSimilar": "Request Similar Vehicle",
     "whatsapp": "Chat on WhatsApp",
-    "keySpecs": "Detailed Specifications",
+    "keySpecs": "Model Specifications",
+    "modelSpecsNote": "These are model-level specifications (typical for this model). Typical specification / Trim-dependent / Vehicle-specific information should be confirmed before purchase.",
+    "modelSpecsLink": "Model-level specifications",
     "history": "Vehicle History",
+    "vehicleHistoryStatus": "Vehicle history status",
+    "vinStatus": "VIN status",
     "accidentHistory": "Accident history",
     "maintenanceHistory": "Maintenance history",
     "inspectionHeading": "Inspection",
@@ -242,11 +250,16 @@
     "batteryHeading": "Battery Information",
     "batteryCapacity": "Battery capacity",
     "batteryHealth": "Battery health",
+    "batteryStatusLabel": "Battery status",
     "batteryNote": "Battery health is typically confirmed through a battery diagnostic report; availability depends on the vehicle.",
     "documentsHeading": "Documents",
     "documentsNote": "Export documents are prepared during the export process and confirmed with the buyer.",
     "shippingHeading": "Shipping Information",
     "shippingNote": "Shipping method, port, transit time and cost depend on the vehicle and destination and are confirmed when you request a quote.",
+    "includedHeading": "What's Included",
+    "includedText": "The asking price covers the vehicle itself. Shipping, insurance, import duties, VAT and destination charges are quoted separately and are not included.",
+    "excludedHeading": "What's Excluded",
+    "excludedText": "Landed costs — freight, insurance, taxes, import duties, destination clearance and local fees — are not included in the asking price and are confirmed in the quote.",
     "destinationHeading": "Destination Considerations",
     "destinationNote": "Import requirements — duty, taxes, vehicle age, drive side and documents — vary by destination country. We confirm these with you during the quote.",
     "relatedData": "Related Vehicle Data",
@@ -343,39 +356,78 @@
   },
   "howItWorks": {
     "title": "How It Works — Buying a Used Car from China",
-    "description": "How to find, request, confirm and export a used vehicle from China: search, select, request a quote, confirm and export.",
+    "description": "The 10-step B2B sourcing workflow for a used vehicle from China: search, shortlist, review, confirm, verify, document, ship and deliver — with platform vs third-party responsibility clearly marked.",
     "h1": "How It Works",
-    "intro": "A straightforward process for finding and exporting a used vehicle from China.",
+    "intro": "A 10-step workflow for finding, confirming and exporting a used vehicle from China. Each step shows whether it is handled by the platform or depends on a third party.",
     "whatWeProvide": "What we provide",
     "faqHeading": "Frequently Asked Questions",
     "ready": "Ready to find a vehicle?",
     "buyerGuideNote": "Choosing a vehicle, budgeting and assessing risk are buyer-side decisions. For a step-by-step walkthrough, see the How to Buy guide.",
     "buyerGuideLink": "Buyer-side decision process",
+    "ownerLegend": "Each step is labelled: Platform (handled by us), Third-party (depends on customs, shipping lines, inspection providers or destination authorities), or Platform + third-party (coordinated by us, executed with third parties).",
+    "ownerPlatform": "Platform",
+    "ownerThirdParty": "Third-party",
+    "ownerBoth": "Platform + third-party",
     "steps": [
       {
         "n": "1",
         "title": "Search",
-        "text": "Browse our available inventory and filter by brand, model, year, price, mileage and body type."
+        "text": "Browse our available inventory and filter by brand, model, year, price, mileage and body type.",
+        "owner": "platform"
       },
       {
         "n": "2",
-        "title": "Select",
-        "text": "Choose a vehicle, or tell us your requirements and we will source options from China's market."
+        "title": "Shortlist",
+        "text": "Build a shortlist of candidates, or tell us your requirements and we will source options from China's market.",
+        "owner": "platform"
       },
       {
         "n": "3",
-        "title": "Request a Quote",
-        "text": "Send us the vehicle details or your requirements and receive a quote for the vehicle."
+        "title": "Vehicle information review",
+        "text": "Review the specifications, mileage and condition information we hold, each marked with its data-status label.",
+        "owner": "platform"
       },
       {
         "n": "4",
-        "title": "Confirm",
-        "text": "Confirm the vehicle, configuration and shipping arrangement for your destination."
+        "title": "Availability confirmation",
+        "text": "We confirm with the source that the vehicle is still available before you commit.",
+        "owner": "platform"
       },
       {
         "n": "5",
-        "title": "Export",
-        "text": "We coordinate export preparation and documentation for shipment from China."
+        "title": "Inspection / verification",
+        "text": "Inspection and verification may be coordinated by us but performed by an independent provider, depending on the vehicle and your requirements.",
+        "owner": "both"
+      },
+      {
+        "n": "6",
+        "title": "Price confirmation",
+        "text": "We confirm the final vehicle price and configuration with the source and provide a quote.",
+        "owner": "platform"
+      },
+      {
+        "n": "7",
+        "title": "Export documentation",
+        "text": "We prepare the export documentation we are able to provide; some documents are issued by authorities or third parties.",
+        "owner": "both"
+      },
+      {
+        "n": "8",
+        "title": "Shipping arrangement",
+        "text": "Shipping is arranged with a shipping line or freight forwarder and depends on the route and schedule.",
+        "owner": "third-party"
+      },
+      {
+        "n": "9",
+        "title": "Destination clearance",
+        "text": "Customs clearance and import at the destination are handled by the destination-country authorities and your local agent.",
+        "owner": "third-party"
+      },
+      {
+        "n": "10",
+        "title": "Delivery",
+        "text": "Final delivery from the destination port is arranged by the buyer or their local agent.",
+        "owner": "third-party"
       }
     ],
     "areas": [
@@ -519,6 +571,28 @@
     "newArrivalsDataNote": "This is a time-sorted view of recently added vehicles. Detailed model specifications live on the Vehicle Data sub-site.",
     "updated": "Updated",
     "whyHeading": "Why Source Used Cars from China",
+    "whoHeading": "Who we serve",
+    "whoText": "China used-car sourcing for global B2B buyers — overseas used-car dealers, importers, wholesalers, fleet buyers and sourcing agents.",
+    "whatHeading": "What the platform provides",
+    "methodology": "China Used Auto Hub combines live vehicle inventory with structured vehicle data, destination-market information and import calculation tools so professional buyers can evaluate Chinese used vehicles before requesting a quotation.",
+    "problemsHeading": "Buyer challenges, and how the platform helps",
+    "problems": [
+      { "problem": "Vehicle selection", "solution": "Search a structured inventory and request specific vehicles through our sourcing service." },
+      { "problem": "Specification verification", "solution": "Model-level specifications on the Vehicle Data sub-site, marked as typical/trim-dependent." },
+      { "problem": "Pricing", "solution": "Asking prices on listings, confirmed with a quote before you commit." },
+      { "problem": "Inspection", "solution": "Condition information with clear status labels; independent inspection coordinated where required." },
+      { "problem": "Export procedures", "solution": "Export documentation and coordination, with customs handled by authorities." },
+      { "problem": "Destination-market eligibility", "solution": "Sourced import rules and taxes on the Market sub-site, to be verified with authorities." },
+      { "problem": "Shipping and landed cost", "solution": "Shipping coordination plus import calculators that show estimates, not fake precision." }
+    ],
+    "pathwaysHeading": "Five ways to get started",
+    "pathways": [
+      { "title": "Browse Vehicles", "text": "See currently listed inventory with condition, mileage and price." },
+      { "title": "Explore Vehicle Data", "text": "Model, generation and trim specifications on the Data sub-site." },
+      { "title": "Explore Markets", "text": "Import rules and taxes for destination markets on the Market sub-site." },
+      { "title": "Use Import Tools", "text": "Estimate landed cost, duty, profit and shipping with our calculators." },
+      { "title": "Request Sourcing", "text": "Describe what you need and we source candidates from China's market." }
+    ],
     "ctaHeading": "Can't Find the Car You Need?",
     "ctaText": "Tell us what you are looking for and we can help source it from China.",
     "ctaDetail": "Provide as much detail as you can — brand, model, year, budget and destination — and we will get back to you with sourcing options.",

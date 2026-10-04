@@ -221,6 +221,10 @@
     "location": "Ubicación",
     "status": "Estado",
     "askingPrice": "Precio solicitado",
+    "priceType": "Tipo de precio",
+    "priceTypeAsking": "Precio solicitado (solo vehículo)",
+    "registrationDate": "Fecha de matriculación",
+    "notCurrentlyAvailable": "No disponible actualmente",
     "originalListing": "Anuncio original",
     "demoPrice": "Precio de ejemplo — anuncio de demo",
     "demoTitlePrefix": "Ejemplo de anuncio de vehículo —",
@@ -232,8 +236,12 @@
     "requestQuote": "Solicitar cotización",
     "requestSimilar": "Pedir un vehículo similar",
     "whatsapp": "Chatear por WhatsApp",
-    "keySpecs": "Especificaciones detalladas",
+    "keySpecs": "Especificaciones del modelo",
+    "modelSpecsNote": "Son especificaciones a nivel de modelo (típicas para este modelo). Especificación típica / Depende del acabado / La información específica del vehículo debe confirmarse antes de la compra.",
+    "modelSpecsLink": "Especificaciones a nivel de modelo",
     "history": "Historial del vehículo",
+    "vehicleHistoryStatus": "Estado del historial del vehículo",
+    "vinStatus": "Estado del VIN",
     "accidentHistory": "Historial de accidentes",
     "maintenanceHistory": "Historial de mantenimiento",
     "inspectionHeading": "Inspección",
@@ -242,11 +250,16 @@
     "batteryHeading": "Información de la batería",
     "batteryCapacity": "Capacidad de la batería",
     "batteryHealth": "Estado de la batería",
+    "batteryStatusLabel": "Estado de la batería",
     "batteryNote": "El estado de la batería suele confirmarse con un informe de diagnóstico; la disponibilidad depende del vehículo.",
     "documentsHeading": "Documentos",
     "documentsNote": "Los documentos de exportación se preparan durante el proceso de exportación y se confirman con el comprador.",
     "shippingHeading": "Información de envío",
     "shippingNote": "El método de envío, el puerto, el tiempo de tránsito y el coste dependen del vehículo y el destino y se confirman al solicitar la cotización.",
+    "includedHeading": "Qué incluye",
+    "includedText": "El precio solicitado cubre el propio vehículo. El envío, el seguro, los aranceles de importación, el IVA y los cargos de destino se cotizan por separado y no están incluidos.",
+    "excludedHeading": "Qué no incluye",
+    "excludedText": "Los costes de llegada — flete, seguro, impuestos, aranceles de importación, despacho en destino y tarifas locales — no están incluidos en el precio solicitado y se confirman en la cotización.",
     "destinationHeading": "Consideraciones del destino",
     "destinationNote": "Los requisitos de importación — aranceles, impuestos, antigüedad del vehículo, lado de conducción y documentos — varían según el país. Los confirmamos contigo durante la cotización.",
     "relatedData": "Datos relacionados del vehículo",
@@ -343,40 +356,29 @@
   },
   "howItWorks": {
     "title": "Cómo funciona — Comprar un coche usado de China",
-    "description": "Cómo encontrar, pedir, confirmar y exportar un coche usado de China: buscar, seleccionar, solicitar cotización, confirmar y exportar.",
+    "description": "El flujo de trabajo B2B de abastecimiento de un coche usado de China en 10 pasos: buscar, preseleccionar, revisar, confirmar, verificar, documentar, enviar y entregar — con la responsabilidad de plataforma vs terceros claramente marcada.",
     "h1": "Cómo funciona",
-    "intro": "Un proceso sencillo para encontrar y exportar un coche usado de China.",
+    "intro": "Un flujo de 10 pasos para encontrar, confirmar y exportar un coche usado de China. Cada paso indica si lo gestiona la plataforma o depende de un tercero.",
     "whatWeProvide": "Qué ofrecemos",
     "faqHeading": "Preguntas frecuentes",
     "ready": "¿Listo para encontrar un vehículo?",
     "buyerGuideNote": "Elegir un vehículo, presupuestar y evaluar el riesgo son decisiones del comprador. Para una guía paso a paso, consulta la guía «Cómo comprar».",
     "buyerGuideLink": "Proceso de decisión del comprador",
+    "ownerLegend": "Cada paso está etiquetado: Plataforma (lo gestionamos nosotros), Tercero (depende de aduanas, navieras, proveedores de inspección o autoridades de destino) o Plataforma + tercero (lo coordinamos nosotros y se ejecuta con terceros).",
+    "ownerPlatform": "Plataforma",
+    "ownerThirdParty": "Tercero",
+    "ownerBoth": "Plataforma + tercero",
     "steps": [
-      {
-        "n": "1",
-        "title": "Buscar",
-        "text": "Consulta nuestro inventario disponible y filtra por marca, modelo, año, precio, kilometraje y tipo de carrocería."
-      },
-      {
-        "n": "2",
-        "title": "Seleccionar",
-        "text": "Elige un vehículo o cuéntanos tus requisitos y buscaremos opciones en el mercado de China."
-      },
-      {
-        "n": "3",
-        "title": "Solicitar cotización",
-        "text": "Envíanos los datos del vehículo o tus requisitos y recibe una cotización."
-      },
-      {
-        "n": "4",
-        "title": "Confirmar",
-        "text": "Confirma el vehículo, la configuración y el acuerdo de envío a tu destino."
-      },
-      {
-        "n": "5",
-        "title": "Exportar",
-        "text": "Coordinamos la preparación de la exportación y la documentación para el envío desde China."
-      }
+      { "n": "1", "title": "Buscar", "text": "Consulta nuestro inventario disponible y filtra por marca, modelo, año, precio, kilometraje y tipo de carrocería.", "owner": "platform" },
+      { "n": "2", "title": "Preseleccionar", "text": "Crea una lista de candidatos o cuéntanos tus requisitos y buscaremos opciones en el mercado de China.", "owner": "platform" },
+      { "n": "3", "title": "Revisar la información del vehículo", "text": "Revisa las especificaciones, el kilometraje y el estado que tenemos, cada uno con su etiqueta de estado de datos.", "owner": "platform" },
+      { "n": "4", "title": "Confirmar disponibilidad", "text": "Confirmamos con la fuente que el vehículo sigue disponible antes de que te comprometas.", "owner": "platform" },
+      { "n": "5", "title": "Inspección / verificación", "text": "La inspección y verificación pueden coordinarse por nosotros pero las realiza un proveedor independiente, según el vehículo y tus requisitos.", "owner": "both" },
+      { "n": "6", "title": "Confirmar precio", "text": "Confirmamos el precio final del vehículo y la configuración con la fuente y damos una cotización.", "owner": "platform" },
+      { "n": "7", "title": "Documentación de exportación", "text": "Preparamos la documentación de exportación que podemos proporcionar; algunos documentos los emiten autoridades o terceros.", "owner": "both" },
+      { "n": "8", "title": "Organizar el envío", "text": "El envío se organiza con una naviera o transitario y depende de la ruta y el calendario.", "owner": "third-party" },
+      { "n": "9", "title": "Despacho en destino", "text": "El despacho de aduanas y la importación en destino los gestionan las autoridades del país de destino y tu agente local.", "owner": "third-party" },
+      { "n": "10", "title": "Entrega", "text": "La entrega final desde el puerto de destino la organiza el comprador o su agente local.", "owner": "third-party" }
     ],
     "areas": [
       {
@@ -519,6 +521,28 @@
     "newArrivalsDataNote": "Esta es una vista ordenada por fecha de los vehículos añadidos recientemente. Las especificaciones detalladas de los modelos están en el subsitio de datos de vehículos.",
     "updated": "Actualizado",
     "whyHeading": "Por qué importar coches usados de China",
+    "whoHeading": "A quién servimos",
+    "whoText": "Abastecimiento de coches usados de China para compradores B2B globales — concesionarios de usados, importadores, mayoristas, compradores de flotas y agentes de abastecimiento en el extranjero.",
+    "whatHeading": "Qué proporciona la plataforma",
+    "methodology": "China Used Auto Hub combina inventario de vehículos en vivo con datos estructurados de vehículos, información de mercados de destino y herramientas de cálculo de importación para que los compradores profesionales puedan evaluar coches usados chinos antes de solicitar una cotización.",
+    "problemsHeading": "Retos del comprador y cómo ayuda la plataforma",
+    "problems": [
+      { "problem": "Selección de vehículos", "solution": "Busque en un inventario estructurado y pida vehículos concretos a través de nuestro servicio de abastecimiento." },
+      { "problem": "Verificación de especificaciones", "solution": "Especificaciones a nivel de modelo en el subsitio de datos, marcadas como típicas/dependientes del acabado." },
+      { "problem": "Precios", "solution": "Precios solicitados en los anuncios, confirmados con una cotización antes de comprometerse." },
+      { "problem": "Inspección", "solution": "Información de estado con etiquetas claras; inspección independiente coordinada cuando se requiere." },
+      { "problem": "Procedimientos de exportación", "solution": "Documentación y coordinación de exportación; las aduanas las gestionan las autoridades." },
+      { "problem": "Elegibilidad del mercado de destino", "solution": "Reglas e impuestos de importación con fuentes en el subsitio de mercado, a verificar con las autoridades." },
+      { "problem": "Envío y coste de desembarco", "solution": "Coordinación de envío y calculadoras de importación que muestran estimaciones, no precisión falsa." }
+    ],
+    "pathwaysHeading": "Cinco formas de empezar",
+    "pathways": [
+      { "title": "Explorar vehículos", "text": "Vea el inventario actual con estado, kilometraje y precio." },
+      { "title": "Explorar datos de vehículos", "text": "Especificaciones de modelo, generación y acabado en el subsitio de datos." },
+      { "title": "Explorar mercados", "text": "Reglas e impuestos de importación para mercados de destino en el subsitio de mercado." },
+      { "title": "Usar herramientas de importación", "text": "Estime coste de desembarco, aranceles, beneficio y envío con nuestras calculadoras." },
+      { "title": "Solicitar abastecimiento", "text": "Describa lo que necesita y buscaremos candidatos en el mercado de China." }
+    ],
     "ctaHeading": "¿No encuentras el coche que necesitas?",
     "ctaText": "Cuéntanos qué buscas y podemos ayudarte a conseguirlo desde China.",
     "ctaDetail": "Danos todos los detalles que puedas — marca, modelo, año, presupuesto y destino — y te responderemos con opciones de abastecimiento.",

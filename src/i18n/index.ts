@@ -64,7 +64,11 @@ export interface Dictionary {
     ready: string;
     buyerGuideNote: string;
     buyerGuideLink: string;
-    steps: { n: string; title: string; text: string }[];
+    ownerLegend: string;
+    ownerPlatform: string;
+    ownerThirdParty: string;
+    ownerBoth: string;
+    steps: { n: string; title: string; text: string; owner: string }[];
     areas: { title: string; text: string }[];
     faqs: { question: string; answer: string }[];
   };
@@ -77,6 +81,14 @@ export interface Dictionary {
     steps: { n: string; title: string; text: string }[];
     markets: { slug: string; name: string }[];
     faqs: { question: string; answer: string }[];
+    whoHeading: string;
+    whoText: string;
+    whatHeading: string;
+    methodology: string;
+    problemsHeading: string;
+    problems: { problem: string; solution: string }[];
+    pathwaysHeading: string;
+    pathways: { title: string; text: string }[];
   };
   about: {
     title: string;
