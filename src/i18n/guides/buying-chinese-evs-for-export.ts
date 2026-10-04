@@ -1,6 +1,10 @@
 import type { L10n } from '../l10n';
 
-// Guide 8 — Buying Chinese EVs for Export (EV/PHEV considerations; market-dependent).
+// Guide 8 — Buying Chinese EVs for Export.
+// P3.7: structured as four professional blocks — Battery / Vehicle / Compatibility /
+// Export Risks — each explaining *why* a factor changes an export decision, plus a
+// decision framework table (Factor | What to check | Why it matters for export).
+// Zero-fabrication: parameters without a source are written "Not publicly documented".
 
 export const buyingEvs = {
   slug: 'buying-chinese-evs-for-export',
@@ -11,10 +15,10 @@ export const buyingEvs = {
     es: 'Comprar VE chinos para exportar — qué considerar',
   },
   description: {
-    en: 'Considerations for buying Chinese electric vehicles for export: EV categories, battery health and capacity, charging compatibility, shipping and destination rules.',
-    ar: 'اعتبارات شراء المركبات الكهربائية الصينية للتصدير: فئات المركبات الكهربائية، وصحة البطارية وسعتها، وتوافق الشحن، والشحن وقواعد الوجهة.',
-    ru: 'Что учесть при покупке китайских электромобилей на экспорт: категории электромобилей, здоровье и ёмкость батареи, совместимость зарядки, доставка и правила страны назначения.',
-    es: 'Consideraciones para comprar vehículos eléctricos chinos para exportar: categorías de VE, salud y capacidad de la batería, compatibilidad de carga, envío y normas de destino.',
+    en: 'Professional export knowledge for Chinese EVs: battery health and capacity, BEV/PHEV/EREV categories, charging and software compatibility, and export risks — each explained in terms of how it changes an export decision.',
+    ar: 'معرفة تصديرية احترافية للسيارات الكهربائية الصينية: صحة البطارية وسعتها، وفئات BEV/PHEV/EREV، وتوافق الشحن والبرمجيات، ومخاطر التصدير — كل منها مشروحًا من حيث كيفية تأثيره على قرار التصدير.',
+    ru: 'Профессиональные знания об экспорте китайских электромобилей: здоровье и ёмкость батареи, категории BEV/PHEV/EREV, совместимость зарядки и ПО, а также риски экспорта — каждый фактор объяснён через его влияние на решение об экспорте.',
+    es: 'Conocimiento profesional de exportación para VE chinos: salud y capacidad de la batería, categorías BEV/PHEV/EREV, compatibilidad de carga y software, y riesgos de exportación — cada uno explicado por cómo cambia una decisión de exportación.',
   },
   h1: {
     en: 'Buying Chinese EVs for Export',
@@ -23,10 +27,10 @@ export const buyingEvs = {
     es: 'Comprar VE chinos para exportar',
   },
   summary: {
-    en: 'Considerations for buying Chinese EVs for export.',
-    ar: 'اعتبارات شراء المركبات الكهربائية الصينية للتصدير.',
-    ru: 'Что учесть при покупке китайских электромобилей на экспорт.',
-    es: 'Consideraciones para comprar VE chinos para exportar.',
+    en: 'Four blocks of EV export knowledge: battery, vehicle category, compatibility and export risks.',
+    ar: 'أربع كتل من معرفة تصدير المركبات الكهربائية: البطارية، وفئة المركبة، والتوافق، ومخاطر التصدير.',
+    ru: 'Четыре блока знаний об экспорте электромобилей: батарея, категория автомобиля, совместимость и риски экспорта.',
+    es: 'Cuatro bloques de conocimiento sobre exportación de VE: batería, categoría del vehículo, compatibilidad y riesgos de exportación.',
   },
   sections: [
     {
@@ -38,334 +42,241 @@ export const buyingEvs = {
       },
       paragraphs: [
         {
-          en: 'Chinese brands produce a wide range of battery electric vehicles (BEVs) and plug-in hybrids (PHEVs), and many models are increasingly exported worldwide. Buyers source them for their efficiency, features and value across many markets.',
-          ar: 'تنتج العلامات الصينية نطاقاً واسعاً من المركبات الكهربائية بالكامل (BEV) والهجينة القابلة للشحن (PHEV)، ويُصدَّر العديد من الطرازات بشكل متزايد حول العالم. يورّدها المشترون لكفاءتها ومزاياها وقيمتها عبر أسواق عديدة.',
-          ru: 'Китайские бренды выпускают широкий ассортимент аккумуляторных электромобилей (BEV) и подключаемых гибридов (PHEV), и многие модели всё чаще экспортируются по всему миру. Покупатели выбирают их за эффективность, оснащение и ценность на многих рынках.',
-          es: 'Las marcas chinas producen una amplia gama de vehículos eléctricos de batería (BEV) e híbridos enchufables (PHEV), y muchos modelos se exportan cada vez más a todo el mundo. Los compradores los eligen por su eficiencia, prestaciones y valor en muchos mercados.',
+          en: 'Chinese brands produce a wide range of battery electric vehicles (BEVs), plug-in hybrids (PHEVs) and extended-range EVs (EREVs), and many are increasingly exported worldwide. Buyers source them for their efficiency, features and value across many markets.',
+          ar: 'تنتج العلامات الصينية نطاقاً واسعاً من المركبات الكهربائية بالكامل (BEV) والهجينة القابلة للشحن (PHEV) والمركبات الكهربائية ممتدة المدى (EREV)، ويُصدَّر الكثير منها بشكل متزايد حول العالم. يورّدها المشترون لكفاءتها ومزاياها وقيمتها عبر أسواق عديدة.',
+          ru: 'Китайские бренды выпускают широкий ассортимент аккумуляторных электромобилей (BEV), подключаемых гибридов (PHEV) и электромобилей с увеличенным запасом хода (EREV), и многие из них всё чаще экспортируются по всему миру. Покупатели выбирают их за эффективность, оснащение и ценность на многих рынках.',
+          es: 'Las marcas chinas producen una amplia gama de eléctricos de batería (BEV), híbridos enchufables (PHEV) y eléctricos de autonomía extendida (EREV), y muchos se exportan cada vez más a todo el mundo. Los compradores los eligen por su eficiencia, prestaciones y valor en muchos mercados.',
+        },
+        {
+          en: 'This guide is organised into four blocks — battery, vehicle, compatibility and export risks — and each factor is explained in terms of why it changes an export decision, not just what it means.',
+          ar: 'يُنظَّم هذا الدليل في أربع كتل — البطارية، والمركبة، والتوافق، ومخاطر التصدير — ويُشرح كل عامل من حيث لماذا يغيّر قرار التصدير، لا مجرد معناه.',
+          ru: 'Это руководство состоит из четырёх блоков — батарея, автомобиль, совместимость и риски экспорта, — и каждый фактор объясняется через то, почему он меняет решение об экспорте, а не только что он означает.',
+          es: 'Esta guía se organiza en cuatro bloques — batería, vehículo, compatibilidad y riesgos de exportación — y cada factor se explica por qué cambia una decisión de exportación, no solo qué significa.',
         },
       ],
     },
     {
       heading: {
-        en: 'EV categories: BEV and PHEV',
-        ar: 'فئات المركبات الكهربائية: BEV وPHEV',
-        ru: 'Категории электромобилей: BEV и PHEV',
-        es: 'Categorías de VE: BEV y PHEV',
+        en: 'Block 1 — Battery: the factors that decide export value and risk',
+        ar: 'الكتلة 1 — البطارية: العوامل التي تحدد قيمة التصدير ومخاطره',
+        ru: 'Блок 1 — Батарея: факторы, определяющие ценность и риск экспорта',
+        es: 'Bloque 1 — Batería: los factores que deciden el valor y el riesgo de exportación',
       },
       paragraphs: [
         {
-          en: 'A battery electric vehicle (BEV) runs only on electricity from a rechargeable battery. A plug-in hybrid (PHEV) combines an electric motor with a combustion engine and a rechargeable battery, running on electric power for daily use with a fuel engine as a range extender.',
-          ar: 'تعمل المركبة الكهربائية بالكامل (BEV) على الكهرباء فقط من بطارية قابلة للشحن. وتجمع الهجينة القابلة للشحن (PHEV) بين محرك كهربائي ومحرك احتراق وبطارية قابلة للشحن، وتعمل بالكهرباء للاستخدام اليومي مع محرك وقود كموسّع للمدى.',
-          ru: 'Аккумуляторный электромобиль (BEV) работает только на электричестве от заряжаемой батареи. Подключаемый гибрид (PHEV) сочетает электромотор с ДВС и заряжаемой батареей, работая на электротяге для повседневных поездок с бензиновым двигателем как удлинителем запаса хода.',
-          es: 'Un vehículo eléctrico de batería (BEV) funciona solo con electricidad de una batería recargable. Un híbrido enchufable (PHEV) combina un motor eléctrico con un motor de combustión y una batería recargable, funcionando en eléctrico para el uso diario con el motor de combustible como extensor de autonomía.',
+          en: 'The battery is the single most important and expensive component of an EV, and it dominates both the vehicle\'s value and its risk profile for an importer. Every battery factor below matters for export because it changes what a destination-market buyer is actually paying for — and what they can resell later.',
+          ar: 'البطارية هي أهم وأغلى مكوّن في المركبة الكهربائية، وهي تهيمن على قيمة المركبة وعلى ملف مخاطرها بالنسبة للمستورد. كل عامل بطارية أدناه يهم التصدير لأنه يغيّر ما يدفع المشتري في سوق الوجهة مقابله فعلياً — وما يمكنه إعادة بيعه لاحقاً.',
+          ru: 'Батарея — самый важный и дорогой компонент электромобиля, и она определяет как стоимость автомобиля, так и его профиль риска для импортёра. Каждый фактор батареи ниже важен для экспорта, потому что он меняет то, за что фактически платит покупатель в стране назначения, — и что можно перепродать позже.',
+          es: 'La batería es el componente más importante y caro de un VE, y domina tanto el valor del vehículo como su perfil de riesgo para un importador. Cada factor de batería que sigue importa para la exportación porque cambia lo que el comprador del mercado de destino está pagando realmente — y lo que podrá revender después.',
+        },
+        {
+          en: 'State of health (SOH) is the battery\'s current capacity as a proportion of its capacity when new. For export it matters because SOH sets the real-world range and the remaining useful life a buyer is paying for — a battery at 85% SOH is a materially different asset from one at 70%, and that difference moves the whole landed-cost and resale equation.',
+          ar: 'حالة الصحة (SOH) هي سعة البطارية الحالية كنسبة من سعتها عندما كانت جديدة. وتهم التصدير لأنها تحدد المدى الفعلي والعمر الإنتاجي المتبقي الذي يدفع المشتري مقابله — فبطارية عند 85% حالة صحة أصل مختلف مادياً عن واحدة عند 70%، وهذا الفرق يحرّك معادلة التكلفة النهائية وإعادة البيع كلها.',
+          ru: 'Состояние здоровья (SOH) — это текущая ёмкость батареи как доля от ёмкости новой. Для экспорта это важно, потому что SOH задаёт реальный запас хода и остаточный срок службы, за который платит покупатель: батарея с SOH 85% — это материально иной актив, чем с SOH 70%, и эта разница сдвигает всю итоговую стоимость и перепродажу.',
+          es: 'El estado de salud (SOH) es la capacidad actual de la batería como proporción de su capacidad de nueva. Para la exportación importa porque el SOH fija la autonomía real y la vida útil restante que paga el comprador: una batería al 85% de SOH es un activo materialmente distinto de una al 70%, y esa diferencia mueve toda la ecuación de coste de desembarco y reventa.',
+        },
+        {
+          en: 'Capacity is usually quoted two ways: nominal (rated) capacity and usable capacity — what the vehicle can actually draw, which is lower. For export the gap matters because a buyer compares the advertised range against usable capacity, and a vehicle whose usable capacity is far below nominal will disappoint in the destination market and hurt resale.',
+          ar: 'تُذكر السعة عادة بطريقتين: السعة الاسمية (المُقدَّرة) والسعة القابلة للاستخدام — ما يمكن للمركبة سحبه فعلياً، وهي أقل. ويَهم الفرق التصديرَ لأن المشتري يقارن المدى المُعلَن بالسعة القابلة للاستخدام، والمركبة التي تكون سعتها القابلة للاستخدام أدنى كثيراً من الاسمية ستُخيب الآمال في سوق الوجهة وتضر بإعادة البيع.',
+          ru: 'Ёмкость обычно указывают двумя способами: номинальная (паспортная) и полезная — то, что автомобиль реально может использовать, и она ниже. Для экспорта важен этот разрыв: покупатель сравнивает заявленный запас хода с полезной ёмкостью, и автомобиль, чья полезная ёмкость намного ниже номинальной, разочарует на рынке назначения и навредит перепродаже.',
+          es: 'La capacidad se cita normalmente de dos formas: nominal (homologada) y útil — lo que el vehículo puede aprovechar realmente, que es menor. Para la exportación importa la brecha porque el comprador compara la autonomía anunciada con la capacidad útil, y un vehículo cuya capacidad útil está muy por debajo de la nominal decepcionará en destino y perjudicará la reventa.',
+        },
+        {
+          en: 'Degradation is gradual and driven by age, use and charging habits, and the two main chemistries degrade differently: LFP (lithium iron phosphate) and NMC (nickel manganese cobalt). For export this matters because the destination\'s climate and charging patterns change how quickly degradation continues, and chemistry affects cold-weather range and charging behaviour — a fact that shifts a vehicle\'s suitability between a hot market and a cold one.',
+          ar: 'التدهور تدريجي وتقوده العوامل العمر والاستخدام وعادات الشحن، وتتدهور الكيميائيتان الرئيسيتان بشكل مختلف: LFP (فوسفات الحديد الليثيوم) وNMC (نيكل منغنيز كوبالت). ويَهم ذلك التصديرَ لأن مناخ الوجهة وأنماط الشحن فيها تغيّران مدى سرعة استمرار التدهور، وتؤثر الكيمياء على المدى في الطقس البارد وسلوك الشحن — وهي حقيقة تنقل ملاءمة المركبة بين سوق حار وسوق بارد.',
+          ru: 'Деградация постепенна и обусловлена возрастом, использованием и привычками зарядки, а две основные химии деградируют по-разному: LFP (литий-железо-фосфат) и NMC (никель-марганец-кобальт). Для экспорта это важно, потому что климат и режим зарядки в стране назначения меняют скорость дальнейшей деградации, а химия влияет на запас хода в холоде и поведение при зарядке — факт, который меняет пригодность автомобиля между жарким и холодным рынками.',
+          es: 'La degradación es gradual y la impulsan la edad, el uso y los hábitos de carga, y las dos químicas principales se degradan de forma distinta: LFP (litio-ferrofosfato) y NMC (níquel-manganeso-cobalto). Para la exportación importa porque el clima y los patrones de carga del destino cambian la rapidez de la degradación futura, y la química afecta a la autonomía en frío y al comportamiento de carga: un hecho que desplaza la idoneidad del vehículo entre un mercado cálido y uno frío.',
+        },
+        {
+          en: 'Charging splits into AC (home/workplace) charging and DC fast charging, with different speeds and connectors. For export, fast-charging capability decides real-world usability in a market with limited home charging, and the fast-charging standard must match the destination network — a vehicle that cannot fast-charge on the local standard loses practical value even if its battery is healthy.',
+          ar: 'ينقسم الشحن إلى شحن بالتيار المتردد (في المنزل/العمل) وشحن سريع بالتيار المستمر، بسرعات وموصلات مختلفة. ويحدد الشحن السريع في التصدير قابلية الاستخدام الفعلي في سوق ذات شحن منزلي محدود، ويجب أن يطابق معيار الشحن السريع شبكة الوجهة — فالمركبة التي لا تستطيع الشحن السريع بالمعيار المحلي تفقد قيمتها العملية حتى لو كانت بطاريتها سليمة.',
+          ru: 'Зарядка делится на зарядку переменным током (AC, дома/на работе) и быструю зарядку постоянным током (DC), с разными скоростями и разъёмами. Для экспорта возможность быстрой зарядки определяет реальную пригодность на рынке с ограниченной домашней зарядкой, а стандарт быстрой зарядки должен совпадать с сетью страны назначения — автомобиль, который не может быстро заряжаться по местному стандарту, теряет практическую ценность даже при исправной батарее.',
+          es: 'La carga se divide en carga de CA (en casa/trabajo) y carga rápida de CC, con velocidades y conectores distintos. Para la exportación, la carga rápida decide la usabilidad real en un mercado con carga doméstica limitada, y el estándar de carga rápida debe coincidir con la red de destino: un vehículo que no puede cargar rápido con el estándar local pierde valor práctico aunque su batería esté sana.',
+        },
+        {
+          en: 'Battery warranty is often generous in the domestic market but frequently does not transfer to export markets. For export this is a deciding factor: whether the warranty applies at the destination, and whether any local service can honour it, directly changes the buyer\'s downside risk and therefore the price they will pay.',
+          ar: 'ضمان البطارية سخيّ غالباً في السوق المحلي لكنه لا ينتقل عادة إلى أسواق التصدير. ويُعد هذا في التصدير عاملاً حاسماً: فسريان الضمان في الوجهة، وقدرة أي خدمة محلية على الوفاء به، يغيّران مباشرة مخاطر المشتري السلبية وبالتالي السعر الذي سيدفعه.',
+          ru: 'Гарантия на батарею часто щедрая на внутреннем рынке, но обычно не переносится на экспортные рынки. Для экспорта это решающий фактор: действует ли гарантия в стране назначения и может ли местный сервис её исполнить, напрямую меняет риск покупателя и, следовательно, цену, которую он заплатит.',
+          es: 'La garantía de batería suele ser generosa en el mercado interno, pero con frecuencia no se transfiere a mercados de exportación. Para la exportación es un factor decisivo: si la garantía aplica en destino y si un servicio local puede hacerla efectiva, cambia directamente el riesgo a la baja del comprador y, por tanto, el precio que pagará.',
+        },
+        {
+          en: 'Where a battery parameter is not available, treat that absence as information. We mark unavailable data as such rather than guessing; a parameter that has no published figure is written "Not publicly documented".',
+          ar: 'عندما لا يتوفر معامل من معاملات البطارية، عامل غيابه كمعلومة. نعلّم البيانات غير المتوفرة على أنها كذلك بدلاً من التخمين؛ والمعامل الذي لا رقم منشور له يُكتب «غير موثّق علناً».',
+          ru: 'Если параметр батареи недоступен, воспринимайте его отсутствие как информацию. Мы помечаем недоступные данные как таковые, а не угадываем; параметр без опубликованной цифры записывается как «Не задокументировано публично».',
+          es: 'Cuando un parámetro de batería no está disponible, trate esa ausencia como información. Marcamos los datos no disponibles como tales en lugar de adivinar; un parámetro sin cifra publicada se escribe «No documentado públicamente».',
         },
       ],
     },
     {
       heading: {
-        en: 'Battery condition, health and capacity',
-        ar: 'حالة البطارية وصحتها وسعتها',
-        ru: 'Состояние, здоровье и ёмкость батареи',
-        es: 'Estado, salud y capacidad de la batería',
+        en: 'Block 2 — Vehicle: BEV, PHEV and EREV, and domestic vs export specification',
+        ar: 'الكتلة 2 — المركبة: BEV وPHEV وEREV، والمواصفات المحلية مقابل التصديرية',
+        ru: 'Блок 2 — Автомобиль: BEV, PHEV и EREV, а также внутренняя и экспортная спецификация',
+        es: 'Bloque 2 — Vehículo: BEV, PHEV y EREV, y especificación nacional frente a exportación',
       },
       paragraphs: [
         {
-          en: 'The battery is the most important and expensive component of an EV. Key checks are battery condition, state of health (how much capacity it retains relative to new), and capacity. A diagnostic report gives the clearest picture where available.',
-          ar: 'البطارية هي أهم وأغلى مكوّن في المركبة الكهربائية. الفحوصات الأساسية هي حالة البطارية وحالة صحتها (مقدار السعة التي تحتفظ بها مقارنة بالجديدة) وسعتها. يقدم تقرير التشخيص الصورة الأوضح عندما يتوفر.',
-          ru: 'Батарея — самый важный и дорогой компонент электромобиля. Ключевые проверки: состояние батареи, состояние здоровья (сколько ёмкости она сохраняет по сравнению с новой) и ёмкость. Диагностический отчёт даёт самую ясную картину при наличии.',
-          es: 'La batería es el componente más importante y caro de un VE. Las comprobaciones clave son el estado de la batería, su estado de salud (cuánta capacidad conserva respecto a nueva) y su capacidad. Un informe de diagnóstico da la imagen más clara cuando está disponible.',
+          en: 'The vehicle category decides which rules, duties and charging infrastructure apply. A BEV runs only on its rechargeable battery. A PHEV combines an electric motor with a combustion engine and recharges from the grid, running electric for daily use with the engine as backup. An EREV (extended-range EV, a range-extender form of PHEV) is always driven by its electric motor while a small combustion engine only generates electricity — it plugs in like a PHEV but drives like a BEV.',
+          ar: 'تحدد فئة المركبة القواعد والرسوم وبنية الشحن التي تنطبق. تعمل المركبة الكهربائية بالكامل (BEV) على بطاريتها القابلة للشحن فقط. وتجمع الهجينة القابلة للشحن (PHEV) بين محرك كهربائي ومحرك احتراق وتُشحن من الشبكة، وتعمل بالكهرباء للاستخدام اليومي مع المحرك كاحتياطي. أما المركبة الكهربائية ممتدة المدى (EREV، وهي شكل من الهجينة القابلة للشحن بموسّع مدى) فيُدار دفعها دائماً بالمحرك الكهربائي بينما يولد محرك احتراق صغير الكهرباء فقط — تُشحن مثل PHEV لكنها تسير مثل BEV.',
+          ru: 'Категория автомобиля определяет, какие правила, пошлины и зарядная инфраструктура применяются. BEV работает только от заряжаемой батареи. PHEV сочетает электромотор с ДВС и заряжается от сети, работая на электротяге в повседневных поездках с двигателем как резервом. EREV (электромобиль с увеличенным запасом хода, форма PHEV с удлинителем хода) всегда приводится электромотором, а небольшой ДВС лишь вырабатывает электричество — он заряжается как PHEV, но едет как BEV.',
+          es: 'La categoría del vehículo decide qué normas, aranceles e infraestructura de carga aplican. Un BEV funciona solo con su batería recargable. Un PHEV combina un motor eléctrico con uno de combustión y se recarga de la red, funcionando en eléctrico para el uso diario con el motor como respaldo. Un EREV (eléctrico de autonomía extendida, forma de PHEV con extensor de autonomía) siempre lo impulsa su motor eléctrico mientras un pequeño motor de combustión solo genera electricidad: se enchufa como un PHEV pero circula como un BEV.',
+        },
+        {
+          en: 'Domestic vs export specification is a distinct check. A vehicle built for the China domestic market can differ from an official export version in its charging port, software and connectivity, supported voltage and frequency, and even safety/type-approval. For export this means a domestic-specification vehicle may need a connector adapter, may carry region-locked software, or may not meet the destination\'s homologation — so specification is a decision factor, not a minor detail.',
+          ar: 'المواصفات المحلية مقابل التصديرية فحص مستقل. فالمركبة المصنوعة للسوق الصيني المحلي قد تختلف عن نسخة التصدير الرسمية في منفذ الشحن والبرمجيات والاتصال والجهد والتردد المدعومين، وحتى في الأمان واعتماد الطراز. ويعني ذلك في التصدير أن مركبة بالمواصفات المحلية قد تحتاج محول موصل، أو تحمل برمجيات مقفلة إقليمياً، أو لا تفي باعتماد الطراز في الوجهة — فالمواصفات عامل قرار لا تفصيل ثانوي.',
+          ru: 'Внутренняя и экспортная спецификация — это отдельная проверка. Автомобиль, созданный для внутреннего рынка Китая, может отличаться от официальной экспортной версии портом зарядки, ПО и связью, поддерживаемым напряжением и частотой и даже безопасностью/омологацией. Для экспорта это значит, что автомобиль с внутренней спецификацией может требовать адаптер разъёма, нести привязанное к региону ПО или не соответствовать омологации страны назначения — спецификация является фактором решения, а не мелочью.',
+          es: 'La especificación nacional frente a la de exportación es una comprobación distinta. Un vehículo fabricado para el mercado interno chino puede diferir de una versión oficial de exportación en el puerto de carga, el software y la conectividad, el voltaje y la frecuencia soportados, e incluso la seguridad/homologación. Para la exportación esto significa que un vehículo de especificación nacional puede necesitar un adaptador de conector, traer software bloqueado por región o no cumplir la homologación del destino: la especificación es un factor de decisión, no un detalle menor.',
         },
       ],
     },
     {
       heading: {
-        en: 'Charging and electrical compatibility',
-        ar: 'توافق الشحن والكهرباء',
-        ru: 'Совместимость зарядки и электрики',
-        es: 'Compatibilidad de carga y eléctrica',
+        en: 'Block 3 — Compatibility: will the vehicle work in the destination market',
+        ar: 'الكتلة 3 — التوافق: هل ستعمل المركبة في سوق الوجهة',
+        ru: 'Блок 3 — Совместимость: будет ли автомобиль работать в стране назначения',
+        es: 'Bloque 3 — Compatibilidad: funcionará el vehículo en el mercado de destino',
       },
       paragraphs: [
         {
-          en: 'Charging connector standards and electrical systems vary by market. Before buying, consider whether the vehicle\'s charging connector and voltage are compatible with your market\'s infrastructure. Compatibility depends on the vehicle and the destination country.',
-          ar: 'تختلف معايير موصلات الشحن والأنظمة الكهربائية حسب السوق. قبل الشراء، راعِ ما إذا كان موصل شحن المركبة وجهدها متوافقين مع البنية التحتية في سوقك. يعتمد التوافق على المركبة وبلد الوجهة.',
-          ru: 'Стандарты зарядных разъёмов и электрические системы различаются по рынкам. Перед покупкой оцените, совместимы ли зарядный разъём и напряжение автомобиля с инфраструктурой вашего рынка. Совместимость зависит от автомобиля и страны назначения.',
-          es: 'Los estándares de conectores de carga y los sistemas eléctricos varían según el mercado. Antes de comprar, considere si el conector de carga y el voltaje del vehículo son compatibles con la infraestructura de su mercado. La compatibilidad depende del vehículo y el país de destino.',
+          en: 'Charging standard and connector are the first compatibility check. China\'s domestic standard is GB/T; destinations commonly use CCS2 (Europe and several regions), CHAdeMO (notably Japan) or North American connectors. A China-market vehicle\'s port may not physically match the destination network, and adapters are not always practical or safe for daily fast charging.',
+          ar: 'معيار الشحن والموصل هما أول فحص توافق. المعيار المحلي في الصين هو GB/T؛ وتستخدم الوجهات عادة CCS2 (أوروبا ومناطق عدة)، أو CHAdeMO (خاصة اليابان) أو موصلات أمريكا الشمالية. قد لا يطابق منفذ مركبة السوق الصيني شبكة الوجهة فعلياً، والمحولات ليست دائماً عملية أو آمنة للشحن السريع اليومي.',
+          ru: 'Стандарт зарядки и разъём — первая проверка совместимости. Внутренний стандарт Китая — GB/T; в странах назначения обычно используются CCS2 (Европа и ряд регионов), CHAdeMO (особенно Япония) или североамериканские разъёмы. Порт автомобиля китайского рынка может физически не совпадать с сетью страны назначения, а адаптеры не всегда практичны или безопасны для ежедневной быстрой зарядки.',
+          es: 'El estándar de carga y el conector son la primera comprobación de compatibilidad. El estándar interno de China es GB/T; los destinos suelen usar CCS2 (Europa y varias regiones), CHAdeMO (sobre todo Japón) o conectores norteamericanos. El puerto de un vehículo del mercado chino puede no coincidir físicamente con la red de destino, y los adaptadores no siempre son prácticos o seguros para la carga rápida diaria.',
+        },
+        {
+          en: 'Voltage, frequency and charging infrastructure matter next. Grid voltage and frequency differ between regions, and public-charging density varies widely. The vehicle\'s on-board charger must accept the destination\'s voltage and frequency, and its connector must match the local physical standard — both, not just one.',
+          ar: 'الجهد والتردد وبنية الشحن تهم بعد ذلك. يختلف جهد الشبكة وترددها بين المناطق، وتتباين كثافة الشحن العام على نطاق واسع. يجب أن يقبل الشاحن المدمج في المركبة جهد الوجهة وترددها، وأن يطابق موصلها المعيار الفيزيائي المحلي — كلاهما، لا أحدهما فقط.',
+          ru: 'Далее важны напряжение, частота и зарядная инфраструктура. Напряжение и частота сети различаются между регионами, а плотность публичных зарядок сильно варьируется. Встроенное зарядное устройство автомобиля должно принимать напряжение и частоту страны назначения, а его разъём — совпадать с местным физическим стандартом: и то, и другое, а не что-то одно.',
+          es: 'Después importan el voltaje, la frecuencia y la infraestructura de carga. El voltaje y la frecuencia de red difieren entre regiones, y la densidad de carga pública varía mucho. El cargador de a bordo del vehículo debe aceptar el voltaje y la frecuencia del destino, y su conector debe coincidir con el estándar físico local: ambas cosas, no solo una.',
+        },
+        {
+          en: 'Software, OTA, language and connected services are a compatibility risk most buyers overlook. Infotainment, navigation, over-the-air updates, the mobile app and connected services are often region- or language-locked to China. In the destination they may not work, may not update, or may require re-flashing — and that affects the buyer\'s day-to-day experience and resale appeal.',
+          ar: 'البرمجيات والتحديث اللاسلكي واللغة والخدمات المتصلة مخاطرة توافق يغفلها معظم المشترين. فأنظمة الترفيه والملاحة والتحديثات اللاسلكية وتطبيق الهاتف والخدمات المتصلة غالباً مقفلة إقليمياً أو لغوياً على الصين. وفي الوجهة قد لا تعمل أو لا تتحدث أو تحتاج إعادة تثبيت برمجي — وهذا يؤثر على تجربة المشتري اليومية وجاذبية إعادة البيع.',
+          ru: 'ПО, обновления по воздуху, язык и подключённые сервисы — это риск совместимости, который большинство покупателей упускает. Мультимедиа, навигация, обновления по воздуху, мобильное приложение и подключённые сервисы часто привязаны к региону или языку Китая. В стране назначения они могут не работать, не обновляться или требовать перепрошивки — и это влияет на ежедневный опыт покупателя и привлекательность при перепродаже.',
+          es: 'El software, las OTA, el idioma y los servicios conectados son un riesgo de compatibilidad que la mayoría de compradores pasa por alto. El infoentretenimiento, la navegación, las actualizaciones por aire, la app móvil y los servicios conectados suelen estar bloqueados por región o idioma a China. En destino pueden no funcionar, no actualizarse o requerir re-flasheo, y eso afecta a la experiencia diaria del comprador y al atractivo de reventa.',
+        },
+      ],
+      checklist: [
+        { en: 'Check the connector standard against the destination network (GB/T vs CCS2/CHAdeMO/other).', ar: 'تحقق من معيار الموصل مقابل شبكة الوجهة (GB/T مقابل CCS2/CHAdeMO/غيرها).', ru: 'Проверьте стандарт разъёма против сети страны назначения (GB/T или CCS2/CHAdeMO/иное).', es: 'Compruebe el estándar del conector frente a la red de destino (GB/T frente a CCS2/CHAdeMO/otro).' },
+        { en: 'Check voltage and frequency compatibility for on-board charging.', ar: 'تحقق من توافق الجهد والتردد للشحن المدمج.', ru: 'Проверьте совместимость напряжения и частоты для встроенной зарядки.', es: 'Compruebe la compatibilidad de voltaje y frecuencia para la carga de a bordo.' },
+        { en: 'Check fast-charging standard and whether adapters are practical for your use.', ar: 'تحقق من معيار الشحن السريع وما إذا كانت المحولات عملية لاستخدامك.', ru: 'Проверьте стандарт быстрой зарядки и практичность адаптеров для вашего использования.', es: 'Compruebe el estándar de carga rápida y si los adaptadores son prácticos para su uso.' },
+        { en: 'Check software, OTA, app, language and connected-service availability in the destination.', ar: 'تحقق من توفر البرمجيات والتحديث اللاسلكي والتطبيق واللغة والخدمات المتصلة في الوجهة.', ru: 'Проверьте доступность ПО, обновлений по воздуху, приложения, языка и подключённых сервисов в стране назначения.', es: 'Compruebe la disponibilidad de software, OTA, app, idioma y servicios conectados en destino.' },
+        { en: 'Confirm each point against the specific vehicle\'s specification and the destination network — not generic assumptions.', ar: 'أكد كل نقطة مقابل مواصفات المركبة المحددة وشبكة الوجهة — لا افتراضات عامة.', ru: 'Подтверждайте каждый пункт по конкретной спецификации автомобиля и сети страны назначения, а не по общим предположениям.', es: 'Confirme cada punto según la especificación concreta del vehículo y la red de destino, no por supuestos genéricos.' },
+      ],
+    },
+    {
+      heading: {
+        en: 'Block 4 — Export risks: what can go wrong after purchase',
+        ar: 'الكتلة 4 — مخاطر التصدير: ما قد يسوء بعد الشراء',
+        ru: 'Блок 4 — Риски экспорта: что может пойти не так после покупки',
+        es: 'Bloque 4 — Riesgos de exportación: qué puede salir mal tras la compra',
+      },
+      paragraphs: [
+        {
+          en: 'Warranty is the first risk. Battery and vehicle warranties are often valid only in the domestic market, so an export buyer may find the warranty does not transfer, or that no local dealer will honour it. This converts a "covered" vehicle into an "uncovered" one the moment it ships — a change that should be priced into the decision.',
+          ar: 'الضمان هو أول مخاطرة. فغالباً ما تكون ضمانات البطارية والمركبة سارية في السوق المحلي فقط، لذا قد يجد مشتري التصدير أن الضمان لا ينتقل، أو أنه لا يوجد وكيل محلي يفي به. وهذا يحوّل المركبة «المغطاة» إلى «غير مغطاة» لحظة شحنها — تغيير يجب تسعيره في القرار.',
+          ru: 'Гарантия — первый риск. Гарантии на батарею и автомобиль часто действуют только на внутреннем рынке, поэтому экспортный покупатель может обнаружить, что гарантия не переносится или ни один местный дилер её не исполнит. Это превращает «покрытый» автомобиль в «непокрытый» в момент отправки — изменение, которое следует заложить в решение.',
+          es: 'La garantía es el primer riesgo. Las garantías de batería y vehículo a menudo solo valen en el mercado interno, por lo que un comprador de exportación puede encontrar que la garantía no se transfiere o que ningún concesionario local la hace efectiva. Esto convierte un vehículo «cubierto» en «descubierto» en el momento del envío: un cambio que debe incluirse en la decisión.',
+        },
+        {
+          en: 'Software region lock, app availability and OTA limitations form a cluster of risks. A vehicle region-locked to China may not receive over-the-air updates abroad, its companion app may be unavailable or geo-restricted, and connected features may stop working. These are rarely visible in a listing and only surface after the vehicle arrives.',
+          ar: 'قفل البرمجيات الإقليمي وتوفر التطبيق وقيود التحديث اللاسلكي تشكل مجموعة مخاطر. فالمركبة المقفلة إقليمياً على الصين قد لا تتلقى تحديثات لاسلكية في الخارج، وقد يكون تطبيقها المصاحب غير متوفر أو مقيداً جغرافياً، وقد تتوقف المزايا المتصلة. ونادراً ما تظهر هذه في الإعلان ولا تظهر إلا بعد وصول المركبة.',
+          ru: 'Региональная блокировка ПО, доступность приложения и ограничения OTA образуют кластер рисков. Автомобиль, привязанный к региону Китая, может не получать обновления по воздуху за рубежом, его сопутствующее приложение может быть недоступно или гео-ограничено, а подключённые функции могут перестать работать. Это редко видно в объявлении и проявляется только после прибытия автомобиля.',
+          es: 'El bloqueo regional de software, la disponibilidad de la app y las limitaciones de OTA forman un grupo de riesgos. Un vehículo bloqueado por región a China puede no recibir actualizaciones por aire en el extranjero, su app complementaria puede estar no disponible o georestringida, y las funciones conectadas pueden dejar de funcionar. Rara vez se ve en el anuncio y solo aparece tras la llegada del vehículo.',
+        },
+        {
+          en: 'Parts and service are a practical risk. Availability of parts and of technicians trained on the brand and model varies by market. A model with weak local support is harder to maintain and resell, which matters for dealers and importers who must support what they sell.',
+          ar: 'قطع الغيار والخدمة مخاطرة عملية. يتباين توفر قطع الغيار والفنيين المدرَّبين على العلامة والطراز حسب السوق. فالطراز ضعيف الدعم المحلي أصعب صيانةً وإعادة بيع، وهذا يهم التجار والمستوردين الذين يجب أن يدعموا ما يبيعونه.',
+          ru: 'Запчасти и сервис — практический риск. Доступность запчастей и специалистов, обученных по марке и модели, различается по рынкам. Модель со слабой локальной поддержкой сложнее обслуживать и перепродавать, что важно для дилеров и импортёров, которые должны поддерживать то, что продают.',
+          es: 'Los repuestos y el servicio son un riesgo práctico. La disponibilidad de repuestos y de técnicos formados en la marca y el modelo varía por mercado. Un modelo con poco soporte local es más difícil de mantener y revender, algo que importa a concesionarios e importadores que deben respaldar lo que venden.',
+        },
+        {
+          en: 'Destination compatibility pulls these risks together. A vehicle can be inexpensive, healthy and well-specced yet still be a poor export choice if its charging standard, software or support do not fit the destination. The export decision is a compatibility decision as much as a price decision.',
+          ar: 'توافق الوجهة يجمع هذه المخاطر. فقد تكون المركبة رخيصة وسليمة وجيدة التجهيز ومع ذلك خيار تصدير ضعيف إذا لم يناسب معيار الشحن أو البرمجيات أو الدعم لديها الوجهة. فقرار التصدير قرار توافق بقدر ما هو قرار سعر.',
+          ru: 'Совместимость со страной назначения объединяет эти риски. Автомобиль может быть недорогим, исправным и хорошо оснащённым, но всё равно быть плохим выбором для экспорта, если его стандарт зарядки, ПО или поддержка не подходят стране назначения. Решение об экспорте — это решение о совместимости в той же мере, что и о цене.',
+          es: 'La compatibilidad de destino reúne estos riesgos. Un vehículo puede ser barato, sano y bien equipado y aun así ser una mala opción de exportación si su estándar de carga, software o soporte no encajan con el destino. La decisión de exportación es tanto de compatibilidad como de precio.',
         },
       ],
     },
     {
       heading: {
-        en: 'Condition and EV-specific checks',
-        ar: 'الحالة والفحوصات الخاصة بالمركبات الكهربائية',
-        ru: 'Состояние и специфические проверки для электромобилей',
-        es: 'Estado y comprobaciones específicas de VE',
+        en: 'Decision framework — the factors that drive an EV export decision',
+        ar: 'إطار القرار — العوامل التي تقود قرار تصدير المركبة الكهربائية',
+        ru: 'Структура решения — факторы, определяющие решение об экспорте электромобиля',
+        es: 'Marco de decisión — los factores que guían una decisión de exportación de VE',
       },
       paragraphs: [
         {
-          en: 'Alongside the usual exterior, interior and chassis checks, EV buyers should review the charging system, the battery diagnostic report, and any degradation data. We present what we hold with a confidence level; where data is not available, we say so.',
-          ar: 'إلى جانب الفحوصات المعتادة للخارجي والداخلي والهيكل، يجب على مشتري المركبات الكهربائية مراجعة نظام الشحن وتقرير تشخيص البطارية وأي بيانات تدهور. نعرض ما نحتفظ به مع مستوى ثقة؛ وعندما لا تتوفر البيانات، نقول ذلك.',
-          ru: 'Наряду с обычными проверками кузова, салона и шасси покупателям электромобилей стоит изучить систему зарядки, диагностический отчёт по батарее и данные о деградации. Мы показываем имеющееся с уровнем достоверности; если данных нет, мы это указываем.',
-          es: 'Junto a las comprobaciones habituales de exterior, interior y chasis, los compradores de VE deben revisar el sistema de carga, el informe de diagnóstico de la batería y los datos de degradación. Presentamos lo que tenemos con un nivel de confianza; cuando no hay datos, lo decimos.',
-        },
-      ],
-    },
-    {
-      heading: {
-        en: 'Export and shipping for EVs',
-        ar: 'التصدير والشحن للمركبات الكهربائية',
-        ru: 'Экспорт и доставка электромобилей',
-        es: 'Exportación y envío de VE',
-      },
-      paragraphs: [
-        {
-          en: 'EVs are shipped like other vehicles — RoRo, container or car carrier — but their batteries can involve additional transport and handling requirements. These depend on the vehicle and the destination, and are confirmed during the quote.',
-          ar: 'تُشحن المركبات الكهربائية مثل غيرها — RoRo أو حاوية أو ناقلة سيارات — لكن بطارياتها قد تتضمن متطلبات نقل ومناولة إضافية. تعتمد هذه على المركبة والوجهة وتُؤكد أثناء عرض السعر.',
-          ru: 'Электромобили перевозятся так же, как и другие автомобили, — RoRo, контейнер или автовоз, — но их батареи могут требовать дополнительных условий транспортировки и обработки. Они зависят от автомобиля и страны назначения и подтверждаются при расчёте.',
-          es: 'Los VE se envían como otros vehículos — RoRo, contenedor o transportista —, pero sus baterías pueden implicar requisitos adicionales de transporte y manipulación. Dependen del vehículo y el destino, y se confirman durante la cotización.',
-        },
-      ],
-    },
-    {
-      heading: {
-        en: 'Destination rules and incentives',
-        ar: 'قواعد الوجهة والحوافز',
-        ru: 'Правила и стимулы страны назначения',
-        es: 'Normas e incentivos de destino',
-      },
-      paragraphs: [
-        {
-          en: 'Import duties, taxes, age limits and any EV-specific rules or incentives depend on the destination country. Some markets have lower duties or incentives for electric vehicles; others have specific technical requirements. These are covered per market on the Market sub-site.',
-          ar: 'تعتمد رسوم الاستيراد والضرائب وحدود العمر وأي قواعد أو حوافز خاصة بالمركبات الكهربائية على بلد الوجهة. لدى بعض الأسواق رسوم أقل أو حوافز للمركبات الكهربائية؛ ولدى أخرى متطلبات تقنية محددة. تُغطى هذه لكل سوق في الموقع الفرعي للأسواق.',
-          ru: 'Импортные пошлины, налоги, ограничения по возрасту и любые специфические правила или стимулы для электромобилей зависят от страны назначения. В одних рынках ниже пошлины или есть стимулы для электромобилей, в других — особые технические требования. Они описаны по рынкам на подсайте Market.',
-          es: 'Los aranceles, impuestos, límites de antigüedad y cualquier norma o incentivo específico de VE dependen del país de destino. Algunos mercados tienen aranceles más bajos o incentivos para eléctricos; otros tienen requisitos técnicos específicos. Se detallan por mercado en el subsitio Market.',
-        },
-      ],
-    },
-    {
-      heading: {
-        en: 'Battery warranty and degradation',
-        ar: 'ضمان البطارية وتدهورها',
-        ru: 'Гарантия на батарею и деградация',
-        es: 'Garantía de la batería y degradación',
-      },
-      paragraphs: [
-        {
-          en: 'EV batteries degrade gradually with age and use, and most retain a high percentage of capacity for many years. Understanding the battery\'s current state of health, its capacity, and whether any warranty applies (and whether it transfers to an export market) is a key part of the decision.',
-          ar: 'تتدهور بطاريات المركبات الكهربائية تدريجيًا مع العمر والاستخدام، وتحتفظ معظمها بنسبة عالية من السعة لسنوات عديدة. إن فهم حالة صحة البطارية الحالية وسعتها، وما إذا كان أي ضمان ساريًا (وهل ينتقل إلى سوق التصدير) جزء أساسي من القرار.',
-          ru: 'Батареи электромобилей деградируют постепенно с возрастом и использованием, и большинство сохраняет высокий процент ёмкости много лет. Понимание текущего состояния здоровья батареи, её ёмкости и того, действует ли гарантия (и переносится ли она на экспортный рынок), — ключевая часть решения.',
-          es: 'Las baterías de los VE se degradan gradualmente con la edad y el uso, y la mayoría conserva un alto porcentaje de capacidad durante muchos años. Entender el estado de salud actual de la batería, su capacidad y si se aplica alguna garantía (y si se transfiere a un mercado de exportación) es una parte clave de la decisión.',
-        },
-      ],
-    },
-    {
-      heading: {
-        en: 'Charging standards by region',
-        ar: 'معايير الشحن حسب المنطقة',
-        ru: 'Стандарты зарядки по регионам',
-        es: 'Estándares de carga por región',
-      },
-      paragraphs: [
-        {
-          en: 'Charging connector standards differ around the world, and a vehicle built for one market may use a connector that is less common in another. Check whether the vehicle\'s charging port and electrical system match your market\'s infrastructure before buying, and whether adapters are practical for your use.',
-          ar: 'تختلف معايير موصلات الشحن حول العالم، وقد تستخدم المركبة المصنوعة لسوق معين موصلًا أقل شيوعًا في سوق آخر. تحقق قبل الشراء مما إذا كان منفذ شحن المركبة ونظامها الكهربائي يتطابقان مع البنية التحتية في سوقك، وما إذا كانت المحولات عملية لاستخدامك.',
-          ru: 'Стандарты зарядных разъёмов различаются по миру, и автомобиль, созданный для одного рынка, может использовать разъём, менее распространённый в другом. До покупки проверьте, совпадают ли зарядный порт и электрическая система автомобиля с инфраструктурой вашего рынка и практичны ли адаптеры для вашего использования.',
-          es: 'Los estándares de conectores de carga difieren en el mundo, y un vehículo fabricado para un mercado puede usar un conector menos común en otro. Compruebe antes de comprar si el puerto de carga y el sistema eléctrico del vehículo coinciden con la infraestructura de su mercado y si los adaptadores son prácticos para su uso.',
-        },
-      ],
-    },
-    {
-      heading: {
-        en: 'Climate, range and performance',
-        ar: 'المناخ والمدى والأداء',
-        ru: 'Климат, запас хода и производительность',
-        es: 'Clima, autonomía y rendimiento',
-      },
-      paragraphs: [
-        {
-          en: 'Real-world range varies with temperature, driving conditions and load, and cold climates reduce effective range more than mild ones. Consider whether the vehicle\'s range and charging speed suit your market\'s climate and typical journeys before committing.',
-          ar: 'يختلف المدى الفعلي مع درجة الحرارة وظروف القيادة والحمولة، وتقلل المناخات الباردة من المدى الفعال أكثر من المعتدلة. راعِ ما إذا كان مدى المركبة وسرعة شحنها يناسبان مناخ سوقك ورحلاته النموذجية قبل الالتزام.',
-          ru: 'Реальный запас хода зависит от температуры, условий движения и нагрузки, и холодный климат снижает его сильнее, чем умеренный. Прежде чем брать обязательства, оцените, подходят ли запас хода и скорость зарядки автомобиля климату и типичным поездкам вашего рынка.',
-          es: 'La autonomía real varía con la temperatura, las condiciones de conducción y la carga, y los climas fríos la reducen más que los templados. Considere si la autonomía y la velocidad de carga del vehículo se adaptan al clima y los trayectos típicos de su mercado antes de comprometerse.',
-        },
-      ],
-    },
-    {
-      heading: {
-        en: 'Parts, service and resale',
-        ar: 'قطع الغيار والخدمة وإعادة البيع',
-        ru: 'Запчасти, сервис и перепродажа',
-        es: 'Repuestos, servicio y reventa',
-      },
-      paragraphs: [
-        {
-          en: 'Consider the after-sales picture in your market: parts availability, service expertise for the brand and model, and expected resale value. A model with good local support and strong resale is easier to sell on, which matters for dealers and importers.',
-          ar: 'راعِ صورة ما بعد البيع في سوقك: توفر قطع الغيار، وخبرة الخدمة للعلامة والطراز، وقيمة إعادة البيع المتوقعة. فالطراز الذي يتمتع بدعم محلي جيد وإعادة بيع قوية يسهل بيعه، وهذا يهم التجار والمستوردين.',
-          ru: 'Учитывайте послепродажную картину на вашем рынке: доступность запчастей, опыт обслуживания по марке и модели и ожидаемую стоимость перепродажи. Модель с хорошей локальной поддержкой и сильной перепродажей легче продать, что важно для дилеров и импортёров.',
-          es: 'Considere el panorama posventa en su mercado: disponibilidad de repuestos, experiencia de servicio para la marca y el modelo, y valor de reventa esperado. Un modelo con buen soporte local y buena reventa es más fácil de vender, algo que importa a concesionarios e importadores.',
-        },
-      ],
-    },
-    {
-      heading: {
-        en: 'EV categories in the market',
-        ar: 'فئات المركبات الكهربائية في السوق',
-        ru: 'Категории электромобилей на рынке',
-        es: 'Categorías de VE en el mercado',
-      },
-      paragraphs: [
-        {
-          en: 'Beyond BEVs and PHEVs, you may also encounter hybrid electric vehicles (HEVs), which do not plug in and recharge through driving and braking. Understanding which category a vehicle belongs to helps you match it to your market\'s charging infrastructure and buyer preferences.',
-          ar: 'إلى جانب BEV وPHEV، قد تصادف المركبات الهجينة (HEV) التي لا تُشحن بالكهرباء وتُعاد شحنها أثناء القيادة والفرملة. إن فهم فئة المركبة يساعدك على مطابقتها مع البنية التحتية للشحن في سوقك وتفضيلات المشترين.',
-          ru: 'Помимо BEV и PHEV вы можете встретить гибридные электромобили (HEV), которые не подключаются к розетке и заряжаются при движении и торможении. Понимание категории помогает подобрать автомобиль под зарядную инфраструктуру и предпочтения покупателей вашего рынка.',
-          es: 'Además de BEV y PHEV, también puede encontrar híbridos eléctricos (HEV), que no se enchufan y se recargan al conducir y frenar. Entender a qué categoría pertenece un vehículo le ayuda a adaptarlo a la infraestructura de carga y las preferencias de su mercado.',
-        },
-      ],
-    },
-    {
-      heading: {
-        en: 'How to evaluate an EV listing',
-        ar: 'كيف تقيّم إعلان مركبة كهربائية',
-        ru: 'Как оценить объявление об электромобиле',
-        es: 'Cómo evaluar un anuncio de VE',
-      },
-      paragraphs: [
-        {
-          en: 'For an EV, focus first on the battery: its capacity, state of health, and any diagnostic report. Then check the charging system and connector, and the usual exterior, interior and chassis condition. Review each detail\'s confidence level and ask for anything marked not available that matters to you.',
-          ar: 'بالنسبة للمركبة الكهربائية، ركّز أولًا على البطارية: سعتها وحالة صحتها وأي تقرير تشخيصي. ثم تحقق من نظام الشحن والموصل، والحالة المعتادة للخارجي والداخلي والهيكل. راجع مستوى ثقة كل تفصيل واطلب أي شيء معلَّم بأنه غير متوفر ويهمك.',
-          ru: 'Для электромобиля сначала сосредоточьтесь на батарее: её ёмкость, состояние здоровья и диагностический отчёт. Затем проверьте систему зарядки и разъём, а также обычное состояние кузова, салона и шасси. Проверьте уровень достоверности каждой детали и запросите всё, что помечено как недоступное и важно для вас.',
-          es: 'Para un VE, céntrese primero en la batería: su capacidad, estado de salud y cualquier informe de diagnóstico. Luego compruebe el sistema de carga y el conector, y el estado habitual de exterior, interior y chasis. Revise el nivel de confianza de cada detalle y pida lo que esté marcado como no disponible y le importe.',
-        },
-      ],
-    },
-    {
-      heading: {
-        en: 'EVs and destination incentives',
-        ar: 'المركبات الكهربائية وحوافز الوجهة',
-        ru: 'Электромобили и стимулы в стране назначения',
-        es: 'Los VE y los incentivos de destino',
-      },
-      paragraphs: [
-        {
-          en: 'Some markets offer lower import duties, tax exemptions or other incentives for electric vehicles, while others have specific technical or safety requirements. These rules are destination-specific and change over time, so confirm them for your market before committing — they can materially affect the economics of an EV import.',
-          ar: 'تقدم بعض الأسواق رسوم استيراد أقل أو إعفاءات ضريبية أو حوافز أخرى للمركبات الكهربائية، بينما لدى أخرى متطلبات تقنية أو أمان محددة. هذه القواعد خاصة بكل وجهة وتتغير بمرور الوقت، لذا أكدها لسوقك قبل الالتزام — فقد تؤثر ماديًا على اقتصاديات استيراد المركبة الكهربائية.',
-          ru: 'Некоторые рынки предлагают более низкие пошлины, налоговые льготы или иные стимулы для электромобилей, а другие имеют особые технические требования или требования безопасности. Эти правила зависят от страны и меняются со временем, поэтому подтвердите их для своего рынка до обязательств — они могут существенно повлиять на экономику импорта электромобиля.',
-          es: 'Algunos mercados ofrecen aranceles más bajos, exenciones fiscales u otros incentivos para vehículos eléctricos, mientras que otros tienen requisitos técnicos o de seguridad específicos. Estas normas dependen del destino y cambian con el tiempo, así que confírmelas para su mercado antes de comprometerse: pueden afectar de forma importante a la economía de la importación de un VE.',
-        },
-      ],
-    },
-    {
-      heading: {
-        en: 'Range and real-world expectations',
-        ar: 'المدى وتوقعات الواقع',
-        ru: 'Запас хода и реальные ожидания',
-        es: 'Autonomía y expectativas reales',
-      },
-      paragraphs: [
-        {
-          en: 'A vehicle\'s rated range is measured under standard conditions and differs from real-world range, which falls with cold weather, highway speed, load and climate control use. Set buyer expectations around a realistic range for your market\'s conditions, not the headline figure.',
-          ar: 'يُقاس مدى المركبة المعلن في ظروف قياسية ويختلف عن المدى الفعلي، الذي ينخفض مع الطقس البارد وسرعة الطرق السريعة والحمولة واستخدام التكييف. ضع توقعات المشترين حول مدى واقعي لظروف سوقك، وليس الرقم المعلن.',
-          ru: 'Заявленный запас хода измеряется в стандартных условиях и отличается от реального, который снижается при холоде, на трассе, при нагрузке и использовании климат-контроля. Задавайте ожидания покупателей по реалистичному запасу хода для условий вашего рынка, а не по рекламной цифре.',
-          es: 'La autonomía homologada de un vehículo se mide en condiciones estándar y difiere de la real, que baja con el frío, la velocidad en autopista, la carga y el uso del climatizador. Fije las expectativas de los compradores en torno a una autonomía realista para su mercado, no a la cifra publicitaria.',
-        },
-      ],
-    },
-    {
-      heading: {
-        en: 'Battery health measurement methods',
-        ar: 'طرق قياس صحة البطارية',
-        ru: 'Методы измерения здоровья батареи',
-        es: 'Métodos para medir la salud de la batería',
-      },
-      paragraphs: [
-        {
-          en: 'Battery health is typically measured through a diagnostic readout of the battery management system, which reports state of health and capacity. Where available, a battery diagnostic report is the clearest evidence. Where it is not available, we mark battery health as not available rather than guessing.',
-          ar: 'تُقاس صحة البطارية عادةً عبر قراءة تشخيصية من نظام إدارة البطارية، الذي يبلغ عن حالة الصحة والسعة. وعندما يتوفر، يكون تقرير تشخيص البطارية أوضح دليل. وعندما لا يتوفر، نعلّم صحة البطارية بأنها غير متوفرة بدلًا من التخمين.',
-          ru: 'Здоровье батареи обычно измеряется через диагностическое считывание системы управления батареей, которая сообщает состояние здоровья и ёмкость. При наличии диагностический отчёт по батарее — самое ясное доказательство. Если его нет, мы помечаем здоровье батареи как недоступное, а не угадываем.',
-          es: 'La salud de la batería suele medirse mediante una lectura de diagnóstico del sistema de gestión de batería, que informa del estado de salud y la capacidad. Cuando está disponible, un informe de diagnóstico de batería es la evidencia más clara. Cuando no lo está, marcamos la salud de la batería como no disponible en lugar de adivinar.',
-        },
-      ],
-    },
-    {
-      heading: {
-        en: 'Export and customs for EVs specifically',
-        ar: 'التصدير والجمارك للمركبات الكهربائية تحديدًا',
-        ru: 'Экспорт и таможня именно для электромобилей',
-        es: 'Exportación y aduana específicas para VE',
-      },
-      paragraphs: [
-        {
-          en: 'EVs can involve additional considerations in export and customs: battery transport and handling requirements, and destination-specific technical or charging rules. These depend on the vehicle and the destination country and are confirmed during the quote. Verify the destination\'s EV rules before committing.',
-          ar: 'قد تنطوي المركبات الكهربائية على اعتبارات إضافية في التصدير والجمارك: متطلبات نقل البطارية ومناولتها، وقواعد تقنية أو شحن خاصة بالوجهة. تعتمد هذه على المركبة وبلد الوجهة وتُؤكد أثناء عرض السعر. تحقق من قواعد المركبات الكهربائية في وجهتك قبل الالتزام.',
-          ru: 'Электромобили могут требовать дополнительных условий в экспорте и таможне: требования к транспортировке и обработке батареи, а также технические и зарядные правила страны назначения. Они зависят от автомобиля и страны назначения и подтверждаются при расчёте. Проверьте правила для электромобилей в стране назначения до обязательств.',
-          es: 'Los VE pueden implicar consideraciones adicionales en exportación y aduana: requisitos de transporte y manipulación de la batería, y normas técnicas o de carga específicas del destino. Dependen del vehículo y el país de destino y se confirman durante la cotización. Verifique las normas de VE de su destino antes de comprometerse.',
-        },
-      ],
-    },
-    {
-      heading: {
-        en: 'Battery health — SOH, capacity and chemistry',
-        ar: 'صحة البطارية — حالة الصحة والسعة والكيمياء',
-        ru: 'Здоровье батареи — SOH, ёмкость и химия',
-        es: 'Salud de la batería — SOH, capacidad y química',
-      },
-      paragraphs: [
-        {
-          en: 'State of health (SOH) is the battery\'s current capacity as a proportion of its capacity when new. Usable capacity is what the vehicle can actually draw on, which is usually less than the nominal (rated) capacity. Batteries degrade gradually with age, use and charging habits, and the two main chemistries — LFP (lithium iron phosphate) and NMC (nickel manganese cobalt) — degrade and behave differently. Where a diagnostic report is available it is the clearest evidence; where it is not, we mark battery health as not available rather than guessing.',
-          ar: 'حالة الصحة (SOH) هي سعة البطارية الحالية كنسبة من سعتها عند الجديدة. السعة القابلة للاستخدام هي ما يمكن للمركبة سحبه فعليًا، وعادة تكون أقل من السعة الاسمية (المقدرة). تتدهور البطاريات تدريجيًا مع العمر والاستخدام وعادات الشحن، والكيمياء الرئيسية — LFP (فوسفات الحديد الليثيوم) وNMC (نيكل منغنيز كوبالت) — تتدهوران وتتصرفان بشكل مختلف. عندما يتوفر تقرير تشخيصي يكون أوضح دليل؛ وعندما لا يتوفر، نعلّم صحة البطارية بأنها غير متوفرة بدلًا من التخمين.',
-          ru: 'Состояние здоровья (SOH) — это текущая ёмкость батареи как доля от ёмкости новой. Полезная ёмкость — то, что автомобиль реально может использовать, и она обычно меньше номинальной (паспортной). Батареи деградируют постепенно с возрастом, использованием и привычками зарядки, а две основные химии — LFP (литий-железо-фосфат) и NMC (никель-марганец-кобальт) — деградируют и ведут себя по-разному. При наличии диагностического отчёта он — самое ясное доказательство; если его нет, мы помечаем здоровье батареи как недоступное, а не угадываем.',
-          es: 'El estado de salud (SOH) es la capacidad actual de la batería como proporción de su capacidad de nueva. La capacidad útil es lo que el vehículo puede realmente aprovechar, normalmente menor que la capacidad nominal (homologada). Las baterías se degradan gradualmente con la edad, el uso y los hábitos de carga, y las dos químicas principales — LFP (litio-ferrofosfato) y NMC (níquel-manganeso-cobalto) — se degradan y se comportan de forma distinta. Cuando hay un informe de diagnóstico es la evidencia más clara; si no lo hay, marcamos la salud de la batería como no disponible en lugar de adivinar.',
+          en: 'The table below maps each factor to what to check and why it matters for export. It is a decision aid, not a substitute for verifying the specific vehicle and destination. Any parameter with no published figure is written "Not publicly documented", never guessed.',
+          ar: 'تربط الجدول أدناه كل عامل بما يجب التحقق منه ولماذا يهم التصدير. وهو أداة قرار لا بديل عن التحقق من المركبة والوجهة المحددتين. أي معامل لا رقم منشور له يُكتب «غير موثّق علناً»، ولا يُخمَّن أبداً.',
+          ru: 'Таблица ниже связывает каждый фактор с тем, что проверять и почему это важно для экспорта. Это инструмент принятия решения, а не замена проверки конкретного автомобиля и страны назначения. Любой параметр без опубликованной цифры записывается как «Не задокументировано публично» и никогда не угадывается.',
+          es: 'La tabla siguiente relaciona cada factor con qué comprobar y por qué importa para la exportación. Es una ayuda de decisión, no un sustituto de verificar el vehículo y destino concretos. Cualquier parámetro sin cifra publicada se escribe «No documentado públicamente» y nunca se adivina.',
         },
       ],
       table: {
         headers: [
           { en: 'Factor', ar: 'العامل', ru: 'Фактор', es: 'Factor' },
           { en: 'What to check', ar: 'ما يجب التحقق منه', ru: 'Что проверять', es: 'Qué comprobar' },
-          { en: 'Warning signs', ar: 'علامات التحذير', ru: 'Тревожные сигналы', es: 'Señales de alarma' },
+          { en: 'Why it matters for export', ar: 'لماذا يهم التصدير', ru: 'Почему это важно для экспорта', es: 'Por qué importa para la exportación' },
         ],
         rows: [
           [
             { en: 'State of health (SOH)', ar: 'حالة الصحة (SOH)', ru: 'Состояние здоровья (SOH)', es: 'Estado de salud (SOH)' },
-            { en: 'Ask for a battery diagnostic report showing SOH as a percentage of new capacity.', ar: 'اطلب تقرير تشخيص للبطارية يعرض حالة الصحة كنسبة من سعة الجديدة.', ru: 'Запросите диагностический отчёт по батарее с SOH как процентом от новой ёмкости.', es: 'Pida un informe de diagnóstico de batería que muestre el SOH como porcentaje de la capacidad de nueva.' },
-            { en: 'No diagnostic report available for a battery you cannot otherwise assess.', ar: 'لا يوجد تقرير تشخيصي لبطارية لا يمكنك تقييمها بغير ذلك.', ru: 'Нет диагностического отчёта по батарее, которую иначе оценить нельзя.', es: 'Sin informe de diagnóstico para una batería que no puede evaluar de otro modo.' },
+            { en: 'A battery diagnostic report showing SOH as a percentage of new capacity.', ar: 'تقرير تشخيص للبطارية يعرض حالة الصحة كنسبة من سعة الجديدة.', ru: 'Диагностический отчёт по батарее с SOH как процентом от новой ёмкости.', es: 'Un informe de diagnóstico de batería que muestre el SOH como porcentaje de la capacidad de nueva.' },
+            { en: 'SOH sets real-world range and remaining life — what a destination buyer is actually paying for.', ar: 'تحدد حالة الصحة المدى الفعلي والعمر المتبقي — ما يدفع مشتري الوجهة مقابله فعلياً.', ru: 'SOH задаёт реальный запас хода и остаточный ресурс — то, за что фактически платит покупатель в стране назначения.', es: 'El SOH fija la autonomía real y la vida restante: lo que paga realmente un comprador de destino.' },
           ],
           [
             { en: 'Usable vs nominal capacity', ar: 'السعة القابلة للاستخدام مقابل الاسمية', ru: 'Полезная и номинальная ёмкость', es: 'Capacidad útil frente a nominal' },
-            { en: 'Check the usable (real-world) capacity against the nominal (rated) capacity.', ar: 'تحقق من السعة القابلة للاستخدام (الواقعية) مقابل السعة الاسمية (المقدرة).', ru: 'Проверьте полезную (реальную) ёмкость против номинальной (паспортной).', es: 'Compruebe la capacidad útil (real) frente a la nominal (homologada).' },
-            { en: 'A large, unexplained gap between usable and nominal capacity.', ar: 'فجوة كبيرة غير مفسرة بين السعة القابلة للاستخدام والاسمية.', ru: 'Большой необъяснимый разрыв между полезной и номинальной ёмкостью.', es: 'Una brecha grande e inexplicada entre la capacidad útil y la nominal.' },
+            { en: 'Usable capacity against the nominal (rated) figure.', ar: 'السعة القابلة للاستخدام مقابل الرقم الاسمي (المُقدَّر).', ru: 'Полезная ёмкость против номинальной (паспортной).', es: 'La capacidad útil frente a la nominal (homologada).' },
+            { en: 'A large gap means the advertised range overstates what the vehicle can deliver, hurting resale in the destination.', ar: 'الفجوة الكبيرة تعني أن المدى المُعلَن يبالغ فيما يمكن للمركبة تقديمه، مما يضر بإعادة البيع في الوجهة.', ru: 'Большой разрыв означает, что заявленный запас хода завышает реальные возможности, что вредит перепродаже в стране назначения.', es: 'Una brecha grande significa que la autonomía anunciada exagera lo que el vehículo entrega, perjudicando la reventa en destino.' },
           ],
           [
-            { en: 'Degradation and chemistry', ar: 'التدهور والكيمياء', ru: 'Деградация и химия', es: 'Degradación y química' },
-            { en: 'Consider the battery\'s age, chemistry (LFP vs NMC) and how it has been used and charged.', ar: 'راعِ عمر البطارية وكيميائها (LFP مقابل NMC) وكيف استُخدمت وشُحنت.', ru: 'Учитывайте возраст батареи, химию (LFP или NMC) и то, как её использовали и заряжали.', es: 'Considere la edad de la batería, su química (LFP frente a NMC) y cómo se ha usado y cargado.' },
-            { en: 'A degradation curve that is unusually steep for the vehicle\'s age and chemistry.', ar: 'منحنى تدهور شديد بشكل غير معتاد بالنسبة لعمر المركبة وكيميائها.', ru: 'Кривая деградации, необычно крутая для возраста автомобиля и химии.', es: 'Una curva de degradación inusualmente pronunciada para la edad y química del vehículo.' },
+            { en: 'Degradation & chemistry', ar: 'التدهور والكيمياء', ru: 'Деградация и химия', es: 'Degradación y química' },
+            { en: 'Age, chemistry (LFP vs NMC) and how the battery has been used and charged.', ar: 'العمر والكيمياء (LFP مقابل NMC) وكيف استُخدمت البطارية وشُحنت.', ru: 'Возраст, химия (LFP или NMC) и то, как батарею использовали и заряжали.', es: 'La edad, la química (LFP frente a NMC) y cómo se ha usado y cargado la batería.' },
+            { en: 'The destination\'s climate and charging patterns change future degradation, and chemistry shifts cold-weather range and charging behaviour.', ar: 'يغيّر مناخ الوجهة وأنماط الشحن فيها التدهور المستقبلي، وتنقل الكيمياء مدى الطقس البارد وسلوك الشحن.', ru: 'Климат и режим зарядки в стране назначения меняют будущую деградацию, а химия сдвигает запас хода в холод и поведение при зарядке.', es: 'El clima y los patrones de carga del destino cambian la degradación futura, y la química desplaza la autonomía en frío y el comportamiento de carga.' },
           ],
           [
-            { en: 'Charging system', ar: 'نظام الشحن', ru: 'Система зарядки', es: 'Sistema de carga' },
-            { en: 'Check the connector standard, voltage and any charging limits against your market.', ar: 'تحقق من معيار الموصل والجهد وأي حدود شحن مقابل سوقك.', ru: 'Проверьте стандарт разъёма, напряжение и ограничения зарядки относительно вашего рынка.', es: 'Compruebe el estándar del conector, el voltaje y los límites de carga frente a su mercado.' },
-            { en: 'A connector or electrical system your market\'s infrastructure does not support.', ar: 'موصل أو نظام كهربائي لا تدعمه البنية التحتية في سوقك.', ru: 'Разъём или электрическая система, не поддерживаемые инфраструктурой вашего рынка.', es: 'Un conector o sistema eléctrico que la infraestructura de su mercado no admite.' },
+            { en: 'Charging & fast charging', ar: 'الشحن والشحن السريع', ru: 'Зарядка и быстрая зарядка', es: 'Carga y carga rápida' },
+            { en: 'AC charging capability and DC fast-charging speed and standard.', ar: 'قدرة الشحن بالتيار المتردد وسرعة ومعيار الشحن السريع بالتيار المستمر.', ru: 'Возможность зарядки AC и скорость и стандарт быстрой зарядки DC.', es: 'La capacidad de carga de CA y la velocidad y estándar de carga rápida de CC.' },
+            { en: 'Fast-charging determines usability where home charging is scarce, and the standard must match the destination network.', ar: 'يحدد الشحن السريع قابلية الاستخدام حيث يندر الشحن المنزلي، ويجب أن يطابق المعيار شبكة الوجهة.', ru: 'Быстрая зарядка определяет пригодность там, где домашняя зарядка ограничена, а стандарт должен совпадать с сетью страны назначения.', es: 'La carga rápida determina la usabilidad donde escasea la carga doméstica, y el estándar debe coincidir con la red de destino.' },
           ],
           [
-            { en: 'Warranty', ar: 'الضمان', ru: 'Гарантия', es: 'Garantía' },
-            { en: 'Check whether a battery warranty applies and whether it transfers to your export market.', ar: 'تحقق مما إذا كان ضمان البطارية ساريًا وهل ينتقل إلى سوق التصدير لديك.', ru: 'Проверьте, действует ли гарантия на батарею и переносится ли она на ваш экспортный рынок.', es: 'Compruebe si se aplica una garantía de batería y si se transfiere a su mercado de exportación.' },
-            { en: 'A warranty that is not valid outside the domestic market, with no local support.', ar: 'ضمان غير سارٍ خارج السوق المحلي، دون دعم محلي.', ru: 'Гарантия, не действующая за пределами внутреннего рынка, без локальной поддержки.', es: 'Una garantía no válida fuera del mercado interno, sin soporte local.' },
+            { en: 'Battery warranty', ar: 'ضمان البطارية', ru: 'Гарантия на батарею', es: 'Garantía de batería' },
+            { en: 'Whether the warranty applies and whether it transfers to the export market.', ar: 'ما إذا كان الضمان سارياً وما إذا كان ينتقل إلى سوق التصدير.', ru: 'Действует ли гарантия и переносится ли она на экспортный рынок.', es: 'Si la garantía aplica y si se transfiere al mercado de exportación.' },
+            { en: 'A non-transferring warranty removes the buyer\'s safety net and lowers the price they will pay.', ar: 'الضمان غير المنتقل يزيل شبكة أمان المشتري ويخفض السعر الذي سيدفعه.', ru: 'Непередаваемая гарантия лишает покупателя подушки безопасности и снижает цену, которую он заплатит.', es: 'Una garantía no transferible elimina la red de seguridad del comprador y baja el precio que pagará.' },
+          ],
+          [
+            { en: 'Vehicle category', ar: 'فئة المركبة', ru: 'Категория автомобиля', es: 'Categoría del vehículo' },
+            { en: 'Whether the vehicle is a BEV, PHEV or EREV.', ar: 'ما إذا كانت المركبة BEV أو PHEV أو EREV.', ru: 'Является ли автомобиль BEV, PHEV или EREV.', es: 'Si el vehículo es BEV, PHEV o EREV.' },
+            { en: 'The category decides which duties, rules and charging infrastructure apply at the destination.', ar: 'تحدد الفئة الرسوم والقواعد وبنية الشحن التي تنطبق في الوجهة.', ru: 'Категория определяет, какие пошлины, правила и зарядная инфраструктура применяются в стране назначения.', es: 'La categoría decide qué aranceles, normas e infraestructura de carga aplican en destino.' },
+          ],
+          [
+            { en: 'Domestic vs export specification', ar: 'المواصفات المحلية مقابل التصديرية', ru: 'Внутренняя и экспортная спецификация', es: 'Especificación nacional frente a exportación' },
+            { en: 'Whether the vehicle is a China-domestic spec or an official export version.', ar: 'ما إذا كانت المركبة بمواصفات السوق الصيني المحلي أو نسخة تصدير رسمية.', ru: 'Автомобиль внутренней китайской спецификации или официальная экспортная версия.', es: 'Si el vehículo es de especificación nacional china o una versión oficial de exportación.' },
+            { en: 'Domestic spec may need a connector adapter, carry region-locked software, or fail destination homologation.', ar: 'قد تحتاج المواصفات المحلية محول موصل، أو تحمل برمجيات مقفلة إقليمياً، أو تفشل في اعتماد الطراز في الوجهة.', ru: 'Внутренняя спецификация может требовать адаптер разъёма, нести привязанное к региону ПО или не пройти омологацию страны назначения.', es: 'La especificación nacional puede requerir adaptador de conector, traer software bloqueado por región o fallar la homologación de destino.' },
+          ],
+          [
+            { en: 'Connector & charging standard', ar: 'الموصل ومعيار الشحن', ru: 'Разъём и стандарт зарядки', es: 'Conector y estándar de carga' },
+            { en: 'The vehicle\'s port (e.g. GB/T) against the destination standard (e.g. CCS2, CHAdeMO).', ar: 'منفذ المركبة (مثل GB/T) مقابل معيار الوجهة (مثل CCS2 أو CHAdeMO).', ru: 'Порт автомобиля (например, GB/T) против стандарта страны назначения (например, CCS2, CHAdeMO).', es: 'El puerto del vehículo (p. ej. GB/T) frente al estándar de destino (p. ej. CCS2, CHAdeMO).' },
+            { en: 'A mismatch blocks or complicates charging, and adapters are not always practical for daily fast charging.', ar: 'عدم التطابق يمنع الشحن أو يعقّده، والمحولات ليست دائماً عملية للشحن السريع اليومي.', ru: 'Несовпадение блокирует или усложняет зарядку, а адаптеры не всегда практичны для ежедневной быстрой зарядки.', es: 'Un desajuste bloquea o complica la carga, y los adaptadores no siempre son prácticos para la carga rápida diaria.' },
+          ],
+          [
+            { en: 'Voltage, frequency & infrastructure', ar: 'الجهد والتردد والبنية التحتية', ru: 'Напряжение, частота и инфраструктура', es: 'Voltaje, frecuencia e infraestructura' },
+            { en: 'On-board charger support for the destination\'s voltage/frequency and local charging density.', ar: 'دعم الشاحن المدمج لجهد/تردد الوجهة وكثافة الشحن المحلية.', ru: 'Поддержка встроенным зарядным устройством напряжения/частоты страны и плотность местной зарядки.', es: 'El soporte del cargador de a bordo para el voltaje/frecuencia del destino y la densidad de carga local.' },
+            { en: 'Even a matching connector fails if the electrical system or network density does not suit the market.', ar: 'حتى الموصل المطابق يفشل إذا لم يناسب النظام الكهربائي أو كثافة الشبكة السوق.', ru: 'Даже совпадающий разъём не поможет, если электрическая система или плотность сети не подходят рынку.', es: 'Incluso un conector que coincide falla si el sistema eléctrico o la densidad de red no se adaptan al mercado.' },
+          ],
+          [
+            { en: 'Software, OTA & connected services', ar: 'البرمجيات والتحديث اللاسلكي والخدمات المتصلة', ru: 'ПО, OTA и подключённые сервисы', es: 'Software, OTA y servicios conectados' },
+            { en: 'Whether infotainment, navigation, OTA updates, app and connected services work in the destination.', ar: 'ما إذا كانت أنظمة الترفيه والملاحة والتحديثات اللاسلكية والتطبيق والخدمات المتصلة تعمل في الوجهة.', ru: 'Работают ли мультимедиа, навигация, обновления по воздуху, приложение и подключённые сервисы в стране назначения.', es: 'Si el infoentretenimiento, la navegación, las OTA, la app y los servicios conectados funcionan en destino.' },
+            { en: 'Region-locked software or an unavailable app degrades the daily experience and resale appeal — often only visible after arrival.', ar: 'البرمجيات المقفلة إقليمياً أو التطبيق غير المتوفر يخفضان التجربة اليومية وجاذبية إعادة البيع — وغالباً لا يظهران إلا بعد الوصول.', ru: 'Привязанное к региону ПО или недоступное приложение ухудшают ежедневный опыт и привлекательность при перепродаже — часто видно только после прибытия.', es: 'El software bloqueado por región o una app no disponible degradan la experiencia diaria y el atractivo de reventa, a menudo solo visibles tras la llegada.' },
+          ],
+          [
+            { en: 'Parts, service & destination eligibility', ar: 'قطع الغيار والخدمة وأهلية الوجهة', ru: 'Запчасти, сервис и пригодность для страны', es: 'Repuestos, servicio y elegibilidad de destino' },
+            { en: 'Local parts/service for the model, and the destination\'s import eligibility and EV rules.', ar: 'قطع الغيار/الخدمة المحلية للطراز، وأهلية الاستيراد وقواعد المركبات الكهربائية في الوجهة.', ru: 'Местные запчасти/сервис для модели, а также правила импорта и нормы для электромобилей в стране.', es: 'Repuestos/servicio local del modelo, y la elegibilidad de importación y las normas de VE del destino.' },
+            { en: 'Weak support or restrictive rules can make an otherwise good EV a poor commercial choice in a specific market.', ar: 'قد يجعل الدعم الضعيف أو القواعد المقيِّدة مركبة كهربائية جيدة خياراً تجارياً ضعيفاً في سوق معين.', ru: 'Слабая поддержка или ограничительные правила могут сделать в целом хороший электромобиль плохим коммерческим выбором на конкретном рынке.', es: 'Un soporte débil o normas restrictivas pueden hacer que un VE por lo demás bueno sea una mala opción comercial en un mercado concreto.' },
           ],
         ],
       },
-    },
-    {
-      heading: {
-        en: 'Charging standards and compatibility',
-        ar: 'معايير الشحن والتوافق',
-        ru: 'Стандарты зарядки и совместимость',
-        es: 'Estándares de carga y compatibilidad',
-      },
-      paragraphs: [
-        {
-          en: 'Charging connectors and standards differ by region. China\'s domestic standard is GB/T; other markets commonly use CCS2 (Europe and several other regions), CHAdeMO (notably Japan) or North American connectors. A vehicle built for the Chinese market may use a connector and electrical system that is less common in your destination, and its software, over-the-air updates, app and connected services may be region- or language-locked. Check compatibility — connector, voltage and frequency, software and language — against your market\'s infrastructure before buying, and confirm whether adapters are practical for your use.',
-          ar: 'تختلف موصلات ومعايير الشحن حسب المنطقة. المعيار المحلي في الصين هو GB/T؛ وتستخدم أسواق أخرى عادة CCS2 (أوروبا ومناطق أخرى عدة)، أو CHAdeMO (خاصة اليابان) أو موصلات أمريكا الشمالية. قد تستخدم المركبة المصنوعة للسوق الصيني موصلًا ونظامًا كهربائيًا أقل شيوعًا في وجهتك، وقد تكون برمجياتها وتحديثاتها اللاسلكية وتطبيقها وخدماتها المتصلة مقفلة حسب المنطقة أو اللغة. تحقق من التوافق — الموصل والجهد والتردد والبرمجيات واللغة — مقابل البنية التحتية في سوقك قبل الشراء، وأكد ما إذا كانت المحولات عملية لاستخدامك.',
-          ru: 'Разъёмы и стандарты зарядки различаются по регионам. Внутренний стандарт Китая — GB/T; в других рынках обычно используются CCS2 (Европа и ряд других регионов), CHAdeMO (особенно Япония) или североамериканские разъёмы. Автомобиль, созданный для китайского рынка, может использовать разъём и электрическую систему, менее распространённые в вашей стране, а его ПО, обновления по воздуху, приложение и подключённые сервисы могут быть привязаны к региону или языку. Проверьте совместимость — разъём, напряжение и частоту, ПО и язык — с инфраструктурой вашего рынка до покупки и подтвердите, практичны ли адаптеры для вашего использования.',
-          es: 'Los conectores y estándares de carga difieren por región. El estándar interno de China es GB/T; otros mercados suelen usar CCS2 (Europa y otras regiones), CHAdeMO (sobre todo Japón) o conectores norteamericanos. Un vehículo fabricado para el mercado chino puede usar un conector y un sistema eléctrico menos comunes en su destino, y su software, actualizaciones por aire, app y servicios conectados pueden estar bloqueados por región o idioma. Compruebe la compatibilidad — conector, voltaje y frecuencia, software e idioma — con la infraestructura de su mercado antes de comprar, y confirme si los adaptadores son prácticos para su uso.',
-        },
-      ],
     },
     {
       heading: {
@@ -376,10 +287,10 @@ export const buyingEvs = {
       },
       paragraphs: [
         {
-          en: 'The depth of EV checking varies. A nearly new BEV with a diagnostic report needs less scrutiny than an older PHEV with no battery data; a market with strong EV incentives changes the economics; and a model with an official export version may already match your market\'s charging standard. The principle is the same — weigh battery condition and compatibility against the vehicle\'s value and your destination\'s rules.',
-          ar: 'يختلف عمق فحص المركبة الكهربائية. فالمركبة الكهربائية بالكامل شبه الجديدة ذات التقرير التشخيصي تحتاج فحصًا أقل من هجينة أقدم دون بيانات بطارية؛ ويغير السوق ذو حوافز المركبات الكهربائية القوية الاقتصاديات؛ وقد يطابق الطراز ذو النسخة التصديرية الرسمية معيار الشحن في سوقك بالفعل. المبدأ واحد — وازن بين حالة البطارية والتوافق وقيمة المركبة وقواعد وجهتك.',
-          ru: 'Глубина проверки электромобиля зависит от случая. Почти новый BEV с диагностическим отчётом требует меньше проверок, чем старый PHEV без данных о батарее; рынок с сильными стимулами для электромобилей меняет экономику; модель с официальной экспортной версией может уже соответствовать стандарту зарядки вашего рынка. Принцип тот же — сопоставьте состояние батареи и совместимость со стоимостью автомобиля и правилами вашей страны.',
-          es: 'La profundidad de comprobación de un VE varía. Un BEV seminuevo con informe de diagnóstico necesita menos escrutinio que un PHEV más antiguo sin datos de batería; un mercado con fuertes incentivos para VE cambia la economía; y un modelo con versión de exportación oficial puede ya coincidir con el estándar de carga de su mercado. El principio es el mismo: sopese el estado de la batería y la compatibilidad con el valor del vehículo y las normas de su destino.',
+          en: 'The depth of checking varies. A nearly new BEV with a diagnostic report needs less scrutiny than an older PHEV with no battery data; an official export version may already match the destination\'s charging standard; and a market with strong EV incentives changes the economics. The principle is constant — weigh battery condition and compatibility against the vehicle\'s value and the destination\'s rules.',
+          ar: 'يختلف عمق الفحص. فالمركبة الكهربائية بالكامل شبه الجديدة ذات التقرير التشخيصي تحتاج فحصاً أقل من هجينة أقدم دون بيانات بطارية؛ وقد تطابق نسخة التصدير الرسمية معيار الشحن في الوجهة بالفعل؛ ويغيّر السوق ذو حوافز المركبات الكهربائية القوية الاقتصاديات. المبدأ ثابت — وازن بين حالة البطارية والتوافق وقيمة المركبة وقواعد الوجهة.',
+          ru: 'Глубина проверки зависит от случая. Почти новый BEV с диагностическим отчётом требует меньше проверок, чем старый PHEV без данных о батарее; официальная экспортная версия может уже соответствовать стандарту зарядки страны назначения; рынок с сильными стимулами для электромобилей меняет экономику. Принцип неизменен — сопоставляйте состояние батареи и совместимость со стоимостью автомобиля и правилами страны.',
+          es: 'La profundidad de comprobación varía. Un BEV seminuevo con informe de diagnóstico necesita menos escrutinio que un PHEV antiguo sin datos de batería; una versión oficial de exportación puede ya coincidir con el estándar de carga del destino; y un mercado con fuertes incentivos para VE cambia la economía. El principio es constante: sopese el estado de la batería y la compatibilidad con el valor del vehículo y las normas del destino.',
         },
       ],
     },
@@ -392,10 +303,10 @@ export const buyingEvs = {
       },
       paragraphs: [
         {
-          en: 'EV import rules, duties, incentives and technical requirements are destination-specific and maintained on the Market sub-site (each rule with a source and last-checked date). The EV import centre compares EV policy across markets.',
-          ar: 'قواعد استيراد المركبات الكهربائية والرسوم والحوافز والمتطلبات التقنية خاصة بكل وجهة وتُصان في الموقع الفرعي للأسواق (كل حكم بمصدر وتاريخ آخر فحص). يقارن مركز استيراد المركبات الكهربائية سياسات المركبات الكهربائية عبر الأسواق.',
-          ru: 'Правила импорта электромобилей, пошлины, стимулы и технические требования специфичны для страны и ведутся на подсайте Market (каждое правило с источником и датой последней проверки). Центр импорта электромобилей сравнивает политику по рынкам.',
-          es: 'Las normas de importación de VE, aranceles, incentivos y requisitos técnicos son específicos del destino y se mantienen en el subsitio Market (cada norma con fuente y fecha de última comprobación). El centro de importación de VE compara la política entre mercados.',
+          en: 'EV import rules, duties, incentives and technical requirements are destination-specific and maintained on the Market sub-site (each rule with a source and last-checked date). The EV import centre compares EV policy across markets, and each country page carries an EV rules section.',
+          ar: 'قواعد استيراد المركبات الكهربائية والرسوم والحوافز والمتطلبات التقنية خاصة بكل وجهة وتُصان في الموقع الفرعي للأسواق (كل حكم بمصدر وتاريخ آخر فحص). يقارن مركز استيراد المركبات الكهربائية سياسات المركبات الكهربائية عبر الأسواق، وتحمل كل صفحة بلد قسماً لقواعد المركبات الكهربائية.',
+          ru: 'Правила импорта электромобилей, пошлины, стимулы и технические требования специфичны для страны и ведутся на подсайте Market (каждое правило с источником и датой последней проверки). Центр импорта электромобилей сравнивает политику по рынкам, а каждая страница страны содержит раздел правил для электромобилей.',
+          es: 'Las normas de importación de VE, aranceles, incentivos y requisitos técnicos son específicos del destino y se mantienen en el subsitio Market (cada norma con fuente y fecha de última comprobación). El centro de importación de VE compara la política entre mercados, y cada página de país lleva una sección de normas de VE.',
         },
       ],
       links: [
@@ -419,13 +330,49 @@ export const buyingEvs = {
       },
       paragraphs: [
         {
-          en: 'EV and hybrid model specifications live on the Data sub-site. For the condition and battery checks that precede purchase, see the Inspection guide; for the full commercial decision, see the How to Buy guide\'s suitability framework.',
-          ar: 'توجد مواصفات طرازات المركبات الكهربائية والهجينة في الموقع الفرعي للبيانات. لفحوصات الحالة والبطارية التي تسبق الشراء، راجع دليل الفحص؛ وللقرار التجاري الكامل، راجع إطار الملاءمة في دليل «كيف تشتري».',
-          ru: 'Спецификации электрических и гибридных моделей находятся на подсайте Data. По проверкам состояния и батареи перед покупкой см. руководство по проверке; по полному коммерческому решению — структуру пригодности в руководстве «Как купить».',
-          es: 'Las especificaciones de modelos EV e híbridos viven en el subsitio Data. Para las comprobaciones de estado y batería previas a la compra, consulte la guía de inspección; para la decisión comercial completa, el marco de idoneidad de la guía «Cómo comprar».',
+          en: 'EV, PHEV and EREV model specifications live on the Data sub-site — each model page carries powertrain, battery capacity, range and a source/confidence note. For the condition and battery checks that precede purchase, see the Inspection guide; for the full commercial decision, see the How to Buy guide.',
+          ar: 'توجد مواصفات طرازات BEV وPHEV وEREV في الموقع الفرعي للبيانات — تحمل كل صفحة طراز نظام الدفع وسعة البطارية والمدى وملاحظة مصدر/ثقة. لفحوصات الحالة والبطارية التي تسبق الشراء، راجع دليل الفحص؛ وللقرار التجاري الكامل، راجع دليل «كيف تشتري».',
+          ru: 'Спецификации моделей BEV, PHEV и EREV находятся на подсайте Data — каждая страница модели содержит силовую установку, ёмкость батареи, запас хода и пометку источника/достоверности. По проверкам состояния и батареи перед покупкой см. руководство по проверке; по полному коммерческому решению — руководство «Как купить».',
+          es: 'Las especificaciones de modelos BEV, PHEV y EREV viven en el subsitio Data: cada página de modelo lleva la motorización, la capacidad de batería, la autonomía y una nota de fuente/confianza. Para las comprobaciones de estado y batería previas a la compra, consulte la guía de inspección; para la decisión comercial completa, la guía «Cómo comprar».',
         },
       ],
       links: [
+        {
+          href: 'https://data.chinausedautohub.com/models/byd-atto-3/',
+          label: {
+            en: 'BYD Atto 3 — EV model data',
+            ar: 'BYD Atto 3 — بيانات طراز كهربائي',
+            ru: 'BYD Atto 3 — данные модели электромобиля',
+            es: 'BYD Atto 3 — datos del modelo EV',
+          },
+        },
+        {
+          href: 'https://data.chinausedautohub.com/models/byd-seal/',
+          label: {
+            en: 'BYD Seal — EV model data',
+            ar: 'BYD Seal — بيانات طراز كهربائي',
+            ru: 'BYD Seal — данные модели электромобиля',
+            es: 'BYD Seal — datos del modelo EV',
+          },
+        },
+        {
+          href: 'https://data.chinausedautohub.com/models/li-auto-l7/',
+          label: {
+            en: 'Li Auto L7 — EREV model data',
+            ar: 'Li Auto L7 — بيانات طراز ممتد المدى',
+            ru: 'Li Auto L7 — данные модели EREV',
+            es: 'Li Auto L7 — datos del modelo EREV',
+          },
+        },
+        {
+          href: 'https://data.chinausedautohub.com/models/byd-song-plus/',
+          label: {
+            en: 'BYD Song Plus — PHEV/EV model data',
+            ar: 'BYD Song Plus — بيانات طراز هجين/كهربائي',
+            ru: 'BYD Song Plus — данные модели PHEV/EV',
+            es: 'BYD Song Plus — datos del modelo PHEV/EV',
+          },
+        },
         {
           slug: 'vehicle-inspection',
           label: {
@@ -491,10 +438,10 @@ export const buyingEvs = {
       },
       paragraphs: [
         {
-          en: 'Battery and charging information is presented only when we hold it, with a confidence level; we do not fabricate SOH or range figures. EV import rules and incentives are sourced on the Market sub-site (each with a cited source), and model specifications on the Data sub-site. Charging-standard compatibility should be verified for the specific vehicle and destination.',
-          ar: 'تُعرض معلومات البطارية والشحن فقط عندما نحتفظ بها، مع مستوى ثقة؛ ولا نختلق أرقام حالة الصحة أو المدى. تصدر قواعد وحوافز استيراد المركبات الكهربائية من الموقع الفرعي للأسواق (كل منها بمصدر مستشهد به)، ومواصفات الطرازات من الموقع الفرعي للبيانات. يجب التحقق من توافق معيار الشحن للمركبة والوجهة المحددتين.',
-          ru: 'Информация о батарее и зарядке показывается только при её наличии, с уровнем достоверности; мы не выдумываем цифры SOH или запаса хода. Правила и стимулы импорта электромобилей берутся на подсайте Market (каждое с указанным источником), а спецификации моделей — на подсайте Data. Совместимость стандарта зарядки нужно проверять для конкретного автомобиля и страны.',
-          es: 'La información de batería y carga se presenta solo cuando la tenemos, con un nivel de confianza; no fabricamos cifras de SOH ni de autonomía. Las normas e incentivos de importación de VE proceden del subsitio Market (cada uno con fuente citada) y las especificaciones de modelos del subsitio Data. La compatibilidad del estándar de carga debe verificarse para el vehículo y destino concretos.',
+          en: 'Battery and charging information is presented only when we hold it, with a confidence level. We do not fabricate SOH, capacity, range or chemistry figures; a parameter with no published figure is written "Not publicly documented", and battery health without a diagnostic report is marked "Not available". EV import rules and incentives are sourced on the Market sub-site (each with a cited source), and model specifications on the Data sub-site. Charging-standard compatibility should be verified for the specific vehicle and destination.',
+          ar: 'تُعرض معلومات البطارية والشحن فقط عندما نحتفظ بها، مع مستوى ثقة. ولا نختلق أرقام حالة الصحة أو السعة أو المدى أو الكيمياء؛ فالمعامل الذي لا رقم منشور له يُكتب «غير موثّق علناً»، وتُعلَّم صحة البطارية دون تقرير تشخيصي بأنها «غير متوفرة». تصدر قواعد وحوافز استيراد المركبات الكهربائية من الموقع الفرعي للأسواق (كل منها بمصدر مستشهد به)، ومواصفات الطرازات من الموقع الفرعي للبيانات. يجب التحقق من توافق معيار الشحن للمركبة والوجهة المحددتين.',
+          ru: 'Информация о батарее и зарядке показывается только при её наличии, с уровнем достоверности. Мы не выдумываем цифры SOH, ёмкости, запаса хода или химии; параметр без опубликованной цифры записывается как «Не задокументировано публично», а здоровье батареи без диагностического отчёта помечается как «Недоступно». Правила и стимулы импорта электромобилей берутся на подсайте Market (каждое с указанным источником), а спецификации моделей — на подсайте Data. Совместимость стандарта зарядки нужно проверять для конкретного автомобиля и страны.',
+          es: 'La información de batería y carga se presenta solo cuando la tenemos, con un nivel de confianza. No fabricamos cifras de SOH, capacidad, autonomía ni química; un parámetro sin cifra publicada se escribe «No documentado públicamente», y la salud de batería sin informe de diagnóstico se marca «No disponible». Las normas e incentivos de importación de VE proceden del subsitio Market (cada uno con fuente citada) y las especificaciones de modelos del subsitio Data. La compatibilidad del estándar de carga debe verificarse para el vehículo y destino concretos.',
         },
       ],
     },
@@ -507,10 +454,10 @@ export const buyingEvs = {
       },
       paragraphs: [
         {
-          en: 'Last reviewed: 2026-10-04. This guide describes EV considerations in general; battery health, charging compatibility and destination rules must be verified for the specific vehicle and market. Confirm any figure that affects your decision with a current quote or diagnostic before committing.',
-          ar: 'آخر مراجعة: 2026-10-04. يصف هذا الدليل اعتبارات المركبات الكهربائية عمومًا؛ يجب التحقق من صحة البطارية وتوافق الشحن وقواعد الوجهة للمركبة والسوق المحددين. أكد أي رقم يؤثر على قرارك بعرض سعر أو تشخيص حالي قبل الالتزام.',
-          ru: 'Последняя проверка: 2026-10-04. Это руководство описывает соображения по электромобилям в общем виде; здоровье батареи, совместимость зарядки и правила страны нужно проверять для конкретного автомобиля и рынка. Подтвердите любую важную цифру актуальным расчётом или диагностикой до обязательств.',
-          es: 'Última revisión: 2026-10-04. Esta guía describe las consideraciones de VE en general; la salud de la batería, la compatibilidad de carga y las normas de destino deben verificarse para el vehículo y mercado concretos. Confirme cualquier cifra que afecte a su decisión con una cotización o diagnóstico actual antes de comprometerse.',
+          en: 'Last reviewed: 2026-10-04. This guide describes EV export considerations in general; battery health, charging compatibility and destination rules must be verified for the specific vehicle and market. Confirm any figure that affects your decision with a current quote or diagnostic before committing.',
+          ar: 'آخر مراجعة: 2026-10-04. يصف هذا الدليل اعتبارات تصدير المركبات الكهربائية عمومًا؛ يجب التحقق من صحة البطارية وتوافق الشحن وقواعد الوجهة للمركبة والسوق المحددين. أكد أي رقم يؤثر على قرارك بعرض سعر أو تشخيص حالي قبل الالتزام.',
+          ru: 'Последняя проверка: 2026-10-04. Это руководство описывает соображения по экспорту электромобилей в общем виде; здоровье батареи, совместимость зарядки и правила страны нужно проверять для конкретного автомобиля и рынка. Подтвердите любую важную цифру актуальным расчётом или диагностикой до обязательств.',
+          es: 'Última revisión: 2026-10-04. Esta guía describe las consideraciones de exportación de VE en general; la salud de la batería, la compatibilidad de carga y las normas de destino deben verificarse para el vehículo y mercado concretos. Confirme cualquier cifra que afecte a su decisión con una cotización o diagnóstico actual antes de comprometerse.',
         },
       ],
     },
