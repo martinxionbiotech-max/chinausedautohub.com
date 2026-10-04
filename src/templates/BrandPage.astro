@@ -17,6 +17,7 @@ import { getTranslations } from '../i18n';
 import { GUIDES } from '../i18n/guides';
 import { pick } from '../i18n/l10n';
 import { getBrandKnowledge } from '../i18n/brands';
+import { getBrandDetail } from '../i18n/brands-detail';
 import { bodyTypeName, brandOverview, modelDescription, powertrainName } from '../i18n/reference';
 import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
 import type { Vehicle } from '../lib/types';
@@ -61,6 +62,17 @@ const fuelSlugs = Array.from(new Set(vehicles.map((v) => v.fuel)));
 const powertrainOptions = fuelSlugs.map((s) => getPowertrain(s)).filter(Boolean);
 
 const knowledge = getBrandKnowledge(brandSlug, locale);
+const detail = getBrandDetail(brandSlug, locale);
+
+// Per-brand model families derived from the data layer (never invented).
+const detailRows: { label: string; value: string }[] = [
+  { label: t.brands.majorSegments, value: detail.majorSegments },
+  { label: t.brands.exportModels, value: detail.exportModels },
+  { label: t.brands.portfolio, value: detail.portfolio },
+  { label: t.brands.usedMarket, value: detail.usedMarket },
+  { label: t.brands.modelFamilies, value: detail.modelFamilies },
+  { label: t.brands.destinationConsiderations, value: detail.destinationConsiderations },
+];
 
 const title = `${brand.name} — ${t.brands.vehiclesForExport}`;
 const description = `${t.listing.descriptionPrefix} ${available.length} ${t.listing.available} ${brand.name} — ${t.brands.vehiclesForExport}.`;
@@ -174,6 +186,19 @@ const requestBrandHref = localizedUrl('/contact/', locale);
         <h2 class="text-lg font-semibold text-ink">{t.brands.exportConsideration}</h2>
         <p class="mt-2 text-sm text-ink-soft">{knowledge.exportConsideration}</p>
       </div>
+    </div>
+  </section>
+
+  <!-- PROCUREMENT-DETAIL SECTIONS (PHASE 5) -->
+  <section class="container-site mt-12">
+    <h2 class="text-xl font-bold text-ink">{t.brands.whyConsider}</h2>
+    <div class="mt-4 grid gap-5 lg:grid-cols-2">
+      {detailRows.map((r) => (
+        <div class="card p-6">
+          <h3 class="text-base font-semibold text-ink">{r.label}</h3>
+          <p class="mt-2 text-sm text-ink-soft">{r.value}</p>
+        </div>
+      ))}
     </div>
   </section>
 

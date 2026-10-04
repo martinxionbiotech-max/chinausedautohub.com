@@ -7,6 +7,16 @@ import { shipping } from './shipping';
 import { fobVsCifVsCfr } from './fob-vs-cif-vs-cfr';
 import { landedCost } from './landed-cost';
 import { buyingEvs } from './buying-chinese-evs-for-export';
+import { evaluateSupplier } from './evaluate-chinese-used-car-supplier';
+import { compareChineseUsedEvs } from './compare-chinese-used-evs';
+import { evVsIce } from './ev-vs-ice-vehicles-from-china';
+import { domesticVsExportSpec } from './china-domestic-vs-export-specification';
+import { evaluateByd } from './evaluate-used-byd';
+import { evaluateGeely } from './evaluate-used-geely';
+import { evaluateChery } from './evaluate-used-chery';
+import { checkEvBatteryHealth } from './check-used-ev-battery-health';
+import { checkMileageHistory } from './check-mileage-and-vehicle-history';
+import { roroVsContainer } from './roro-vs-container-shipping';
 
 export interface GuideSection {
   heading: L10n;
@@ -74,6 +84,16 @@ export const GUIDES: GuideContent[] = [
   fobVsCifVsCfr,
   landedCost,
   buyingEvs,
+  evaluateSupplier,
+  compareChineseUsedEvs,
+  evVsIce,
+  domesticVsExportSpec,
+  evaluateByd,
+  evaluateGeely,
+  evaluateChery,
+  checkEvBatteryHealth,
+  checkMileageHistory,
+  roroVsContainer,
 ];
 
 export function getGuide(slug: string): GuideContent | undefined {

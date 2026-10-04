@@ -310,6 +310,12 @@
     "powertrainOptions": "Powertrain Options",
     "chinaPosition": "China Domestic Market Position",
     "exportConsideration": "China-Market vs Export-Version Considerations",
+    "majorSegments": "Major Segments",
+    "exportModels": "Export-Relevant Models",
+    "portfolio": "EV / PHEV / ICE Portfolio",
+    "usedMarket": "Used-Market Considerations",
+    "modelFamilies": "Common Model Families",
+    "destinationConsiderations": "Destination-Market Considerations",
     "destinationMarkets": "Popular Destination Markets",
     "relatedData": "Related Vehicle Data",
     "relatedGuides": "Related Guides",
@@ -577,21 +583,57 @@
     "methodology": "China Used Auto Hub combines live vehicle inventory with structured vehicle data, destination-market information and import calculation tools so professional buyers can evaluate Chinese used vehicles before requesting a quotation.",
     "problemsHeading": "Buyer challenges, and how the platform helps",
     "problems": [
-      { "problem": "Vehicle selection", "solution": "Search a structured inventory and request specific vehicles through our sourcing service." },
-      { "problem": "Specification verification", "solution": "Model-level specifications on the Vehicle Data sub-site, marked as typical/trim-dependent." },
-      { "problem": "Pricing", "solution": "Asking prices on listings, confirmed with a quote before you commit." },
-      { "problem": "Inspection", "solution": "Condition information with clear status labels; independent inspection coordinated where required." },
-      { "problem": "Export procedures", "solution": "Export documentation and coordination, with customs handled by authorities." },
-      { "problem": "Destination-market eligibility", "solution": "Sourced import rules and taxes on the Market sub-site, to be verified with authorities." },
-      { "problem": "Shipping and landed cost", "solution": "Shipping coordination plus import calculators that show estimates, not fake precision." }
+      {
+        "problem": "Vehicle selection",
+        "solution": "Search a structured inventory and request specific vehicles through our sourcing service."
+      },
+      {
+        "problem": "Specification verification",
+        "solution": "Model-level specifications on the Vehicle Data sub-site, marked as typical/trim-dependent."
+      },
+      {
+        "problem": "Pricing",
+        "solution": "Asking prices on listings, confirmed with a quote before you commit."
+      },
+      {
+        "problem": "Inspection",
+        "solution": "Condition information with clear status labels; independent inspection coordinated where required."
+      },
+      {
+        "problem": "Export procedures",
+        "solution": "Export documentation and coordination, with customs handled by authorities."
+      },
+      {
+        "problem": "Destination-market eligibility",
+        "solution": "Sourced import rules and taxes on the Market sub-site, to be verified with authorities."
+      },
+      {
+        "problem": "Shipping and landed cost",
+        "solution": "Shipping coordination plus import calculators that show estimates, not fake precision."
+      }
     ],
     "pathwaysHeading": "Five ways to get started",
     "pathways": [
-      { "title": "Browse Vehicles", "text": "See currently listed inventory with condition, mileage and price." },
-      { "title": "Explore Vehicle Data", "text": "Model, generation and trim specifications on the Data sub-site." },
-      { "title": "Explore Markets", "text": "Import rules and taxes for destination markets on the Market sub-site." },
-      { "title": "Use Import Tools", "text": "Estimate landed cost, duty, profit and shipping with our calculators." },
-      { "title": "Request Sourcing", "text": "Describe what you need and we source candidates from China's market." }
+      {
+        "title": "Browse Vehicles",
+        "text": "See currently listed inventory with condition, mileage and price."
+      },
+      {
+        "title": "Explore Vehicle Data",
+        "text": "Model, generation and trim specifications on the Data sub-site."
+      },
+      {
+        "title": "Explore Markets",
+        "text": "Import rules and taxes for destination markets on the Market sub-site."
+      },
+      {
+        "title": "Use Import Tools",
+        "text": "Estimate landed cost, duty, profit and shipping with our calculators."
+      },
+      {
+        "title": "Request Sourcing",
+        "text": "Describe what you need and we source candidates from China's market."
+      }
     ],
     "ctaHeading": "Can't Find the Car You Need?",
     "ctaText": "Tell us what you are looking for and we can help source it from China.",
