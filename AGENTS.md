@@ -19,7 +19,7 @@ China Used Auto Hub（中国二手车出口商业站）。Astro 5 + Tailwind + �
 ## 其他硬约束
 
 - 数据层（src/data/*.json）与展示层分离；Agent 更新只能走 scripts/update-vehicle.mjs（changelog + validation + 禁删）。
-- 库存生命周期：Sold 页面保留不 404；状态枚举 available/reserved/sold/unavailable。
+- 库存生命周期：Sold 页面保留不 404；状态枚举 available/reserved/sold/expired/removed（§7 五态，另保留 sourcing 作兼容）。
 - 零虚构商业数据（销量/认证/排名/客户数）；Demo 数据 is_demo 标记，上线前 scripts/clear-demo-data.mjs 清除。
 - 唯一 title/description/H1 + canonical + Schema 与页面可见信息一致（禁伪造 Rating/价格）。
 - 子站（data/companies/tools/market.chinausedautohub.com）内容不复制进主站。

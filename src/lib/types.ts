@@ -11,7 +11,7 @@ export interface SpecItem {
   value: string;
 }
 
-export type VehicleStatus = 'available' | 'reserved' | 'sold' | 'sourcing' | 'expired' | 'hidden';
+export type VehicleStatus = 'available' | 'reserved' | 'sold' | 'sourcing' | 'expired' | 'removed';
 
 export interface ExportInfo {
   export_availability?: string;
@@ -68,6 +68,21 @@ export interface Vehicle {
   inspection_status?: string | null;
   export_status?: string | null;
   destination?: string | null;
+  // Phase 3 real-inventory model — structure only, never fabricated (null until real data).
+  powertrain?: string | null;
+  range_km?: number | null;
+  dimensions?: string | null;
+  verification_status?: string | null;
+  mileage_status?: string | null;
+  document_status?: string | null;
+  battery_status?: string | null;
+  inspection_report?: string | null;
+  battery_report?: string | null;
+  interior_photos?: string[] | null;
+  dashboard_photos?: string[] | null;
+  export_eligibility?: string | null;
+  shipping?: string | null;
+  notes?: string | null;
   documents?: string[] | null;
   data_source?: string;
   data_confidence?: DataConfidence;
@@ -95,7 +110,8 @@ export interface VehicleModel {
   bodyType: string;
   fuelType: string;
   shortDescription: string;
-  dataUrl: string;
+  /** data sub-site model_id (e.g. "byd-song-plus"); null when no corresponding data page. */
+  dataModelId: string | null;
 }
 
 export interface BodyType {

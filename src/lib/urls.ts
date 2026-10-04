@@ -56,8 +56,10 @@ export function requestACarUrl(): string {
 }
 
 // Model specifications live on the Data sub-site, not the main site.
-export function dataModelUrl(m: Pick<VehicleModel, 'brand' | 'slug'>): string {
-  return `${SUBDOMAINS.data}/models/${m.brand}/${m.slug}`;
+// The data sub-site routes models at `/models/{model_id}` (one segment);
+// returns null when the main-site model has no corresponding data page.
+export function dataModelUrl(m: Pick<VehicleModel, 'dataModelId'>): string | null {
+  return m.dataModelId ? `${SUBDOMAINS.data}/models/${m.dataModelId}` : null;
 }
 
 export function dataBrandUrl(b: Pick<Brand, 'slug'>): string {
@@ -65,7 +67,7 @@ export function dataBrandUrl(b: Pick<Brand, 'slug'>): string {
 }
 
 export function marketUrl(m: Pick<Market, 'slug'>): string {
-  return `${SUBDOMAINS.market}/${m.slug}`;
+  return `${SUBDOMAINS.market}/countries/${m.slug}`;
 }
 
 export function toolsUrl(): string {

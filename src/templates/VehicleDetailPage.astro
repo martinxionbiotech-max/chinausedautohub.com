@@ -49,8 +49,9 @@ const drive = driveName(vehicle.drive, locale, d.drive?.name ?? vehicle.drive);
 const color = colorName(vehicle.color, locale);
 const location = locationName(vehicle.location, locale);
 const desc = vehicleDescription(vehicle.vehicle_id, locale, vehicle.description);
+const modelDataUrl = d.model ? dataModelUrl(d.model) : null;
 
-const pageTitle = `${title} — ${formatPrice(vehicle.price, locale)} | ${t.detail.titleSuffix}`;
+const pageTitle = `${vehicle.is_demo ? `${t.detail.demoTitlePrefix} ` : ''}${title} — ${formatPrice(vehicle.price, locale)} | ${t.detail.titleSuffix}`;
 const statusText = vehicle.status === 'available' ? t.detail.statusAvailable : `${t.detail.statusPrefix}: ${statusLabel}`;
 const description = `${vehicle.year} ${brandName} ${modelName}, ${formatMileage(vehicle.mileage_km, locale, t.units.km)}, ${fuel}, ${color}, ${location}. ${statusText}.`;
 
@@ -147,8 +148,34 @@ const inspectionValue = vehicle.inspection_status ?? null;
 const documentsValue = vehicle.documents ?? null;
 ---
 
-<BaseLayout title={pageTitle} description={description} canonical={localizedUrl(vehicleUrl(vehicle), locale)} schema={schemas}>
+<BaseLayout title={pageTitle} description={description} canonical={localizedUrl(vehicleUrl(vehicle), locale)} schema={schemas} noindex={vehicle.is_demo}>
   <Breadcrumb crumbs={crumbs} />
+
+  {vehicle.is_demo && (
+    <div class="container-site pt-4">
+      <div class="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3">
+        <p class="text-sm font-semibold text-amber-800">{t.detail.demoBanner}</p>
+      </div>
+    </div>
+  )}
+
+  <!-- VEHICLE ENTITY CHAIN: Brand → Model → Generation → Trim → Vehicle -->
+  <div class="container-site pt-2">
+    <nav aria-label={t.detail.entityChain} class="flex flex-wrap items-center gap-1.5 text-sm text-ink-muted">
+      <span class="font-semibold text-ink-soft">{t.detail.entityChain}:</span>
+      <a href={dataBrandUrl({ slug: vehicle.brand })} target="_blank" rel="noopener noreferrer" class="font-medium text-brand-700 hover:underline">{brandName}</a>
+      <span aria-hidden="true">{t.common.arrow}</span>
+      {modelDataUrl ? (
+        <a href={modelDataUrl} target="_blank" rel="noopener noreferrer" class="font-medium text-brand-700 hover:underline">{modelName}</a>
+      ) : (
+        <span class="text-ink-soft">{modelName}</span>
+      )}
+      {vehicle.generation && (<><span aria-hidden="true">{t.common.arrow}</span><span class="text-ink-soft">{vehicle.generation}</span></>)}
+      {vehicle.trim && (<><span aria-hidden="true">{t.common.arrow}</span><span class="text-ink-soft">{vehicle.trim}</span></>)}
+      <span aria-hidden="true">{t.common.arrow}</span>
+      <span class="font-medium text-ink">{title}</span>
+    </nav>
+  </div>
 
   <!-- TITLE + STATUS -->
   <section class="container-site pb-6">
@@ -219,6 +246,8 @@ const documentsValue = vehicle.documents ?? null;
       <dl class="grid grid-cols-2 gap-x-4 gap-y-3 pt-4 text-sm">
         <div><dt class="text-ink-muted">{t.detail.status}</dt><dd class="font-medium text-ink">{statusLabel}</dd></div>
         <div><dt class="text-ink-muted">{t.detail.location}</dt><dd class="font-medium text-ink">{location}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.generation}</dt><dd class="font-medium text-ink">{vehicle.generation ?? t.confidence.notProvided}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.trim}</dt><dd class="font-medium text-ink">{vehicle.trim ?? t.confidence.notProvided}</dd></div>
         <div><dt class="text-ink-muted">{t.detail.year}</dt><dd class="font-medium text-ink">{vehicle.year}</dd></div>
         <div><dt class="text-ink-muted">{t.detail.mileage}</dt><dd class="font-medium text-ink">{formatMileage(vehicle.mileage_km, locale, t.units.km)}</dd></div>
         <div><dt class="text-ink-muted">{t.detail.fuel}</dt><dd class="font-medium text-ink">{fuel}</dd></div>
@@ -398,9 +427,11 @@ const documentsValue = vehicle.documents ?? null;
       <h2 class="text-lg font-bold text-ink">{aboutModelHeading}</h2>
       <p class="mt-2 text-sm text-ink-soft max-w-3xl">{modelDescription(vehicle.brand, vehicle.model, locale, d.model?.shortDescription ?? t.detail.modelInfo)}</p>
       <div class="mt-3">
-        <a href={dataModelUrl({ brand: vehicle.brand, slug: vehicle.model })} target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-700 hover:underline">
-          {viewModelSpecsText} {t.common.arrow}
-        </a>
+        {modelDataUrl && (
+          <a href={modelDataUrl} target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-700 hover:underline">
+            {viewModelSpecsText} {t.common.arrow}
+          </a>
+        )}
       </div>
     </div>
   </section>
@@ -409,10 +440,12 @@ const documentsValue = vehicle.documents ?? null;
   <section class="container-site mt-10">
     <h2 class="text-xl font-bold text-ink">{t.detail.relatedData}</h2>
     <div class="mt-4 grid gap-4 sm:grid-cols-2">
-      <a href={dataModelUrl({ brand: vehicle.brand, slug: vehicle.model })} target="_blank" rel="noopener noreferrer" class="card p-4 hover:border-brand-300">
-        <span class="block text-sm font-semibold text-ink">{modelName}</span>
-        <span class="mt-1 block text-xs text-ink-muted">{t.common.viewSpecifications}</span>
-      </a>
+      {modelDataUrl && (
+        <a href={modelDataUrl} target="_blank" rel="noopener noreferrer" class="card p-4 hover:border-brand-300">
+          <span class="block text-sm font-semibold text-ink">{modelName}</span>
+          <span class="mt-1 block text-xs text-ink-muted">{t.common.viewSpecifications}</span>
+        </a>
+      )}
       <a href={dataBrandUrl({ slug: vehicle.brand })} target="_blank" rel="noopener noreferrer" class="card p-4 hover:border-brand-300">
         <span class="block text-sm font-semibold text-ink">{brandName}</span>
         <span class="mt-1 block text-xs text-ink-muted">{t.common.brandData}</span>

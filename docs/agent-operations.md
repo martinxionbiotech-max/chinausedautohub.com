@@ -30,6 +30,7 @@
 | `update-specs` | UPDATE SPECS（`--set label=value` 可重复） |
 | `mark-reserved` | MARK RESERVED（`status → reserved`） |
 | `mark-sold` | MARK SOLD（`status → sold`，**保留页面**，不 404） |
+| `mark-real` | DEMO → REAL（翻转 `is_demo`，URL 不变，自动移除 noindex / title 前缀 / demo 横幅） |
 
 ### 示例
 
@@ -46,6 +47,9 @@ node scripts/update-vehicle.mjs update-price --vehicle-id byd-song-plus-2024-001
 # 改状态
 node scripts/update-vehicle.mjs mark-sold --vehicle-id byd-song-plus-2024-001
 
+# demo 转真实库存（保留 URL，移除 noindex）
+node scripts/update-vehicle.mjs mark-real --vehicle-id byd-song-plus-2024-001
+
 # 补规格
 node scripts/update-vehicle.mjs update-specs --vehicle-id byd-song-plus-2024-001 --set "Battery=18.3 kWh" --set "Seats=5"
 
@@ -60,7 +64,7 @@ node scripts/update-vehicle.mjs update --vehicle-id X --set status=reserved --se
 | `price.amount` | 必须 `> 0` |
 | `mileage_km` | 必须 `>= 0` |
 | `year` | 必须为整数，且在 `1990` ～ `当前年+1` 之间 |
-| `status` | 只能 `available` / `reserved` / `sold` / `unavailable` |
+| `status` | 只能 `available` / `reserved` / `sold` / `expired` / `removed` / `sourcing`（§7 五态 + `sourcing` 兼容） |
 
 非法输入会直接报错退出（exit 1），**不写入**。
 
@@ -109,3 +113,22 @@ node scripts/clear-demo-data.mjs --yes  # 备份后执行
 ```
 
 脚本会先把当前 `vehicles.json` 备份到 `src/data/backups/vehicles-<时间戳>.json`，再删除 demo 记录。
+
+## Demo → Real 转换（URL 不变性）
+
+真实库存到来时，将某台 demo 车「原地」转为真实库存，**不改变 URL**：
+
+```bash
+node scripts/update-vehicle.mjs mark-real --vehicle-id <vehicle_id>
+```
+
+该操作只翻转 `is_demo: true → false`，并自动产生以下效果（均由 `is_demo` 驱动，无需改页面）：
+
+1. **移除 noindex**：demo 详情页的 `<meta name="robots" content="noindex">` 消失，页面恢复可索引；
+2. **移除 title 前缀**：`Example Vehicle Listing —` 前缀不再输出；
+3. **移除 demo 横幅/角标**：h1 顶部演示横幅与卡片 Demo 角标不再显示；
+4. **重新进入 sitemap**：build 时的 sitemap 过滤（按 `is_demo`）自动重新收录该详情页。
+
+随后再用 `update --set key=value` 补真实字段（VIN、价格、里程、照片、verification_status 等），URL 始终不变。
+
+若需保留某 demo 的 URL 而新建真实记录，`create` 时复用相同 `vehicle_id`（脚本会拒绝重复，需先 `mark-real` 或移除旧记录）。

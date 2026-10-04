@@ -12,6 +12,7 @@
  *   update-specs    UPDATE SPECS (add/replace spec rows)
  *   mark-reserved   MARK RESERVED
  *   mark-sold       MARK SOLD
+ *   mark-real       DEMO → REAL (flip is_demo, keep URL, remove noindex)
  *   list            List inventory (read-only)
  *
  * Every mutation:
@@ -36,7 +37,7 @@ const DATA_DIR = join(ROOT, 'src', 'data');
 const VEHICLES_PATH = join(DATA_DIR, 'vehicles.json');
 const CHANGELOG_PATH = join(DATA_DIR, 'changelog.json');
 
-const STATUSES = ['available', 'reserved', 'sold', 'sourcing', 'expired', 'hidden'];
+const STATUSES = ['available', 'reserved', 'sold', 'sourcing', 'expired', 'removed'];
 const CURRENT_YEAR = new Date().getFullYear();
 const MIN_YEAR = 1990;
 const MAX_YEAR = CURRENT_YEAR + 1;
@@ -213,6 +214,20 @@ function actionCreate(list, args) {
     inspection_status: null,
     export_status: null,
     destination: null,
+    powertrain: null,
+    range_km: null,
+    dimensions: null,
+    verification_status: null,
+    mileage_status: null,
+    document_status: null,
+    battery_status: null,
+    inspection_report: null,
+    battery_report: null,
+    interior_photos: null,
+    dashboard_photos: null,
+    export_eligibility: null,
+    shipping: null,
+    notes: null,
     documents: null,
     data_source: args.source || 'agent',
     data_confidence: {},
@@ -343,6 +358,17 @@ function actionMark(list, args, status, actionName) {
   console.log(`${id}: ${old} -> ${status}`);
 }
 
+function actionMarkReal(list, args) {
+  const id = req(args, 'vehicle-id');
+  const v = getVehicle(list, id);
+  const old = v.is_demo;
+  v.is_demo = false;
+  v.updated_at = new Date().toISOString();
+  writeVehicles(list);
+  recordChange(v, ['is_demo'], old, false, 'mark-real');
+  console.log(`${id}: demo -> real (is_demo ${old} -> false; URL unchanged, noindex/title-prefix/banner removed)`);
+}
+
 // ---------- Main ----------
 function main() {
   const { args, sets, positionals } = parseArgs(process.argv.slice(2));
@@ -362,7 +388,8 @@ Actions:
   update-images  --vehicle-id --images "a.svg,b.svg"
   update-specs   --vehicle-id --set label=value [...]
   mark-reserved  --vehicle-id
-  mark-sold      --vehicle-id`);
+  mark-sold      --vehicle-id
+  mark-real      --vehicle-id  (demo -> real: flips is_demo, keeps URL)`);
     return;
   }
 
@@ -377,6 +404,7 @@ Actions:
     case 'update-specs': return actionUpdateSpecs(list, args, sets);
     case 'mark-reserved': return actionMark(list, args, 'reserved', 'mark-reserved');
     case 'mark-sold': return actionMark(list, args, 'sold', 'mark-sold');
+    case 'mark-real': return actionMarkReal(list, args);
     default: fail(`unknown action: ${action}`);
   }
 }

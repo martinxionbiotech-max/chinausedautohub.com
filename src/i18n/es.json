@@ -71,7 +71,7 @@
     "sold": "Vendido",
     "sourcing": "En abastecimiento",
     "expired": "Caducado",
-    "hidden": "Oculto"
+    "removed": "Eliminado"
   },
   "vehicleCard": {
     "year": "Año",
@@ -222,6 +222,11 @@
     "askingPrice": "Precio solicitado",
     "originalListing": "Anuncio original",
     "demoPrice": "Precio de ejemplo — anuncio de demo",
+    "demoTitlePrefix": "Ejemplo de anuncio de vehículo —",
+    "demoBanner": "Este es un anuncio de demostración, no es inventario real.",
+    "generation": "Generación",
+    "trim": "Acabado",
+    "entityChain": "Entidad del vehículo",
     "priceNote": "El precio puede variar según la configuración, el envío, los impuestos y el destino.",
     "requestQuote": "Solicitar cotización",
     "requestSimilar": "Pedir un vehículo similar",

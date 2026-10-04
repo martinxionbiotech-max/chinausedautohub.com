@@ -71,7 +71,7 @@
     "sold": "Sold",
     "sourcing": "Sourcing",
     "expired": "Expired",
-    "hidden": "Hidden"
+    "removed": "Removed"
   },
   "vehicleCard": {
     "year": "Year",
@@ -222,6 +222,11 @@
     "askingPrice": "Asking price",
     "originalListing": "Original listing",
     "demoPrice": "Example price — demo listing",
+    "demoTitlePrefix": "Example Vehicle Listing —",
+    "demoBanner": "This is a demonstration listing, not real inventory.",
+    "generation": "Generation",
+    "trim": "Trim",
+    "entityChain": "Vehicle Entity",
     "priceNote": "Price may vary based on configuration, shipping, taxes and destination.",
     "requestQuote": "Request Quote",
     "requestSimilar": "Request Similar Vehicle",

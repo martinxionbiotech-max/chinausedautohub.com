@@ -86,7 +86,21 @@
       "battery_health": "not_available",
       "maintenance_history": "not_available"
     },
-    "last_verified_at": null
+    "last_verified_at": null,
+    "powertrain": null,
+    "range_km": null,
+    "dimensions": null,
+    "verification_status": null,
+    "mileage_status": null,
+    "document_status": null,
+    "battery_status": null,
+    "inspection_report": null,
+    "battery_report": null,
+    "interior_photos": null,
+    "dashboard_photos": null,
+    "export_eligibility": null,
+    "shipping": null,
+    "notes": null
   },
   {
     "vehicle_id": "byd-seal-2024-001",
@@ -171,7 +185,21 @@
       "battery_health": "not_available",
       "maintenance_history": "not_available"
     },
-    "last_verified_at": null
+    "last_verified_at": null,
+    "powertrain": null,
+    "range_km": null,
+    "dimensions": null,
+    "verification_status": null,
+    "mileage_status": null,
+    "document_status": null,
+    "battery_status": null,
+    "inspection_report": null,
+    "battery_report": null,
+    "interior_photos": null,
+    "dashboard_photos": null,
+    "export_eligibility": null,
+    "shipping": null,
+    "notes": null
   },
   {
     "vehicle_id": "geely-monjaro-2024-001",
@@ -256,7 +284,21 @@
       "battery_health": "not_available",
       "maintenance_history": "not_available"
     },
-    "last_verified_at": null
+    "last_verified_at": null,
+    "powertrain": null,
+    "range_km": null,
+    "dimensions": null,
+    "verification_status": null,
+    "mileage_status": null,
+    "document_status": null,
+    "battery_status": null,
+    "inspection_report": null,
+    "battery_report": null,
+    "interior_photos": null,
+    "dashboard_photos": null,
+    "export_eligibility": null,
+    "shipping": null,
+    "notes": null
   },
   {
     "vehicle_id": "geely-coolray-2023-001",
@@ -341,7 +383,21 @@
       "battery_health": "not_available",
       "maintenance_history": "not_available"
     },
-    "last_verified_at": null
+    "last_verified_at": null,
+    "powertrain": null,
+    "range_km": null,
+    "dimensions": null,
+    "verification_status": null,
+    "mileage_status": null,
+    "document_status": null,
+    "battery_status": null,
+    "inspection_report": null,
+    "battery_report": null,
+    "interior_photos": null,
+    "dashboard_photos": null,
+    "export_eligibility": null,
+    "shipping": null,
+    "notes": null
   },
   {
     "vehicle_id": "chery-tiggo-8-pro-2023-001",
@@ -426,7 +482,21 @@
       "battery_health": "not_available",
       "maintenance_history": "not_available"
     },
-    "last_verified_at": null
+    "last_verified_at": null,
+    "powertrain": null,
+    "range_km": null,
+    "dimensions": null,
+    "verification_status": null,
+    "mileage_status": null,
+    "document_status": null,
+    "battery_status": null,
+    "inspection_report": null,
+    "battery_report": null,
+    "interior_photos": null,
+    "dashboard_photos": null,
+    "export_eligibility": null,
+    "shipping": null,
+    "notes": null
   },
   {
     "vehicle_id": "chery-arrizo-8-2023-001",
@@ -511,7 +581,21 @@
       "battery_health": "not_available",
       "maintenance_history": "not_available"
     },
-    "last_verified_at": null
+    "last_verified_at": null,
+    "powertrain": null,
+    "range_km": null,
+    "dimensions": null,
+    "verification_status": null,
+    "mileage_status": null,
+    "document_status": null,
+    "battery_status": null,
+    "inspection_report": null,
+    "battery_report": null,
+    "interior_photos": null,
+    "dashboard_photos": null,
+    "export_eligibility": null,
+    "shipping": null,
+    "notes": null
   },
   {
     "vehicle_id": "changan-cs75-plus-2024-001",
@@ -596,7 +680,21 @@
       "battery_health": "not_available",
       "maintenance_history": "not_available"
     },
-    "last_verified_at": null
+    "last_verified_at": null,
+    "powertrain": null,
+    "range_km": null,
+    "dimensions": null,
+    "verification_status": null,
+    "mileage_status": null,
+    "document_status": null,
+    "battery_status": null,
+    "inspection_report": null,
+    "battery_report": null,
+    "interior_photos": null,
+    "dashboard_photos": null,
+    "export_eligibility": null,
+    "shipping": null,
+    "notes": null
   },
   {
     "vehicle_id": "changan-uni-v-2023-001",
@@ -681,7 +779,21 @@
       "battery_health": "not_available",
       "maintenance_history": "not_available"
     },
-    "last_verified_at": null
+    "last_verified_at": null,
+    "powertrain": null,
+    "range_km": null,
+    "dimensions": null,
+    "verification_status": null,
+    "mileage_status": null,
+    "document_status": null,
+    "battery_status": null,
+    "inspection_report": null,
+    "battery_report": null,
+    "interior_photos": null,
+    "dashboard_photos": null,
+    "export_eligibility": null,
+    "shipping": null,
+    "notes": null
   },
   {
     "vehicle_id": "gac-gs4-2022-001",
@@ -762,7 +874,21 @@
       "battery_health": "not_available",
       "maintenance_history": "not_available"
     },
-    "last_verified_at": null
+    "last_verified_at": null,
+    "powertrain": null,
+    "range_km": null,
+    "dimensions": null,
+    "verification_status": null,
+    "mileage_status": null,
+    "document_status": null,
+    "battery_status": null,
+    "inspection_report": null,
+    "battery_report": null,
+    "interior_photos": null,
+    "dashboard_photos": null,
+    "export_eligibility": null,
+    "shipping": null,
+    "notes": null
   },
   {
     "vehicle_id": "great-wall-haval-h6-2023-001",
@@ -843,7 +969,21 @@
       "battery_health": "not_available",
       "maintenance_history": "not_available"
     },
-    "last_verified_at": null
+    "last_verified_at": null,
+    "powertrain": null,
+    "range_km": null,
+    "dimensions": null,
+    "verification_status": null,
+    "mileage_status": null,
+    "document_status": null,
+    "battery_status": null,
+    "inspection_report": null,
+    "battery_report": null,
+    "interior_photos": null,
+    "dashboard_photos": null,
+    "export_eligibility": null,
+    "shipping": null,
+    "notes": null
   },
   {
     "vehicle_id": "nio-es6-2023-001",
@@ -928,7 +1068,21 @@
       "battery_health": "not_available",
       "maintenance_history": "not_available"
     },
-    "last_verified_at": null
+    "last_verified_at": null,
+    "powertrain": null,
+    "range_km": null,
+    "dimensions": null,
+    "verification_status": null,
+    "mileage_status": null,
+    "document_status": null,
+    "battery_status": null,
+    "inspection_report": null,
+    "battery_report": null,
+    "interior_photos": null,
+    "dashboard_photos": null,
+    "export_eligibility": null,
+    "shipping": null,
+    "notes": null
   },
   {
     "vehicle_id": "xpeng-g6-2024-001",
@@ -1013,6 +1167,20 @@
       "battery_health": "not_available",
       "maintenance_history": "not_available"
     },
-    "last_verified_at": null
+    "last_verified_at": null,
+    "powertrain": null,
+    "range_km": null,
+    "dimensions": null,
+    "verification_status": null,
+    "mileage_status": null,
+    "document_status": null,
+    "battery_status": null,
+    "inspection_report": null,
+    "battery_report": null,
+    "interior_photos": null,
+    "dashboard_photos": null,
+    "export_eligibility": null,
+    "shipping": null,
+    "notes": null
   }
 ]

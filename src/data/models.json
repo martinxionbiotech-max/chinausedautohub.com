@@ -6,7 +6,7 @@
     "bodyType": "suv",
     "fuelType": "phev",
     "shortDescription": "Mid-size SUV available as a PHEV (DM-i) in the Chinese market, known for electric-first daily driving with a petrol range extender.",
-    "dataUrl": "https://data.chinausedautohub.com/models/byd/song-plus"
+    "dataModelId": "byd-song-plus"
   },
   {
     "slug": "seal",
@@ -15,7 +15,7 @@
     "bodyType": "sedan",
     "fuelType": "ev",
     "shortDescription": "Mid-size electric sedan built on BYD's e-platform 3.0, offered with single- and dual-motor configurations.",
-    "dataUrl": "https://data.chinausedautohub.com/models/byd/seal"
+    "dataModelId": "byd-seal"
   },
   {
     "slug": "monjaro",
@@ -24,7 +24,7 @@
     "bodyType": "suv",
     "fuelType": "petrol",
     "shortDescription": "Mid-size SUV (sold as Xingyue L in China) with a 2.0T engine and automatic transmission, exported to several markets.",
-    "dataUrl": "https://data.chinausedautohub.com/models/geely/monjaro"
+    "dataModelId": "geely-monjaro"
   },
   {
     "slug": "coolray",
@@ -33,7 +33,7 @@
     "bodyType": "suv",
     "fuelType": "petrol",
     "shortDescription": "Compact SUV (Binyue in China) with a turbocharged petrol engine, popular in export markets.",
-    "dataUrl": "https://data.chinausedautohub.com/models/geely/coolray"
+    "dataModelId": null
   },
   {
     "slug": "tiggo-8-pro",
@@ -42,7 +42,7 @@
     "bodyType": "suv",
     "fuelType": "petrol",
     "shortDescription": "Mid-size 7-seat SUV with turbocharged petrol engines, a core export model for Chery.",
-    "dataUrl": "https://data.chinausedautohub.com/models/chery/tiggo-8-pro"
+    "dataModelId": null
   },
   {
     "slug": "arrizo-8",
@@ -51,7 +51,7 @@
     "bodyType": "sedan",
     "fuelType": "petrol",
     "shortDescription": "Mid-size sedan with turbocharged petrol engines, positioned as a value-focused family sedan.",
-    "dataUrl": "https://data.chinausedautohub.com/models/chery/arrizo-8"
+    "dataModelId": null
   },
   {
     "slug": "cs75-plus",
@@ -60,7 +60,7 @@
     "bodyType": "suv",
     "fuelType": "petrol",
     "shortDescription": "Compact-to-mid-size SUV with turbocharged petrol engines and automatic transmission, one of Changan's best-selling models.",
-    "dataUrl": "https://data.chinausedautohub.com/models/changan/cs75-plus"
+    "dataModelId": "changan-cs75-plus"
   },
   {
     "slug": "uni-v",
@@ -69,7 +69,7 @@
     "bodyType": "sedan",
     "fuelType": "petrol",
     "shortDescription": "Sporty compact sedan with a turbocharged petrol engine and dual-clutch transmission.",
-    "dataUrl": "https://data.chinausedautohub.com/models/changan/uni-v"
+    "dataModelId": null
   },
   {
     "slug": "gs4",
@@ -78,7 +78,7 @@
     "bodyType": "suv",
     "fuelType": "petrol",
     "shortDescription": "Compact SUV from GAC Motor (Trumpchi), offered with turbocharged petrol engines.",
-    "dataUrl": "https://data.chinausedautohub.com/models/gac/gs4"
+    "dataModelId": "gac-gs4"
   },
   {
     "slug": "haval-h6",
@@ -87,7 +87,7 @@
     "bodyType": "suv",
     "fuelType": "petrol",
     "shortDescription": "Compact SUV from Haval with turbocharged petrol engines and DCT, a long-running high-volume model in China.",
-    "dataUrl": "https://data.chinausedautohub.com/models/great-wall/haval-h6"
+    "dataModelId": "great-wall-haval-h6"
   },
   {
     "slug": "es6",
@@ -96,7 +96,7 @@
     "bodyType": "suv",
     "fuelType": "ev",
     "shortDescription": "Mid-size electric SUV from NIO, offered with dual-motor AWD and battery-swap capability.",
-    "dataUrl": "https://data.chinausedautohub.com/models/nio/es6"
+    "dataModelId": "nio-es6"
   },
   {
     "slug": "g6",
@@ -105,6 +105,6 @@
     "bodyType": "suv",
     "fuelType": "ev",
     "shortDescription": "Mid-size electric SUV from XPeng with 800V architecture and fast-charging capability.",
-    "dataUrl": "https://data.chinausedautohub.com/models/xpeng/g6"
+    "dataModelId": "xpeng-g6"
   }
 ]

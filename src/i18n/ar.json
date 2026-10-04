@@ -71,7 +71,7 @@
     "sold": "مباعة",
     "sourcing": "قيد التوريد",
     "expired": "منتهية",
-    "hidden": "مخفية"
+    "removed": "مُزالة"
   },
   "vehicleCard": {
     "year": "سنة الصنع",
@@ -222,6 +222,11 @@
     "askingPrice": "السعر المطلوب",
     "originalListing": "الإدراج الأصلي",
     "demoPrice": "سعر مثالي — إدراج تجريبي",
+    "demoTitlePrefix": "مثال على إدراج مركبة —",
+    "demoBanner": "هذا إدراج تجريبي لأغراض العرض، وليس مخزونًا حقيقيًا.",
+    "generation": "الجيل",
+    "trim": "الطراز",
+    "entityChain": "كيان المركبة",
     "priceNote": "قد يختلف السعر حسب التكوين والشحن والضرائب والوجهة.",
     "requestQuote": "اطلب عرض سعر",
     "requestSimilar": "اطلب سيارة مماثلة",
