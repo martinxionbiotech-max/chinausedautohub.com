@@ -25,6 +25,15 @@ const description = pick(service.description, locale);
 const h1 = pick(service.h1, locale);
 const intro = pick(service.intro, locale);
 
+const SERVICE_IMAGES: Record<string, string> = {
+  'vehicle-sourcing': 'service-sourcing-800x533',
+  'vehicle-inspection': 'service-inspection-800x533',
+  'export-documentation': 'service-documentation-800x533',
+  'shipping': 'service-shipping-800x533',
+  'port-handling': 'service-port-handling-800x533',
+};
+const serviceImage = SERVICE_IMAGES[slug] ?? 'og-default-1200x630';
+
 const heading = (k: string) => pick(SERVICE_SECTION_HEADINGS[k], locale);
 const list = (items: { en: string; ar: string; ru: string; es: string }[]) =>
   items.map((it) => pick(it, locale));
@@ -36,6 +45,15 @@ const list = (items: { en: string; ar: string; ru: string; es: string }[]) =>
   <section class="container-site py-6">
     <h1 class="text-3xl font-bold text-ink">{h1}</h1>
     <p class="mt-2 max-w-3xl text-ink-soft">{intro}</p>
+    <img
+      src={`/images/${serviceImage}.webp`}
+      alt={h1}
+      width="800"
+      height="533"
+      loading="lazy"
+      decoding="async"
+      class="mt-4 w-full max-w-3xl rounded-lg object-cover"
+    />
   </section>
 
   <section class="container-site grid gap-5 lg:grid-cols-2">

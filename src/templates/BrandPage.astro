@@ -74,6 +74,19 @@ const requestBrandHref = localizedUrl('/contact/', locale);
 <BaseLayout title={title} description={description} canonical={localizedUrl(brandUrl(brand), locale)} schema={schema}>
   <Breadcrumb crumbs={[{ name: t.breadcrumb.home, path: localizedUrl('/', locale) }, { name: t.breadcrumb.brands, path: localizedUrl('/brands/', locale) }, { name: brand.name, path: localizedUrl(brandUrl(brand), locale) }]} />
 
+  <!-- BRAND BANNER -->
+  <section class="container-site pt-6">
+    <img
+      src="/images/brand-banner-1200x400.webp"
+      alt=""
+      width="1200"
+      height="400"
+      loading="lazy"
+      decoding="async"
+      class="w-full rounded-lg object-cover"
+    />
+  </section>
+
   <!-- BRAND OVERVIEW -->
   <section class="container-site py-6">
     <div class="flex flex-wrap items-start justify-between gap-4">

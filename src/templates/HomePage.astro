@@ -48,8 +48,18 @@ const featuredListSchema = itemListSchema(
 
 <BaseLayout title={title} description={description} schema={[organizationSchema(), webSiteSchema(), featuredListSchema]}>
   <!-- HERO -->
-  <section class="bg-brand-900 text-white">
-    <div class="container-site py-16 sm:py-20">
+  <section class="relative overflow-hidden bg-brand-900 text-white">
+    <img
+      src="/images/home-hero-1600x900.webp"
+      alt=""
+      width="1600"
+      height="900"
+      fetchpriority="high"
+      decoding="async"
+      class="absolute inset-0 h-full w-full object-cover opacity-35"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-900/95 via-brand-900/70 to-brand-900/40"></div>
+    <div class="relative container-site py-16 sm:py-20">
       <div class="max-w-2xl">
         <h1 class="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">{t.home.heroH1}</h1>
         <p class="mt-4 text-lg text-brand-100">{t.home.heroSub}</p>
@@ -90,6 +100,15 @@ const featuredListSchema = itemListSchema(
       </div>
       <a href={carsHref} class="btn-ghost hidden sm:inline-flex">{t.common.viewAllVehicles} {t.common.arrow}</a>
     </div>
+    <img
+      src="/images/home-vehicles-lot-1200x675.webp"
+      alt=""
+      width="1200"
+      height="675"
+      loading="lazy"
+      decoding="async"
+      class="mt-6 w-full rounded-lg object-cover"
+    />
     <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {featured.map((v: Vehicle) => <VehicleCard vehicle={v} />)}
     </div>
@@ -106,6 +125,15 @@ const featuredListSchema = itemListSchema(
         </div>
         <a href={localizedUrl('/new-arrivals/', locale)} class="btn-ghost hidden sm:inline-flex">{t.common.allNewArrivals} {t.common.arrow}</a>
       </div>
+      <img
+        src="/images/home-detail-interior-1200x675.webp"
+        alt=""
+        width="1200"
+        height="675"
+        loading="lazy"
+        decoding="async"
+        class="mt-6 w-full rounded-lg object-cover"
+      />
       <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
         {arrivals.map((v: Vehicle) => (
           <a href={localizedUrl(vehicleUrl(v), locale)} class="card flex gap-3 p-3 hover:border-brand-300">
@@ -161,6 +189,15 @@ const featuredListSchema = itemListSchema(
   <section class="container-site py-14">
     <h2 class="text-2xl font-bold text-ink">{t.home.powertrainHeading}</h2>
     <p class="mt-1 text-ink-soft">{t.home.powertrainSub}</p>
+    <img
+      src="/images/home-ev-charging-1200x675.webp"
+      alt=""
+      width="1200"
+      height="675"
+      loading="lazy"
+      decoding="async"
+      class="mt-6 w-full rounded-lg object-cover"
+    />
     <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {powertrains.map((p) => (
         <a href={localizedUrl(powertrainUrl(p), locale)} class="card flex items-center justify-between p-5 hover:border-brand-300">
@@ -198,6 +235,15 @@ const featuredListSchema = itemListSchema(
       </div>
       <a href={localizedUrl('/services/', locale)} class="btn-primary">{t.home.servicesLink} {t.common.arrow}</a>
     </div>
+    <img
+      src="/images/home-export-port-1200x675.webp"
+      alt=""
+      width="1200"
+      height="675"
+      loading="lazy"
+      decoding="async"
+      class="mt-6 w-full rounded-lg object-cover"
+    />
   </section>
 
   <!-- POPULAR MARKETS -->
@@ -205,6 +251,15 @@ const featuredListSchema = itemListSchema(
     <div class="container-site">
       <h2 class="text-2xl font-bold text-ink">{t.home.marketHeading}</h2>
       <p class="mt-1 text-ink-soft">{t.home.marketSub}</p>
+      <img
+        src="/images/home-shipping-route-1200x675.webp"
+        alt=""
+        width="1200"
+        height="675"
+        loading="lazy"
+        decoding="async"
+        class="mt-6 w-full rounded-lg object-cover"
+      />
       <div class="mt-6 flex flex-wrap gap-3">
         {t.home.markets.map((m) => (
           <a

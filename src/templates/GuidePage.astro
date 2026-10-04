@@ -27,6 +27,18 @@ const description = pick(guide.description, locale);
 const h1 = pick(guide.h1, locale);
 const canonical = localizedUrl(guideUrl(slug), locale);
 
+const GUIDE_COVERS: Record<string, string> = {
+  'how-to-buy-used-car-from-china': 'guide-how-to-buy-1200x630',
+  'china-used-car-export-process': 'guide-export-process-1200x630',
+  'vehicle-inspection': 'guide-inspection-1200x630',
+  'export-documents': 'guide-documents-1200x630',
+  'shipping': 'guide-shipping-1200x630',
+  'fob-vs-cif-vs-cfr': 'guide-fob-cif-cfr-1200x630',
+  'landed-cost': 'guide-landed-cost-1200x630',
+  'buying-chinese-evs-for-export': 'guide-china-ev-1200x630',
+};
+const cover = GUIDE_COVERS[slug] ?? 'og-default-1200x630';
+
 const schema = articleSchema({
   headline: pick(guide.title, locale),
   description: pick(guide.description, locale),
@@ -41,6 +53,15 @@ const schema = articleSchema({
   <article class="container-site py-6">
     <h1 class="text-3xl font-bold text-ink">{h1}</h1>
     <p class="mt-2 max-w-3xl text-ink-soft">{description}</p>
+    <img
+      src={`/images/${cover}.webp`}
+      alt={h1}
+      width="1200"
+      height="630"
+      loading="lazy"
+      decoding="async"
+      class="mt-4 w-full rounded-lg object-cover"
+    />
   </article>
 
   <article class="container-site max-w-3xl">

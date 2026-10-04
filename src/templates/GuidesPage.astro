@@ -19,6 +19,17 @@ const intro = pick(GUIDES_OVERVIEW.intro, locale);
 const schema = itemListSchema(
   GUIDES.map((g) => ({ name: pick(g.h1, locale), url: localizedUrl(guideUrl(g.slug), locale) })),
 );
+
+const GUIDE_COVERS: Record<string, string> = {
+  'how-to-buy-used-car-from-china': 'guide-how-to-buy-1200x630',
+  'china-used-car-export-process': 'guide-export-process-1200x630',
+  'vehicle-inspection': 'guide-inspection-1200x630',
+  'export-documents': 'guide-documents-1200x630',
+  'shipping': 'guide-shipping-1200x630',
+  'fob-vs-cif-vs-cfr': 'guide-fob-cif-cfr-1200x630',
+  'landed-cost': 'guide-landed-cost-1200x630',
+  'buying-chinese-evs-for-export': 'guide-china-ev-1200x630',
+};
 ---
 
 <BaseLayout title={title} description={description} canonical={localizedUrl(guidesUrl(), locale)} schema={schema}>
@@ -32,10 +43,21 @@ const schema = itemListSchema(
   <section class="container-site">
     <div class="grid gap-5 sm:grid-cols-2">
       {GUIDES.map((g) => (
-        <a href={localizedUrl(guideUrl(g.slug), locale)} class="card flex flex-col p-5 hover:border-brand-300">
-          <h2 class="text-base font-semibold text-ink">{pick(g.h1, locale)}</h2>
-          <p class="mt-2 flex-1 text-sm text-ink-soft">{pick(g.summary, locale)}</p>
-          <span class="mt-3 text-sm font-semibold text-brand-700">{t.common.viewDetails} {t.common.arrow}</span>
+        <a href={localizedUrl(guideUrl(g.slug), locale)} class="card flex flex-col overflow-hidden p-0 hover:border-brand-300">
+          <img
+            src={`/images/${GUIDE_COVERS[g.slug] ?? 'og-default-1200x630'}.webp`}
+            alt={pick(g.h1, locale)}
+            width="1200"
+            height="630"
+            loading="lazy"
+            decoding="async"
+            class="aspect-[1200/630] w-full object-cover"
+          />
+          <div class="flex flex-col p-5">
+            <h2 class="text-base font-semibold text-ink">{pick(g.h1, locale)}</h2>
+            <p class="mt-2 flex-1 text-sm text-ink-soft">{pick(g.summary, locale)}</p>
+            <span class="mt-3 text-sm font-semibold text-brand-700">{t.common.viewDetails} {t.common.arrow}</span>
+          </div>
         </a>
       ))}
     </div>
