@@ -45,6 +45,7 @@ export function articleSchema(opts: {
   headline: string;
   description: string;
   url: string;
+  locale?: string;
   datePublished?: string;
   dateModified?: string;
 }): JsonLd {
@@ -57,7 +58,7 @@ export function articleSchema(opts: {
     mainEntityOfPage: opts.url,
     author: publisher,
     publisher,
-    inLanguage: 'en',
+    inLanguage: opts.locale ?? 'en',
     ...(opts.datePublished ? { datePublished: opts.datePublished } : {}),
     ...(opts.dateModified ? { dateModified: opts.dateModified } : {}),
   };

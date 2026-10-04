@@ -2,6 +2,7 @@
 import BaseLayout from '../components/BaseLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import { getAllMarkets } from '../lib/data';
+import { SUBDOMAINS } from '../lib/site';
 import { getTranslations } from '../i18n';
 import { MARKETS_PAGE } from '../i18n/markets';
 import { marketName } from '../i18n/reference';
@@ -37,6 +38,26 @@ const markets = getAllMarkets();
           <span class="mt-3 text-sm font-semibold text-brand-700">{pick(MARKETS_PAGE.detailNote, locale)} {t.common.arrow}</span>
         </a>
       ))}
+    </div>
+  </section>
+
+  <section class="container-site mt-12">
+    <div class="grid gap-4 sm:grid-cols-3">
+      <a href={localizedUrl('/cars/', locale)} class="card p-5 hover:border-brand-300">
+        <h2 class="text-base font-semibold text-ink">{t.nav.availableVehicles}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{pick(MARKETS_PAGE.suitableVehicles, locale)}</p>
+        <span class="mt-3 inline-block text-sm font-semibold text-brand-700">{t.common.browseCars} {t.common.arrow}</span>
+      </a>
+      <a href={localizedUrl('/brands/', locale)} class="card p-5 hover:border-brand-300">
+        <h2 class="text-base font-semibold text-ink">{t.nav.brands}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{pick(MARKETS_PAGE.browseBrands, locale)}</p>
+        <span class="mt-3 inline-block text-sm font-semibold text-brand-700">{t.nav.brands} {t.common.arrow}</span>
+      </a>
+      <a href={SUBDOMAINS.tools} target="_blank" rel="noopener noreferrer" class="card p-5 hover:border-brand-300">
+        <h2 class="text-base font-semibold text-ink">{t.nav.tools}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{pick(MARKETS_PAGE.importTools, locale)}</p>
+        <span class="mt-3 inline-block text-sm font-semibold text-brand-700">{t.nav.tools} {t.common.arrow}</span>
+      </a>
     </div>
   </section>
 

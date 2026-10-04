@@ -6,7 +6,7 @@ import LeadForm from '../components/LeadForm.astro';
 import { getSimilarVehicles, resolveVehicle, vehicleTitle } from '../lib/data';
 import { formatPrice, formatMileage, formatDate, CONTACT } from '../lib/site';
 import { dataModelUrl, dataBrandUrl, vehicleUrl } from '../lib/urls';
-import { vehicleSchema, breadcrumbSchema, faqSchema, type FaqItem } from '../lib/schema';
+import { vehicleSchema, breadcrumbSchema, type FaqItem } from '../lib/schema';
 import { getTranslations } from '../i18n';
 import {
   vehicleDescription,
@@ -108,7 +108,6 @@ if (vehicle.is_demo) {
 }
 
 const schemas = [vehicleSchema(vehicle, locale), breadcrumbSchema(crumbs)];
-if (faqs.length > 0) schemas.push(faqSchema(faqs));
 
 const aboutModelHeading = t.detail.aboutModel.replace('{model}', modelName);
 const viewModelSpecsText = t.detail.viewModelSpecs.replace('{model}', modelName);
@@ -352,6 +351,7 @@ const documentsValue = vehicle.documents ?? null;
     <h2 class="text-xl font-bold text-ink">{t.detail.destinationHeading}</h2>
     <div class="card mt-4 p-5">
       <p class="text-sm text-ink-soft">{t.detail.destinationNote}</p>
+      <a href={localizedUrl('/markets/', locale)} class="mt-3 inline-block text-sm font-semibold text-brand-700 hover:underline">{t.nav.markets} {t.common.arrow}</a>
     </div>
   </section>
 

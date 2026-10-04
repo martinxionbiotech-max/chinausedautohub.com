@@ -28,9 +28,10 @@ const h1 = pick(guide.h1, locale);
 const canonical = localizedUrl(guideUrl(slug), locale);
 
 const schema = articleSchema({
-  headline: pick(guide.title, 'en'),
-  description: pick(guide.description, 'en'),
+  headline: pick(guide.title, locale),
+  description: pick(guide.description, locale),
   url: `${SITE_URL}${canonical}`,
+  locale,
 });
 ---
 

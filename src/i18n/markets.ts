@@ -10,6 +10,9 @@ export const MARKETS_PAGE: {
   h1: L10n;
   intro: L10n;
   detailNote: L10n;
+  suitableVehicles: L10n;
+  browseBrands: L10n;
+  importTools: L10n;
 } = {
   title: {
     en: 'Export Markets — Used Cars from China to Your Market',
@@ -40,5 +43,23 @@ export const MARKETS_PAGE: {
     ar: 'افتح تفاصيل السوق',
     ru: 'Открыть детали рынка',
     es: 'Abrir detalles del mercado',
+  },
+  suitableVehicles: {
+    en: 'Browse available vehicles from China and filter by brand, body type and powertrain for your market.',
+    ar: 'تصفح المركبات المتاحة من الصين وصفّها حسب العلامة التجارية ونوع الهيكل ونظام الدفع المناسب لسوقك.',
+    ru: 'Просмотрите доступные автомобили из Китая и отфильтруйте по марке, типу кузова и силовой установке для вашего рынка.',
+    es: 'Explore los vehículos disponibles desde China y fíltrelos por marca, tipo de carrocería y tren motriz para su mercado.',
+  },
+  browseBrands: {
+    en: 'Compare Chinese brands and find which models are available for export.',
+    ar: 'قارن العلامات التجارية الصينية واكتشف الموديلات المتاحة للتصدير.',
+    ru: 'Сравните китайские марки и узнайте, какие модели доступны для экспорта.',
+    es: 'Compare las marcas chinas y descubra qué modelos están disponibles para exportación.',
+  },
+  importTools: {
+    en: 'Estimate landed cost, shipping and import costs with the calculators on the Import Tools sub-site.',
+    ar: 'قدّر التكلفة النهائية والشحن وتكاليف الاستيراد باستخدام الحاسبات في الموقع الفرعي لأدوات الاستيراد.',
+    ru: 'Оцените итоговую стоимость, доставку и расходы на импорт с помощью калькуляторов на подсайте инструментов импорта.',
+    es: 'Estime el coste de desembarco, el envío y los costes de importación con las calculadoras del subsitio de herramientas de importación.',
   },
 };
