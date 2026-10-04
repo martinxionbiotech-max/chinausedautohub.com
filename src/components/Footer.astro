@@ -1,5 +1,5 @@
 ---
-import { SITE, CONTACT, SUBDOMAINS } from '../lib/site';
+import { SITE, CONTACT, SUBDOMAINS, LEGAL_NAV } from '../lib/site';
 import { getTranslations } from '../i18n';
 import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
 
@@ -41,11 +41,13 @@ const resources = [
   { label: t.nav.companies, note: hostOf(SUBDOMAINS.companies), href: SUBDOMAINS.companies },
 ];
 
-const legal = [
-  { label: t.breadcrumb.privacy, href: localizedUrl('/privacy/', locale) },
-  { label: t.breadcrumb.terms, href: localizedUrl('/terms/', locale) },
-  { label: t.breadcrumb.cookies, href: localizedUrl('/cookies/', locale) },
-];
+const legalLink = (l: { crumbKey: string; path: string }) => ({
+  label: (t.breadcrumb as Record<string, string>)[l.crumbKey] ?? l.crumbKey,
+  href: localizedUrl(l.path, locale),
+});
+
+const legalGroup = LEGAL_NAV.legal.map(legalLink);
+const disclaimersGroup = LEGAL_NAV.disclaimers.map(legalLink);
 
 const homeHref = localizedUrl('/', locale);
 const year = new Date().getFullYear();
@@ -105,13 +107,26 @@ const year = new Date().getFullYear();
   </div>
 
   <div class="border-t border-surface-line">
-    <div class="container-site flex flex-col gap-3 py-6 sm:flex-row sm:items-center sm:justify-between">
-      <p class="text-sm text-ink-muted">© {year} {SITE.name}. {t.footer.allRightsReserved}</p>
-      <nav class="flex flex-wrap gap-x-5 gap-y-2" aria-label={t.footer.legal}>
-        {legal.map((l) => (
-          <a href={l.href} class="text-sm text-ink-muted hover:text-brand-700">{l.label}</a>
-        ))}
-      </nav>
+    <div class="container-site py-6">
+      <div class="grid gap-6 sm:grid-cols-2">
+        <nav aria-label={t.footer.legal}>
+          <h3 class="text-xs font-semibold uppercase tracking-wide text-ink-muted">{t.footer.legal}</h3>
+          <ul class="mt-2 grid grid-cols-2 gap-x-5 gap-y-1.5">
+            {legalGroup.map((l) => (
+              <li><a href={l.href} class="text-xs text-ink-muted hover:text-brand-700">{l.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+        <nav aria-label={t.footer.disclaimers}>
+          <h3 class="text-xs font-semibold uppercase tracking-wide text-ink-muted">{t.footer.disclaimers}</h3>
+          <ul class="mt-2 grid grid-cols-2 gap-x-5 gap-y-1.5">
+            {disclaimersGroup.map((l) => (
+              <li><a href={l.href} class="text-xs text-ink-muted hover:text-brand-700">{l.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+      <p class="mt-6 text-sm text-ink-muted">© {year} {SITE.name}. {t.footer.allRightsReserved}</p>
     </div>
   </div>
 </footer>

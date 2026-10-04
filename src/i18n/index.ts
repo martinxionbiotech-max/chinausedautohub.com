@@ -103,7 +103,15 @@ export interface Dictionary {
     lastUpdated: string;
     privacy: LegalPage;
     terms: LegalPage;
-    cookies: { title: string; description: string; h1: string; paragraphs: string[] };
+    cookies: LegalPage;
+    legalNotice: LegalPage;
+    disclaimer: LegalPage;
+    vehicleListingDisclaimer: LegalPage;
+    exportCompliance: LegalPage;
+    dataProtection: LegalPage;
+    externalLinks: LegalPage;
+    errorsOmissions: LegalPage;
+    copyright: LegalPage;
   };
   notFound: Record<string, string>;
   breadcrumb: Record<string, string>;

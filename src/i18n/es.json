@@ -46,7 +46,8 @@
     "email": "Correo",
     "whatsapp": "WhatsApp",
     "allRightsReserved": "Todos los derechos reservados.",
-    "legal": "Legal"
+    "legal": "Legal",
+    "disclaimers": "Avisos legales"
   },
   "common": {
     "home": "Inicio",
@@ -592,14 +593,14 @@
     "lastUpdated": "Última actualización: 4 de octubre de 2026",
     "privacy": {
       "title": "Política de privacidad — Exportación de coches usados de China",
-      "description": "Política de privacidad de China Used Auto Hub — cómo tratamos la información que envías a través de nuestros formularios de consulta.",
+      "description": "Política de privacidad de China Used Auto Hub — qué información recopilamos a través de formularios de consulta, correo y WhatsApp y cómo la usamos.",
       "h1": "Política de privacidad",
       "intro": "Esta política explica cómo {siteName} trata la información que proporcionas al usar este sitio web, incluidos los formularios de consulta y solicitud.",
       "sections": [
         {
           "h": "Información que recopilamos",
           "p": [
-            "Cuando envías una cotización o una solicitud de abastecimiento, recopilamos los datos que proporcionas — como tu nombre, correo electrónico, número de WhatsApp, empresa y los requisitos del vehículo que describes. Solo los usamos para responder a tu consulta."
+            "Cuando envías una cotización o una solicitud de abastecimiento, recopilamos los datos que proporcionas — como tu nombre, correo electrónico, número de WhatsApp, empresa y los requisitos del vehículo que describes. Recopilamos las mismas categorías de información cuando nos contactas por correo o WhatsApp."
           ]
         },
         {
@@ -609,19 +610,37 @@
           ]
         },
         {
+          "h": "Almacenamiento",
+          "p": [
+            "Conservamos las consultas solo el tiempo necesario para responderte y mantener un registro de la conversación. Este sitio web es estático y no utiliza rastreadores publicitarios ni analíticos."
+          ]
+        },
+        {
+          "h": "Tus derechos",
+          "p": [
+            "Puedes pedirnos acceso, corrección o eliminación de los datos personales que nos has proporcionado. Actualmente no designamos a ningún representante en una jurisdicción específica; describimos nuestras prácticas tal como operan realmente."
+          ]
+        },
+        {
           "h": "Contacto",
           "p": [
-            "Para cuestiones de privacidad, escribe a {email}."
+            "Para cuestiones de privacidad, escribe a {email} o mándanos un mensaje por WhatsApp: {whatsapp}."
           ]
         }
       ]
     },
     "terms": {
       "title": "Términos — Exportación de coches usados de China",
-      "description": "Términos de uso de China Used Auto Hub.",
+      "description": "Términos de uso de China Used Auto Hub — descripción del servicio, anuncios, responsabilidades del comprador y ley aplicable.",
       "h1": "Términos de uso",
       "intro": "Al usar este sitio web aceptas estos términos. {siteName} proporciona una plataforma para el abastecimiento y la exportación de vehículos usados de China.",
       "sections": [
+        {
+          "h": "Descripción del servicio",
+          "p": [
+            "Ayudamos a concesionarios, importadores, mayoristas y compradores profesionales en el extranjero a encontrar vehículos, comparar especificaciones, solicitar cotizaciones y abastecer vehículos concretos. Ayudamos a coordinar la preparación de la exportación, la documentación y el envío. No fabricamos vehículos, no realizamos inspecciones reglamentarias ni gestionamos el despacho de aduanas en tu país de destino."
+          ]
+        },
         {
           "h": "Anuncios y precios",
           "p": [
@@ -635,6 +654,18 @@
           ]
         },
         {
+          "h": "Responsabilidades del comprador",
+          "p": [
+            "Eres responsable de confirmar que un vehículo puede importarse a tu país de destino y de pagar los aranceles, impuestos y demás cargos aplicables."
+          ]
+        },
+        {
+          "h": "Ley aplicable",
+          "p": [
+            "Salvo que la ley imperativa de tu jurisdicción disponga lo contrario, estos términos y tu uso de este sitio web se rigen por las leyes de la República Popular China."
+          ]
+        },
+        {
           "h": "Contacto",
           "p": [
             "Para preguntas sobre estos términos, escribe a {email}."
@@ -644,11 +675,261 @@
     },
     "cookies": {
       "title": "Política de cookies — Exportación de coches usados de China",
-      "description": "Política de cookies de China Used Auto Hub.",
+      "description": "Política de cookies de China Used Auto Hub — las cookies limitadas que usa este sitio estático y cómo gestionarlas.",
       "h1": "Política de cookies",
-      "paragraphs": [
-        "Este sitio web es un sitio estático y no utiliza cookies publicitarias ni analíticas. Las cookies que se establezcan se limitan a las necesarias para la funcionalidad básica del sitio.",
-        "No utilizamos rastreadores publicitarios de terceros ni cookies de seguimiento entre sitios."
+      "intro": "Esta página describe las cookies que se usan en este sitio web.",
+      "sections": [
+        {
+          "h": "Cookies que usamos",
+          "p": [
+            "Este sitio web es un sitio estático y no utiliza cookies publicitarias ni analíticas. Las cookies que se establezcan se limitan a las necesarias para la funcionalidad básica del sitio."
+          ]
+        },
+        {
+          "h": "Sin seguimiento de terceros",
+          "p": [
+            "No utilizamos rastreadores publicitarios de terceros ni cookies de seguimiento entre sitios."
+          ]
+        },
+        {
+          "h": "Gestión de cookies",
+          "p": [
+            "Puedes controlar o eliminar las cookies desde la configuración de tu navegador. Como este sitio solo usa cookies funcionales mínimas, desactivarlas no debería afectar a tu capacidad de navegarlo."
+          ]
+        },
+        {
+          "h": "Contacto",
+          "p": [
+            "Para preguntas sobre esta política de cookies, escribe a {email}."
+          ]
+        }
+      ]
+    },
+    "legalNotice": {
+      "title": "Aviso legal — Exportación de coches usados de China",
+      "description": "Información sobre el operador del sitio y contacto de China Used Auto Hub, y la ley que se aplica a este sitio web.",
+      "h1": "Aviso legal",
+      "intro": "{siteName} es una plataforma de abastecimiento y exportación de vehículos. Puedes contactar con el operador a través de los canales indicados a continuación.",
+      "sections": [
+        {
+          "h": "Operador del sitio",
+          "p": [
+            "{siteName} actualmente no publica una entidad corporativa registrada por separado y no indicamos un número de registro de empresa porque no se publica ninguno. El sitio web se opera a través de los canales de contacto indicados en esta página."
+          ]
+        },
+        {
+          "h": "Contacto",
+          "p": [
+            "Correo: {email}",
+            "WhatsApp: {whatsapp}"
+          ]
+        },
+        {
+          "h": "Ley aplicable",
+          "p": [
+            "Este sitio web se opera desde la República Popular China. Salvo que la ley imperativa de tu jurisdicción disponga lo contrario, el uso de este sitio web se rige por las leyes de la República Popular China."
+          ]
+        }
+      ]
+    },
+    "disclaimer": {
+      "title": "Descargo de responsabilidad — Exportación de coches usados de China",
+      "description": "Descargo de responsabilidad general de China Used Auto Hub — la información es solo de referencia y no es asesoramiento profesional.",
+      "h1": "Descargo de responsabilidad",
+      "intro": "El contenido de este sitio web se proporciona solo con fines informativos generales.",
+      "sections": [
+        {
+          "h": "Información solo de referencia",
+          "p": [
+            "La información de este sitio web — incluidos los anuncios de vehículos, especificaciones, precios, guías y notas de mercado — se proporciona como referencia general. Publicamos solo la información que tenemos y no la presentamos como asesoramiento profesional."
+          ]
+        },
+        {
+          "h": "No es asesoramiento profesional",
+          "p": [
+            "Nada de este sitio web constituye asesoramiento legal, fiscal, financiero, de importación ni de otro tipo profesional. Para decisiones con consecuencias legales o financieras, consulta a un asesor cualificado en tu jurisdicción."
+          ]
+        },
+        {
+          "h": "Los precios y la disponibilidad pueden cambiar",
+          "p": [
+            "Los precios, las especificaciones y la disponibilidad pueden cambiar en cualquier momento y se confirman contigo durante el proceso de cotización."
+          ]
+        },
+        {
+          "h": "No es una oferta ni un compromiso",
+          "p": [
+            "El contenido de este sitio web no constituye una oferta, una invitación a ofertar ni un compromiso vinculante de vender o suministrar ningún vehículo o servicio."
+          ]
+        }
+      ]
+    },
+    "vehicleListingDisclaimer": {
+      "title": "Aviso sobre listados de vehículos — Exportación de coches usados de China",
+      "description": "Cómo leer los anuncios de vehículos en China Used Auto Hub, incluida la divulgación de inventario de demostración y de ejemplo.",
+      "h1": "Aviso sobre listados de vehículos",
+      "intro": "Los anuncios de vehículos de este sitio web se elaboran a partir de la información proporcionada por la fuente.",
+      "sections": [
+        {
+          "h": "Información de la fuente",
+          "p": [
+            "Las especificaciones, el kilometraje, las notas de estado y los precios de venta son proporcionados por la fuente o se elaboran a partir de la información que tenemos. Cuando un detalle no está disponible, lo decimos en lugar de adivinar."
+          ]
+        },
+        {
+          "h": "No verificado de forma independiente",
+          "p": [
+            "Salvo que un anuncio indique lo contrario, la información del vehículo no ha sido verificada de forma independiente por nosotros. Confirma siempre los detalles, el estado y el historial antes de comprar."
+          ]
+        },
+        {
+          "h": "Anuncios de demostración y de ejemplo",
+          "p": [
+            "El inventario que se muestra actualmente en este sitio web es información de demostración. Son anuncios de ejemplo que se usan para mostrar cómo funciona la plataforma y no son vehículos reales actualmente a la venta. Cada anuncio de demostración está etiquetado como dato de demostración en su página. Cuando se conecte inventario real, se actualizará este aviso."
+          ]
+        }
+      ]
+    },
+    "exportCompliance": {
+      "title": "Cumplimiento de exportación — Exportación de coches usados de China",
+      "description": "Declaración de cumplimiento de exportación — responsabilidades del comprador sobre elegibilidad de importación, impuestos, aranceles y normativa.",
+      "h1": "Cumplimiento de exportación",
+      "intro": "Exportar un vehículo desde China e importarlo a un país de destino está sujeto a las leyes de ambos países.",
+      "sections": [
+        {
+          "h": "Responsabilidades del comprador",
+          "p": [
+            "Eres responsable de confirmar que un vehículo puede importarse a tu país de destino, incluidos los límites de antigüedad, las normas de lado de conducción, los estándares de emisiones, los aranceles, los impuestos y cualquier requisito de licencia o registro."
+          ]
+        },
+        {
+          "h": "Sin asesoramiento legal",
+          "p": [
+            "No proporcionamos asesoramiento legal ni regulatorio. La información de mercado de este sitio web y de nuestro subsitio de mercado es solo orientación general."
+          ]
+        },
+        {
+          "h": "Verifica antes de confiar",
+          "p": [
+            "Antes de confiar en cualquier dato de mercado, tipo arancelario o normativa, verifícalo con las autoridades competentes de tu país de destino. Las cifras pueden cambiar y diferir de lo mostrado."
+          ]
+        }
+      ]
+    },
+    "dataProtection": {
+      "title": "Protección de datos — Exportación de coches usados de China",
+      "description": "Qué datos recopila China Used Auto Hub a través de formularios de consulta, correo y WhatsApp y cómo se usan y almacenan.",
+      "h1": "Protección de datos",
+      "intro": "Esta página describe los datos personales que recopilamos y cómo los tratamos.",
+      "sections": [
+        {
+          "h": "Qué recopilamos",
+          "p": [
+            "Cuando nos contactas — mediante el formulario de cotización o solicitud, por correo o por WhatsApp — recopilamos los datos que proporcionas, como tu nombre, correo electrónico, número de WhatsApp, empresa y los requisitos del vehículo que describes."
+          ]
+        },
+        {
+          "h": "Por qué los recopilamos",
+          "p": [
+            "Usamos tus datos únicamente para responder a tu consulta y prestar los servicios de abastecimiento y exportación que solicitas. No vendemos tus datos ni los compartimos con terceros con fines de marketing."
+          ]
+        },
+        {
+          "h": "Almacenamiento",
+          "p": [
+            "Las consultas se almacenan solo el tiempo necesario para responderte y mantener un registro de la conversación. No utilizamos rastreadores publicitarios ni analíticos en este sitio web."
+          ]
+        },
+        {
+          "h": "Tus derechos",
+          "p": [
+            "Puedes pedirnos acceso, corrección o eliminación de los datos personales que nos has proporcionado. Actualmente no designamos a ningún representante en una jurisdicción específica; describimos nuestras prácticas tal como operan realmente."
+          ]
+        },
+        {
+          "h": "Contacto",
+          "p": [
+            "Para cuestiones de protección de datos, escribe a {email} o mándanos un mensaje por WhatsApp: {whatsapp}."
+          ]
+        }
+      ]
+    },
+    "externalLinks": {
+      "title": "Enlaces externos — Exportación de coches usados de China",
+      "description": "Descargo de responsabilidad sobre enlaces externos y terceros de China Used Auto Hub, incluida la atribución de marcas.",
+      "h1": "Enlaces externos",
+      "intro": "Este sitio web enlaza con subsitios relacionados y con sitios web externos.",
+      "sections": [
+        {
+          "h": "Subsitios y enlaces externos",
+          "p": [
+            "Operamos varios subsitios relacionados de datos de vehículos, información de mercado, herramientas de importación y datos de empresas. Los enlaces a estos y a sitios web externos se proporcionan por conveniencia."
+          ]
+        },
+        {
+          "h": "Sin respaldo",
+          "p": [
+            "Un enlace a un sitio web externo no implica respaldo de ese sitio ni de su contenido. No somos responsables del contenido ni de las prácticas de los sitios de terceros."
+          ]
+        },
+        {
+          "h": "Marcas",
+          "p": [
+            "Los nombres de marcas, nombres de modelos y logotipos de vehículos que aparecen en este sitio web pertenecen a sus respectivos propietarios. Su uso es solo para identificación y no implica afiliación ni respaldo."
+          ]
+        }
+      ]
+    },
+    "errorsOmissions": {
+      "title": "Errores y omisiones — Exportación de coches usados de China",
+      "description": "Política de errores y omisiones de China Used Auto Hub y cómo informar de una corrección.",
+      "h1": "Errores y omisiones",
+      "intro": "Trabajamos para mantener precisa la información de este sitio web, pero pueden producirse errores.",
+      "sections": [
+        {
+          "h": "Sin garantía de exactitud",
+          "p": [
+            "Aunque procuramos publicar información precisa y actual, no garantizamos que todo en este sitio web esté libre de errores u omisiones. Las especificaciones de los vehículos, los precios y los datos de mercado están sujetos a cambios."
+          ]
+        },
+        {
+          "h": "Cómo informar de un error",
+          "p": [
+            "Si crees que la información de este sitio web es incorrecta o está desactualizada, avísanos y la revisaremos. Contacta por {email} o WhatsApp: {whatsapp}."
+          ]
+        },
+        {
+          "h": "Correcciones",
+          "p": [
+            "Cuando confirmemos un error u omisión, lo corregiremos tan pronto como sea posible. Podemos actualizar o eliminar contenido sin previo aviso."
+          ]
+        }
+      ]
+    },
+    "copyright": {
+      "title": "Derechos de autor — Exportación de coches usados de China",
+      "description": "Aviso de derechos de autor de China Used Auto Hub, incluida la atribución de imágenes y cómo informar de una infracción.",
+      "h1": "Derechos de autor",
+      "intro": "El contenido de este sitio web está protegido por derechos de autor.",
+      "sections": [
+        {
+          "h": "Contenido",
+          "p": [
+            "Salvo que se indique lo contrario, el texto y el diseño de este sitio web son propiedad de {siteName}. No puedes reproducir ni volver a publicar partes sustanciales del mismo sin permiso."
+          ]
+        },
+        {
+          "h": "Imágenes",
+          "p": [
+            "Algunas imágenes de este sitio web son ilustraciones provisionales que se usan para representar categorías de vehículos; no son fotografías de vehículos reales. Las fotografías y demás imágenes proporcionadas por terceros siguen siendo propiedad de sus respectivos propietarios."
+          ]
+        },
+        {
+          "h": "Informar de una infracción",
+          "p": [
+            "Si crees que el contenido de este sitio web infringe tus derechos, contacta con nosotros con los detalles y lo revisaremos. Respondemos a solicitudes de retirada por derechos de autor, incluidas las realizadas conforme a la ley estadounidense Digital Millennium Copyright Act cuando corresponda. Escribe a {email} o mándanos un mensaje por WhatsApp: {whatsapp}."
+          ]
+        }
       ]
     }
   },
@@ -677,7 +958,15 @@
     "markets": "Mercados",
     "privacy": "Política de privacidad",
     "terms": "Términos",
-    "cookies": "Política de cookies"
+    "cookies": "Política de cookies",
+    "legalNotice": "Aviso legal",
+    "dataProtection": "Protección de datos",
+    "copyright": "Derechos de autor",
+    "disclaimer": "Descargo de responsabilidad",
+    "vehicleListingDisclaimer": "Aviso sobre listados de vehículos",
+    "exportCompliance": "Cumplimiento de exportación",
+    "externalLinks": "Enlaces externos",
+    "errorsOmissions": "Errores y omisiones"
   },
   "specLabels": {
     "engine": "Motor",
