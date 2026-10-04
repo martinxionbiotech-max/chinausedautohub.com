@@ -24,14 +24,12 @@ const navItems: NavItem[] = [
     children: [
       { label: t.nav.availableVehicles, href: localizedUrl('/cars/', locale) },
       { label: t.nav.vehicleTypes, href: localizedUrl('/body-types/', locale) },
-      { label: t.nav.powertrains, href: localizedUrl('/powertrains/', locale) },
       { label: t.nav.newArrivals, href: localizedUrl('/new-arrivals/', locale) },
     ],
   },
   { label: t.nav.brands, href: localizedUrl('/brands/', locale) },
   { label: t.nav.markets, href: localizedUrl('/markets/', locale) },
   { label: t.nav.services, href: localizedUrl('/services/', locale) },
-  { label: t.nav.requestACar, href: localizedUrl('/request-a-car/', locale) },
   { label: t.nav.howItWorks, href: localizedUrl('/how-it-works/', locale) },
 ];
 
@@ -44,10 +42,11 @@ const hostOf = (url: string) => {
 };
 
 const resources = [
-  { label: t.nav.vehicleData, note: hostOf(SUBDOMAINS.data), href: SUBDOMAINS.data },
-  { label: t.nav.marketInformation, note: hostOf(SUBDOMAINS.market), href: SUBDOMAINS.market },
-  { label: t.nav.tools, note: hostOf(SUBDOMAINS.tools), href: SUBDOMAINS.tools },
-  { label: t.nav.companies, note: hostOf(SUBDOMAINS.companies), href: SUBDOMAINS.companies },
+  { label: t.nav.vehicleData, note: hostOf(SUBDOMAINS.data), href: SUBDOMAINS.data, external: true },
+  { label: t.nav.marketInformation, note: hostOf(SUBDOMAINS.market), href: SUBDOMAINS.market, external: true },
+  { label: t.nav.guides, note: null, href: localizedUrl('/guides/', locale), external: false },
+  { label: t.nav.tools, note: hostOf(SUBDOMAINS.tools), href: SUBDOMAINS.tools, external: true },
+  { label: t.nav.companies, note: hostOf(SUBDOMAINS.companies), href: SUBDOMAINS.companies, external: true },
 ];
 
 const homeHref = localizedUrl('/', locale);
@@ -122,18 +121,15 @@ function isActive(item: NavItem): boolean {
         </svg>
       </summary>
       <div class="absolute end-0 top-full mt-1.5 w-64 rounded-lg border border-surface-line bg-white p-1.5 shadow-md">
-        <a href={localizedUrl('/guides/', locale)} class="block rounded-md px-3 py-2">
-          <span class="block text-sm font-medium text-ink-soft hover:text-brand-700">{t.nav.guides}</span>
-        </a>
         {resources.map((item) => (
           <a
             href={item.href}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={item.external ? '_blank' : undefined}
+            rel={item.external ? 'noopener noreferrer' : undefined}
             class="block rounded-md px-3 py-2"
           >
             <span class="block text-sm font-medium text-ink-soft hover:text-brand-700">{item.label}</span>
-            <span class="block text-[11px] text-ink-muted">{item.note}</span>
+            {item.note && <span class="block text-[11px] text-ink-muted">{item.note}</span>}
           </a>
         ))}
       </div>
@@ -179,6 +175,7 @@ function isActive(item: NavItem): boolean {
       </details>
 
       <a href={localizedUrl('/request-a-car/', locale)} class="btn-primary hidden sm:inline-flex">{t.common.requestACar}</a>
+      <a href={localizedUrl('/contact/', locale)} class="btn-secondary hidden md:inline-flex">{t.nav.contact}</a>
       <button
         id="nav-toggle"
         class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-surface-line text-ink"
@@ -197,6 +194,10 @@ function isActive(item: NavItem): boolean {
 
   <div id="mobile-menu" class="hidden lg:hidden border-t border-surface-line bg-white">
     <nav class="container-site flex flex-col py-3" aria-label={t.nav.mobile}>
+      <div class="flex gap-2 pb-3">
+        <a href={localizedUrl('/request-a-car/', locale)} class="btn-primary flex-1">{t.common.requestACar}</a>
+        <a href={localizedUrl('/contact/', locale)} class="btn-secondary flex-1">{t.nav.contact}</a>
+      </div>
       {navItems.map((item) =>
         item.children ? (
           <details class="group">
@@ -248,18 +249,15 @@ function isActive(item: NavItem): boolean {
           </svg>
         </summary>
         <div class="flex flex-col ps-3">
-          <a href={localizedUrl('/guides/', locale)} class="px-3 py-2 text-sm font-medium text-ink-muted hover:text-brand-700">
-            {t.nav.guides}
-          </a>
           {resources.map((item) => (
             <a
               href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              target={item.external ? '_blank' : undefined}
+              rel={item.external ? 'noopener noreferrer' : undefined}
               class="px-3 py-2 text-sm font-medium text-ink-muted hover:text-brand-700"
             >
               {item.label}
-              <span class="text-[11px] text-ink-muted"> — {item.note}</span>
+              {item.note && <span class="text-[11px] text-ink-muted"> — {item.note}</span>}
             </a>
           ))}
         </div>

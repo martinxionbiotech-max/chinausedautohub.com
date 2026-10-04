@@ -73,6 +73,7 @@ export interface Dictionary {
     whyItems: { title: string; text: string }[];
     steps: { n: string; title: string; text: string }[];
     markets: { slug: string; name: string }[];
+    faqs: { question: string; answer: string }[];
   };
   about: {
     title: string;

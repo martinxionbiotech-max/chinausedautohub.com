@@ -8,12 +8,13 @@ import {
   getNewArrivals,
   getBrandsWithVehicles,
   getBodyTypesWithVehicles,
+  getPowertrainsWithVehicles,
 } from '../lib/data';
 import { formatPrice, formatDate, SITE } from '../lib/site';
-import { brandUrl, bodyTypeUrl, vehicleUrl } from '../lib/urls';
+import { brandUrl, bodyTypeUrl, vehicleUrl, powertrainUrl } from '../lib/urls';
 import { organizationSchema, webSiteSchema, itemListSchema } from '../lib/schema';
 import { getTranslations } from '../i18n';
-import { bodyTypeName, bodyTypeDescription } from '../i18n/reference';
+import { bodyTypeName, bodyTypeDescription, powertrainName, powertrainDescription } from '../i18n/reference';
 import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
 import type { Vehicle } from '../lib/types';
 
@@ -24,12 +25,21 @@ const featured = getFeaturedVehicles(8);
 const arrivals = getNewArrivals(5);
 const brands = getBrandsWithVehicles();
 const bodyTypes = getBodyTypesWithVehicles();
+const powertrains = getPowertrainsWithVehicles();
 
 const title = t.home.title;
 const description = t.site.description;
 
 const carsHref = localizedUrl('/cars/', locale);
 const requestHref = localizedUrl('/request-a-car/', locale);
+
+const hostOf = (url: string) => {
+  try {
+    return new URL(url).host;
+  } catch {
+    return url;
+  }
+};
 
 const featuredListSchema = itemListSchema(
   featured.map((v) => ({ name: `${v.year} ${v.brand} ${v.model}`, url: localizedUrl(vehicleUrl(v), locale) })),
@@ -54,7 +64,7 @@ const featuredListSchema = itemListSchema(
     </div>
   </section>
 
-  <!-- TRUST STRIP -->
+  <!-- VALUE / TRUST BAR -->
   <section class="border-b border-surface-line bg-surface-alt">
     <div class="container-site grid gap-6 py-8 sm:grid-cols-2 lg:grid-cols-4">
       {t.home.trustItems.map((item) => (
@@ -86,42 +96,6 @@ const featuredListSchema = itemListSchema(
     <a href={carsHref} class="btn-secondary mt-6 sm:hidden">{t.common.viewAllVehicles} {t.common.arrow}</a>
   </section>
 
-  <!-- BROWSE BY BRAND -->
-  <section class="bg-surface-alt py-14">
-    <div class="container-site">
-      <h2 class="text-2xl font-bold text-ink">{t.home.browseBrandHeading}</h2>
-      <p class="mt-1 text-ink-soft">{t.home.browseBrandSub}</p>
-      <div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-        {brands.map((b) => (
-          <a href={localizedUrl(brandUrl(b), locale)} class="card flex items-center gap-3 p-4 hover:border-brand-300">
-            <span class="flex h-10 w-10 items-center justify-center rounded bg-brand-800 text-sm font-bold text-white">{b.name.slice(0, 2).toUpperCase()}</span>
-            <div>
-              <span class="block text-sm font-semibold text-ink">{b.name}</span>
-              <span class="block text-xs text-ink-muted">{t.home.browseVehicles}</span>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- BROWSE BY VEHICLE TYPE -->
-  <section class="container-site py-14">
-    <h2 class="text-2xl font-bold text-ink">{t.home.browseTypeHeading}</h2>
-    <p class="mt-1 text-ink-soft">{t.home.browseTypeSub}</p>
-    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {bodyTypes.map((bt) => (
-        <a href={localizedUrl(bodyTypeUrl(bt), locale)} class="card flex items-center justify-between p-5 hover:border-brand-300">
-          <div>
-            <span class="block text-base font-semibold text-ink">{bodyTypeName(bt.slug, locale, bt.name)}</span>
-            <span class="block text-sm text-ink-muted">{bodyTypeDescription(bt.slug, locale, bt.description)}</span>
-          </div>
-          <span class="text-brand-700">{t.common.arrow}</span>
-        </a>
-      ))}
-    </div>
-  </section>
-
   <!-- NEW ARRIVALS -->
   <section class="bg-surface-alt py-14">
     <div class="container-site">
@@ -147,65 +121,106 @@ const featuredListSchema = itemListSchema(
     </div>
   </section>
 
-  <!-- WHY SOURCE FROM CHINA -->
+  <!-- BROWSE BY BRAND -->
   <section class="container-site py-14">
-    <h2 class="text-2xl font-bold text-ink">{t.home.whyHeading}</h2>
-    <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-      {t.home.whyItems.map((w) => (
-        <div class="card p-5">
-          <h3 class="text-base font-semibold text-ink">{w.title}</h3>
-          <p class="mt-2 text-sm text-ink-soft">{w.text}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- REQUEST A CAR CTA -->
-  <section class="bg-surface-alt py-14">
-    <div class="container-site grid gap-8 lg:grid-cols-2">
-      <div>
-        <h2 class="text-2xl font-bold text-ink">{t.home.ctaHeading}</h2>
-        <p class="mt-2 text-ink-soft">{t.home.ctaText}</p>
-        <p class="mt-4 text-sm text-ink-muted">
-          {t.home.ctaDetail}
-        </p>
-      </div>
-      <LeadForm variant="full" />
-    </div>
-  </section>
-
-  <!-- MARKET ENTRY -->
-  <section class="container-site py-14">
-    <h2 class="text-2xl font-bold text-ink">{t.home.marketHeading}</h2>
-    <p class="mt-1 text-ink-soft">{t.home.marketSub}</p>
-    <div class="mt-6 flex flex-wrap gap-3">
-      {t.home.markets.map((m) => (
-        <a
-          href={`${SITE.subdomains.market}/${m.slug}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="card px-4 py-2.5 text-sm font-medium text-ink hover:border-brand-300"
-        >
-          {m.name}
+    <h2 class="text-2xl font-bold text-ink">{t.home.browseBrandHeading}</h2>
+    <p class="mt-1 text-ink-soft">{t.home.browseBrandSub}</p>
+    <div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+      {brands.map((b) => (
+        <a href={localizedUrl(brandUrl(b), locale)} class="card flex items-center gap-3 p-4 hover:border-brand-300">
+          <span class="flex h-10 w-10 items-center justify-center rounded bg-brand-800 text-sm font-bold text-white">{b.name.slice(0, 2).toUpperCase()}</span>
+          <div>
+            <span class="block text-sm font-semibold text-ink">{b.name}</span>
+            <span class="block text-xs text-ink-muted">{t.home.browseVehicles}</span>
+          </div>
         </a>
       ))}
     </div>
-    <p class="mt-3 text-xs text-ink-muted">{t.home.marketNote}</p>
   </section>
 
-  <!-- DATA / TOOLS ENTRY -->
+  <!-- BROWSE BY VEHICLE TYPE -->
   <section class="bg-surface-alt py-14">
-    <div class="container-site grid gap-5 lg:grid-cols-2">
-      <a href={`${SITE.subdomains.data}`} target="_blank" rel="noopener noreferrer" class="card p-6 hover:border-brand-300">
-        <h2 class="text-lg font-semibold text-ink">{t.home.dataHeading}</h2>
-        <p class="mt-2 text-sm text-ink-soft">{t.home.dataText}</p>
-        <span class="mt-3 inline-block text-sm font-semibold text-brand-700">{t.home.dataLink} {t.common.arrow}</span>
-      </a>
-      <a href={`${SITE.subdomains.tools}`} target="_blank" rel="noopener noreferrer" class="card p-6 hover:border-brand-300">
-        <h2 class="text-lg font-semibold text-ink">{t.home.toolsHeading}</h2>
-        <p class="mt-2 text-sm text-ink-soft">{t.home.toolsText}</p>
-        <span class="mt-3 inline-block text-sm font-semibold text-brand-700">{t.home.toolsLink} {t.common.arrow}</span>
-      </a>
+    <div class="container-site">
+      <h2 class="text-2xl font-bold text-ink">{t.home.browseTypeHeading}</h2>
+      <p class="mt-1 text-ink-soft">{t.home.browseTypeSub}</p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {bodyTypes.map((bt) => (
+          <a href={localizedUrl(bodyTypeUrl(bt), locale)} class="card flex items-center justify-between p-5 hover:border-brand-300">
+            <div>
+              <span class="block text-base font-semibold text-ink">{bodyTypeName(bt.slug, locale, bt.name)}</span>
+              <span class="block text-sm text-ink-muted">{bodyTypeDescription(bt.slug, locale, bt.description)}</span>
+            </div>
+            <span class="text-brand-700">{t.common.arrow}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BROWSE BY POWERTRAIN -->
+  <section class="container-site py-14">
+    <h2 class="text-2xl font-bold text-ink">{t.home.powertrainHeading}</h2>
+    <p class="mt-1 text-ink-soft">{t.home.powertrainSub}</p>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {powertrains.map((p) => (
+        <a href={localizedUrl(powertrainUrl(p), locale)} class="card flex items-center justify-between p-5 hover:border-brand-300">
+          <div>
+            <span class="block text-base font-semibold text-ink">{powertrainName(p.slug, locale, p.name)}</span>
+            <span class="block text-sm text-ink-muted">{powertrainDescription(p.slug, locale, p.description)}</span>
+          </div>
+          <span class="text-brand-700">{t.common.arrow}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- WHY SOURCE FROM CHINA -->
+  <section class="bg-surface-alt py-14">
+    <div class="container-site">
+      <h2 class="text-2xl font-bold text-ink">{t.home.whyHeading}</h2>
+      <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {t.home.whyItems.map((w) => (
+          <div class="card p-5">
+            <h3 class="text-base font-semibold text-ink">{w.title}</h3>
+            <p class="mt-2 text-sm text-ink-soft">{w.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPORT SERVICES -->
+  <section class="container-site py-14">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div class="max-w-2xl">
+        <h2 class="text-2xl font-bold text-ink">{t.home.servicesHeading}</h2>
+        <p class="mt-2 text-ink-soft">{t.home.servicesSub}</p>
+      </div>
+      <a href={localizedUrl('/services/', locale)} class="btn-primary">{t.home.servicesLink} {t.common.arrow}</a>
+    </div>
+  </section>
+
+  <!-- POPULAR MARKETS -->
+  <section class="bg-surface-alt py-14">
+    <div class="container-site">
+      <h2 class="text-2xl font-bold text-ink">{t.home.marketHeading}</h2>
+      <p class="mt-1 text-ink-soft">{t.home.marketSub}</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        {t.home.markets.map((m) => (
+          <a
+            href={`${SITE.subdomains.market}/${m.slug}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card px-4 py-2.5 text-sm font-medium text-ink hover:border-brand-300"
+          >
+            {m.name}
+          </a>
+        ))}
+      </div>
+      <div class="mt-4 flex items-center gap-4">
+        <a href={localizedUrl('/markets/', locale)} class="text-sm font-semibold text-brand-700 hover:underline">{t.home.marketOverviewLink} {t.common.arrow}</a>
+        <span class="text-xs text-ink-muted">{t.home.marketNote}</span>
+      </div>
     </div>
   </section>
 
@@ -222,6 +237,61 @@ const featuredListSchema = itemListSchema(
       ))}
     </div>
     <a href={localizedUrl('/how-it-works/', locale)} class="btn-ghost mt-5">{t.common.learnMoreProcess} {t.common.arrow}</a>
+  </section>
+
+  <!-- RESOURCE HUBS: VEHICLE DATA / MARKET INFO / IMPORT TOOLS / BUYER GUIDES -->
+  <section class="bg-surface-alt py-14">
+    <div class="container-site grid gap-5 sm:grid-cols-2">
+      <a href={SITE.subdomains.data} target="_blank" rel="noopener noreferrer" class="card p-6 hover:border-brand-300">
+        <h2 class="text-lg font-semibold text-ink">{t.home.dataHeading}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{t.home.dataText}</p>
+        <span class="mt-3 inline-block text-sm font-semibold text-brand-700">{t.home.dataLink} {t.common.arrow}</span>
+      </a>
+      <a href={SITE.subdomains.market} target="_blank" rel="noopener noreferrer" class="card p-6 hover:border-brand-300">
+        <h2 class="text-lg font-semibold text-ink">{t.home.marketInfoHeading}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{t.home.marketInfoText}</p>
+        <span class="mt-3 inline-block text-sm font-semibold text-brand-700">{hostOf(SITE.subdomains.market)} {t.common.arrow}</span>
+      </a>
+      <a href={SITE.subdomains.tools} target="_blank" rel="noopener noreferrer" class="card p-6 hover:border-brand-300">
+        <h2 class="text-lg font-semibold text-ink">{t.home.toolsHeading}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{t.home.toolsText}</p>
+        <span class="mt-3 inline-block text-sm font-semibold text-brand-700">{t.home.toolsLink} {t.common.arrow}</span>
+      </a>
+      <a href={localizedUrl('/guides/', locale)} class="card p-6 hover:border-brand-300">
+        <h2 class="text-lg font-semibold text-ink">{t.home.guidesHeading}</h2>
+        <p class="mt-2 text-sm text-ink-soft">{t.home.guidesText}</p>
+        <span class="mt-3 inline-block text-sm font-semibold text-brand-700">{t.home.guidesLink} {t.common.arrow}</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- REQUEST A VEHICLE -->
+  <section class="container-site py-14">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div>
+        <h2 class="text-2xl font-bold text-ink">{t.home.ctaHeading}</h2>
+        <p class="mt-2 text-ink-soft">{t.home.ctaText}</p>
+        <p class="mt-4 text-sm text-ink-muted">
+          {t.home.ctaDetail}
+        </p>
+      </div>
+      <LeadForm variant="full" />
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface-alt py-14">
+    <div class="container-site max-w-3xl">
+      <h2 class="text-2xl font-bold text-ink">{t.home.faqHeading}</h2>
+      <div class="mt-6 space-y-3">
+        {t.home.faqs.map((f) => (
+          <details class="card p-4">
+            <summary class="cursor-pointer text-sm font-semibold text-ink">{f.question}</summary>
+            <p class="mt-2 text-sm text-ink-soft">{f.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
   </section>
 
   <!-- FINAL CTA -->

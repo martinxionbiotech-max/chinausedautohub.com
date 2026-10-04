@@ -93,11 +93,30 @@ const clientStrings = {
 
     <div class="grid gap-4 sm:grid-cols-2">
       {!isQuote && (
-        <div class="sm:col-span-2">
+        <div class="sm:col-span-2 space-y-2">
           <label class="flex items-center gap-2 text-sm text-ink-soft">
             <input type="checkbox" id="unknown-model" name="unknown_model" class="h-4 w-4 rounded border-surface-line" />
             {t.leadForm.unknownModel}
           </label>
+          <label class="flex items-center gap-2 text-sm text-ink-soft">
+            <input type="checkbox" id="recommend-market" name="recommend_market" class="h-4 w-4 rounded border-surface-line" />
+            {t.leadForm.recommendMarket}
+          </label>
+        </div>
+      )}
+
+      {!isQuote && (
+        <div class="sm:col-span-2">
+          <label for={`${formId}-buyer-type`} class="label">{t.leadForm.buyerType}</label>
+          <select id={`${formId}-buyer-type`} name="buyer_type" class="input">
+            <option value="">{t.leadForm.selectBuyerType}</option>
+            <option value="dealer">{t.leadForm.buyerDealer}</option>
+            <option value="importer">{t.leadForm.buyerImporter}</option>
+            <option value="wholesaler">{t.leadForm.buyerWholesaler}</option>
+            <option value="fleet">{t.leadForm.buyerFleet}</option>
+            <option value="rental">{t.leadForm.buyerRental}</option>
+            <option value="other">{t.leadForm.buyerOther}</option>
+          </select>
         </div>
       )}
 
@@ -166,6 +185,19 @@ const clientStrings = {
         <label for={`${formId}-port`} class="label">{t.leadForm.destinationPort}</label>
         <input id={`${formId}-port`} name="port" type="text" class="input" placeholder={t.leadForm.portPlaceholder} />
       </div>
+      {!isQuote && (
+        <div class="sm:col-span-2">
+          <label for={`${formId}-timeline`} class="label">{t.leadForm.timeline}</label>
+          <select id={`${formId}-timeline`} name="timeline" class="input">
+            <option value="">{t.leadForm.selectTimeline}</option>
+            <option value="asap">{t.leadForm.timelineAsap}</option>
+            <option value="1-month">{t.leadForm.timelineMonth1}</option>
+            <option value="1-3-months">{t.leadForm.timelineMonths1to3}</option>
+            <option value="3-6-months">{t.leadForm.timelineMonths3to6}</option>
+            <option value="flexible">{t.leadForm.timelineFlexible}</option>
+          </select>
+        </div>
+      )}
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2">
@@ -222,6 +254,7 @@ const clientStrings = {
     const okEl = document.getElementById(fid + '-success');
     const submitBtn = document.getElementById(fid + '-submit');
     const unknownModel = document.getElementById('unknown-model');
+    const recommendMarket = document.getElementById('recommend-market');
 
     const brandSel = document.getElementById(fid + '-brand');
     const modelInp = document.getElementById(fid + '-model');
@@ -257,7 +290,7 @@ const clientStrings = {
       const email = String(fd.get('email') || '').trim();
       const country = String(fd.get('country') || '').trim();
       const brand = String(fd.get('brand') || '').trim();
-      const skipVehicle = unknownModel ? unknownModel.checked : false;
+      const skipVehicle = (unknownModel ? unknownModel.checked : false) || (recommendMarket ? recommendMarket.checked : false);
 
       if (!name) { setError(S.errName || 'Please enter your name.'); return; }
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError(S.errEmail || 'Please enter a valid email address.'); return; }

@@ -4,7 +4,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import VehicleCard from '../components/VehicleCard.astro';
 import LeadForm from '../components/LeadForm.astro';
 import { getSimilarVehicles, resolveVehicle, vehicleTitle } from '../lib/data';
-import { formatPrice, formatMileage, formatDate } from '../lib/site';
+import { formatPrice, formatMileage, formatDate, CONTACT } from '../lib/site';
 import { dataModelUrl, dataBrandUrl, vehicleUrl } from '../lib/urls';
 import { vehicleSchema, breadcrumbSchema, faqSchema, type FaqItem } from '../lib/schema';
 import { getTranslations } from '../i18n';
@@ -35,6 +35,7 @@ const d = resolveVehicle(vehicle);
 const title = vehicleTitle(d);
 const isSold = vehicle.status === 'sold';
 const isReserved = vehicle.status === 'reserved';
+const isBatteryVehicle = vehicle.fuel === 'ev' || vehicle.fuel === 'phev';
 
 const similar = getSimilarVehicles(vehicle, 4);
 
@@ -52,6 +53,8 @@ const desc = vehicleDescription(vehicle.vehicle_id, locale, vehicle.description)
 const pageTitle = `${title} — ${formatPrice(vehicle.price, locale)} | ${t.detail.titleSuffix}`;
 const statusText = vehicle.status === 'available' ? t.detail.statusAvailable : `${t.detail.statusPrefix}: ${statusLabel}`;
 const description = `${vehicle.year} ${brandName} ${modelName}, ${formatMileage(vehicle.mileage_km, locale, t.units.km)}, ${fuel}, ${color}, ${location}. ${statusText}.`;
+
+const whatsappHref = `${CONTACT.whatsappLink}?text=${encodeURIComponent(`${t.detail.requestQuote}: ${title}`)}`;
 
 const crumbs = [
   { name: t.breadcrumb.home, path: localizedUrl('/', locale) },
@@ -133,11 +136,22 @@ const confidenceRows = [
 const lastVerifiedText = vehicle.last_verified_at
   ? formatDate(vehicle.last_verified_at, locale)
   : t.confidence.notAvailable;
+
+const batteryCapacityValue =
+  vehicle.battery_capacity ??
+  vehicle.specs.find((s) => s.label === 'Battery')?.value ??
+  null;
+const batteryHealthValue = vehicle.battery_health ?? null;
+const accidentValue = vehicle.accident_history ?? null;
+const maintenanceValue = vehicle.maintenance_history ?? null;
+const inspectionValue = vehicle.inspection_status ?? null;
+const documentsValue = vehicle.documents ?? null;
 ---
 
 <BaseLayout title={pageTitle} description={description} canonical={localizedUrl(vehicleUrl(vehicle), locale)} schema={schemas}>
   <Breadcrumb crumbs={crumbs} />
 
+  <!-- TITLE + STATUS -->
   <section class="container-site pb-6">
     <div class="flex flex-wrap items-start justify-between gap-3">
       <h1 class="text-2xl font-bold text-ink sm:text-3xl">{title}</h1>
@@ -167,6 +181,7 @@ const lastVerifiedText = vehicle.last_verified_at
     </div>
   )}
 
+  <!-- GALLERY + SUMMARY -->
   <section class="container-site grid gap-8 lg:grid-cols-[1.4fr_1fr]">
     <!-- GALLERY -->
     <div>
@@ -188,21 +203,11 @@ const lastVerifiedText = vehicle.last_verified_at
       )}
     </div>
 
-    <!-- SUMMARY -->
+    <!-- SUMMARY: PRICE / AVAILABILITY / LOCATION / QUICK SPECS -->
     <aside class="card h-fit p-5">
       <h2 class="sr-only">{t.detail.vehicleSummary}</h2>
-      <dl class="grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
-        <div><dt class="text-ink-muted">{t.detail.year}</dt><dd class="font-medium text-ink">{vehicle.year}</dd></div>
-        <div><dt class="text-ink-muted">{t.detail.mileage}</dt><dd class="font-medium text-ink">{formatMileage(vehicle.mileage_km, locale, t.units.km)}</dd></div>
-        <div><dt class="text-ink-muted">{t.detail.fuel}</dt><dd class="font-medium text-ink">{fuel}</dd></div>
-        <div><dt class="text-ink-muted">{t.detail.transmission}</dt><dd class="font-medium text-ink">{trans}</dd></div>
-        <div><dt class="text-ink-muted">{t.detail.drive}</dt><dd class="font-medium text-ink">{drive}</dd></div>
-        <div><dt class="text-ink-muted">{t.detail.color}</dt><dd class="font-medium text-ink">{color}</dd></div>
-        <div><dt class="text-ink-muted">{t.detail.location}</dt><dd class="font-medium text-ink">{location}</dd></div>
-        <div><dt class="text-ink-muted">{t.detail.status}</dt><dd class="font-medium text-ink">{statusLabel}</dd></div>
-      </dl>
 
-      <div class="mt-5 border-t border-surface-line pt-4">
+      <div class="border-b border-surface-line pb-4">
         <p class="text-sm text-ink-muted">{t.detail.askingPrice}</p>
         <p class="mt-1 text-2xl font-bold text-ink">{formatPrice(vehicle.price, locale)}</p>
         {vehicle.original_price && (
@@ -212,32 +217,30 @@ const lastVerifiedText = vehicle.last_verified_at
         <p class="mt-2 text-xs text-ink-muted">{t.detail.priceNote}</p>
       </div>
 
-      <div class="mt-4 grid gap-2">
+      <dl class="grid grid-cols-2 gap-x-4 gap-y-3 pt-4 text-sm">
+        <div><dt class="text-ink-muted">{t.detail.status}</dt><dd class="font-medium text-ink">{statusLabel}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.location}</dt><dd class="font-medium text-ink">{location}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.year}</dt><dd class="font-medium text-ink">{vehicle.year}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.mileage}</dt><dd class="font-medium text-ink">{formatMileage(vehicle.mileage_km, locale, t.units.km)}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.fuel}</dt><dd class="font-medium text-ink">{fuel}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.transmission}</dt><dd class="font-medium text-ink">{trans}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.drive}</dt><dd class="font-medium text-ink">{drive}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.bodyType}</dt><dd class="font-medium text-ink">{bodyTypeName(vehicle.body_type, locale, d.bodyType?.name ?? vehicle.body_type)}</dd></div>
+        <div><dt class="text-ink-muted">{t.detail.color}</dt><dd class="font-medium text-ink">{color}</dd></div>
+      </dl>
+
+      <div class="mt-5 grid gap-2">
         {!isSold ? (
-          <a href="#lead-form" class="btn-primary w-full">{t.detail.requestQuote}</a>
+          <a href="#request-vehicle" class="btn-primary w-full">{t.detail.requestQuote}</a>
         ) : (
           <a href={localizedUrl('/request-a-car/', locale)} class="btn-primary w-full">{t.detail.requestSimilar}</a>
         )}
-        <a href={localizedUrl('/request-a-car/', locale)} class="btn-secondary w-full">{t.detail.requestSimilar}</a>
+        <a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="btn-secondary w-full">{t.detail.whatsapp}</a>
+        {!isSold && (
+          <a href={localizedUrl('/request-a-car/', locale)} class="btn-ghost w-full text-sm">{t.detail.requestSimilar}</a>
+        )}
       </div>
     </aside>
-  </section>
-
-  <!-- KEY SPECS -->
-  <section class="container-site mt-10">
-    <h2 class="text-xl font-bold text-ink">{t.detail.keySpecs}</h2>
-    <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2 lg:grid-cols-3">
-      {vehicle.specs.map((s) => (
-        <div class="bg-white p-4">
-          <dt class="text-sm text-ink-muted">{specLabel(s.label)}</dt>
-          <dd class="mt-0.5 text-sm font-medium text-ink">{s.value}</dd>
-        </div>
-      ))}
-      <div class="bg-white p-4">
-        <dt class="text-sm text-ink-muted">{t.detail.bodyType}</dt>
-        <dd class="mt-0.5 text-sm font-medium text-ink">{bodyTypeName(vehicle.body_type, locale, d.bodyType?.name ?? vehicle.body_type)}</dd>
-      </div>
-    </div>
   </section>
 
   <!-- DESCRIPTION -->
@@ -249,11 +252,117 @@ const lastVerifiedText = vehicle.last_verified_at
   <!-- CONDITION -->
   <section class="container-site mt-10">
     <h2 class="text-xl font-bold text-ink">{t.detail.condition}</h2>
-    <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2 lg:grid-cols-4">
       {Object.entries(vehicle.condition).map(([k, v]) => (
         <div class="bg-white p-4">
           <dt class="text-sm text-ink-muted">{conditionLabelMap[k] ?? k}</dt>
           <dd class="mt-0.5 text-sm font-medium text-ink">{v == null ? t.confidence.notProvided : v}</dd>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- VEHICLE HISTORY -->
+  <section class="container-site mt-10">
+    <h2 class="text-xl font-bold text-ink">{t.detail.history}</h2>
+    <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2">
+      <div class="bg-white p-4">
+        <dt class="text-sm text-ink-muted">{t.detail.accidentHistory}</dt>
+        <dd class="mt-0.5 text-sm font-medium text-ink">{accidentValue ?? t.confidence.notProvided}</dd>
+      </div>
+      <div class="bg-white p-4">
+        <dt class="text-sm text-ink-muted">{t.detail.maintenanceHistory}</dt>
+        <dd class="mt-0.5 text-sm font-medium text-ink">{maintenanceValue ?? t.confidence.notProvided}</dd>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSPECTION -->
+  <section class="container-site mt-10">
+    <h2 class="text-xl font-bold text-ink">{t.detail.inspectionHeading}</h2>
+    <div class="card mt-4 p-5">
+      <dl class="text-sm">
+        <div class="flex items-start justify-between gap-4">
+          <dt class="text-ink-muted">{t.detail.inspectionStatus}</dt>
+          <dd class="font-medium text-ink">{inspectionValue ?? t.confidence.notAvailable}</dd>
+        </div>
+      </dl>
+      <p class="mt-3 text-sm text-ink-soft">{t.detail.inspectionNote}</p>
+    </div>
+  </section>
+
+  <!-- BATTERY INFORMATION (EV / PHEV) -->
+  {isBatteryVehicle && (
+    <section class="container-site mt-10">
+      <h2 class="text-xl font-bold text-ink">{t.detail.batteryHeading}</h2>
+      <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2">
+        <div class="bg-white p-4">
+          <dt class="text-sm text-ink-muted">{t.detail.batteryCapacity}</dt>
+          <dd class="mt-0.5 text-sm font-medium text-ink">{batteryCapacityValue ?? t.confidence.notProvided}</dd>
+        </div>
+        <div class="bg-white p-4">
+          <dt class="text-sm text-ink-muted">{t.detail.batteryHealth}</dt>
+          <dd class="mt-0.5 text-sm font-medium text-ink">{batteryHealthValue ?? t.confidence.notAvailable}</dd>
+        </div>
+      </div>
+      <p class="mt-3 text-sm text-ink-soft">{t.detail.batteryNote}</p>
+    </section>
+  )}
+
+  <!-- DOCUMENTS -->
+  <section class="container-site mt-10">
+    <h2 class="text-xl font-bold text-ink">{t.detail.documentsHeading}</h2>
+    <div class="card mt-4 p-5">
+      {documentsValue && documentsValue.length > 0 ? (
+        <ul class="list-disc space-y-1 ps-5 text-sm text-ink-soft">
+          {documentsValue.map((doc) => <li>{doc}</li>)}
+        </ul>
+      ) : (
+        <p class="text-sm text-ink-soft">{t.confidence.notProvided}.</p>
+      )}
+      <p class="mt-3 text-sm text-ink-soft">{t.detail.documentsNote}</p>
+    </div>
+  </section>
+
+  <!-- EXPORT INFORMATION (when real data exists) -->
+  {vehicle.export && (
+    <section class="container-site mt-10">
+      <h2 class="text-xl font-bold text-ink">{t.detail.exportInfo}</h2>
+      <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2">
+        {Object.entries(vehicle.export).map(([k, v]) => (
+          <div class="bg-white p-4">
+            <dt class="text-sm text-ink-muted">{exportLabelMap[k] ?? k}</dt>
+            <dd class="mt-0.5 text-sm font-medium text-ink">{v}</dd>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- SHIPPING INFORMATION -->
+  <section class="container-site mt-10">
+    <h2 class="text-xl font-bold text-ink">{t.detail.shippingHeading}</h2>
+    <div class="card mt-4 p-5">
+      <p class="text-sm text-ink-soft">{t.detail.shippingNote}</p>
+    </div>
+  </section>
+
+  <!-- DESTINATION CONSIDERATIONS -->
+  <section class="container-site mt-10">
+    <h2 class="text-xl font-bold text-ink">{t.detail.destinationHeading}</h2>
+    <div class="card mt-4 p-5">
+      <p class="text-sm text-ink-soft">{t.detail.destinationNote}</p>
+    </div>
+  </section>
+
+  <!-- DETAILED SPECIFICATIONS -->
+  <section class="container-site mt-10">
+    <h2 class="text-xl font-bold text-ink">{t.detail.keySpecs}</h2>
+    <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2 lg:grid-cols-3">
+      {vehicle.specs.map((s) => (
+        <div class="bg-white p-4">
+          <dt class="text-sm text-ink-muted">{specLabel(s.label)}</dt>
+          <dd class="mt-0.5 text-sm font-medium text-ink">{s.value}</dd>
         </div>
       ))}
     </div>
@@ -283,40 +392,32 @@ const lastVerifiedText = vehicle.last_verified_at
     </div>
   </section>
 
-  <!-- EXPORT INFORMATION (only when real data exists) -->
-  {vehicle.export && (
-    <section class="container-site mt-10">
-      <h2 class="text-xl font-bold text-ink">{t.detail.exportInfo}</h2>
-      <div class="mt-4 grid gap-px overflow-hidden rounded-lg border border-surface-line bg-surface-line sm:grid-cols-2">
-        {Object.entries(vehicle.export).map(([k, v]) => (
-          <div class="bg-white p-4">
-            <dt class="text-sm text-ink-muted">{exportLabelMap[k] ?? k}</dt>
-            <dd class="mt-0.5 text-sm font-medium text-ink">{v}</dd>
-          </div>
-        ))}
-      </div>
-    </section>
-  )}
-
-  <!-- MODEL INFORMATION -->
+  <!-- ABOUT THIS MODEL -->
   <section class="container-site mt-10">
     <div class="card p-5">
       <h2 class="text-lg font-bold text-ink">{aboutModelHeading}</h2>
       <p class="mt-2 text-sm text-ink-soft max-w-3xl">{modelDescription(vehicle.brand, vehicle.model, locale, d.model?.shortDescription ?? t.detail.modelInfo)}</p>
-      <div class="mt-3 flex flex-wrap gap-4 text-sm">
+      <div class="mt-3">
         <a href={dataModelUrl({ brand: vehicle.brand, slug: vehicle.model })} target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-700 hover:underline">
           {viewModelSpecsText} {t.common.arrow}
-        </a>
-        <a href={dataBrandUrl({ slug: vehicle.brand })} target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-700 hover:underline">
-          {brandName} {t.common.brandData ?? ''} {t.common.arrow}
         </a>
       </div>
     </div>
   </section>
 
-  <!-- REQUEST QUOTE -->
-  <section class="container-site mt-10" id="quote">
-    <LeadForm variant="quote" vehicle={vehicle} />
+  <!-- RELATED VEHICLE DATA -->
+  <section class="container-site mt-10">
+    <h2 class="text-xl font-bold text-ink">{t.detail.relatedData}</h2>
+    <div class="mt-4 grid gap-4 sm:grid-cols-2">
+      <a href={dataModelUrl({ brand: vehicle.brand, slug: vehicle.model })} target="_blank" rel="noopener noreferrer" class="card p-4 hover:border-brand-300">
+        <span class="block text-sm font-semibold text-ink">{modelName}</span>
+        <span class="mt-1 block text-xs text-ink-muted">{t.common.viewSpecifications}</span>
+      </a>
+      <a href={dataBrandUrl({ slug: vehicle.brand })} target="_blank" rel="noopener noreferrer" class="card p-4 hover:border-brand-300">
+        <span class="block text-sm font-semibold text-ink">{brandName}</span>
+        <span class="mt-1 block text-xs text-ink-muted">{t.common.brandData}</span>
+      </a>
+    </div>
   </section>
 
   <!-- SIMILAR -->
@@ -343,4 +444,12 @@ const lastVerifiedText = vehicle.last_verified_at
       </div>
     </section>
   )}
+
+  <!-- REQUEST A VEHICLE -->
+  <section class="container-site mt-12" id="request-vehicle">
+    <h2 class="text-xl font-bold text-ink">{t.detail.requestVehicle}</h2>
+    <div class="mt-4">
+      <LeadForm variant="quote" vehicle={vehicle} />
+    </div>
+  </section>
 </BaseLayout>
