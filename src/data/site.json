@@ -9,8 +9,8 @@
   "whatsappLink": "https://wa.me/8613323237275",
   "subdomains": {
     "data": "https://data.chinausedautohub.com",
-    "companies": "https://companies.chinausedautohub.com",
-    "tools": "https://tools.chinausedautohub.com",
+    "companies": "https://company.chinausedautohub.com",
+    "tools": "https://tool.chinausedautohub.com",
     "market": "https://market.chinausedautohub.com"
   },
   "leadEndpoint": "",
