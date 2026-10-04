@@ -23,7 +23,7 @@ export function requestACarUrl(): string {
   return '/request-a-car/';
 }
 
-// Model specifications live on the future Data sub-site, not the main site.
+// Model specifications live on the Data sub-site, not the main site.
 export function dataModelUrl(m: Pick<VehicleModel, 'brand' | 'slug'>): string {
   return `${SUBDOMAINS.data}/models/${m.brand}/${m.slug}`;
 }

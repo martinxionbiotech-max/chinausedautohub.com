@@ -19,10 +19,10 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   {
-    label: t.nav.certifiedVehicle,
+    label: t.nav.vehicles,
     href: localizedUrl('/cars/', locale),
     children: [
-      { label: t.nav.certifiedVehicles, href: localizedUrl('/cars/', locale) },
+      { label: t.nav.availableVehicles, href: localizedUrl('/cars/', locale) },
       { label: t.nav.vehicleTypes, href: localizedUrl('/body-types/', locale) },
       { label: t.nav.newArrivals, href: localizedUrl('/new-arrivals/', locale) },
     ],
@@ -32,11 +32,19 @@ const navItems: NavItem[] = [
   { label: t.nav.howItWorks, href: localizedUrl('/how-it-works/', locale) },
 ];
 
+const hostOf = (url: string) => {
+  try {
+    return new URL(url).host;
+  } catch {
+    return url;
+  }
+};
+
 const resources = [
-  { label: t.nav.vehicleData, note: t.nav.futureSubsite, href: SUBDOMAINS.data },
-  { label: t.nav.marketInformation, note: t.nav.futureSubsite, href: SUBDOMAINS.market },
-  { label: t.nav.tools, note: t.nav.futureSubsite, href: SUBDOMAINS.tools },
-  { label: t.nav.companies, note: t.nav.futureSubsite, href: SUBDOMAINS.companies },
+  { label: t.nav.vehicleData, note: hostOf(SUBDOMAINS.data), href: SUBDOMAINS.data },
+  { label: t.nav.marketInformation, note: hostOf(SUBDOMAINS.market), href: SUBDOMAINS.market },
+  { label: t.nav.tools, note: hostOf(SUBDOMAINS.tools), href: SUBDOMAINS.tools },
+  { label: t.nav.companies, note: hostOf(SUBDOMAINS.companies), href: SUBDOMAINS.companies },
 ];
 
 const homeHref = localizedUrl('/', locale);

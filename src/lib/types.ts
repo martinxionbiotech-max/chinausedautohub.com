@@ -11,7 +11,7 @@ export interface SpecItem {
   value: string;
 }
 
-export type VehicleStatus = 'available' | 'reserved' | 'sold' | 'unavailable';
+export type VehicleStatus = 'available' | 'reserved' | 'sold' | 'sourcing' | 'expired' | 'hidden';
 
 export interface ExportInfo {
   export_availability?: string;
@@ -19,6 +19,23 @@ export interface ExportInfo {
   shipping_port?: string;
   inspection?: string;
   documents?: string;
+}
+
+export type ConfidenceLevel =
+  | 'verified'
+  | 'provided'
+  | 'estimated'
+  | 'not_available'
+  | 'not_provided';
+
+export interface DataConfidence {
+  vehicle_identity?: ConfidenceLevel;
+  mileage?: ConfidenceLevel;
+  price?: ConfidenceLevel;
+  inspection?: ConfidenceLevel;
+  battery_health?: ConfidenceLevel;
+  maintenance_history?: ConfidenceLevel;
+  [key: string]: ConfidenceLevel | undefined;
 }
 
 export interface Vehicle {
@@ -40,7 +57,21 @@ export interface Vehicle {
   images: string[];
   specs: SpecItem[];
   description: string;
-  condition: Record<string, string>;
+  condition: Record<string, string | null>;
+  generation?: string | null;
+  trim?: string | null;
+  registration_date?: string | null;
+  battery_capacity?: string | null;
+  battery_health?: string | null;
+  accident_history?: string | null;
+  maintenance_history?: string | null;
+  inspection_status?: string | null;
+  export_status?: string | null;
+  destination?: string | null;
+  documents?: string[] | null;
+  data_source?: string;
+  data_confidence?: DataConfidence;
+  last_verified_at?: string | null;
   export: ExportInfo | null;
   is_demo: boolean;
   source: string;

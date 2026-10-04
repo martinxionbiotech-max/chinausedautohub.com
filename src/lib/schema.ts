@@ -98,6 +98,14 @@ export function vehicleSchema(v: Vehicle, locale = 'en'): JsonLd {
     offers: offer,
   };
 
+  // PHASE 6 structured fields — emitted only when present (no fabricated data).
+  if (v.registration_date) vehicle.dateVehicleFirstRegistered = v.registration_date;
+  if (v.trim) vehicle.vehicleConfiguration = v.trim;
+  const extraProps: JsonLd[] = [];
+  if (v.generation) extraProps.push({ '@type': 'PropertyValue', name: 'Generation', value: v.generation });
+  if (v.battery_capacity) extraProps.push({ '@type': 'PropertyValue', name: 'Battery capacity', value: v.battery_capacity });
+  if (extraProps.length) vehicle.additionalProperty = extraProps;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',

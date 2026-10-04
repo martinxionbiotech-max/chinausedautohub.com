@@ -74,10 +74,13 @@ const specLabelMap: Record<string, string> = {
 const specLabel = (label: string) => specLabelMap[label] ?? label;
 
 const conditionLabelMap: Record<string, string> = {
-  accident_history: t.conditionLabels.accident_history,
-  maintenance: t.conditionLabels.maintenance,
-  inspection: t.conditionLabels.inspection,
-  battery_health: t.conditionLabels.battery_health,
+  exterior: t.conditionLabels.exterior,
+  interior: t.conditionLabels.interior,
+  engine: t.conditionLabels.engine,
+  transmission: t.conditionLabels.transmission,
+  chassis: t.conditionLabels.chassis,
+  electrical: t.conditionLabels.electrical,
+  tires: t.conditionLabels.tires,
   paint: t.conditionLabels.paint,
 };
 
@@ -106,6 +109,30 @@ if (faqs.length > 0) schemas.push(faqSchema(faqs));
 
 const aboutModelHeading = t.detail.aboutModel.replace('{model}', modelName);
 const viewModelSpecsText = t.detail.viewModelSpecs.replace('{model}', modelName);
+
+const confidenceLevelLabels: Record<string, string> = {
+  verified: t.confidence.verified,
+  provided: t.confidence.provided,
+  estimated: t.confidence.estimated,
+  not_available: t.confidence.notAvailable,
+  not_provided: t.confidence.notProvided,
+};
+
+const confidenceRows = [
+  { key: 'vehicle_identity', label: t.confidence.vehicleIdentity },
+  { key: 'mileage', label: t.confidence.mileage },
+  { key: 'price', label: t.confidence.price },
+  { key: 'inspection', label: t.confidence.inspection },
+  { key: 'battery_health', label: t.confidence.batteryHealth },
+  { key: 'maintenance_history', label: t.confidence.maintenanceHistory },
+].map((r) => {
+  const level = vehicle.data_confidence?.[r.key] ?? 'not_available';
+  return { label: r.label, level: confidenceLevelLabels[level] ?? level };
+});
+
+const lastVerifiedText = vehicle.last_verified_at
+  ? formatDate(vehicle.last_verified_at, locale)
+  : t.confidence.notAvailable;
 ---
 
 <BaseLayout title={pageTitle} description={description} canonical={localizedUrl(vehicleUrl(vehicle), locale)} schema={schemas}>
@@ -128,7 +155,7 @@ const viewModelSpecsText = t.detail.viewModelSpecs.replace('{model}', modelName)
         </span>
       </div>
     </div>
-    <p class="mt-1 text-sm text-ink-muted">{t.detail.vehicleId}: {vehicle.vehicle_id} · {t.detail.lastUpdated} {formatDate(vehicle.updated_at, locale)}</p>
+    <p class="mt-1 text-sm text-ink-muted">{t.detail.vehicleId}: {vehicle.vehicle_id} · {t.detail.lastUpdated} {formatDate(vehicle.updated_at, locale)} · {t.detail.lastVerified} {lastVerifiedText}</p>
   </section>
 
   {isSold && (
@@ -226,9 +253,33 @@ const viewModelSpecsText = t.detail.viewModelSpecs.replace('{model}', modelName)
       {Object.entries(vehicle.condition).map(([k, v]) => (
         <div class="bg-white p-4">
           <dt class="text-sm text-ink-muted">{conditionLabelMap[k] ?? k}</dt>
-          <dd class="mt-0.5 text-sm font-medium text-ink">{v === 'Not provided' ? t.detail.notProvided : v}</dd>
+          <dd class="mt-0.5 text-sm font-medium text-ink">{v == null ? t.confidence.notProvided : v}</dd>
         </div>
       ))}
+    </div>
+  </section>
+
+  <!-- INFORMATION AVAILABILITY -->
+  <section class="container-site mt-10">
+    <h2 class="text-xl font-bold text-ink">{t.confidence.heading}</h2>
+    <p class="mt-1 text-sm text-ink-muted">{t.confidence.intro}</p>
+    <div class="mt-4 overflow-hidden rounded-lg border border-surface-line">
+      <table class="w-full text-sm">
+        <thead class="bg-surface-alt text-ink-soft">
+          <tr>
+            <th class="px-4 py-2.5 text-start font-semibold">{t.confidence.field}</th>
+            <th class="px-4 py-2.5 text-start font-semibold">{t.confidence.status}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {confidenceRows.map((r) => (
+            <tr class="border-t border-surface-line">
+              <td class="px-4 py-2.5 text-ink-soft">{r.label}</td>
+              <td class="px-4 py-2.5 font-medium text-ink">{r.level}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   </section>
 

@@ -105,6 +105,7 @@ export interface Dictionary {
   specLabels: Record<string, string>;
   conditionLabels: Record<string, string>;
   exportLabels: Record<string, string>;
+  confidence: Record<string, string>;
   units: Record<string, string>;
   plurals: Plurals;
 }

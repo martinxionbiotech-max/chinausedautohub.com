@@ -36,7 +36,7 @@ const DATA_DIR = join(ROOT, 'src', 'data');
 const VEHICLES_PATH = join(DATA_DIR, 'vehicles.json');
 const CHANGELOG_PATH = join(DATA_DIR, 'changelog.json');
 
-const STATUSES = ['available', 'reserved', 'sold', 'unavailable'];
+const STATUSES = ['available', 'reserved', 'sold', 'sourcing', 'expired', 'hidden'];
 const CURRENT_YEAR = new Date().getFullYear();
 const MIN_YEAR = 1990;
 const MAX_YEAR = CURRENT_YEAR + 1;
@@ -193,7 +193,30 @@ function actionCreate(list, args) {
     images: (args.images || '/images/placeholder-suv-white.svg').split(',').map((s) => s.trim()),
     specs: [],
     description: args.description || '',
-    condition: {},
+    condition: {
+      exterior: null,
+      interior: null,
+      engine: null,
+      transmission: null,
+      chassis: null,
+      electrical: null,
+      tires: null,
+      paint: null,
+    },
+    generation: null,
+    trim: null,
+    registration_date: null,
+    battery_capacity: null,
+    battery_health: null,
+    accident_history: null,
+    maintenance_history: null,
+    inspection_status: null,
+    export_status: null,
+    destination: null,
+    documents: null,
+    data_source: args.source || 'agent',
+    data_confidence: {},
+    last_verified_at: null,
     export: null,
     is_demo: true,
     source: args.source || 'agent',

@@ -10,8 +10,8 @@
     "es": "Español"
   },
   "nav": {
-    "certifiedVehicle": "Vehículo certificado",
-    "certifiedVehicles": "Vehículos certificados",
+    "vehicles": "Vehículos",
+    "availableVehicles": "Vehículos disponibles",
     "vehicleTypes": "Tipos de vehículo",
     "newArrivals": "Novedades",
     "brands": "Marcas",
@@ -20,9 +20,8 @@
     "resources": "Recursos",
     "vehicleData": "Datos de vehículos",
     "marketInformation": "Información de mercado",
-    "tools": "Herramientas",
+    "tools": "Herramientas de importación",
     "companies": "Empresas",
-    "futureSubsite": "futuro subsitio",
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
     "primary": "Principal",
@@ -63,7 +62,9 @@
     "available": "Disponible",
     "reserved": "Reservado",
     "sold": "Vendido",
-    "unavailable": "No disponible"
+    "sourcing": "En abastecimiento",
+    "expired": "Caducado",
+    "hidden": "Oculto"
   },
   "vehicleCard": {
     "year": "Año",
@@ -183,6 +184,7 @@
     "titleSuffix": "Exportación de coches usados de China",
     "vehicleId": "ID del vehículo",
     "lastUpdated": "Última actualización",
+    "lastVerified": "Última verificación",
     "soldNoticeTitle": "Este vehículo ha sido vendido.",
     "soldNoticeText": "El anuncio se conserva como referencia. Consulta vehículos similares disponibles abajo o pide un coche y podemos conseguir una unidad comparable.",
     "vehicleSummary": "Resumen del vehículo",
@@ -238,9 +240,9 @@
     "popularModels": "Modelos populares",
     "vehicleTypes": "Tipos de vehículo",
     "data": "Datos",
-    "dataDesc": "El perfil completo de la marca y los datos de los modelos están en el futuro subsitio de datos.",
+    "dataDesc": "El perfil completo de la marca y los datos de los modelos están en el subsitio de datos.",
     "relatedMarkets": "Mercados relacionados",
-    "marketNote": "Las páginas de mercado son parte de un futuro subsitio de mercado.",
+    "marketNote": "Las páginas de mercado son parte del subsitio de mercado.",
     "dataSubsite": "data.chinausedautohub.com"
   },
   "bodyTypes": {
@@ -331,12 +333,12 @@
     "ctaDetail": "Danos todos los detalles que puedas — marca, modelo, año, presupuesto y destino — y te responderemos con opciones de abastecimiento.",
     "marketHeading": "Coches usados de China a",
     "marketSub": "Explora opciones de abastecimiento para tu mercado de destino.",
-    "marketNote": "Las páginas de mercado son parte de un futuro subsitio de mercado (market.chinausedautohub.com).",
+    "marketNote": "Las páginas de mercado son parte del subsitio de mercado (market.chinausedautohub.com).",
     "dataHeading": "Base de datos de vehículos",
-    "dataText": "Explora especificaciones detalladas de vehículos chinos — un futuro subsitio de datos.",
+    "dataText": "Explora especificaciones detalladas de vehículos chinos en el subsitio de datos.",
     "dataLink": "data.chinausedautohub.com",
     "toolsHeading": "Herramientas de importación",
-    "toolsText": "Estima el coste de importar un vehículo desde China — un futuro subsitio de herramientas.",
+    "toolsText": "Estima el coste de importar un vehículo desde China con el subsitio de herramientas de importación.",
     "toolsLink": "tools.chinausedautohub.com",
     "howItWorksHeading": "Cómo funciona",
     "finalCtaHeading": "Encuentra tu próximo vehículo desde China"
@@ -433,10 +435,13 @@
     "emissionStandard": "Norma de emisiones"
   },
   "conditionLabels": {
-    "accident_history": "Historial de accidentes",
-    "maintenance": "Mantenimiento",
-    "inspection": "Inspección",
-    "battery_health": "Estado de la batería",
+    "exterior": "Exterior",
+    "interior": "Interior",
+    "engine": "Motor",
+    "transmission": "Transmisión",
+    "chassis": "Chasis",
+    "electrical": "Sistema eléctrico",
+    "tires": "Neumáticos",
     "paint": "Pintura"
   },
   "exportLabels": {
@@ -445,6 +450,23 @@
     "shipping_port": "Puerto de envío",
     "inspection": "Inspección",
     "documents": "Documentos"
+  },
+  "confidence": {
+    "heading": "Disponibilidad de información",
+    "intro": "Muestra qué detalles del vehículo están verificados, proporcionados por la fuente o no disponibles para este anuncio.",
+    "field": "Campo",
+    "status": "Estado",
+    "vehicleIdentity": "Identidad del vehículo",
+    "mileage": "Kilometraje",
+    "price": "Precio",
+    "inspection": "Inspección",
+    "batteryHealth": "Estado de la batería",
+    "maintenanceHistory": "Historial de mantenimiento",
+    "verified": "Verificado",
+    "provided": "Proporcionado",
+    "estimated": "Estimado",
+    "notAvailable": "No disponible",
+    "notProvided": "No proporcionado"
   },
   "units": {
     "km": "km"

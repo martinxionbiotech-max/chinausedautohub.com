@@ -20,11 +20,19 @@ const company = [
   { label: t.footer.contact, href: localizedUrl('/contact/', locale) },
 ];
 
+const hostOf = (url: string) => {
+  try {
+    return new URL(url).host;
+  } catch {
+    return url;
+  }
+};
+
 const resources = [
-  { label: t.nav.vehicleData, note: t.nav.futureSubsite, href: SUBDOMAINS.data },
-  { label: t.nav.marketInformation, note: t.nav.futureSubsite, href: SUBDOMAINS.market },
-  { label: t.nav.tools, note: t.nav.futureSubsite, href: SUBDOMAINS.tools },
-  { label: t.nav.companies, note: t.nav.futureSubsite, href: SUBDOMAINS.companies },
+  { label: t.nav.vehicleData, note: hostOf(SUBDOMAINS.data), href: SUBDOMAINS.data },
+  { label: t.nav.marketInformation, note: hostOf(SUBDOMAINS.market), href: SUBDOMAINS.market },
+  { label: t.nav.tools, note: hostOf(SUBDOMAINS.tools), href: SUBDOMAINS.tools },
+  { label: t.nav.companies, note: hostOf(SUBDOMAINS.companies), href: SUBDOMAINS.companies },
 ];
 
 const legal = [

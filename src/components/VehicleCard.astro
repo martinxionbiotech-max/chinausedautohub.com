@@ -25,7 +25,9 @@ const statusClass = {
   available: 'bg-green-50 text-green-700 border-green-200',
   reserved: 'bg-amber-50 text-amber-700 border-amber-200',
   sold: 'bg-red-50 text-red-700 border-red-200',
-  unavailable: 'bg-gray-50 text-gray-600 border-gray-200',
+  sourcing: 'bg-blue-50 text-blue-700 border-blue-200',
+  expired: 'bg-gray-50 text-gray-600 border-gray-200',
+  hidden: 'bg-gray-50 text-gray-600 border-gray-200',
 }[vehicle.status] ?? 'bg-gray-50 text-gray-600 border-gray-200';
 
 const fuel = fuelTypeName(vehicle.fuel, locale, d.fuelType?.name ?? vehicle.fuel);

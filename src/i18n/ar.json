@@ -10,8 +10,8 @@
     "es": "Español"
   },
   "nav": {
-    "certifiedVehicle": "السيارات المعتمدة",
-    "certifiedVehicles": "السيارات المعتمدة",
+    "vehicles": "السيارات",
+    "availableVehicles": "السيارات المتاحة",
     "vehicleTypes": "أنواع السيارات",
     "newArrivals": "الوافدات الجديدة",
     "brands": "العلامات التجارية",
@@ -20,9 +20,8 @@
     "resources": "موارد",
     "vehicleData": "بيانات السيارات",
     "marketInformation": "معلومات السوق",
-    "tools": "الأدوات",
+    "tools": "أدوات الاستيراد",
     "companies": "الشركات",
-    "futureSubsite": "موقع فرعي مستقبلي",
     "openMenu": "افتح القائمة",
     "closeMenu": "أغلق القائمة",
     "primary": "أساسي",
@@ -63,7 +62,9 @@
     "available": "متاحة",
     "reserved": "محجوزة",
     "sold": "مباعة",
-    "unavailable": "غير متاحة"
+    "sourcing": "قيد التوريد",
+    "expired": "منتهية",
+    "hidden": "مخفية"
   },
   "vehicleCard": {
     "year": "سنة الصنع",
@@ -183,6 +184,7 @@
     "titleSuffix": "تصدير السيارات المستعملة من الصين",
     "vehicleId": "معرف السيارة",
     "lastUpdated": "آخر تحديث",
+    "lastVerified": "آخر تحقق",
     "soldNoticeTitle": "تم بيع هذه السيارة.",
     "soldNoticeText": "تم الاحتفاظ بالإدراج للرجوع إليه. شاهد السيارات المتاحة المماثلة أدناه، أو اطلب سيارة ويمكننا توفير وحدة مماثلة.",
     "vehicleSummary": "ملخص السيارة",
@@ -238,9 +240,9 @@
     "popularModels": "الموديلات الشائعة",
     "vehicleTypes": "أنواع السيارات",
     "data": "البيانات",
-    "dataDesc": "الملف الكامل للعلامة التجارية وبيانات الموديلات موجودة على الموقع الفرعي للبيانات المستقبلي.",
+    "dataDesc": "الملف الكامل للعلامة التجارية وبيانات الموديلات موجودة على الموقع الفرعي للبيانات.",
     "relatedMarkets": "أسواق ذات صلة",
-    "marketNote": "صفحات السوق جزء من موقع فرعي للسوق مستقبلي.",
+    "marketNote": "صفحات السوق جزء من الموقع الفرعي للسوق.",
     "dataSubsite": "data.chinausedautohub.com"
   },
   "bodyTypes": {
@@ -331,12 +333,12 @@
     "ctaDetail": "قدم أكبر قدر ممكن من التفاصيل — العلامة التجارية والموديل والسنة والميزانية والوجهة — وسنعاود التواصل معك بخيارات التوريد.",
     "marketHeading": "سيارات مستعملة من الصين إلى",
     "marketSub": "استكشف خيارات التوريد لسوق وجهتك.",
-    "marketNote": "صفحات السوق جزء من موقع فرعي للسوق مستقبلي (market.chinausedautohub.com).",
+    "marketNote": "صفحات السوق جزء من الموقع الفرعي للسوق (market.chinausedautohub.com).",
     "dataHeading": "قاعدة بيانات السيارات",
-    "dataText": "استكشف المواصفات التفصيلية للسيارات الصينية — موقع فرعي للبيانات مستقبلي.",
+    "dataText": "استكشف المواصفات التفصيلية للسيارات الصينية على الموقع الفرعي للبيانات.",
     "dataLink": "data.chinausedautohub.com",
     "toolsHeading": "أدوات الاستيراد",
-    "toolsText": "قدّر تكلفة استيراد سيارة من الصين — موقع فرعي للأدوات مستقبلي.",
+    "toolsText": "قدّر تكلفة استيراد سيارة من الصين باستخدام الموقع الفرعي لأدوات الاستيراد.",
     "toolsLink": "tools.chinausedautohub.com",
     "howItWorksHeading": "كيف نعمل",
     "finalCtaHeading": "اعثر على سيارتك القادمة من الصين"
@@ -433,10 +435,13 @@
     "emissionStandard": "معيار الانبعاثات"
   },
   "conditionLabels": {
-    "accident_history": "سجل الحوادث",
-    "maintenance": "الصيانة",
-    "inspection": "الفحص",
-    "battery_health": "صحة البطارية",
+    "exterior": "الهيكل الخارجي",
+    "interior": "المقصورة الداخلية",
+    "engine": "المحرك",
+    "transmission": "ناقل الحركة",
+    "chassis": "الهيكل",
+    "electrical": "النظام الكهربائي",
+    "tires": "الإطارات",
     "paint": "الطلاء"
   },
   "exportLabels": {
@@ -445,6 +450,23 @@
     "shipping_port": "ميناء الشحن",
     "inspection": "الفحص",
     "documents": "المستندات"
+  },
+  "confidence": {
+    "heading": "توفر المعلومات",
+    "intro": "يوضح تفاصيل السيارة التي تم التحقق منها أو المقدمة من المصدر أو غير المتوفرة لهذا الإدراج.",
+    "field": "الحقل",
+    "status": "الحالة",
+    "vehicleIdentity": "هوية السيارة",
+    "mileage": "المسافة المقطوعة",
+    "price": "السعر",
+    "inspection": "الفحص",
+    "batteryHealth": "صحة البطارية",
+    "maintenanceHistory": "سجل الصيانة",
+    "verified": "تم التحقق",
+    "provided": "مقدمة",
+    "estimated": "تقديري",
+    "notAvailable": "غير متوفرة",
+    "notProvided": "غير مقدمة"
   },
   "units": {
     "km": "كم"

@@ -10,8 +10,8 @@
     "es": "Español"
   },
   "nav": {
-    "certifiedVehicle": "Certified Vehicle",
-    "certifiedVehicles": "Certified Vehicles",
+    "vehicles": "Vehicles",
+    "availableVehicles": "Available Vehicles",
     "vehicleTypes": "Vehicle Types",
     "newArrivals": "New Arrivals",
     "brands": "Brands",
@@ -20,9 +20,8 @@
     "resources": "Resources",
     "vehicleData": "Vehicle Data",
     "marketInformation": "Market Information",
-    "tools": "Tools",
+    "tools": "Import Tools",
     "companies": "Companies",
-    "futureSubsite": "future sub-site",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "primary": "Primary",
@@ -63,7 +62,9 @@
     "available": "Available",
     "reserved": "Reserved",
     "sold": "Sold",
-    "unavailable": "Unavailable"
+    "sourcing": "Sourcing",
+    "expired": "Expired",
+    "hidden": "Hidden"
   },
   "vehicleCard": {
     "year": "Year",
@@ -183,6 +184,7 @@
     "titleSuffix": "China Used Car Export",
     "vehicleId": "Vehicle ID",
     "lastUpdated": "Last updated",
+    "lastVerified": "Last verified",
     "soldNoticeTitle": "This vehicle has been sold.",
     "soldNoticeText": "The listing is retained for reference. See similar available vehicles below, or request a car and we can source a comparable unit.",
     "vehicleSummary": "Vehicle summary",
@@ -238,9 +240,9 @@
     "popularModels": "Popular Models",
     "vehicleTypes": "Vehicle Types",
     "data": "Data",
-    "dataDesc": "Full brand profile and model data live on the future Data sub-site.",
+    "dataDesc": "Full brand profile and model data live on the Data sub-site.",
     "relatedMarkets": "Related Markets",
-    "marketNote": "Market pages are part of a future Market sub-site.",
+    "marketNote": "Market pages are part of the Market sub-site.",
     "dataSubsite": "data.chinausedautohub.com"
   },
   "bodyTypes": {
@@ -331,12 +333,12 @@
     "ctaDetail": "Provide as much detail as you can — brand, model, year, budget and destination — and we will get back to you with sourcing options.",
     "marketHeading": "Used Cars from China to",
     "marketSub": "Explore sourcing for your destination market.",
-    "marketNote": "Market pages are part of a future Market sub-site (market.chinausedautohub.com).",
+    "marketNote": "Market pages are part of the Market sub-site (market.chinausedautohub.com).",
     "dataHeading": "Vehicle Database",
-    "dataText": "Explore detailed specifications of Chinese vehicles — a future Data sub-site.",
+    "dataText": "Explore detailed specifications of Chinese vehicles on the Data sub-site.",
     "dataLink": "data.chinausedautohub.com",
     "toolsHeading": "Import Tools",
-    "toolsText": "Estimate the cost of importing a vehicle from China — a future Tools sub-site.",
+    "toolsText": "Estimate the cost of importing a vehicle from China with the Import Tools sub-site.",
     "toolsLink": "tools.chinausedautohub.com",
     "howItWorksHeading": "How It Works",
     "finalCtaHeading": "Find Your Next Vehicle from China"
@@ -433,10 +435,13 @@
     "emissionStandard": "Emission standard"
   },
   "conditionLabels": {
-    "accident_history": "Accident history",
-    "maintenance": "Maintenance",
-    "inspection": "Inspection",
-    "battery_health": "Battery health",
+    "exterior": "Exterior",
+    "interior": "Interior",
+    "engine": "Engine",
+    "transmission": "Transmission",
+    "chassis": "Chassis",
+    "electrical": "Electrical",
+    "tires": "Tires",
     "paint": "Paint"
   },
   "exportLabels": {
@@ -445,6 +450,23 @@
     "shipping_port": "Shipping port",
     "inspection": "Inspection",
     "documents": "Documents"
+  },
+  "confidence": {
+    "heading": "Information Availability",
+    "intro": "Shows which vehicle details are verified, provided by the source, or not available for this listing.",
+    "field": "Field",
+    "status": "Status",
+    "vehicleIdentity": "Vehicle Identity",
+    "mileage": "Mileage",
+    "price": "Price",
+    "inspection": "Inspection",
+    "batteryHealth": "Battery Health",
+    "maintenanceHistory": "Maintenance History",
+    "verified": "Verified",
+    "provided": "Provided",
+    "estimated": "Estimated",
+    "notAvailable": "Not Available",
+    "notProvided": "Not Provided"
   },
   "units": {
     "km": "km"
