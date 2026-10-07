@@ -26,8 +26,14 @@ const label = (t.breadcrumb as Record<string, string>)[meta.crumbKey] ?? page.h1
 
 // Render a translated paragraph, substituting trusted placeholders.
 function render(p: string): string {
+  const subLegal = (navKey: string, url: string) =>
+    `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-brand-700 hover:underline">${(t.nav as Record<string, string>)[navKey] ?? navKey}</a>`;
   return p
     .replaceAll('{siteName}', SITE.name)
+    .replaceAll('{dataLegal}', subLegal('vehicleData', `${SITE.subdomains.data}/privacy/`))
+    .replaceAll('{marketLegal}', subLegal('marketInformation', `${SITE.subdomains.market}/privacy/`))
+    .replaceAll('{toolsLegal}', subLegal('tools', `${SITE.subdomains.tools}/privacy/`))
+    .replaceAll('{companiesLegal}', subLegal('companies', `${SITE.subdomains.companies}/privacy/`))
     .replace('{email}', `<a href="mailto:${CONTACT.email}" class="text-brand-700 hover:underline">${CONTACT.email}</a>`)
     .replace('{whatsapp}', `<a href="${CONTACT.whatsappLink}" target="_blank" rel="noopener noreferrer" class="text-brand-700 hover:underline">${CONTACT.whatsapp}</a>`);
 }

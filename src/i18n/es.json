@@ -706,7 +706,7 @@
     "formTail": "y te responderemos por correo electrónico o WhatsApp."
   },
   "legal": {
-    "lastUpdated": "Última actualización: 4 de octubre de 2026",
+    "lastUpdated": "Última actualización: 7 de octubre de 2026",
     "privacy": {
       "title": "Política de privacidad — Exportación de coches usados de China",
       "description": "Política de privacidad de China Used Auto Hub — qué información recopilamos a través de formularios de consulta, correo y WhatsApp y cómo la usamos.",
@@ -979,7 +979,8 @@
         {
           "h": "Subsitios y enlaces externos",
           "p": [
-            "Operamos varios subsitios relacionados de datos de vehículos, información de mercado, herramientas de importación y datos de empresas. Los enlaces a estos y a sitios web externos se proporcionan por conveniencia."
+            "Operamos varios subsitios relacionados de datos de vehículos, información de mercado, herramientas de importación y datos de empresas. Los enlaces a estos y a sitios web externos se proporcionan por conveniencia.",
+            "Cada subsitio mantiene sus propias páginas legales locales en su propio dominio — privacidad, términos, cookies y aviso legal. Consulte {dataLegal}, {marketLegal}, {toolsLegal} y {companiesLegal}."
           ]
         },
         {

@@ -706,7 +706,7 @@
     "formTail": "form and we will get back to you by email or WhatsApp."
   },
   "legal": {
-    "lastUpdated": "Last updated: 4 October 2026",
+    "lastUpdated": "Last updated: 7 October 2026",
     "privacy": {
       "title": "Privacy Policy — China Used Car Export",
       "description": "Privacy policy for China Used Auto Hub — what information we collect through enquiry forms, email and WhatsApp, and how we use it.",
@@ -979,7 +979,8 @@
         {
           "h": "Sub-sites and external links",
           "p": [
-            "We operate several related sub-sites for vehicle data, market information, import tools and company data. Links to these and to external websites are provided for convenience."
+            "We operate several related sub-sites for vehicle data, market information, import tools and company data. Links to these and to external websites are provided for convenience.",
+            "Each sub-site maintains its own local legal pages on its own domain — privacy, terms, cookies and disclaimer. See {dataLegal}, {marketLegal}, {toolsLegal} and {companiesLegal}."
           ]
         },
         {
