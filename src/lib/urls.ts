@@ -59,15 +59,15 @@ export function requestACarUrl(): string {
 // The data sub-site routes models at `/models/{model_id}` (one segment);
 // returns null when the main-site model has no corresponding data page.
 export function dataModelUrl(m: Pick<VehicleModel, 'dataModelId'>): string | null {
-  return m.dataModelId ? `${SUBDOMAINS.data}/models/${m.dataModelId}` : null;
+  return m.dataModelId ? `${SUBDOMAINS.data}/models/${m.dataModelId}/` : null;
 }
 
 export function dataBrandUrl(b: Pick<Brand, 'slug'>): string {
-  return `${SUBDOMAINS.data}/brands/${b.slug}`;
+  return `${SUBDOMAINS.data}/brands/${b.slug}/`;
 }
 
 export function marketUrl(m: Pick<Market, 'slug'>): string {
-  return `${SUBDOMAINS.market}/countries/${m.slug}`;
+  return `${SUBDOMAINS.market}/countries/${m.slug}/`;
 }
 
 export function toolsUrl(): string {

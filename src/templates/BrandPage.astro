@@ -208,7 +208,7 @@ const requestBrandHref = localizedUrl('/contact/', locale);
     <p class="mt-1 text-sm text-ink-muted">{t.brands.marketNote}</p>
     <div class="mt-4 flex flex-wrap gap-3">
       {t.home.markets.map((m) => (
-        <a href={`${SITE.subdomains.market}/countries/${m.slug}`} target="_blank" rel="noopener noreferrer" class="card px-4 py-2.5 text-sm font-medium text-ink hover:border-brand-300">{m.name}</a>
+        <a href={`${SITE.subdomains.market}/countries/${m.slug}/`} target="_blank" rel="noopener noreferrer" class="card px-4 py-2.5 text-sm font-medium text-ink hover:border-brand-300">{m.name}</a>
       ))}
     </div>
   </section>
