@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { SUBDOMAINS, SITE_URL } from '../lib/site';
+import { articleSchema } from '../lib/schema';
+import { getTranslations } from '../i18n';
+import { getPillar } from '../i18n/pillars';
+import { pick } from '../i18n/l10n';
+import { guidesUrl, guideUrl } from '../lib/urls';
+import { DEFAULT_LOCALE, localizedUrl, type Locale } from '../lib/i18n';
+
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const locale = (Astro.currentLocale ?? DEFAULT_LOCALE) as Locale;
+const t = getTranslations(locale);
+
+const pillar = getPillar(slug);
+if (!pillar) {
+  return Astro.redirect(localizedUrl('/', locale));
+}
+
+const title = pick(pillar.title, locale);
+const description = pick(pillar.description, locale);
+const h1 = pick(pillar.h1, locale);
+const canonical = localizedUrl(pillar.path, locale);
+
+const schema = articleSchema({
+  headline: title,
+  description,
+  url: `${SITE_URL}${canonical}`,
+  locale,
+});
+
+const topicHref = (topic: { slug?: string; href?: string }) =>
+  topic.href ?? localizedUrl(guideUrl(topic.slug!), locale);
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schema={schema}>
+  <Breadcrumb crumbs={[{ name: t.breadcrumb.home, path: localizedUrl('/', locale) }, { name: h1, path: canonical }]} />
+
+  <article class="container-site py-6">
+    <h1 class="text-3xl font-bold text-ink">{h1}</h1>
+    <p class="mt-2 max-w-3xl text-ink-soft">{description}</p>
+  </article>
+
+  <article class="container-site max-w-4xl">
+    <div class="space-y-10">
+      {pillar.sections.map((section) => (
+        <section>
+          <h2 class="text-xl font-bold text-ink">{pick(section.heading, locale)}</h2>
+          {section.paragraphs && section.paragraphs.length > 0 && (
+            <div class="prose-vehicle mt-3 space-y-3">
+              {section.paragraphs.map((p) => <p>{pick(p, locale)}</p>)}
+            </div>
+          )}
+          {section.checklist && section.checklist.length > 0 && (
+            <ul class="mt-3 space-y-2">
+              {section.checklist.map((item) => (
+                <li class="flex items-start gap-2 text-ink-soft">
+                  <span class="mt-1 text-brand-700" aria-hidden="true">✓</span>
+                  <span>{pick(item, locale)}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          {section.table && section.table.headers && section.table.headers.length > 0 && (
+            <div class="mt-3 overflow-x-auto">
+              <table class="w-full border-collapse text-sm">
+                <thead>
+                  <tr>
+                    {section.table.headers.map((h) => (
+                      <th class="border border-surface-line bg-surface-alt px-3 py-2 text-left font-semibold text-ink">{pick(h, locale)}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {section.table.rows.map((row) => (
+                    <tr class="align-top">
+                      {row.map((cell) => (
+                        <td class="border border-surface-line px-3 py-2 text-ink-soft">{pick(cell, locale)}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+          {section.topics && section.topics.length > 0 && (
+            <div class="mt-4 grid gap-3 sm:grid-cols-2">
+              {section.topics.map((topic) => {
+                const isExternal = Boolean(topic.href);
+                return (
+                  <a
+                    href={topicHref(topic)}
+                    target={isExternal ? '_blank' : undefined}
+                    rel={isExternal ? 'noopener noreferrer' : undefined}
+                    class="card p-4 hover:border-brand-300"
+                  >
+                    <span class="block text-sm font-semibold text-ink">{pick(topic.label, locale)}</span>
+                    <span class="mt-1.5 block text-[13px] text-ink-soft">{pick(topic.description, locale)}</span>
+                  </a>
+                );
+              })}
+            </div>
+          )}
+          {section.links && section.links.length > 0 && (
+            <div class="mt-3 space-y-1.5">
+              {section.links.map((l) => {
+                const isExternal = Boolean(l.href);
+                const href = l.href ?? localizedUrl(guideUrl(l.slug!), locale);
+                return (
+                  <a href={href} target={isExternal ? '_blank' : undefined} rel={isExternal ? 'noopener noreferrer' : undefined} class="inline-block text-sm font-semibold text-brand-700 hover:underline">{pick(l.label, locale)} {t.common.arrow}</a>
+                );
+              })}
+            </div>
+          )}
+        </section>
+      ))}
+    </div>
+  </article>
+
+  <section class="container-site mt-12 max-w-4xl pb-10">
+    <div class="card p-6">
+      <h2 class="text-lg font-semibold text-ink">{t.nav.resources}</h2>
+      <p class="mt-2 text-sm text-ink-soft">{t.howItWorks.ready}</p>
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <a href={SUBDOMAINS.data} target="_blank" rel="noopener noreferrer" class="card p-4 hover:border-brand-300">
+          <span class="block text-sm font-semibold text-ink">{t.nav.vehicleData}</span>
+          <span class="block text-[11px] text-ink-muted">data.chinausedautohub.com</span>
+        </a>
+        <a href={SUBDOMAINS.market} target="_blank" rel="noopener noreferrer" class="card p-4 hover:border-brand-300">
+          <span class="block text-sm font-semibold text-ink">{t.nav.marketInformation}</span>
+          <span class="block text-[11px] text-ink-muted">market.chinausedautohub.com</span>
+        </a>
+        <a href={SUBDOMAINS.tools} target="_blank" rel="noopener noreferrer" class="card p-4 hover:border-brand-300">
+          <span class="block text-sm font-semibold text-ink">{t.nav.tools}</span>
+          <span class="block text-[11px] text-ink-muted">tool.chinausedautohub.com</span>
+        </a>
+        <a href={localizedUrl('/contact/', locale)} class="card p-4 hover:border-brand-300">
+          <span class="block text-sm font-semibold text-ink">{t.common.requestACar}</span>
+          <span class="block text-[11px] text-ink-muted">{t.site.tagline}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

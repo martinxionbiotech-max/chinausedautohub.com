@@ -23,6 +23,9 @@ import { dueDiligenceChecklist } from './china-used-car-exporter-due-diligence-c
 import { contractChecklist } from './china-used-car-export-contract-checklist';
 import { paymentRisks } from './china-used-car-export-payment-risks';
 import { oneEightyDayRule } from './china-180-day-used-car-export-rule';
+import { redFlags } from './china-used-car-exporter-red-flags';
+import { avoidScams } from './how-to-avoid-china-used-car-export-scams';
+import { checkCompanyRegistration } from './how-to-check-chinese-company-registration';
 
 export interface GuideSection {
   heading: L10n;
@@ -106,6 +109,9 @@ export const GUIDES: GuideContent[] = [
   contractChecklist,
   paymentRisks,
   oneEightyDayRule,
+  redFlags,
+  avoidScams,
+  checkCompanyRegistration,
 ];
 
 export function getGuide(slug: string): GuideContent | undefined {
