@@ -35,6 +35,16 @@ export function guideUrl(slug: string): string {
   return `/guides/${slug}/`;
 }
 
+// Sourcing cluster: the pillar hub plus its buyer-knowledge deep pages.
+// Distinct from `/services/` (platform services) — sourcing is the how-to
+export function sourcingUrl(): string {
+  return '/sourcing/';
+}
+
+export function sourcingTopicUrl(slug: string): string {
+  return `/sourcing/${slug}/`;
+}
+
 export function trustUrl(): string {
   return '/trust/';
 }

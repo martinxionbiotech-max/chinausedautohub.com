@@ -1,0 +1,11 @@
+---
+import SourcingPage from '../../templates/SourcingPage.astro';
+import { SOURCING_TOPICS } from '../../i18n/sourcing';
+
+export function getStaticPaths() {
+  return SOURCING_TOPICS.map((t) => ({ params: { slug: t.slug } }));
+}
+
+const { slug } = Astro.params;
+---
+<SourcingPage slug={slug} />
