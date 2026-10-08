@@ -18,6 +18,11 @@ import { checkEvBatteryHealth } from './check-used-ev-battery-health';
 import { checkMileageHistory } from './check-mileage-and-vehicle-history';
 import { roroVsContainer } from './roro-vs-container-shipping';
 import { exportCompliance } from './china-used-car-export-compliance';
+import { verifyExporter } from './how-to-verify-china-used-car-exporter';
+import { dueDiligenceChecklist } from './china-used-car-exporter-due-diligence-checklist';
+import { contractChecklist } from './china-used-car-export-contract-checklist';
+import { paymentRisks } from './china-used-car-export-payment-risks';
+import { oneEightyDayRule } from './china-180-day-used-car-export-rule';
 
 export interface GuideSection {
   heading: L10n;
@@ -96,6 +101,11 @@ export const GUIDES: GuideContent[] = [
   checkMileageHistory,
   roroVsContainer,
   exportCompliance,
+  verifyExporter,
+  dueDiligenceChecklist,
+  contractChecklist,
+  paymentRisks,
+  oneEightyDayRule,
 ];
 
 export function getGuide(slug: string): GuideContent | undefined {
