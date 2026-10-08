@@ -1,0 +1,141 @@
+Site,URL,Type,Current Topic,Quality,Search Intent,Business Value,Action
+main,/,Home,Homepage — platform overview (WHO/WHAT/WHY + 7 problems + 5 pathways),Strong,Navigational + Commercial Investigation,High,KEEP
+main,/about/,Static,About — 10 sections + 3-way distinction (platform vs verified vs official),Strong,Navigational,Medium,KEEP
+main,/contact/,Static,Contact + quote request,Good,Transactional,High,KEEP
+main,/faq/,Static,FAQ,Good,Informational,Medium,KEEP
+main,/how-it-works/,Static,10-step export process with owner tags (platform/third-party/both),Strong,Informational,High,KEEP
+main,/trust/,Static,Trust — 13 sections + 8 data-status labels,Strong,Commercial Investigation,High,KEEP
+main,/markets/,Hub,Market index — links 7 market sub-site countries,Good,Navigational,Medium,KEEP
+main,/new-arrivals/,Hub,New arrivals — renders 12 demo vehicles (illustrative),Weak,Navigational,Low,KEEP
+main,/guides/,Hub,19 buying guides index,Strong,Navigational + Informational,High,KEEP
+main,/services/,Hub,8 sourcing services index,Good,Commercial Investigation,High,KEEP
+main,/brands/,Hub,8 brand index,Good,Navigational,Medium,KEEP
+main,/body-types/,Hub,Body-type index (SUV/Sedan),Thin,Navigational,Low,KEEP
+main,/powertrains/,Hub,Powertrain index (EV/PHEV/HEV/petrol/diesel),Thin,Navigational,Low,KEEP
+main,/cars/,Hub,Browse inventory — 12 demo vehicles,Weak,Commercial Investigation,Medium,KEEP
+main,/privacy/,Legal,Privacy Policy,Good,Navigational,Low,KEEP
+main,/terms/,Legal,Terms of Use,Good,Navigational,Low,KEEP
+main,/cookies/,Legal,Cookie Policy (no tracking),Good,Navigational,Low,KEEP
+main,/copyright/,Legal,Copyright,Good,Navigational,Low,KEEP
+main,/data-protection/,Legal,Data protection,Good,Navigational,Low,KEEP
+main,/disclaimer/,Legal,Disclaimer,Good,Navigational,Low,KEEP
+main,/errors-omissions/,Legal,Errors & omissions,Good,Navigational,Low,KEEP
+main,/export-compliance/,Legal,Export compliance disclaimer,Good,Navigational,Medium,KEEP
+main,/external-links/,Legal,External links policy,Good,Navigational,Low,KEEP
+main,/legal-notice/,Legal,Legal notice,Good,Navigational,Low,KEEP
+main,/vehicle-listing-disclaimer/,Legal,Vehicle listing disclaimer (demo disclosure),Good,Navigational,Medium,KEEP
+main,/guides/how-to-buy-used-car-from-china/,Guide,How to buy used car from China — step-by-step,Strong,Informational + Commercial Investigation,High,KEEP
+main,/guides/china-used-car-export-process/,Guide,China used car export full process,Strong,Informational,High,KEEP
+main,/guides/vehicle-inspection/,Guide,Vehicle inspection — what to check,Strong,Informational,High,KEEP
+main,/guides/export-documents/,Guide,Export documents,Strong,Informational,High,KEEP
+main,/guides/shipping/,Guide,Shipping methods explained,Strong,Informational,High,KEEP
+main,/guides/fob-vs-cif-vs-cfr/,Guide,Incoterms FOB/CIF/CFR,Strong,Informational,Medium,KEEP
+main,/guides/landed-cost/,Guide,Landed cost estimation,Strong,Informational + Commercial Investigation,High,KEEP
+main,/guides/buying-chinese-evs-for-export/,Guide,Buying Chinese EVs for export,Strong,Informational + Commercial Investigation,High,KEEP
+main,/guides/china-used-car-export-compliance/,Guide,Export compliance (enterprise filing/licence/180-day/negative list),Strong,Informational,High,EXPAND
+main,/guides/evaluate-chinese-used-car-supplier/,Guide,Evaluate a Chinese used-car supplier,Strong,Commercial Investigation,High,KEEP
+main,/guides/compare-chinese-used-evs/,Guide,Compare Chinese used EVs,Good,Informational,Medium,KEEP
+main,/guides/ev-vs-ice-vehicles-from-china/,Guide,EV vs ICE from China,Good,Informational,Medium,KEEP
+main,/guides/china-domestic-vs-export-specification/,Guide,Domestic vs export specification,Good,Informational,Medium,KEEP
+main,/guides/evaluate-used-byd/,Guide,Evaluate used BYD,Good,Commercial Investigation,Medium,KEEP
+main,/guides/evaluate-used-geely/,Guide,Evaluate used Geely,Good,Commercial Investigation,Medium,KEEP
+main,/guides/evaluate-used-chery/,Guide,Evaluate used Chery,Good,Commercial Investigation,Medium,KEEP
+main,/guides/check-used-ev-battery-health/,Guide,Check used EV battery health,Strong,Informational,High,KEEP
+main,/guides/check-mileage-and-vehicle-history/,Guide,Check mileage & vehicle history,Strong,Informational,High,KEEP
+main,/guides/roro-vs-container-shipping/,Guide,RoRo vs container shipping,Good,Informational,Medium,KEEP
+main,/services/vehicle-sourcing/,Service,Vehicle sourcing service,Good,Commercial Investigation,High,KEEP
+main,/services/vehicle-inspection/,Service,Inspection service,Good,Commercial Investigation,High,KEEP
+main,/services/vehicle-verification/,Service,Vehicle verification service,Good,Commercial Investigation,High,KEEP
+main,/services/export-coordination/,Service,Export coordination,Good,Commercial Investigation,High,KEEP
+main,/services/shipping/,Service,Shipping service,Good,Commercial Investigation,Medium,KEEP
+main,/services/export-documentation/,Service,Export documentation,Good,Commercial Investigation,Medium,KEEP
+main,/services/market-research/,Service,Market research,Good,Commercial Investigation,Medium,KEEP
+main,/services/fleet-batch-sourcing/,Service,Fleet/batch sourcing,Good,Commercial Investigation,Medium,KEEP
+main,/brands/byd/,Brand,BYD brand page (12-section procurement view),Strong,Commercial Investigation,High,KEEP
+main,/brands/geely/,Brand,Geely brand page,Strong,Commercial Investigation,High,KEEP
+main,/brands/chery/,Brand,Chery brand page,Strong,Commercial Investigation,High,KEEP
+main,/brands/changan/,Brand,Changan brand page,Strong,Commercial Investigation,High,KEEP
+main,/brands/gac/,Brand,GAC brand page,Good,Commercial Investigation,Medium,KEEP
+main,/brands/great-wall/,Brand,Great Wall brand page,Good,Commercial Investigation,Medium,KEEP
+main,/brands/nio/,Brand,NIO brand page,Good,Commercial Investigation,Medium,KEEP
+main,/brands/xpeng/,Brand,XPeng brand page,Good,Commercial Investigation,Medium,KEEP
+main,/body-types/suv/,Facet,SUV body-type listing,Thin,Navigational,Low,KEEP
+main,/body-types/sedan/,Facet,Sedan body-type listing,Thin,Navigational,Low,KEEP
+main,/powertrains/ev/,Facet,EV powertrain listing,Thin,Navigational,Low,KEEP
+main,/powertrains/phev/,Facet,PHEV powertrain listing,Thin,Navigational,Low,KEEP
+main,/powertrains/hybrid/,Facet,HEV powertrain listing,Thin,Navigational,Low,KEEP
+main,/powertrains/petrol/,Facet,Petrol powertrain listing,Thin,Navigational,Low,KEEP
+main,/powertrains/diesel/,Facet,Diesel powertrain listing,Thin,Navigational,Low,KEEP
+main,/cars/{brand}/{model}/{inventoryId}/ (12 demo),Vehicle detail,Example Vehicle listings — all is_demo, noindex,Good,Navigational,Low,KEEP
+data,/,Home,China used vehicle database home,Strong,Navigational,High,KEEP
+data,/brands/,Hub,53 brand index,Good,Navigational,Medium,KEEP
+data,/brands/{brand_id}/ (53),Brand,53 brand pages,Good,Navigational,Medium,KEEP
+data,/models/,Hub,120 model index,Good,Navigational,High,KEEP
+data,/models/{model_id}/ (120),Model,120 model pages (20-section record + EI + verification),Strong,Informational + Commercial Investigation,High,KEEP
+data,/body-types/,Hub,Body-type index,Good,Navigational,Medium,KEEP
+data,/powertrains/,Hub,Powertrain index,Good,Navigational,Medium,KEEP
+data,/vehicle-types/ev/,Facet,EV vehicle-type listing,Good,Navigational,Medium,KEEP
+data,/vehicle-types/hybrid/,Facet,Hybrid vehicle-type listing,Good,Navigational,Medium,KEEP
+data,/vehicle-types/suv/,Facet,SUV vehicle-type listing,Good,Navigational,Medium,KEEP
+data,/vehicle-types/sedan/,Facet,Sedan vehicle-type listing,Good,Navigational,Medium,KEEP
+data,/glossary/,Static,20-term glossary + DefinedTermSet,Good,Informational,Medium,KEEP
+data,/vehicle-specifications/,Static,Specification fields reference,Good,Informational,Medium,KEEP
+data,/privacy/,Legal,Privacy,Good,Navigational,Low,KEEP
+data,/terms/,Legal,Terms,Good,Navigational,Low,KEEP
+data,/cookies/,Legal,Cookies,Good,Navigational,Low,KEEP
+data,/disclaimer/,Legal,Disclaimer,Good,Navigational,Low,KEEP
+market,/,Home,Market intelligence home,Strong,Navigational,High,KEEP
+market,/countries/,Hub,82 country index,Strong,Navigational,High,KEEP
+market,/countries/uae/,Country,UAE market page (10/11 editorial fields),Strong,Informational + Commercial Investigation,High,KEEP
+market,/countries/saudi-arabia/,Country,Saudi Arabia (10/11),Strong,Informational + Commercial Investigation,High,KEEP
+market,/countries/oman/,Country,Oman (5/11 — thin editorial),Weak,Informational,High,EXPAND
+market,/countries/kuwait/,Country,Kuwait (5/11 — thin editorial),Weak,Informational,High,EXPAND
+market,/countries/kenya/,Country,Kenya (11/11 full),Strong,Informational + Commercial Investigation,High,KEEP
+market,/countries/tanzania/,Country,Tanzania (10/11),Strong,Informational,High,KEEP
+market,/countries/russia/,Country,Russia (5/11 — thin editorial),Weak,Informational,High,EXPAND
+market,/countries/kazakhstan/,Country,Kazakhstan (10/11),Strong,Informational,High,KEEP
+market,/countries/{remaining 74}/,Country,74 remaining country pages (template-sampled; data layer sourced),Good,Informational,Medium,KEEP
+market,/countries/{country}/{vehicle}/ (228),Vehicle×Market,228 combination pages (all pass increment gate),Strong,Informational + Commercial Investigation,High,KEEP
+market,/duties-taxes/,Static,Duties & taxes comparison table,Good,Informational,High,KEEP
+market,/ev-import/,Static,EV import rules & incentives,Good,Informational,High,KEEP
+market,/ports/,Static,Ports & border crossings,Good,Informational,Medium,KEEP
+market,/shipping-routes/,Static,Shipping routes transit estimates,Good,Informational,Medium,KEEP
+market,/vehicle-age-rules/,Static,Vehicle age rules comparison,Good,Informational,High,KEEP
+market,/privacy/,Legal,Privacy (×4 langs),Good,Navigational,Low,KEEP
+market,/terms/,Legal,Terms (×4 langs),Good,Navigational,Low,KEEP
+market,/cookies/,Legal,Cookies (×4 langs),Good,Navigational,Low,KEEP
+market,/disclaimer/,Legal,Disclaimer (×4 langs),Good,Navigational,Low,KEEP
+tools,/,Home,Tools home,Good,Navigational,High,KEEP
+tools,/landed-cost-calculator/,Tool,Landed cost calculator,Strong,Transactional,High,KEEP
+tools,/import-duty-calculator/,Tool,Import duty calculator,Strong,Transactional,High,KEEP
+tools,/shipping-cost-estimator/,Tool,Shipping cost estimator,Good,Transactional,High,KEEP
+tools,/vehicle-comparison/,Tool,Vehicle comparison,Good,Transactional,High,KEEP
+tools,/market-compatibility/,Tool,Market compatibility checker,Good,Transactional,High,KEEP
+tools,/ev-import-cost-calculator/,Tool,EV import cost calculator,Good,Transactional,High,KEEP
+tools,/fob-cfr-cif-calculator/,Tool,FOB/CFR/CIF calculator,Good,Transactional,Medium,KEEP
+tools,/profit-calculator/,Tool,Profit calculator,Good,Transactional,Medium,KEEP
+tools,/tco-calculator/,Tool,TCO calculator,Good,Transactional,Medium,KEEP
+tools,/vehicle-age-calculator/,Tool,Vehicle age calculator,Good,Transactional,Medium,KEEP
+tools,/currency-converter/,Tool,Currency converter (7 fx rates),Good,Transactional,Low,KEEP
+tools,/privacy/,Legal,Privacy,Good,Navigational,Low,KEEP
+tools,/terms/,Legal,Terms,Good,Navigational,Low,KEEP
+tools,/cookies/,Legal,Cookies,Good,Navigational,Low,KEEP
+tools,/disclaimer/,Legal,Disclaimer,Good,Navigational,Low,KEEP
+companies,/,Home,Company due-diligence directory home,Good,Navigational,High,KEEP
+companies,/{category}/ (4),Category,4 category pages (exporter/dealer/inspection/automaker),Good,Navigational,Medium,KEEP
+companies,/companies/byd-auto/,Company,BYD Auto (publicly_listed),Strong,Commercial Investigation,High,KEEP
+companies,/companies/geely-auto/,Company,Geely Auto (publicly_listed),Strong,Commercial Investigation,High,KEEP
+companies,/companies/chery-auto/,Company,Chery Auto (publicly_listed),Strong,Commercial Investigation,High,KEEP
+companies,/companies/changan-auto/,Company,Changan Auto (publicly_listed),Strong,Commercial Investigation,High,KEEP
+companies,/companies/great-wall-motor/,Company,Great Wall Motor (publicly_listed),Strong,Commercial Investigation,High,KEEP
+companies,/companies/saic-motor/,Company,SAIC Motor (publicly_listed),Strong,Commercial Investigation,High,KEEP
+companies,/companies/li-auto/,Company,Li Auto (publicly_listed),Strong,Commercial Investigation,Medium,KEEP
+companies,/companies/nio/,Company,NIO (publicly_listed),Strong,Commercial Investigation,Medium,KEEP
+companies,/companies/xpeng/,Company,XPeng (publicly_listed),Strong,Commercial Investigation,Medium,KEEP
+companies,/companies/demo-orient-auto-export/,Company,Demo exporter (unverified, noindex),Good,Navigational,Low,KEEP
+companies,/companies/demo-gulf-motors-trading/,Company,Demo dealer (unverified, noindex),Good,Navigational,Low,KEEP
+companies,/companies/demo-eastafrica-inspection/,Company,Demo inspection (unverified, noindex),Good,Navigational,Low,KEEP
+companies,/privacy/,Legal,Privacy,Good,Navigational,Low,KEEP
+companies,/terms/,Legal,Terms,Good,Navigational,Low,KEEP
+companies,/cookies/,Legal,Cookies,Good,Navigational,Low,KEEP
+companies,/disclaimer/,Legal,Disclaimer,Good,Navigational,Low,KEEP
