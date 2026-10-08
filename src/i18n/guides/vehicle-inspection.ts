@@ -434,6 +434,80 @@ export const inspection = {
     },
     {
       heading: {
+        en: 'Pre-payment inspection checklist',
+        ar: 'قائمة الفحص قبل الدفع',
+        ru: 'Контрольный список проверки перед оплатой',
+        es: 'Lista de inspección previa al pago',
+      },
+      paragraphs: [
+        {
+          en: 'Before you transfer any funds, work through this checklist. Each item is something you can run or request directly, and each one closes a gap between what the seller claims and what you can confirm.',
+          ar: 'قبل أن تحوّل أي أموال، اعمل على هذه القائمة. كل بند شيء يمكنك تنفيذه أو طلبه مباشرة، وكل بند يسد فجوة بين ما يدّعيه البائع وما يمكنك تأكيده.',
+          ru: 'Прежде чем переводить средства, пройдите этот чек-лист. Каждый пункт вы можете выполнить или запросить напрямую, и каждый закрывает разрыв между тем, что заявляет продавец, и тем, что вы можете подтвердить.',
+          es: 'Antes de transferir fondos, repase esta lista. Cada punto puede ejecutarlo o pedirlo directamente, y cada uno cierra una brecha entre lo que afirma el vendedor y lo que usted puede confirmar.',
+        },
+      ],
+      checklist: [
+        {
+          en: 'Confirm the VIN matches across the licence, registration certificate and invoice',
+          ar: 'أكّد أن رقم الهيكل (VIN) متطابق عبر الرخصة وشهادة التسجيل والفاتورة',
+          ru: 'Подтвердите, что VIN совпадает в лицензии, свидетельстве о регистрации и счёте',
+          es: 'Confirme que el VIN coincide en la licencia, el certificado de registro y la factura',
+        },
+        {
+          en: 'Cross-check the mileage against the odometer, service records and interior wear',
+          ar: 'قارن المسافة المقطوعة مع عداد المسافة وسجلات الخدمة وتآكل المقصورة',
+          ru: 'Сверьте пробег с одометром, записями о ТО и износом салона',
+          es: 'Cruce el kilometraje con el cuentakilómetros, los registros de servicio y el desgaste interior',
+        },
+        {
+          en: 'Review the accident and repair history with its confidence level',
+          ar: 'راجع سجل الحوادث والإصلاحات مع مستوى ثقته',
+          ru: 'Изучите историю ДТП и ремонтов с её уровнем достоверности',
+          es: 'Revise el historial de accidentes y reparaciones con su nivel de confianza',
+        },
+        {
+          en: 'Request the specific photos or video you need, including the VIN plate and odometer',
+          ar: 'اطلب الصور أو الفيديو المحدد الذي تحتاجه، بما في ذلك لوحة رقم الهيكل وعداد المسافة',
+          ru: 'Запросите нужные фото или видео, включая табличку VIN и одометр',
+          es: 'Pida las fotos o el vídeo concretos que necesite, incluida la placa del VIN y el cuentakilómetros',
+        },
+        {
+          en: 'Commission a third-party inspection or diagnostic where available and worth the cost',
+          ar: 'كلّف بفحص أو تشخيص من طرف ثالث حيثما توفر وكانت التكلفة مبررة',
+          ru: 'Закажите стороннюю проверку или диагностику, где это доступно и оправдано по стоимости',
+          es: 'Encargue una inspección o diagnóstico de terceros cuando esté disponible y merezca la pena',
+        },
+        {
+          en: 'Verify the exporter and the payment account before you transfer funds',
+          ar: 'تحقق من المصدّر وحساب الدفع قبل تحويل الأموال',
+          ru: 'Проверьте экспортёра и платёжный счёт до перевода средств',
+          es: 'Verifique al exportador y la cuenta de pago antes de transferir fondos',
+        },
+      ],
+      links: [
+        {
+          slug: 'how-to-verify-a-vehicle-before-payment',
+          label: {
+            en: 'The full pre-payment action list — Verify Before Payment guide',
+            ar: 'قائمة الإجراءات الكاملة قبل الدفع — دليل «التحقق قبل الدفع»',
+            ru: 'Полный список действий перед оплатой — руководство «Проверить перед оплатой»',
+            es: 'La lista completa de acciones previas al pago — guía «Verificar antes del pago»',
+          },
+        },
+        {
+          slug: 'how-to-verify-china-used-car-exporter',
+          label: {
+            en: 'Verify the exporter — How to Verify guide',
+            ar: 'تحقق من المصدّر — دليل «كيف تتحقق»',
+            ru: 'Проверьте экспортёра — руководство «Как проверить»',
+            es: 'Verifique al exportador — guía «Cómo verificar»',
+          },
+        },
+      ],
+    },
+    {
+      heading: {
         en: 'Exceptions',
         ar: 'استثناءات',
         ru: 'Исключения',
@@ -572,10 +646,10 @@ export const inspection = {
       },
       paragraphs: [
         {
-          en: 'Last reviewed: 2026-10-04. This guide describes a general inspection method and does not certify any specific vehicle. A clean report is a snapshot of the information available at the time, not a lifetime guarantee. Confirm any detail that affects your decision with a current quote or inspection before committing.',
-          ar: 'آخر مراجعة: 2026-10-04. يصف هذا الدليل طريقة فحص عامة ولا يعتمد أي مركبة محددة. التقرير النظيف هو لقطة للمعلومات المتوفرة وقت الفحص، وليس ضمانًا مدى الحياة. أكد أي تفصيل يؤثر على قرارك بعرض سعر أو فحص حالي قبل الالتزام.',
-          ru: 'Последняя проверка: 2026-10-04. Это руководство описывает общий метод проверки и не сертифицирует конкретный автомобиль. Чистый отчёт — это снимок информации, доступной на момент проверки, а не пожизненная гарантия. Подтвердите любую важную деталь актуальным расчётом или проверкой до обязательств.',
-          es: 'Última revisión: 2026-10-04. Esta guía describe un método general de inspección y no certifica ningún vehículo concreto. Un informe limpio es una instantánea de la información disponible en ese momento, no una garantía de por vida. Confirme cualquier detalle que afecte a su decisión con una cotización o inspección actual antes de comprometerse.',
+          en: 'Last reviewed: 2026-10-08. This guide describes a general inspection method and does not certify any specific vehicle. A clean report is a snapshot of the information available at the time, not a lifetime guarantee. Confirm any detail that affects your decision with a current quote or inspection before committing.',
+          ar: 'آخر مراجعة: 2026-10-08. يصف هذا الدليل طريقة فحص عامة ولا يعتمد أي مركبة محددة. التقرير النظيف هو لقطة للمعلومات المتوفرة وقت الفحص، وليس ضمانًا مدى الحياة. أكد أي تفصيل يؤثر على قرارك بعرض سعر أو فحص حالي قبل الالتزام.',
+          ru: 'Последняя проверка: 2026-10-08. Это руководство описывает общий метод проверки и не сертифицирует конкретный автомобиль. Чистый отчёт — это снимок информации, доступной на момент проверки, а не пожизненная гарантия. Подтвердите любую важную деталь актуальным расчётом или проверкой до обязательств.',
+          es: 'Última revisión: 2026-10-08. Esta guía describe un método general de inspección y no certifica ningún vehículo concreto. Un informe limpio es una instantánea de la información disponible en ese momento, no una garantía de por vida. Confirme cualquier detalle que afecte a su decisión con una cotización o inspección actual antes de comprometerse.',
         },
       ],
     },

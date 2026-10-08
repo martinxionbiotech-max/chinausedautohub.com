@@ -26,6 +26,12 @@ import { oneEightyDayRule } from './china-180-day-used-car-export-rule';
 import { redFlags } from './china-used-car-exporter-red-flags';
 import { avoidScams } from './how-to-avoid-china-used-car-export-scams';
 import { checkCompanyRegistration } from './how-to-check-chinese-company-registration';
+import { verifyCredentials } from './how-to-verify-used-car-export-credentials';
+import { verifyBeforePayment } from './how-to-verify-a-vehicle-before-payment';
+import { afterSalesConfirmation } from './used-car-export-after-sales-service-confirmation';
+import { creditEvaluation } from './china-used-car-exporter-credit-evaluation';
+import { negativeList } from './china-used-car-export-negative-list';
+import { policyChanges2026 } from './2026-china-used-car-export-policy-changes';
 
 export interface GuideSection {
   heading: L10n;
@@ -112,6 +118,12 @@ export const GUIDES: GuideContent[] = [
   redFlags,
   avoidScams,
   checkCompanyRegistration,
+  verifyCredentials,
+  verifyBeforePayment,
+  afterSalesConfirmation,
+  creditEvaluation,
+  negativeList,
+  policyChanges2026,
 ];
 
 export function getGuide(slug: string): GuideContent | undefined {
