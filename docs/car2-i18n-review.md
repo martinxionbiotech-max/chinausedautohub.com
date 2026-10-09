@@ -160,10 +160,10 @@
 
 ---
 
-## 9. 收尾（build + check）
+## 9. 收尾（build + check + commit）
 
-- `npm run check`（astro check）：待跑，见 commit 前日志。
-- `npm run build`：待跑，见 commit 前日志。
-- git commit（car2-review 标记）+ push + 同步 0/0：待执行。
-
-（本报告在 build 结果落地后由收尾步骤补记最终验证状态。）
+- `npm run build`（astro build）：**通过**，401 page(s) built，exit 0。修复后 pillar 产物已核实——topic map 链接全部指向正确页面（含新增 2026-changes）。
+- `npm run check`（astro check）：需安装 `@astrojs/check`（未安装，未擅自装依赖）；以 build 通过作为验证门禁。
+- git commit：`7afb338`（car2-review 标记）。
+- git push：`14d85d4..7afb338 main -> main`。
+- 同步状态：**0 ahead / 0 behind**（HEAD == origin/main）。
