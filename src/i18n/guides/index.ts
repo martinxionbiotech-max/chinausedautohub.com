@@ -22,6 +22,9 @@ import { verifyExporter } from './how-to-verify-china-used-car-exporter';
 import { dueDiligenceChecklist } from './china-used-car-exporter-due-diligence-checklist';
 import { contractChecklist } from './china-used-car-export-contract-checklist';
 import { paymentRisks } from './china-used-car-export-payment-risks';
+import { payment } from './china-used-car-export-payment';
+import { warranty } from './china-used-car-export-warranty';
+import { exportRisks } from './china-used-car-export-risks';
 import { oneEightyDayRule } from './china-180-day-used-car-export-rule';
 import { redFlags } from './china-used-car-exporter-red-flags';
 import { avoidScams } from './how-to-avoid-china-used-car-export-scams';
@@ -114,6 +117,9 @@ export const GUIDES: GuideContent[] = [
   dueDiligenceChecklist,
   contractChecklist,
   paymentRisks,
+  payment,
+  warranty,
+  exportRisks,
   oneEightyDayRule,
   redFlags,
   avoidScams,

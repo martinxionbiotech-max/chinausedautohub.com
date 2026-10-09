@@ -117,13 +117,13 @@ export const exportGuidePillar = {
         },
         {
           label: { en: '11. Payment', ar: '11. الدفع', ru: '11. Оплата', es: '11. Pago' },
-          description: { en: 'Payment methods, the risk signals and how to keep your money recoverable.', ar: 'طرق الدفع وإشارات الخطر وكيفية الحفاظ على إمكانية استرداد أموالك.', ru: 'Способы оплаты, тревожные сигналы и как сохранить возможность вернуть деньги.', es: 'Métodos de pago, señales de riesgo y cómo mantener su dinero recuperable.' },
-          slug: 'china-used-car-export-payment-risks',
+          description: { en: 'How payment works end to end: the process, instruments, stages, currency and bank verification.', ar: 'كيف يعمل الدفع من البداية إلى النهاية: العملية والأدوات والمراحل والعملة والتحقق المصرفي.', ru: 'Как устроена оплата от начала до конца: процесс, инструменты, этапы, валюта и банковская проверка.', es: 'Cómo funciona el pago de principio a fin: el proceso, los instrumentos, las etapas, la divisa y la verificación bancaria.' },
+          slug: 'china-used-car-export-payment',
         },
         {
           label: { en: '12. Warranty', ar: '12. الضمان', ru: '12. Гарантия', es: '12. Garantía' },
-          description: { en: 'What warranty and quality-assurance terms to put in the contract.', ar: 'شروط الضمان وضمان الجودة التي يجب تضمينها في العقد.', ru: 'Какие условия гарантии и обеспечения качества включить в контракт.', es: 'Qué términos de garantía y aseguramiento de calidad incluir en el contrato.' },
-          slug: 'china-used-car-export-contract-checklist',
+          description: { en: 'The warranty reality, the after-sales responsibility boundary and the claim process.', ar: 'واقع الضمان وحدود مسؤولية ما بعد البيع وعملية المطالبة.', ru: 'Реальность гарантии, граница ответственности по послепродажному обслуживанию и процесс претензии.', es: 'La realidad de la garantía, el límite de responsabilidad posventa y el proceso de reclamación.' },
+          slug: 'china-used-car-export-warranty',
         },
         {
           label: { en: '13. After-sales', ar: '13. ما بعد البيع', ru: '13. Постпродажное обслуживание', es: '13. Posventa' },
@@ -132,8 +132,8 @@ export const exportGuidePillar = {
         },
         {
           label: { en: '14. Common risks', ar: '14. المخاطر الشائعة', ru: '14. Распространённые риски', es: '14. Riesgos comunes' },
-          description: { en: 'How export scams work and how to avoid them.', ar: 'كيف تعمل عمليات الاحتيال في التصدير وكيف تتجنبها.', ru: 'Как работают мошенничества при экспорте и как их избежать.', es: 'Cómo funcionan las estafas de exportación y cómo evitarlas.' },
-          slug: 'how-to-avoid-china-used-car-export-scams',
+          description: { en: 'The full-chain risk map and which specialty guide covers each risk.', ar: 'خريطة المخاطر عبر السلسلة الكاملة وأي دليل متخصص يغطي كل خطر.', ru: 'Карта рисков всей цепочки и какое специализированное руководство покрывает каждый риск.', es: 'El mapa de riesgos de toda la cadena y qué guía especializada cubre cada riesgo.' },
+          slug: 'china-used-car-export-risks',
         },
         {
           label: { en: '15. Total cost', ar: '15. التكلفة الإجمالية', ru: '15. Итоговая стоимость', es: '15. Coste total' },
