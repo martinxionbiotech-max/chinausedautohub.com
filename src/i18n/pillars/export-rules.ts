@@ -168,7 +168,7 @@ export const exportRulesPillar = {
             ru: 'Подтверждение от производителя, которое должен иметь почти новый автомобиль, и его требуемое содержание.',
             es: 'La confirmación emitida por el fabricante que debe llevar un vehículo seminuevo, y su contenido requerido.',
           },
-          slug: 'china-180-day-used-car-export-rule',
+          slug: 'used-car-export-after-sales-service-confirmation',
         },
         {
           label: {
@@ -183,7 +183,7 @@ export const exportRulesPillar = {
             ru: 'Система кредитной оценки и динамическое управление предприятиями, применяемые органами к экспортным предприятиям.',
             es: 'El sistema de evaluación crediticia y la gestión dinámica de empresas que aplican las autoridades a las empresas exportadoras.',
           },
-          slug: 'china-used-car-export-compliance',
+          slug: 'china-used-car-exporter-credit-evaluation',
         },
         {
           label: {
@@ -198,7 +198,22 @@ export const exportRulesPillar = {
             ru: 'Запрещённые и ограниченные категории, вне которых должен находиться автомобиль, и список недобросовестного поведения для предприятий.',
             es: 'Las categorías prohibidas y restringidas de las que un vehículo debe quedar fuera, y la lista de conductas deshonestas para empresas.',
           },
-          slug: 'china-used-car-export-compliance',
+          slug: 'china-used-car-export-negative-list',
+        },
+        {
+          label: {
+            en: '2026 policy changes',
+            ar: 'تغييرات السياسة في 2026',
+            ru: 'Изменения политики 2026 года',
+            es: 'Cambios de política de 2026',
+          },
+          description: {
+            en: 'What changed on 1 January 2026 compared with the 2024 framework, change by change.',
+            ar: 'ما الذي تغيّر في 1 يناير 2026 مقارنة بإطار 2024، تغييراً بتغيير.',
+            ru: 'Что изменилось с 1 января 2026 года по сравнению с рамками 2024 года — изменение за изменением.',
+            es: 'Qué cambió el 1 de enero de 2026 frente al marco de 2024, cambio por cambio.',
+          },
+          slug: '2026-china-used-car-export-policy-changes',
         },
         {
           label: {
