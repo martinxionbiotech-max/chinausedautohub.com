@@ -1,0 +1,49 @@
+# China Used Auto Hub
+
+> Commercial platform for sourcing used and near-new vehicles from China for export — browse available inventory, request quotes, and request specific vehicles from China's market. Multilingual (English default, plus Spanish, Russian, Arabic). Parent site of the data, companies, tools, and market sub-sites. Contact: landengltd@gmail.com · WhatsApp +86 13323237275.
+
+## Core Pages
+
+- [Home](https://chinausedautohub.com/): Entry point to the China Used Auto Hub platform.
+- [Cars / Inventory](https://chinausedautohub.com/cars/): Browse available vehicle inventory.
+- [New Arrivals](https://chinausedautohub.com/new-arrivals/): Recently added vehicle listings.
+- [China Used Car Export](https://chinausedautohub.com/china-used-car-export/): Overview of China used-car export.
+- [How It Works](https://chinausedautohub.com/how-it-works/): Sourcing and export process walkthrough.
+- [Services](https://chinausedautohub.com/services/): Services offered (individual service pages via /services/[service]/).
+- [Sourcing](https://chinausedautohub.com/sourcing/): Request specific vehicles (individual guides via /sourcing/[slug]/).
+- [Guides](https://chinausedautohub.com/guides/): Buyer guides (individual guides via /guides/[guide]/).
+- [Markets](https://chinausedautohub.com/markets/): Destination-market information.
+- [Brands](https://chinausedautohub.com/brands/): Vehicle brands (individual brand pages via /brands/[brand]/).
+- [Body Types](https://chinausedautohub.com/body-types/): Vehicle body types (individual pages via /body-types/[type]/).
+- [Powertrains](https://chinausedautohub.com/powertrains/): Powertrain types (individual pages via /powertrains/[type]/).
+- [China Used Car Export Rules](https://chinausedautohub.com/china-used-car-export-rules/): Export rules and compliance.
+- [Export Compliance](https://chinausedautohub.com/export-compliance/): Export compliance information.
+- [External Links](https://chinausedautohub.com/external-links/): Curated external resources.
+- [FAQ](https://chinausedautohub.com/faq/): Frequently asked questions.
+- [About](https://chinausedautohub.com/about/): About the platform.
+- [Contact](https://chinausedautohub.com/contact/): Contact and inquiry.
+- [Trust](https://chinausedautohub.com/trust/): Trust and verification information.
+
+## Legal & Policy
+
+- [Terms](https://chinausedautohub.com/terms/): Terms of service.
+- [Privacy](https://chinausedautohub.com/privacy/): Privacy policy.
+- [Disclaimer](https://chinausedautohub.com/disclaimer/): Disclaimer.
+- [Cookies](https://chinausedautohub.com/cookies/): Cookie policy.
+- [Legal Notice](https://chinausedautohub.com/legal-notice/): Legal notice.
+- [Copyright](https://chinausedautohub.com/copyright/): Copyright notice.
+- [Data Protection](https://chinausedautohub.com/data-protection/): Data protection policy.
+- [Errors & Omissions](https://chinausedautohub.com/errors-omissions/): Errors and omissions policy.
+- [Vehicle Listing Disclaimer](https://chinausedautohub.com/vehicle-listing-disclaimer/): Listing disclaimer.
+
+## Sub-sites
+
+- [Data](https://data.chinausedautohub.com/): Vehicle specification and reference data.
+- [Companies](https://company.chinausedautohub.com/): Company directory.
+- [Tools](https://tool.chinausedautohub.com/): Import calculators and tools.
+- [Market](https://market.chinausedautohub.com/): Destination-market import data.
+
+## Notes
+
+- The site is multilingual (English, Spanish, Russian, Arabic); the links above are the English (default) locale. Locale-prefixed equivalents exist under /es/, /ru/, and /ar/.
+- Vehicle listings include demo records that are excluded from indexing; verify listing status before relying on inventory data.
